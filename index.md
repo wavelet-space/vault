@@ -1,6 +1,6 @@
 # David Landa
 
-Welcome on my personal website.
+Welcome to my personal website.
 
 ## Education
 
