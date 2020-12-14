@@ -15,3 +15,5 @@ Welcome to my personal website.
   _Numerical simulation of symplectites using phase-field method_
 
 - 2012 &mdash; (Master) Painting, Academy of Fine Arts in Prague
+
+_I successfully ignore all university courses that force a student to work with Excel._
