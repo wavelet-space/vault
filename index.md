@@ -1,19 +1,20 @@
 ---
 header-includes: <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141722838-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-141722838-1');</script>
+header-includes: <script async src="flow.js"></script>
 ---
 
 # David Landa
 
 Welcome to my personal website.
 
+<canvas id="canvas" width="600px" height=600px></canvas>
+
 ## Education
 
 - 2022 &mdash; (Master) Geology, Charles University in Prague<br />
-  _Numerical simulation of phase transformations and microstructures evolution using neural networks_
+  _Numerical simulation of microstructure evolution using neural networks_
 
 - 2021 &mdash; (Bachelor) Geology, Charles University in Prague<br />
-  _Numerical simulation of symplectites using phase-field method_
+  _Numerical simulation of symplectites using mean and phase-field method_
 
 - 2012 &mdash; (Master) Painting, Academy of Fine Arts in Prague
-
-_I successfully ignore all university courses that force a student to work with Excel._
