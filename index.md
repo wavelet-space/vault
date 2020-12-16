@@ -13,13 +13,8 @@ Welcome to my personal website.
 
 Here is the manually maintained and ever growing list of books and articles. 
 
-### Books
-
 - Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. O'Reilly
 - Napolitano, J. (2018) _A Mathematica Primer for Physicists_. Taylor & Francis Group
-
-### Articles
-
 - Zhi Chen et al, _Concept whitening for interpretable image recognition_, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
 - H. Y. Kwon et al, _Magnetic Hamiltonian parameter estimation using deep learning techniques_, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
 
@@ -36,5 +31,4 @@ Here is the manually maintained and ever growing list of books and articles.
 ## Programming
  
 With various degree of proficiency I am able to use these programming languages: 
-_C++ (2011+), Fortran(2008+) Rust, Julia, R, Python (3+), Wolfram, 
-Lisp (Common Lisp) & Scheme (Racket)_. 
+_C++, Fortran, Rust, Julia, R, Python, Wolfram, Lisp (Common Lisp) & Scheme (Racket)_. 
