@@ -9,6 +9,12 @@ Welcome to my personal website.
 
 <canvas id="canvas" width="600px" height=600px></canvas>
 
+## Reddings
+
+Here is the manually maintained and growing list of books. 
+
+- Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. 
+
 ## Education
 
 - 2022 &mdash; (Master) Geology, Charles University in Prague<br />
