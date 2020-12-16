@@ -6,10 +6,6 @@ body {
   color: rgb(2, 43, 105);
 }
 
-canvas {
-  position: absolute;
-  top: 50px;
-}
 
 h1 {
   text-transform: uppercase;
