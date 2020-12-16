@@ -4,6 +4,9 @@ window.onload = function () {
   c.addEventListener("click", onClick, false)
   var ctx = c.getContext("2d");
 
+  ctx.canvas.width = "700"
+  ctx.canvas.height = "80"
+
   var tracers = [];
 
   var is_paused = false;
@@ -24,14 +27,11 @@ window.onload = function () {
 
   function pause() {
     is_paused = true;
-    ctx.globalAlpha = 0.7;
-
-    ctx.fillRect(270, 260, 20, 60)
-    ctx.fillRect(310, 260, 20, 60)
-
-    ctx.font = "10px Arial";
-    ctx.fillText("Click to unpause", 250, 500);
-    ctx.globalAlpha = 1;
+    let w = 20;
+    let h = 20;
+    ctx.fillStyle = "#ff0000";
+    ctx.fillRect((c.width / 2) - (w * 2), (c.height / 2) - (h / 2), w, h)
+    ctx.fillStyle = "#022b69";
   }
 
   function unpause() {
@@ -95,7 +95,7 @@ window.onload = function () {
     if (is_paused) { return }
 
     let rand = 1;
-    let n_tracer = 30;
+    let n_tracer = 10;
     let step = c.height / n_tracer;
 
     for (var x = step / 30; x < c.width; x += step) {

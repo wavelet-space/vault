@@ -7,7 +7,7 @@ header-includes: <script async src="flow.js"></script><!-- Global site tag (gtag
 
 Welcome to my personal website.
 
-<canvas id="canvas" width="700px" height=700px></canvas>
+<canvas id="canvas"></canvas>
 
 ## Readings
 
