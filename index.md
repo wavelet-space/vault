@@ -9,11 +9,11 @@ Welcome to my personal website.
 
 <canvas id="canvas" width="600px" height=600px></canvas>
 
-## Reddings
+## Readings
 
-Here is the manually maintained and growing list of books. 
+Here is the manually maintained and ever growing list of books. 
 
-- Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. 
+- Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. O'Reilly
 
 ## Education
 
