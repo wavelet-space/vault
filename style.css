@@ -3,14 +3,12 @@ body {
   /* background-color: rgb(255, 147, 74) !important; */
   background-color: rgb(174, 193, 228) !important;
   font-size: 1em;
-  width: 690px;
-  margin: auto;
   color: rgb(2, 43, 105);
 }
 
 canvas {
   position: absolute;
-  top: 20px;
+  top: 50px;
 }
 
 h1 {
@@ -24,15 +22,8 @@ dd {
   font-style: italic;
   margin-bottom: 0.5em;
 }
-body {
-  background: #fff;
-}
-div {
-  background: white;
-  padding: 0em 2em;
-}
 
-main {
+body > main {
   width: 720px;
   margin: auto;
 }

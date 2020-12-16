@@ -1,13 +1,13 @@
 ---
-header-includes: <script async src="flow.js"></script>
-header-includes: <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141722838-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-141722838-1');</script>
+header-includes: <script async src="flow.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141722838-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-141722838-1');</script>
 ---
+<main>
 
 # David Landa
 
 Welcome to my personal website.
 
-<canvas id="canvas" width="600px" height=600px></canvas>
+<canvas id="canvas" width="700px" height=700px></canvas>
 
 ## Readings
 
@@ -32,3 +32,4 @@ Here is the manually maintained and ever growing list of books and articles.
  
 With various degree of proficiency I am able to use these programming languages: 
 _C++, Fortran, Rust, Julia, R, Python, Wolfram, Lisp (Common Lisp) & Scheme (Racket)_. 
+</main>
