@@ -2,6 +2,15 @@
 
 Here is the manually maintained and ever growing list of books and articles to keep my reading archived and myself organized and focused.
 
+## Topics
+
+- Dynamical and Complex Systems
+- Game Theory
+- Optimal Control Theory
+- Catastrophe Theory
+- Pattern Formation
+- Phase Transitions
+
 ## Data Science and Statistics
 
 - Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. O'Reilly
