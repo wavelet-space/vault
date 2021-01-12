@@ -27,8 +27,8 @@ window.onload = function () {
 
   function pause() {
     is_paused = true;
-    let w = 20;
-    let h = 20;
+    let w = 10;
+    let h = 10;
     ctx.fillStyle = "#ffff00";
     ctx.fillRect((c.width / 2) - (w/2), (c.height / 2) - (h/2), w, h)
     ctx.fillStyle = "#fff";
@@ -110,6 +110,6 @@ window.onload = function () {
     }
   }
 
-setInterval(addTracers, 10 / 20);
-setInterval(loop, 100 / 60);
+setInterval(addTracers, 100);
+setInterval(loop, 1000 / 60);
 }

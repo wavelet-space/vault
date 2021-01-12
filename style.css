@@ -28,7 +28,7 @@ a:hover {
 
 canvas {
   transform: rotate(90deg);
-  transition-duration: 0.8s;
+  transition-duration: 0.2s;
   transition-property: transform;
   border-radius: 50%;
 }
@@ -38,7 +38,7 @@ canvas:hover {
 }
 
 canvas:hover:after {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 p,
