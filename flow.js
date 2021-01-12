@@ -4,8 +4,8 @@ window.onload = function () {
   c.addEventListener("click", onClick, false)
   var ctx = c.getContext("2d");
 
-  ctx.canvas.width = "700"
-  ctx.canvas.height = "80"
+  ctx.canvas.width = "200"
+  ctx.canvas.height = "200"
 
   var tracers = [];
 
@@ -29,9 +29,9 @@ window.onload = function () {
     is_paused = true;
     let w = 20;
     let h = 20;
-    ctx.fillStyle = "#ff0000";
-    ctx.fillRect((c.width / 2) - (w * 2), (c.height / 2) - (h / 2), w, h)
-    ctx.fillStyle = "#022b69";
+    ctx.fillStyle = "#ffff00";
+    ctx.fillRect((c.width / 2) - (w/2), (c.height / 2) - (h/2), w, h)
+    ctx.fillStyle = "#fff";
   }
 
   function unpause() {
@@ -46,8 +46,8 @@ window.onload = function () {
     y: y,
 
     draw: function () {
-      ctx.fillStyle = "#022b69";
-      ctx.fillRect(this.x, this.y, 1, 1);
+      ctx.fillStyle = "#fff";
+      ctx.fillRect(this.x, this.y, 0.5, 0.5);
       ctx.fill()
     },
 
@@ -94,7 +94,7 @@ window.onload = function () {
   function addTracers() {
     if (is_paused) { return }
 
-    let rand = 1;
+    let rand = 1.5;
     let n_tracer = 10;
     let step = c.height / n_tracer;
 
@@ -102,15 +102,14 @@ window.onload = function () {
       for (var y = step / 30; y < c.height; y += step) {
         tracers.push(
           Tracer({
-            x: x + rand * (Math.random() - 0.15),
-            y: y + rand * (Math.random() - 0.15)
+            x: x + rand * (Math.random()),
+            y: y + rand * (Math.random())
           })
         );
       }
     }
   }
 
-  setInterval(loop, 1000 / 60);
-  setInterval(addTracers, 1000 / 1);
-
+setInterval(addTracers, 10 / 20);
+setInterval(loop, 100 / 60);
 }

@@ -1,46 +1,128 @@
+/** ----------------------------------------------------------------------- **/
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+header {
+  display: block;
+}
+
 body {
-  font-family: "Times New Roman", Times, serif;
-  /* background-color: rgb(255, 147, 74) !important; */
-  background-color: rgb(174, 193, 228) !important;
+  margin: 1.5em auto;
+  width: 90%;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 1em;
-  color: rgb(2, 43, 105);
+  color: #d7d7d7;
+  background: #1b1b1b; /*#262626*/
+  padding-bottom: 2em;
 }
 
-
-h1 {
-  text-transform: uppercase;
+a {
+  color: #87afd7 /* #d7d7af*/;
 }
-dt {
-  font-weight: normal;
-  margin-bottom: 1em;
-}
-dd {
-  font-style: italic;
-  margin-bottom: 0.5em;
+a:hover {
+  color: #cd5c5c;
+  border-bottom: 1px dashed;
 }
 
-body > main {
-  width: 720px;
-  margin: auto;
-}
-img {
+canvas {
+  transform: rotate(90deg);
+  transition-duration: 0.8s;
+  transition-property: transform;
   border-radius: 50%;
-
-  margin-top: 50px;
-  border: 1px solid #ddd;
 }
 
-table,
-tr,
-tbody,
-thead {
-  width: 100%;
+canvas:hover {
+  transform: rotate(-90deg);
 }
 
-th {
-  text-align: left;
+canvas:hover:after {
+  transform: rotate(90deg);
 }
 
-thead {
-  background: #eee;
+p,
+li {
+  line-height: 1.45em;
+}
+p {
+  line-height: 1.55em;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Headers */
+h1,
+h2 {
+  color: #fff;
+  padding-bottom: 2px;
+}
+h1 {
+  font-size: 1.5em;
+  color: #d7d7af;
+}
+h2 {
+  font-size: 1.25em;
+  padding-top: 1em;
+  color: #cd5c5c; /* #87afd7 */
+  border-bottom: 0px dashed;
+}
+
+/* Lists */
+li::marker {
+  color: #cd5c5c;
+}
+li {
+  padding-bottom: 0.75em;
+  padding-left: 0.25em;
+}
+li:last-child {
+  padding-bottom: 0;
+}
+ol {
+  margin-left: 1em;
+}
+ol li {
+  padding-left: 0;
+}
+
+time {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+/* Code blocks */
+code,
+pre {
+  font-family: Consolas, monaco, monospace;
+  font-size: 1em;
+  color: #fff;
+  background-color: #111;
+}
+
+pre {
+  display: block;
+  padding: 1em;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  border-left: 5px solid gray;
+}
+
+span.comment {
+  color: darkgrey;
+}
+span.out {
+  color: lightgreen;
+}
+span.cmd {
+  color: #cd5c5c;
+}
+
+/* Desktop/Laptop screens */
+@media only screen and (min-width: 700px) {
+  body {
+    width: 40%;
+  }
 }

@@ -1,35 +1,37 @@
 ---
 header-includes: <script async src="flow.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141722838-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-141722838-1');</script>
 ---
+
 <main>
+
+<header>
+</header>
 
 # David Landa
 
-Welcome to my personal website.
+Welcome on my personal website. Here I share what I learned about nature.
+You can contact me via email at <a href="mailto:david.landa@protonmail.com">david.landa@protonmail.com</a> or
+visit my <a href="https://github.com/uetoyo/">github</a>.
 
 <canvas id="canvas"></canvas>
 
-## Readings
-
-Here is the manually maintained and ever growing list of books and articles. 
-
-- Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. O'Reilly
-- Napolitano, J. (2018) _A Mathematica Primer for Physicists_. Taylor & Francis Group
-- Zhi Chen et al, _Concept whitening for interpretable image recognition_, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
-- H. Y. Kwon et al, _Magnetic Hamiltonian parameter estimation using deep learning techniques_, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
-
 ## Education
 
-- 2022 &mdash; (Master) Geology, Charles University in Prague<br />
-  _Numerical simulation of microstructure evolution using neural networks_
+- 2022 &mdash; Geology, Charles University in Prague<br />
+  Thesis: _Numerical simulation of microstructure evolution using neural networks_
+- 2021 &mdash; Geology, Charles University in Prague<br />
+  Thesis: _Numerical simulation of symplectites using mean and phase-field method_
+- 2012 &mdash; Painting, Academy of Fine Arts in Prague
 
-- 2021 &mdash; (Bachelor) Geology, Charles University in Prague<br />
-  _Numerical simulation of symplectites using mean and phase-field method_
+## Experience
 
-- 2012 &mdash; (Master) Painting, Academy of Fine Arts in Prague
+With various degree of proficiency I am able to use these programming languages:
 
-## Programming
- 
-With various degree of proficiency I am able to use these programming languages: 
-_C++, Fortran, Rust, Julia, R, Python, Wolfram, Lisp (Common Lisp) & Scheme (Racket)_. 
+- C++, Fortran, Rust
+- Julia, Python, R, Wolfram
+- Clojure, Elixir, Haskell, Scala
+
+<footer>
+<footer>
+
 </main>
