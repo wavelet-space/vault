@@ -19,3 +19,6 @@ Here is the manually maintained and ever growing list of books and articles to k
 
 - https://github.com/ossu/data-science
   This is a path for those of you who want to complete the Data Science undergraduate curriculum on your own time, for free, with courses from the best universities in the World.
+
+- https://github.com/mlflow/mlflow
+  MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models

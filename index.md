@@ -11,9 +11,8 @@ header-includes: <script async src="flow.js"></script><!-- Global site tag (gtag
 
 <canvas id="canvas"></canvas>
 
-Welcome on my personal website. Here I share what I learned about nature.
-You can contact me via <a href="mailto:david.landa@protonmail.com">email</a> or
-visit my <a href="https://github.com/uetoyo/">github</a>.
+Welcome to my website. Here I share what I learned about nature. You can contact me via <a href="mailto:david.landa@protonmail.com">email</a> or
+visit my <a href="https://github.com/uetoyo/">GitHub</a>.
 
 ## Education
 
