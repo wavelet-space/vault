@@ -9,11 +9,11 @@ header-includes: <script async src="flow.js"></script><!-- Global site tag (gtag
 
 # David Landa
 
-Welcome on my personal website. Here I share what I learned about nature.
-You can contact me via email at <a href="mailto:david.landa@protonmail.com">david.landa@protonmail.com</a> or
-visit my <a href="https://github.com/uetoyo/">github</a>.
-
 <canvas id="canvas"></canvas>
+
+Welcome on my personal website. Here I share what I learned about nature.
+You can contact me via <a href="mailto:david.landa@protonmail.com">email</a> or
+visit my <a href="https://github.com/uetoyo/">github</a>.
 
 ## Education
 
