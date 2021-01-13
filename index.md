@@ -26,9 +26,9 @@ visit my <a href="https://github.com/uetoyo/">GitHub</a>.
 With various degree of proficiency I am able to use these programming languages:
 
 - C++, Fortran, Rust
-- Julia, Python, R, Wolfram
-- Clojure, Elixir, Haskell, Scala
 - JavaScript, TypeScript
+- Clojure, Elixir, Haskell, Scala
+- Julia, MATLAB, Python, R, Wolfram
 
 <footer>&copy; 2021 David Landa<footer>
 
