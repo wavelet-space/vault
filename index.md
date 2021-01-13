@@ -4,8 +4,7 @@ header-includes: <script async src="flow.js"></script><!-- Global site tag (gtag
 
 <main>
 
-<header>
-</header>
+<header></header>
 
 # David Landa
 
@@ -29,8 +28,8 @@ With various degree of proficiency I am able to use these programming languages:
 - C++, Fortran, Rust
 - Julia, Python, R, Wolfram
 - Clojure, Elixir, Haskell, Scala
+- JavaScript, TypeScript
 
-<footer>
-<footer>
+<footer>&copy; 2021 David Landa<footer>
 
 </main>
