@@ -27,9 +27,9 @@ window.onload = function () {
 
   function pause() {
     is_paused = true;
-    let w = 10;
-    let h = 10;
-    ctx.fillStyle = "#ffff00";
+    let w = 3;
+    let h = 3;
+    ctx.fillStyle = "#ff0000";
     ctx.fillRect((c.width / 2) - (w/2), (c.height / 2) - (h/2), w, h)
     ctx.fillStyle = "#fff";
   }

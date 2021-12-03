@@ -26,11 +26,11 @@ canvas {
   margin: 0 auto 4em auto;
   display: block;
   border-radius: 50% !important;
-  transform: rotate(90deg);
+  /* transform: rotate(0deg); */
   transition-duration: 0.2s;
-  transition-property: transform;
+  /* transition-property: transform; */
   border-collapse: collapse;
-  transform: skew(30deg, 30deg);
+  /* transform: skew(30deg, 30deg); */
 }
 
 canvas:hover {
