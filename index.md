@@ -16,9 +16,9 @@ visit my <a href="https://github.com/uetoyo/">GitHub</a>.
 ## Education
 
 - 2022 &mdash; Geology, Charles University in Prague<br />
-  Thesis: _Numerical simulation of microstructure evolution using neural networks_
+  Thesis: _Numerical simulation of microstructures using neural networks_
 - 2021 &mdash; Geology, Charles University in Prague<br />
-  Thesis: _Numerical simulation of symplectites using mean and phase-field method_
+  Thesis: _Numerical simulation of symplectites_
 - 2012 &mdash; Painting, Academy of Fine Arts in Prague
 
 ## Experience
