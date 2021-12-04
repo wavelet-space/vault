@@ -4,8 +4,8 @@ window.onload = function () {
   c.addEventListener("click", onClick, false)
   var ctx = c.getContext("2d");
 
-  ctx.canvas.width = "120"
-  ctx.canvas.height = "120"
+  ctx.canvas.width = "90"
+  ctx.canvas.height = "90"
 
   var tracers = [];
 
