@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!bash
 
 # This script convert a current directory with markdown files to HTML.
 # The output files are named after the source files.
