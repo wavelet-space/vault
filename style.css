@@ -9,9 +9,13 @@ body {
   width: 90%;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 1em;
-  color: #d7d7d7;
-  background: #1b1b1b; /*#262626*/
+  /* color: #d7d7d7; */
   padding-bottom: 2em;
+}
+
+.container {
+  margin: auto;
+  width: 900px
 }
 
 a {
@@ -125,10 +129,8 @@ span.cmd {
 }
 
 /* Desktop/Laptop screens */
-@media only screen and (min-width: 700px) {
-  body {
-    width: 40%;
-  }
+@media only screen and (max-width: 900px) {
+
 }
 
 footer {
