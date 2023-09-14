@@ -27,8 +27,8 @@ jobs:
           # sudo apt-get install pandoc
       - name: Build the documentation.
         run: |
-          make -C docs clean
-          make -C docs html
+          make clean
+          make html
       - name: Create repository in output folder and commit files
         run: |
           cd build/html/
