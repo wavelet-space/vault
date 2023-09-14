@@ -3,10 +3,13 @@
 ```
 
 ```{toctree}
-:maxdepth:1
+:maxdepth: 1
 :glob:
+:hidden:
 
-resume.md
+knowledge
 readings.md
+resume.md
 notes/*
+
 ```
