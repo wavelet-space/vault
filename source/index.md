@@ -4,7 +4,9 @@
 
 ```{toctree}
 :maxdepth:1
+:glob:
 
 resume.md
 readings.md
+notes/*
 ```
