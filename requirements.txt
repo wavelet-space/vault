@@ -1,0 +1,3 @@
+ sphinx
+ myst-parser
+ git+https://github.com/wavelet-space/sphinx-theme.git

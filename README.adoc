@@ -1,7 +1,0 @@
-= README
-
-The personal website.
-
-== Issues
-
-- Use HTML templates: https://www.arthurkoziel.com/convert-md-to-html-pandoc/
