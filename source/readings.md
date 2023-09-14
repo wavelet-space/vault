@@ -1,8 +1,3 @@
-```{toctree}
-:maxdepth: 1
-:caption: David:
-```
-
 # Readings
 
 Here is the manually maintained and ever growing list of books and articles to keep my reading archived and myself organized and focused.

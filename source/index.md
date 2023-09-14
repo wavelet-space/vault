@@ -1,6 +1,4 @@
-
 ```{include} ../README.md
-:maxdepth: 1
 :relative-images:
 ```
 
@@ -9,5 +7,4 @@
 
 resume.md
 readings.md
-notes.md
 ```
