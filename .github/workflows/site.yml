@@ -31,7 +31,7 @@ jobs:
           make -C docs html
       - name: Create repository in output folder and commit files
         run: |
-          cd docs/build/html/
+          cd build/html/
           git init
           touch .nojekyll
           git add -A
