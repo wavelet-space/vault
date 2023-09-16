@@ -11,5 +11,7 @@ knowledge
 readings.md
 resume.md
 notes/*
+lego-general
+lego-technic
 
 ```

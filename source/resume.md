@@ -6,8 +6,8 @@
 
 ## Education
 
-- Geology, Faculty of Science, Charles University in Prague<br />
-  Thesis: [_Numerical simulation of symplectites_](https://dspace.cuni.cz/handle/20.500.11956/151230)
+- Geology, Faculty of Science, Charles University in Prague
+  Thesis: _Numerical simulation of symplectites_
 - Painting, Academy of Fine Arts in Prague
 
 ## Experience
