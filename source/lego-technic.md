@@ -18,13 +18,13 @@ Co obsahuje LEGO Mindtorms EV3 (September 2013):
   - USB cable
   - various cables
 
-### Kompatibilita
+## Kompatibilita
 
 - NXT sensory a motory jsou rozpoznány v EV3.
 - NXT může být programována pomocí EV3 softaru, ale nemá všechny funkce.
 - EV3 software mže programovoat NXT, ale některé bloky se musí doinstalovat.
 
-### References
+## References
 
 - <https://en.wikipedia.org/wiki/Lego_Mindstorms>
 - <https://en.wikipedia.org/wiki/Lego_Mindstorms_EV3>
@@ -40,4 +40,4 @@ Dají se využít i motory, které vyrábí CaDA <https://www.kaufland.cz/produc
 
 ### Power Functions vs Powered Up
 
-
+TODO
