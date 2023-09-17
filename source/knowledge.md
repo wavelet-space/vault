@@ -96,6 +96,22 @@
   -
 - rendering
   - Physical Based Rendering
+  - bitting
 - state managment
 
-## 8 bit computer
+- Algorithms
+  - A-star, D-star
+  
+
+
+- What is visual nove and why it is popular
+  -  https://www.reddit.com/r/truegaming/comments/72p4wp/what_is_the_appeal_of_visual_novels_and_what_are/  
+
+## electronics and 8 bit computer
+
+
+- Záleží na tom, jestli zapojíme rezistor sériově před nebo za LED diodu?
+  Ne: https://electronics.stackexchange.com/a/72754
+
+-Jak zapojit spínač na breadboard?
+ 
