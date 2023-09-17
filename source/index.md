@@ -13,7 +13,5 @@ resume
 notes/*
 lego-general
 lego-technic
-game-design
 people
-8bit-computer
 ```
