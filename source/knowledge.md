@@ -1,4 +1,4 @@
-# Knowledge base tree
+# Knowledge Base Tree
 
 ## Fyzika
 
@@ -109,7 +109,6 @@
 - Algorithms
   - A-star, D-star
   
-
 
 - What is visual nove and why it is popular
   -  https://www.reddit.com/r/truegaming/comments/72p4wp/what_is_the_appeal_of_visual_novels_and_what_are/  
