@@ -32,6 +32,13 @@
 
 - termodynamika a statistická fyzika
 
+- Difuze
+  - Koeficient difůze je v nejjednodušším případě konstanta
+    - může být i fuckcí času
+    - je funkcí teploty
+    - v pevných látkách často je funkcí podle Arrheniuse
+    - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0200303
+
 ## Matematika
 
 - algebra

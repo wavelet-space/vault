@@ -34,6 +34,11 @@ Co obsahuje LEGO Mindtorms EV3 (September 2013):
 - Open NXT Firmware: <https://nxt-firmware.ni.fr.eu.org/>
 - <https://antonsmindstorms.com/2020/10/11/robot-inventor-vs-ev3/>
 
+## Videos
+
+- https://www.youtube.com/@ord1702
+
+
 ## Motory
 
 Dají se využít i motory, které vyrábí CaDA <https://www.kaufland.cz/product/433098790/> nebo
@@ -41,3 +46,9 @@ Dají se využít i motory, které vyrábí CaDA <https://www.kaufland.cz/produc
 ### Power Functions vs Powered Up
 
 TODO
+
+
+- https://www.youtube.com/watch?v=Y2BG48_HHy8
+- https://www.youtube.com/watch?v=ktF8Gbn1UGs
+- https://www.youtube.com/watch?v=Rsn9s1b4CFk&t=1s
+- https://www.youtube.com/watch?v=bq39tDTXGS8
