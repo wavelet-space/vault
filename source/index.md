@@ -14,4 +14,5 @@ notes/*
 lego-general
 lego-technic
 people
+me
 ```
