@@ -40,6 +40,7 @@ Na váhu se dá koupit lego v hrabarnakostek.cz (600 Kč Technic, 700 Kč Classi
 - <https://rebrickable.com/>
 - <https://brickmaster.cz/>
 - <https://www.facebook.com/BricksLand.Lego.prodejna/> prodj na váhu 590 Kč / Kg
+- <https://brickranker.com/>
 
 ## Sets
 
@@ -53,7 +54,7 @@ Na váhu se dá koupit lego v hrabarnakostek.cz (600 Kč Technic, 700 Kč Classi
 
 <https://www.keyestudio.com/>
 
-## Alaternativy Lego®
+## Alternativy Lego®
 
 - Mega Bloks®
 - K'Nex®.

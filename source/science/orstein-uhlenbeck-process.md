@@ -1,8 +1,3 @@
----
-- Probability Density Function PDF
-- Cumulative Distribution Function CDF
----
-
 # Poznámky k článku _Exact numerical simulation of the Ornstein-Uhlenbeck process and its integral_
 
 Orsteinův-Uhlenbeckův proces.
@@ -77,3 +72,5 @@ $$
 X a Y dohromady tvoří bivarietní Markovův proces .
 
 V případě Brownova pohybu je
+
+Keywords: Probability Density Function PDF, Cumulative Distribution Function CDF

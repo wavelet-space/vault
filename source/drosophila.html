@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<script>
+
+
+window.onload = () => {
+
+customElements.define('word-term', class extends HTMLElement {} );
+
+
+var ctx = document.getElementById("canvas1").getContext("2d");
+var ctx2 = document.getElementById("canvas2").getContext("2d");
+
+
+var img = new Image();
+img.src = 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Rhodopsin.jpeg'
+
+
+img.onload = function() {
+  var pat = ctx.createPattern(img, 'repeat');
+  ctx.rect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.fillStyle = pat;
+  ctx.fill();
+
+};
+
+let img2 = new Image()
+img2.src = "https://live.staticflickr.com/4159/34592561912_ee9927d1c7_b.jpg"
+img2.onload = () => {
+    var pat = ctx2.createPattern(img2, 'repeat');
+    ctx2.canvas.width = img2.width
+    console.log(img2.width, img2.height)
+    ctx2.canvas.height = img2.height
+    ctx2.rect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+    ctx2.fillStyle = pat;
+    ctx2.fill();
+}
+
+
+}
+
+</script>
+
+<style>
+
+body{
+    background-color: rgb(0, 0, 0);
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.page {
+    max-width: 1200px;
+    margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content {
+    color: white ;
+}
+
+.notes {
+    background-color: cornsilk;
+}
+
+word-term {
+    font-style: italic;
+}
+
+</style>
+
+<body>
+<div class="page">
+<main>
+    <div class="content">
+        perception, sensory organs, eye, retina, light, <word-term>Drosophila melenogaster</word-term>
+        Rhodopsin is a term homodimeric protein.
+        <canvas id='canvas1' width=928 height=463/>
+        <canvas id='canvas2' width=928 height=926/>
+    </div>
+    <div class="notes">
+        sidenotes
+    </div>
+</main>
+</div>
+
+</body>
+</html>

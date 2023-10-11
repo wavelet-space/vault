@@ -1,7 +1,5 @@
 # Readings
 
-Here is the manually maintained and ever growing list of books and articles to keep my reading archived and myself organized and focused.
-
 - Wickham, H., Grolemund, G. (2017) _R for Data Science: Import, Tidy, Transform, Visualize, and Model Data_. O'Reilly
 - Napolitano, J. (2018) _A Mathematica Primer for Physicists_. Taylor & Francis Group
 

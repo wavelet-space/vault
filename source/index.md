@@ -13,14 +13,36 @@ Event log
 :glob:
 :hidden:
 
+culinary
 knowledge
 readings
 resume
-notes/*
+
 lego-general
 lego-technic
+
 people
-orstein-uhlenbeck-process
+
+science/orstein-uhlenbeck-process
 engineering-hardware.md
 engineering-software.md
+
+linked-list-c
+programming/index
+
+chip8
+
+awesome-tisnik
+
+games
+
+```
+
+```{toctree}
+:caption: Journal
+
+journal/index
+```
+
+```{include} taylor.tex
 ```

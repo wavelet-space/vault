@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Wavelet Vault"
-copyright = "2023, David"
-author = "David"
+project = "vault"
+copyright = "2023, wavelet.space"
+author = "wavelet.space"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -17,14 +17,14 @@ extensions = ["myst_parser"]
 
 myst_enable_extensions = [
     "amsmath",
-    "attrs_inline",
+    #"attrs_inline",
     "colon_fence",
     "deflist",
     "dollarmath",
     "fieldlist",
     "html_admonition",
     "html_image",
-    "linkify",
+    #"linkify",
     "replacements",
     "smartquotes",
     "strikethrough",
@@ -40,7 +40,7 @@ master_doc = 'index' # readme?
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # html_css_files = [
