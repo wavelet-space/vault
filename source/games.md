@@ -1,6 +1,7 @@
 
 ## Games
 
+- [*Albion*](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
 - [Brigand: Oaxaca](https://store.steampowered.com/app/652410/Brigand_Oaxaca/)
 - [El Paso, Elsewhere](https://store.steampowered.com/app/1546310/El_Paso_Elsewhere/)
 - [Alone in the Dark](https://store.steampowered.com/app/548090/Alone_in_the_Dark_1/), 1993
