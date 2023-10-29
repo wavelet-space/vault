@@ -1,24 +1,24 @@
 # Software Engineering
 
-The knowledge of data structures and algorithms should be, besides the other, the bread and butter for any professional software developer. 
+The knowledge of data structures and algorithms should be, besides the other, the bread and butter for any professional software developer.
 There is a class of algorithms that every developer should know which we call the *essential* algorithms.
 
 - Algorithms
   - complexity, O-notation, worst, best, asymptotic
-    - time 
+    - time
     - space
    sequence
-     - searching
+    - searching
       - linear search
       - binary search
       - jump search
-     - shuffling
-     - sorting
-       - bubble sort
-       - merge sort
-       - inject sort 
-       - quick sort
-       - radix sort
+    - shuffling
+    - sorting
+      - bubble sort
+      - merge sort
+      - inject sort
+      - quick sort
+      - radix sort
 - Data Structues
   - array (static sequence)
   - list  (dynamic sequence)
@@ -44,26 +44,24 @@ There is a class of algorithms that every developer should know which we call th
     - red-black
     - balancing
     - operations
-     - insert item
-     - remove item
-     - traverse
-       - inorder
-       - preorder
-       - postorder
+    - insert item
+    - remove item
+    - traverse
+      - inorder
+      - preorder
+      - postorder
     - depth first search (prohledávání do hloubky)
     - breadh first saerch (prohledávání do šířky)
- - graph
-    - representation 
-    - directed graph
-    - weighthed graph
-  - hash map (hash Table)   
-
+- graph
+  - representation
+  - directed graph
+  - weighthed graph
+- hash map (hash Table)
 
 - Problems/Solutions (exercises)
   - Find the duplicate item in a given sequence.
   - Find the largest and smallest item in an unsorted sequence.
- 
- 
+
 - Computer Graphics and Vision Algoritms
   - Bresenham (line, circle)
   
@@ -77,25 +75,27 @@ There is a class of algorithms that every developer should know which we call th
   
 ## Operating systems
 
- - processes
- - threads
- - stdin, stdout
- - kernels: Linux (UNIX), Windows
+- processes
+- threads
+- stdin, stdout
+- kernels: Linux (UNIX), Windows
 
 ## Interpreters, Compilers, Grammars
 
 ## State machines
-  - Finite State Machines
-  - Hierarchical State Machines
+
+- Finite State Machines
+- Hierarchical State Machines
 
 ## Programming Languages and Techniques
-  - Python
-  - C, C++
-  - Lean, Haskell, OCaml 
-  - APL, Lisp
-  - Erlang
 
-## UI/UX 
+- Python
+- C, C++
+- Lean, Haskell, OCaml
+- APL, Lisp
+- Erlang
+
+## UI/UX
 
 Komponenta může nabývat několika základních stavů.
 
@@ -141,5 +141,3 @@ Poté co uživatel vybral položku, tak se seznam zavře.
 - Pointer
 - Selection
 -
-
-

@@ -1,6 +1,6 @@
-# LEGO Mindstroms a Technic
+# LEGO Mindstorms
 
-Co obsahuje LEGO Mindtorms EV3 (September 2013):
+LEGO Mindtorms EV3 (September 2013) contains:
 
 - 1 programmable brick
   - display 178×128 pixel monochrome LCD  
@@ -18,7 +18,7 @@ Co obsahuje LEGO Mindtorms EV3 (September 2013):
   - USB cable
   - various cables
 
-## Kompatibilita
+## Compatibility with LEGO SPIKE Prime
 
 - NXT sensory a motory jsou rozpoznány v EV3.
 - NXT může být programována pomocí EV3 softaru, ale nemá všechny funkce.
@@ -36,10 +36,9 @@ Co obsahuje LEGO Mindtorms EV3 (September 2013):
 
 ## Videos
 
-- https://www.youtube.com/@ord1702
+- <https://www.youtube.com/@ord1702>
 
-
-## Motory
+## Motors
 
 Dají se využít i motory, které vyrábí CaDA <https://www.kaufland.cz/product/433098790/> nebo
 
@@ -47,8 +46,7 @@ Dají se využít i motory, které vyrábí CaDA <https://www.kaufland.cz/produc
 
 TODO
 
-
-- https://www.youtube.com/watch?v=Y2BG48_HHy8
-- https://www.youtube.com/watch?v=ktF8Gbn1UGs
-- https://www.youtube.com/watch?v=Rsn9s1b4CFk&t=1s
-- https://www.youtube.com/watch?v=bq39tDTXGS8
+- <https://www.youtube.com/watch?v=Y2BG48_HHy8>
+- <https://www.youtube.com/watch?v=ktF8Gbn1UGs>
+- <https://www.youtube.com/watch?v=Rsn9s1b4CFk&t=1s>
+- <https://www.youtube.com/watch?v=bq39tDTXGS8>

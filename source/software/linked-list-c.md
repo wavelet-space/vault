@@ -1,6 +1,6 @@
 # Linked List
 
-# Jednosměrně vázaný spojový seznam.
+# Jednosměrně vázaný spojový seznam
 
 Nejříve si ukážeme celý program: [program](github.gist)
 
@@ -26,11 +26,12 @@ struct node * const root_node = malloc(sizeof(struct node));
 Pokud jsi zmatený ze zápisu `struct  node * const` podívej se na tento [článek](ConstPointer.html).
 
 Nyní nastavíme hodnoty našeho prvního prvku (uzlu).
+
 ```
 root_node->value = 1;
 root_node->next = malloc(sizeof(struct node));
 ```
- 
+
 Ukazet na další prvek obsahuje nyní adresu nově vytvořeného prvku, takže opět nastavíme hodnoty tohoto dalšího prvku
 
 ```
@@ -39,6 +40,7 @@ root_node->next->next = malloc(sizeof(struct node));
 ```
 
 Poslední prvek seznamu už bude ukazovat na hodnotu NULL, což bude značit konec seznamu.
+
 ```
 root_node->next->next->value = 3;
 root_node->next->next->next = NULL

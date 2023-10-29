@@ -1,0 +1,9 @@
+# LEGO
+
+
+```{toctree}
+:glob:
+:hidden:
+
+*
+```

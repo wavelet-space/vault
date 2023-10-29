@@ -1,20 +1,20 @@
-# Lego
+# LEGO Overview
 
 Toto jsou osobní poznámky k stavebnici LEGO jako např. odkazy na různé webové stránky, aktuální ceny a praktické tipy.
 
 ## Q/A
 
-### Jak čistit LEGO části?
+### How clean LEGO parts?
 
 LEGO části pereme v ruce nebo pračce v pytlíku. Použijeme dezifenci např. ..., nikdy ne prací prášek, protože obsahuje abraziva a některý bělidla.  Postup Pomocí vody adetergentu např. mýdlo. Někdo je i pere v sáčku v pračce.
 Rozhodně nepoužívát ždánou chemiii ,co by mohla naleptat kostky.
 Možná byh použil i destilovanou vodu, protože normální zaenchývá někdy mapy (vodní kámen).
 
-### Kde sledovat cenu LEGO setů?
+### Where to check the price of parts and sets?
 
-Cena LEGO setů lze sledovat na <https://www.brickeconomy.com/>
+- <https://www.brickeconomy.com/>
 
-### Kde najít katalog součástek?
+### Where to find the parts catalog?
 
 Katalog součástek lze najít např. na uvdených webových stránkách.
 
@@ -25,15 +25,15 @@ Katalog součástek lze najít např. na uvdených webových stránkách.
 
 Na váhu se dá koupit lego v hrabarnakostek.cz (600 Kč Technic, 700 Kč Classic i Technic kola)- Mají tam i motory a ovládácí jednotky pro Mindstorms.
 
-## Jaké jsou zkratky pro LEGO figurky?
+## Abbreviations for LEGO minifigures
 
 - <https://www.minifigure.org/book/the-unofficial-lego-color-guide/>
 
-## Jaké barvy LEGO používá?
+## Colord of LEGO parts
 
 <https://www.minifigure.org/taxonomy/>
 
-## Odkazy
+## References
 
 - <https://www.brickowl.com/>
 - <https://brickset.com/>
@@ -50,11 +50,9 @@ Na váhu se dá koupit lego v hrabarnakostek.cz (600 Kč Technic, 700 Kč Classi
 - 2020 [40413 LEGO Mindstorms Mini Robots](https://www.brickeconomy.com/set/40413-1/lego-mindstorms-mini-robots),
 - 2020 [51515 LEGO Mindstorms Robot Inventor](https://www.brickeconomy.com/set/51515-1/lego-mindstorms-robot-inventor), 359,99 €
 
-## Sety
+- <https://www.keyestudio.com/>
 
-<https://www.keyestudio.com/>
-
-## Alternativy Lego®
+## LEGO alternatives
 
 - Mega Bloks®
 - K'Nex®.

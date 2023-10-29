@@ -10,21 +10,27 @@ project = "vault"
 copyright = "2023, wavelet.space"
 author = "wavelet.space"
 
+html_title = project
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser"]
+extensions = [
+    "myst_parser",
+    # "ablog",
+    "sphinx.ext.intersphinx",
+]
 
 myst_enable_extensions = [
     "amsmath",
-    #"attrs_inline",
+    # "attrs_inline",
     "colon_fence",
     "deflist",
     "dollarmath",
     "fieldlist",
     "html_admonition",
     "html_image",
-    #"linkify",
+    # "linkify",
     "replacements",
     "smartquotes",
     "strikethrough",
@@ -35,17 +41,17 @@ myst_enable_extensions = [
 # templates_path = ['_templates']
 exclude_patterns = []
 
-master_doc = 'index' # readme?
+master_doc = "index"  # readme?
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'furo'
-html_static_path = ['_static']
+html_theme = "furo"
+html_static_path = ["_static"]
 
-# html_css_files = [
-#     'style.css',
-# ]
+html_css_files = [
+    'custom.css',
+]
 
 # html_js_files = [
 #     'custom.js',

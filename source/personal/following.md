@@ -1,4 +1,4 @@
-# People
+# Following
 
 &hellip; to follow&hellip; maybe, meybe not
 

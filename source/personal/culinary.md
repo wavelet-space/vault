@@ -1,4 +1,4 @@
-# Recepty
+# Culinary
 
 - Příprava rýže
   - vaření

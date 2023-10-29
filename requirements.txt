@@ -1,4 +1,5 @@
  sphinx
  myst-parser
  furo
- git+https://github.com/wavelet-space/sphinx-theme.git
+#  git+https://github.com/wavelet-space/sphinx-theme.git
+ablog

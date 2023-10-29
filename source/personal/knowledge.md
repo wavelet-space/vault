@@ -1,4 +1,4 @@
-# Knowledge Base Tree
+# Knowledge
 
 ## Fyzika
 

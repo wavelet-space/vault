@@ -2,12 +2,33 @@
 :relative-images:
 ```
 
-Insert some introduction!
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Projects
+:glob:
 
-Event log
+projects/index
+```
 
-- 2033-10-04 Updated content; still not very usable notes
-- 2023-10-02 Released [Python 3.12](https://www.python.org/downloads/release/python-3120/)
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Methods & Techniques
+
+software/index
+hardware/index
+physics/index
+equations/index
+```
+
+```{toctree}
+:caption: Writings
+:hidden:
+
+journal/2023/index
+article
+```
 
 ```{toctree}
 :maxdepth: 2
@@ -16,31 +37,7 @@ Event log
 :glob:
 
 personal/*
+lego/index
 ```
 
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Engineering
-:glob:
-
-engineering/*
-```
-
-```{toctree}
-:maxdepth: 1
-:glob:
-:hidden:
-:caption: Science
-
-science/*
-```
-
-```{toctree}
-:caption: Journal
-
-journal/index
-```
-
-```{include} eq/taylor.tex
-```
+[eyes](./_static/eyes.html), [drosophila](./_static/drosophila.html)
