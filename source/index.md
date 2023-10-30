@@ -3,7 +3,7 @@
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :hidden:
 :caption: Projects
 :glob:
@@ -12,32 +12,29 @@ projects/index
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :hidden:
-:caption: Methods & Techniques
+:caption: Mémoires
 
-software/index
-hardware/index
-physics/index
-equations/index
+memoires/01-equations/index
+memoires/02-hardware/index
+memoires/03-software/index
 ```
 
 ```{toctree}
+:maxdepth: 3
 :caption: Writings
 :hidden:
 
-journal/2023/index
-article
+writings/2023/index
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :hidden:
 :caption: Personal
 :glob:
 
 personal/*
-lego/index
+personal/lego/index
 ```
-
-[eyes](./_static/eyes.html), [drosophila](./_static/drosophila.html)

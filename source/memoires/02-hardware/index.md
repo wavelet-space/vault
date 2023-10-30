@@ -1,4 +1,4 @@
-# Mathematics and Physics
+# Hardware
 
 ```{toctree}
 :hidden:
