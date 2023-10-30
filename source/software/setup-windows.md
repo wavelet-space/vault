@@ -23,21 +23,21 @@ mark with *auto* or *manual*
 - Set the second monitor as main monitor
 - Set the language to English (needs restart)
 - Set the keayboard to Czech QWERTY and remove Czech QWERTZ
-  - Swap second and third row 
+  - Swap second and third row
 - [MinGW-w64](https://www.mingw-w64.org/)
 - import SSH keys (`C:\Users\{user}\.ssh`).
 - Google Chrome
   - i dont care about cookies
   - adbblock plus
   - disable cookies
-- VS Code extenze a nastavení https://bobbyhadz.com/blog/vscode-export-settings-and-extensions
+- VS Code extenze a nastavení <https://bobbyhadz.com/blog/vscode-export-settings-and-extensions>
 - Git
   - `git config --system --list`
   - `git config --global --list`
   - `git config --local --list`
   - `git config --system init.defaultBranch main`
   - `~/.gitconfig`???
-- MSVC build tools https://visualstudio.microsoft.com/cs/visual-cpp-build-tools/
+- MSVC build tools <https://visualstudio.microsoft.com/cs/visual-cpp-build-tools/>
 - vcpg
 - install Python: CPython (3.12, 3.11), PyPy (3.9)
   - requirements.txt
@@ -47,4 +47,6 @@ mark with *auto* or *manual*
 - PowerTools
   - Swap CAPS Lock na Escape
 
-
+- WinSCP can be handy
+- <https://winscp.net/download/WinSCP-6.1.2-Setup.exe>
+- it is also on winget but i dont know if it si official
