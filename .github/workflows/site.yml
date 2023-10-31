@@ -27,11 +27,10 @@ jobs:
           # sudo apt-get install pandoc
       - name: Build the documentation.
         run: |
-          make clean
-          make html
+          sphinx-build source build
       - name: Create repository in output folder and commit files
         run: |
-          cd build/html/
+          cd build
           git init
           touch .nojekyll
           git add -A
