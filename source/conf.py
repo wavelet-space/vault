@@ -47,9 +47,17 @@ master_doc = "index"
 
 html_theme = "furo"
 html_static_path = ["_static"]
-html_css_files = [
+html_css_files = [ # does not work on GitHub?
     'custom.css',
 ]
+
+html_theme_options = {
+    "light_css_variables": {
+        "font-stack": "Times New Roman, Times, serif",
+        "font-stack--monospace": "Courier, monospace",
+    },
+}
+
 
 # html_js_files = [
 #     'custom.js',
