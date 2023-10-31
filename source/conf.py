@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "vault"
-copyright = "2023, wavelet.space"
-author = "wavelet.space"
+project = "Vault"
+copyright = "2023, David Landa"
+author = "David Landa"
 
 html_title = project
 
@@ -17,7 +17,6 @@ html_title = project
 
 extensions = [
     "myst_parser",
-    # "ablog",
     "sphinx.ext.intersphinx",
 ]
 
@@ -39,16 +38,15 @@ myst_enable_extensions = [
 ]
 
 # templates_path = ['_templates']
-exclude_patterns = []
+exclude_patterns = ['build', '_build', '.github', '.vscode']
 
-master_doc = "index"  # readme?
+master_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "furo"
 html_static_path = ["_static"]
-
 html_css_files = [
     'custom.css',
 ]
