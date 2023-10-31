@@ -1,6 +1,6 @@
-# awesome-tisnik
+# Articles of P. Tišnovský
 
-Every article and lecture by Pavel Tišnovský!
+**Awesome Tisnik**: Every article and lecture by Pavel Tišnovský (aka tisnik) found online!
 
 **Disclaimer:** This list was created by hand because I want to read every article by Pavel Tišnovský. No scraping is allowed, although it is possible.
 
@@ -19,5 +19,5 @@ Every article and lecture by Pavel Tišnovský!
 
 ## Resources
 
-- https://mojefedora.cz/author/tisnik/
-- https://www.root.cz/autori/pavel-tisnovsky/
+- <https://mojefedora.cz/author/tisnik/>
+- <https://www.root.cz/autori/pavel-tisnovsky/>
