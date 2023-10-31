@@ -4,20 +4,20 @@
 
 ```{toctree}
 :maxdepth: 3
+:caption: Essays
 :hidden:
-:caption: Mémoires
 
-memoires/01-equations/index
-memoires/02-hardware/index
-memoires/03-software/index
+essays/2023/index
 ```
 
 ```{toctree}
 :maxdepth: 3
-:caption: Writings
 :hidden:
+:caption: Memoirs
 
-writings/2023/index
+memoirs/01-equations/index
+memoirs/02-hardware/index
+memoirs/03-software/index
 ```
 
 ```{toctree}
