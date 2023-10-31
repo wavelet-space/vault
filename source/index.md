@@ -23,9 +23,18 @@ writings/2023/index
 ```{toctree}
 :maxdepth: 3
 :hidden:
-:caption: Personal
+:caption: Personal 
 :glob:
 
 personal/*
-personal/lego/index
+```
+
+```{toctree}
+:maxdepth: 3
+:hidden:
+:caption: Drafts 
+:glob:
+
+drafts/*
+drafts/lego/index
 ```
