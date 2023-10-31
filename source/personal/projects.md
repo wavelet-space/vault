@@ -1,13 +1,5 @@
 # Projects
 
-```{toctree}
-:maxdepth: 2
-:hidden:
-:glob:
-
-*
-```
-
 - [c16](https://github.com/groundf/c16) Python programming language examples and exercises.
 - [c06](https://github.com/groundf/c06) The Fortran programming language course.
 - [c03](https://github.com/groundf/c03) The systems programming overview; C/C+/Make/CMake/ASM and beyond.

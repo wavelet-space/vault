@@ -1,4 +1,4 @@
-# Mechanical engineering
+# Mechanical systems
 
 ## Linkages
 
