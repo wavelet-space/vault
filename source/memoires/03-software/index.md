@@ -7,5 +7,6 @@ Contains notes on practical programmings and computer science.
 :hidden:
 
 algorithms/index
+programming-c/index
 *
 ```

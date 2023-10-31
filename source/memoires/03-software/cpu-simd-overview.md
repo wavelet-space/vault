@@ -1,9 +1,9 @@
-# Single Instruction Multiple Data (SIMD)
+# CPU SIMD overview
 
-SIMD označuje instrukce dostupné pro jednotlivé procesory, které umožňují provádět některé operace nad několika daty v jediném kroku.
-Tím se zajistí určité zrychlení. Tato technika se používá pro výpočetně náročné úlohy bežící na procesoru (CPU). Jako alternativa a doplněk se 
-dnes používají grafické procesoru (GPU) např. s CUDA (doplň odkaz). SIMD instrukce můžeme programovat "ručně", avšak většina kompilátorů jik umí 
-vuyžívat automaticky. 
+SIMD (Single Instruction Multiple Data) označuje instrukce dostupné pro jednotlivé procesory, které umožňují provádět některé operace nad několika daty v jediném kroku.
+Tím se zajistí určité zrychlení. Tato technika se používá pro výpočetně náročné úlohy bežící na procesoru (CPU). Jako alternativa a doplněk se
+dnes používají grafické procesoru (GPU) např. s CUDA (doplň odkaz). SIMD instrukce můžeme programovat "ručně", avšak většina kompilátorů jik umí
+vuyžívat automaticky.
 
 Skalární operace: 4 instrukce
 

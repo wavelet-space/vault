@@ -1,8 +1,6 @@
 # Some notes
 
-- Renderig APIs
-  - OpenGL/WebGL
-  - DirectX, Metal, Vulkan
+
 
 - Distributed systems, Concurrent and Parallel programming
   - OpenMP

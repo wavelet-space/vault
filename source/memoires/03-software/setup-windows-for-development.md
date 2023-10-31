@@ -1,4 +1,4 @@
-# Setup for Windows
+# Setup Windows for development
 
 This notes contains inforamtion how to setup personal computer with Windows OS for software development.
 
