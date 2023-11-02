@@ -15,9 +15,9 @@ essays/2023/index
 :hidden:
 :caption: Memoirs
 
-memoirs/01-equations/index
-memoirs/02-hardware/index
-memoirs/03-software/index
+memoirs/equations/index
+memoirs/hardware/index
+memoirs/software/index
 ```
 
 ```{toctree}

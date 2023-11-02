@@ -9,6 +9,8 @@ The scripts checks if the winget is present on computer (it should be included i
 
 mark with *auto* or *manual*
 
+- Set dark theme:
+  Go to `Select Start > Settings > Personalization > Colors` and select *Dark*.
 - Window Terminal
   - as main terminal
   - todo: other settings
@@ -50,3 +52,6 @@ mark with *auto* or *manual*
 - WinSCP can be handy
 - <https://winscp.net/download/WinSCP-6.1.2-Setup.exe>
 - it is also on winget but i dont know if it si official
+
+- Set PowerShell prompt¨
+- Set Windows Terminal Tab names to be named by folder
