@@ -12,14 +12,6 @@ essays/index
 
 ```{toctree}
 :maxdepth: 3
-:caption: Notes
-:hidden:
-
-notes/2023/index
-```
-
-```{toctree}
-:maxdepth: 3
 :hidden:
 :caption: Memoirs
 
@@ -40,9 +32,10 @@ personal/*
 ```{toctree}
 :maxdepth: 3
 :hidden:
-:caption: Drafts 
+:caption: Drafts and Notes 
 :glob:
 
 drafts/*
 drafts/lego/index
+drafts/2023/index
 ```
