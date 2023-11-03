@@ -7,7 +7,15 @@
 :caption: Essays
 :hidden:
 
-essays/2023/index
+essays/index
+```
+
+```{toctree}
+:maxdepth: 3
+:caption: Notes
+:hidden:
+
+notes/2023/index
 ```
 
 ```{toctree}

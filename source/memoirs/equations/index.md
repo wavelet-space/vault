@@ -6,3 +6,10 @@ Some equations for reference.
 
 ```{include} taylor.tex
 ```
+
+```{toctree}
+:hidden:
+:glob:
+
+*
+```
