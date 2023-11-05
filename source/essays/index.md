@@ -1,5 +1,8 @@
-# Notes
+# [[empty]]
 
 ```{toctree}
+:glob:
+:hidden:
 
+*
 ```
