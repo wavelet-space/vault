@@ -18,6 +18,10 @@ Personal catalog of articles, books, movies, games etc.
 - [Enemy Mine](https://www.csfd.cz/film/7225-muj-nepritel/prehled/)
 - [King of Kong](https://www.imdb.com/title/tt0923752/)
 
+- [American Journal of Physics](https://pubs.aip.org/aapt/ajp)
+  A very friendly and comprehensive articles on Physics.
+  > The American Journal of Physics publishes papers that will support, inform, and delight a diverse audience of college and university physics teachers. Contents include novel approaches to classroom and laboratory instruction, insightful articles on topics in classical and modern physics, apparatus notes, historical or cultural topics, book reviews, resource letters, and award talks.  
+
 - Wickham, H., Grolemund, G. (2017) *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly
 - Napolitano, J. (2018) *A Mathematica Primer for Physicists*. Taylor & Francis Group
 
@@ -32,3 +36,29 @@ Personal catalog of articles, books, movies, games etc.
 
 - <https://github.com/mlflow/mlflow>
   MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models
+
+- Ben Eater <https://eater.net>
+- Casey Muratori <https://caseymuratori.com/>
+- Jonathan Blow <https://en.wikipedia.org/wiki/Jonathan_Blow>
+- <https://www.youtube.com/@AsmonTV>
+- <https://www.youtube.com/@BellularNews>
+  Game news, industry coverage, features & documentaries.
+- George Hotz <https://github.com/geohot/>
+- Rich Hickey <https://en.wikipedia.org/wiki/Rich_Hickey>
+- <https://www.youtube.com/@gamefromscratch>
+- <https://blog.ploeh.dk/>
+
+- https://www.rfleury.com/
+
+Haskell
+- https://www.reddit.com/r/haskell/comments/108u9g8/what_is_the_best_resource_to_learn_haskell_in_2023/
+- https://haskell-via-sokoban.nomeata.de/
+- https://learn-haskell.blog/
+
+Lisp
+- https://chee.party/2023/02/22/getting-started-with-common-lisp-in-2023/
+
+Erlang
+- Joe Armstrong RIP https://en.wikipedia.org/wiki/Joe_Armstrong_(programmer)
+- https://joearms.github.io/index.html#Index
+- https://joearms.github.io/published/2013-11-21-My-favorite-erlang-program.html

@@ -1,4 +1,4 @@
-# Culinary
+# Sowing, growing and cooking
 
 - Příprava rýže
   - vaření

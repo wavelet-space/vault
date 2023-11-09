@@ -6,6 +6,9 @@
 - Jaký je rozdíl mezi stdin, stdout a stderr?
 - Jaký je rozdíl mezi jednotkovými, funkčními a integračními testy?
 
+- read Tabular Expressions in Software Engineering
+  https://www.semanticscholar.org/paper/Tabular-Expressions-in-Software-Engineering-Wassyng-Janicki/750fecf4349faeeab9a827a929de37be30f3df26?p2df
+- https://www.southwales.ac.uk/news/news-for-2023/jurassic-park-at-30-how-its-cgi-revolutionised-the-film-industry/
 - ComboBox vs SelectBox?
   - https://cs.wikipedia.org/wiki/Kombinovan%C3%A9_pole
 
