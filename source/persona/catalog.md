@@ -47,18 +47,24 @@ Personal catalog of articles, books, movies, games etc.
 - Rich Hickey <https://en.wikipedia.org/wiki/Rich_Hickey>
 - <https://www.youtube.com/@gamefromscratch>
 - <https://blog.ploeh.dk/>
-
-- https://www.rfleury.com/
+- <https://hillelwayne.com/>
+  - <https://github.com/hwayne/tla-graphing-demo>
+  - <https://learntla.com/>
+  
+- <https://www.rfleury.com/>
 
 Haskell
-- https://www.reddit.com/r/haskell/comments/108u9g8/what_is_the_best_resource_to_learn_haskell_in_2023/
-- https://haskell-via-sokoban.nomeata.de/
-- https://learn-haskell.blog/
+
+- <https://www.reddit.com/r/haskell/comments/108u9g8/what_is_the_best_resource_to_learn_haskell_in_2023/>
+- <https://haskell-via-sokoban.nomeata.de/>
+- <https://learn-haskell.blog/>
 
 Lisp
-- https://chee.party/2023/02/22/getting-started-with-common-lisp-in-2023/
+
+- <https://chee.party/2023/02/22/getting-started-with-common-lisp-in-2023/>
 
 Erlang
-- Joe Armstrong RIP https://en.wikipedia.org/wiki/Joe_Armstrong_(programmer)
-- https://joearms.github.io/index.html#Index
-- https://joearms.github.io/published/2013-11-21-My-favorite-erlang-program.html
+
+- Joe Armstrong RIP <https://en.wikipedia.org/wiki/Joe_Armstrong_(programmer)>
+- <https://joearms.github.io/index.html#Index>
+- <https://joearms.github.io/published/2013-11-21-My-favorite-erlang-program.html>

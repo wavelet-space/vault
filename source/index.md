@@ -2,14 +2,13 @@
 :relative-images:
 ```
 
-
 ```{toctree}
 :maxdepth: 3
 :hidden:
-:caption: Personal 
+:caption: Persona 
 :glob:
 
-personal/*
+persona/*
 ```
 
 ```{toctree}
@@ -17,7 +16,7 @@ personal/*
 :hidden:
 :caption: Memoirs
 
-memoirs/essays/index
+memoirs/journal/index
 memoirs/equations/index
 memoirs/hardware/index
 memoirs/software/index
@@ -30,14 +29,10 @@ memoirs/software/index
 
 ```
 
-
 ```{toctree}
-:caption: Diversions 
 :maxdepth: 3
 :hidden:
+:caption: Essays 
 :glob:
 
-diversions/*
-diversions/lego/index
-diversions/2023/index
-```
+essays/index

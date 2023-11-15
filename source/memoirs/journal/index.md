@@ -1,4 +1,4 @@
-# 2023
+# Journal
 
 ```{toctree}
 :glob:
