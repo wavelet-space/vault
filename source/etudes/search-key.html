@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+
+        main {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0 auto;
+            width: 800px;
+            /* border: 1px solid black;  */
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main>div {
+            width: 90%;
+            height: 30%;
+        }
+    </style>
+    <script type="text/javascript" defer>
+        window.onload = () => {
+            document.addEventListener("keydown", (event) => {
+                let search = document.querySelector("#search")
+                if (event.ctrlKey && event.key === 'k') {
+                    event.preventDefault();
+                    search.focus();
+                    search.value = ''
+                }
+                if (event.key === "Escape" && document.activeElement == search) {
+                    event.preventDefault()
+                    search.blur()
+                }
+            })
+
+            let loginForm = document.getElementById("searchForm");
+            loginForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                let search = document.querySelector("#search")
+                let result = await findPerson(search.value)
+            });
+        }
+        
+        
+        async function findPerson(id) {
+            const response = await fetch(
+                `https://dummy.restapiexample.com/api/v1/employees/${id}`, 
+                {
+                    mode: "cors",
+                    method: "GET",
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                    }
+                }
+                )
+            const person = await response.data
+            console.log(person)
+            return person
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <main>
+        <div>
+            <p>This example shows how to add focus in search input element <kbd>Ctrl</kbd> + <kbd>k</kbd> and remove
+                focus on <kbd>Escape</kbd> key.</p>
+            <form id="searchForm" action="">
+                <input type="text" id="search" placeholder="Press Ctrl + k for search"
+                    style="width: 80%; padding: 0; height: 2rem; font-size: 1.5rem;" />
+                <input type="submit" style="height: 2rem; padding: 0; margin: 0; font-size: 1.5rem;" />
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

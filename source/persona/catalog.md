@@ -2,6 +2,8 @@
 
 Personal catalog of articles, books, movies, games etc.
 
+## Computer games
+
 - [*Albion*](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
 - [Brigand: Oaxaca](https://store.steampowered.com/app/652410/Brigand_Oaxaca/)
 - [El Paso, Elsewhere](https://store.steampowered.com/app/1546310/El_Paso_Elsewhere/)
@@ -18,24 +20,10 @@ Personal catalog of articles, books, movies, games etc.
 - [Enemy Mine](https://www.csfd.cz/film/7225-muj-nepritel/prehled/)
 - [King of Kong](https://www.imdb.com/title/tt0923752/)
 
-- [American Journal of Physics](https://pubs.aip.org/aapt/ajp)
-  A very friendly and comprehensive articles on Physics.
-  > The American Journal of Physics publishes papers that will support, inform, and delight a diverse audience of college and university physics teachers. Contents include novel approaches to classroom and laboratory instruction, insightful articles on topics in classical and modern physics, apparatus notes, historical or cultural topics, book reviews, resource letters, and award talks.  
+## YouTube channels, blogs
 
-- Wickham, H., Grolemund, G. (2017) *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly
-- Napolitano, J. (2018) *A Mathematica Primer for Physicists*. Taylor & Francis Group
-
-- Zhi Chen et al, *Concept whitening for interpretable image recognition*, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
-- H. Y. Kwon et al, *Magnetic Hamiltonian parameter estimation using deep learning techniques*, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
-
-- <https://github.com/signals-dev/Orion>
-  **Orion** is a machine learning library built for unsupervised time series anomaly detection. With a given time series data, we provide a number of “verified” ML pipelines (a.k.a Orion pipelines) that identify rare patterns and flag them for expert review.
-
-- <https://github.com/ossu/data-science>
-  This is a path for those of you who want to complete the Data Science undergraduate curriculum on your own time, for free, with courses from the best universities in the World.
-
-- <https://github.com/mlflow/mlflow>
-  MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models
+- ThePrimeTime
+  - <https://www.youtube.com/watch?v=zjBx9ZgjPt4>
 
 - Ben Eater <https://eater.net>
 - Casey Muratori <https://caseymuratori.com/>
@@ -50,8 +38,30 @@ Personal catalog of articles, books, movies, games etc.
 - <https://hillelwayne.com/>
   - <https://github.com/hwayne/tla-graphing-demo>
   - <https://learntla.com/>
-  
 - <https://www.rfleury.com/>
+
+## Books and Articles
+
+- [American Journal of Physics](https://pubs.aip.org/aapt/ajp)
+  A very friendly and comprehensive articles on Physics.
+  > The American Journal of Physics publishes papers that will support, inform, and delight a diverse audience of college and university physics teachers. Contents include novel approaches to classroom and laboratory instruction, insightful articles on topics in classical and modern physics, apparatus notes, historical or cultural topics, book reviews, resource letters, and award talks.  
+
+- Wickham, H., Grolemund, G. (2017) *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly
+- Napolitano, J. (2018) *A Mathematica Primer for Physicists*. Taylor & Francis Group
+
+- Zhi Chen et al, *Concept whitening for interpretable image recognition*, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
+- H. Y. Kwon et al, *Magnetic Hamiltonian parameter estimation using deep learning techniques*, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
+
+## Software projects
+
+- <https://github.com/signals-dev/Orion>
+  **Orion** is a machine learning library built for unsupervised time series anomaly detection. With a given time series data, we provide a number of “verified” ML pipelines (a.k.a Orion pipelines) that identify rare patterns and flag them for expert review.
+
+- <https://github.com/ossu/data-science>
+  This is a path for those of you who want to complete the Data Science undergraduate curriculum on your own time, for free, with courses from the best universities in the World.
+
+- <https://github.com/mlflow/mlflow>
+  MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models
 
 Haskell
 

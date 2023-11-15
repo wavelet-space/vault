@@ -15,11 +15,13 @@ persona/*
 :maxdepth: 3
 :hidden:
 :caption: Memoirs
+:glob:
 
 memoirs/journal/index
 memoirs/equations/index
 memoirs/hardware/index
 memoirs/software/index
+memoirs/*
 ```
 
 ```{toctree}
@@ -27,6 +29,7 @@ memoirs/software/index
 :maxdepth: 2
 :hidden:
 
+c16/source/index
 ```
 
 ```{toctree}
@@ -35,7 +38,7 @@ memoirs/software/index
 :caption: Essays 
 :glob:
 
-essays/index
+essays/*
 ```
 
 ```{toctree}
@@ -45,3 +48,4 @@ essays/index
 :glob:
 
 etudes/*
+```

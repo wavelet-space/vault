@@ -1,19 +1,20 @@
 import math
 
+
 def Z_0(rho: float, c: float, S: float) -> float:
     """
     Calculate a characteristic acoustic impedance :math:`Z_0`.
     """
     return (rho * c) / S
 
-def k_lossless(lam):
+def k_lossless(lam: float) -> float:
     """
     Calculate a propagation number for lossless case.
     """
     return ((2 * math.PI) / lam)
 
 
-def Z_IN(Z_0, Z_L, l, j, k):
+def Z_IN(Z_0: float, Z_L: float, l: float, j: float, k: float) -> float:
     """
     Calculate a ... :math:`Z_L`.
 
@@ -25,7 +26,7 @@ def Z_IN(Z_0, Z_L, l, j, k):
     """
     return Z_0 * ( 
         (Z_L + j * Z_0 * math.tan(k * l)) 
-        / (Z_0 + j * Z_L * math.tan(k* l))
+        / (Z_0 + j * Z_L * math.tan(k*l))
     )
 
 if __name__ == "__main__":
