@@ -1,20 +1,3 @@
-# Acoustic Input Impedance
-
-A quick example for my friend *Jan 2046*.
-
-$$
-Z_0 = \frac{\rho c}{S}
-$$
-
-
-$$
-Z_{IN} = Z_0 \left[  \frac{Z_L + j Z_0 \tan{kl} }{Z_0 + j Z_L \tan{kl}}\right]
-$$
-
-where propagation number $k = \frac{2 \pi}{\lambda} $ for lossless case.
-
-
-```py
 import math
 
 def Z_0(rho: float, c: float, S: float) -> float:
@@ -23,14 +6,14 @@ def Z_0(rho: float, c: float, S: float) -> float:
     """
     return (rho * c) / S
 
-def k_lossless(lam: float) -> float:
+def k_lossless(lam):
     """
     Calculate a propagation number for lossless case.
     """
     return ((2 * math.PI) / lam)
 
 
-def Z_IN(Z_0: float, Z_L: float, l: float, j: float, k: float) -> float:
+def Z_IN(Z_0, Z_L, l, j, k):
     """
     Calculate a ... :math:`Z_L`.
 
@@ -42,6 +25,10 @@ def Z_IN(Z_0: float, Z_L: float, l: float, j: float, k: float) -> float:
     """
     return Z_0 * ( 
         (Z_L + j * Z_0 * math.tan(k * l)) 
-        / (Z_0 + j * Z_L * math.tan(k*l))
+        / (Z_0 + j * Z_L * math.tan(k* l))
     )
-```
+
+if __name__ == "__main__":
+    print(Z_0.__doc__)
+    print(Z_IN.__doc__)
+    print(k_lossless.__doc__)

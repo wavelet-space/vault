@@ -36,3 +36,12 @@ memoirs/software/index
 :glob:
 
 essays/index
+```
+
+```{toctree}
+:maxdepth: 3
+:hidden:
+:caption: Études 
+:glob:
+
+etudes/*
