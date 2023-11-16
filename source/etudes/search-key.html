@@ -30,35 +30,49 @@
         main>div {
             width: 90%;
             height: 30%;
+            border: 1px solid #ddd;
+            padding: 1rem;
         }
     </style>
     <script type="text/javascript" defer>
         window.onload = () => {
             document.addEventListener("keydown", (event) => {
                 let search = document.querySelector("#search")
+                // Focus on search form.
                 if (event.ctrlKey && event.key === 'k') {
                     event.preventDefault();
                     search.focus();
                     search.value = ''
-                }
-                if (event.key === "Escape" && document.activeElement == search) {
+                    // Escape from search form.
+                } else if (event.key === "Escape" && document.activeElement == search) {
                     event.preventDefault()
                     search.blur()
+                    // Clear search input.
+                } else if (event.key === "Delete" && document.activeElement == search) {
+                    event.preventDefault();
+                    search.value = ''
+                    // Submit search form.        
+                } else if (event.key === "Enter" && document.activeElement == search) {
+                    let searchForm = document.querySelector("#search")
+                    // searchForm.submit()
+                    // searchForm.method = "post" 
+                    // let result = await (async () => findPerson(search.value))()
+                    // console.log(result)
                 }
             })
 
-            let loginForm = document.getElementById("searchForm");
-            loginForm.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                let search = document.querySelector("#search")
-                let result = await findPerson(search.value)
+            let searchForm = document.querySelector("#search-form")
+            searchForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const result = await findPerson(1)
+                console.log(result)
             });
         }
-        
-        
+
+        // USECASE
         async function findPerson(id) {
-            const response = await fetch(
-                `https://dummy.restapiexample.com/api/v1/employees/${id}`, 
+            const result = (await fetch(
+                `https://jsonplaceholder.typicode.com/todos/${id}`,
                 {
                     mode: "cors",
                     method: "GET",
@@ -66,11 +80,8 @@
                         'Access-Control-Allow-Origin': '*',
                         'Content-Type': 'application/json',
                     }
-                }
-                )
-            const person = await response.data
-            console.log(person)
-            return person
+                })).json()
+            return result
         }
 
 
@@ -80,13 +91,26 @@
 <body>
     <main>
         <div>
-            <p>This example shows how to add focus in search input element <kbd>Ctrl</kbd> + <kbd>k</kbd> and remove
-                focus on <kbd>Escape</kbd> key.</p>
-            <form id="searchForm" action="">
-                <input type="text" id="search" placeholder="Press Ctrl + k for search"
-                    style="width: 80%; padding: 0; height: 2rem; font-size: 1.5rem;" />
-                <input type="submit" style="height: 2rem; padding: 0; margin: 0; font-size: 1.5rem;" />
-            </form>
+            <p>
+                This example shows cusmoize search form behavior:
+            </p>
+            <ul>
+                <li>
+                    Focus on search input field when <kbd>Ctrl</kbd> + <kbd>k</kbd> key was pressed.
+                </li>
+                <li>
+                    Escape from search input field when <kbd>Escape</kbd> key was pressed.
+                </li>
+                <li>
+                    Delete search input field content when <kbd>Delete</kbd> key was pressed.
+                    <br>Works only when there is s focus on search input field.
+                </li>
+
+                <form id="search-form" action="">
+                    <input type="text" id="search" placeholder="Press Ctrl + k for search"
+                        style="width: 80%; padding: 0; height: 2rem; font-size: 1.5rem;" />
+                    <input type="submit" style="height: 2rem; padding: 0; margin: 0; font-size: 1.5rem;" />
+                </form>
         </div>
     </main>
 </body>
