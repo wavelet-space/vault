@@ -37,13 +37,6 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.txt': 'restructuredtext',
-    '.md': 'markdown',
-    '.html': 'html',
-}
-
 # templates_path = ['_templates']
 exclude_patterns = ['build', '_build', '.github', '.vscode']
 
@@ -58,7 +51,7 @@ html_css_files = [ # does not work on GitHub?
     'custom.css',
 ]
 
-# html_extra_path = ['etudes/*.html']
+html_extra_path = ['etudes/']
 
 html_theme_options = {
     "light_css_variables": {
