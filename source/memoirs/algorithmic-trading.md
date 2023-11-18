@@ -1,4 +1,16 @@
-# Algorithmic trading
+# Algorithmic and High Frequency Trading
+
+[[terms, facts, rules]]
+
+- The motivation for trading on the stock market (exchange) is to make a profit.
+
+- Futures and stocks are two major classes of financial assests.
+- 
+- What is a diffrence between futures and stocks?
+
+
+- What is a future contract?
+  Futures contracts expire; 
 
 ## What is algorithmic trading (AT)?
 
@@ -9,7 +21,6 @@ Generally low latency systems needs special treatment.
 When Java is used, speacial setting for GC or VM is used.
 
 For analysis e.g. Python, R, Julia or q/kdb+ etc.
-
 
 ## Trading strategies
 
