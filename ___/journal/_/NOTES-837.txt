@@ -1,0 +1,83 @@
+
+---
+Feynmans lectures free access online https://www.feynmanlectures.caltech.edu/
+
+---
+
+Online tutoriály na Rko
+
+http://www.r-tutor.com/
+
+
+---
+Nauč se pracovat s emacsem
+
+---
+Nezáleží co si myslíš, ale R je jazyk statistiků a obecně lidí pracujících s daty.
+Na první pohled to třeba není elegantní jazyk, ale zdání často klame. Pod povrchem skrývá
+spoustu zajímavých vlastností ne nepodobných lispovským jazykům.
+
+---
+Kurz termodynakiky komputační
+https://www.youtube.com/watch?v=L7nsVrt41Rg&list=PLaNkJORnlhZmfwQITRbxXCzot3PSXlMYb&index=4&ab_channel=ArindamKumarChatterjee
+https://stanford.edu/~jeffjar/statmech/intro4.html
+
+---
+https://twopirllc.github.io/pandas-ta/
+
+---
+Vypsat knihy pro programování
+
+Leonid Shifrin: _Mathematica Programming_  book is free
+http://www.mathprogramming-intro.org/
+
+
+---
+Kurz v R
+https://campus.datacamp.com/courses/free-introduction-to-r/chapter-3-matrices-3?ex=8¨
+
+
+---
+Ukázky v MATLAB z knihy Prbability od Snella
+https://www3.nd.edu/~nancy/Math30530/matlab.html
+
+Pro vypsání dokumnetace v MATLAB
+    doc cointosses
+
+Pro vypsání zdrojáku funkce v MATLAB
+    type cointosses
+
+https://www3.nd.edu/~nancy/Math30530/Matlab/Demos/Chapter1/chapter1_1_demo.html
+
+ODE v MATLABu
+https://www3.nd.edu/~nancy/Math30650/Matlab/Demos/DEwMlb5/DEwMlb5.html
+
+
+
+---
+Sezname statistických symbolů https://www.rapidtables.com/math/symbols/Statistical_Symbols.html
+
+
+---
+Prozkoumat algortumus Wave Function Collapse pro proceduránlní generování textur
+
+---
+Pročíst numerické metody na stránce https://folk.ntnu.no/leifh/teaching/tkt4140
+Z prvního dojmu se zdá, že je to výborně napsané. Podívat se také, jak mají nastavený
+MathJax (mají vypnuté číslování a používají `\tag`, dále mají makro pro refereencování
+rovnic) a popřemýšlet, jestli by nestálo za to navrhnout nějaký formát jako `edn` pro
+psaní knih a dokumentů s matematikou.
+
+
+- Existence a unikátnost řešení počátečního problému (initial value problem)
+
+
+---
+Vahid Moosavi - Machine Learning and Engineering Applications S02E02
+https://github.com/sevamoo/data_driven_modeling_2018
+- S02E02 Regression Problem​
+    - Least Squares Method
+    - Linear Regression
+    - Polynomial Regression
+    - Nonlinear Regression
+    - Gradient Descent

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flow Editor</title>
+    <style type="text/css">
+
+      #canvas {
+        width: 300px;
+        margin:0  auto;
+        display: block
+      }
+    </style>
+   </head>
+    <body>
+      <div id="container">
+        <canvas id="canvas"></canvas>
+        <div id="editor"></div>
+     </div>
+    <script>
+
+      // Load data from storage.
+      if (typeof(Storage) !== "undefined") {
+
+        if (!window.sessionStorage.client) {
+          window.sessionStorage.client = 0
+
+        } else {
+          window.sessionStorage.client = Number(window.sessionStorage.client) + 1;
+        }
+
+        console.log(window.sessionStorage.client)
+
+      } else {
+        console.log("Sorry! No Web Storage support.")
+      }
+
+      // General domain/system message.
+      class Message {
+        constructor(source, target, type, payload) {
+
+          this.source = source
+          this.target = target
+          this.type = type
+          this.payload = payload
+        }
+      }
+
+      /**
+       * Message dispatcher
+       */
+      class MessageDispatcher {
+
+        constructor() {
+          this.messages = []
+          this.handlers = {}
+        }
+
+        /**
+         * Register message handler.
+         */
+        register(handler) {
+          // node-code
+        }
+
+        /**
+         * Unregister message handler.
+         */
+        unregister(handler) {
+          // no-code
+        }
+
+        /*
+         * Dispatch message to the handler.
+         */
+        dispatch(message) {
+
+          var event = message // how to recognize event/command
+          var message = null;
+
+          switch (event.type) {
+
+            case "click":
+              let rect = event.target.getBoundingClientRect();
+              let position = {
+                  x: event.clientX - rect.left,
+                  y: event.clientY - rect.top
+              }
+
+              // console.log(top, bottom, left, right)
+              message = new Message("#client", "#system", "MouseClicked", { x: event.clientX, y: event.clientY })
+              console.log(position)
+              break
+
+            case "mousemove":
+              message = new Message("#client", "system", "MouseMoved", { x: event.clientX, y: event.clientY })
+              console.log(message)
+              break
+
+            case "keypress":
+              message = new Message("#client", "system",  "KeyPressed", [event.key, event.keyCode])
+              console.log(message)
+              break
+
+          }
+
+          if (!message) {
+            //console.log(event)
+          } else {
+            this.messages.push(message)
+            // editor.innerHTML = `${event.type}, ${event.target}`
+          }
+
+        }
+      }
+
+      var Dispatcher = new MessageDispatcher()
+      var canvas = document.getElementById("canvas")
+      var editor = document.getElementById("editor")
+
+      // This capture all events on `window` object.
+      // Be aware that this capture all the global function which starts with `on` string!
+      Object.keys(window).forEach(key => {
+        if (/on/.test(key)) {
+          //console.log(key)
+          canvas.addEventListener(key.slice(2), event => {
+            Dispatcher.dispatch(event)
+          })
+        }
+      });
+
+    </script>
+    <style type="text/css">
+      canvas { background-color: black }
+    </style>
+  </body>
+</html>

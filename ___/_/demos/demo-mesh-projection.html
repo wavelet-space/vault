@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript">
+
+let canvas = document.getElementById("canvas")
+let context = canvas.getContext("2d");
+
+// context.fillRect(1, 1, 10, 10)
+
+const Vector = (x, y, z) => ({x, y, z})
+
+const Camera = ({position, direction}) => ({position, direction}) 
+
+/** 
+ * The coordinates system is starting at the center of the mesh.
+ */
+const Mesh = (vertices_count, position, rotation) =>  {
+    return {
+        vertices: new Array(vertices_count),
+        position: position || Vector(0, 0, 0), 
+        rotation: null
+    }
+}
+
+/**
+ * The transformation 4×4  matrix.
+ */
+class T {
+    constructor(...columns) {
+        this.vectors = columns
+    }
+
+    equals(other) {
+        return this.vectors === other.vectors
+    }
+
+    get size() {
+        return [this.vectors.length, this.vectors.length]
+    }
+
+    combine(other) {
+        let result = new Array(4).fill(new Array(4).fill(0))
+        console.log("demo", result)
+        for (let i = 0; i < this.size[0]; ++i) {
+            for (let j = 0; j < this.size[1]; ++j) {
+                result[i][j] = this.vectors[i][j] * other.vectors[j][i]      
+            }
+        }
+        return new this.constructor(...result)
+    }
+}
+
+class Device {
+    constructor(context) {
+        this.context = context
+        this.width = context.canvas.width
+        this.height = context.canvas.height
+        this.buffer = null
+        this.clear()
+    }
+
+    project() {
+        console.log("project")
+    }
+
+    clear() {
+        this.context.fillRect(0, 0, this.width, this.height)
+        this.buffer = this.context.getImageData(0, 0, this.width, this.height)
+    }
+
+    paint() {
+         this.context.putImageData(this.buffer, 0, 0);
+    }
+
+    render() {
+        console.log("render")
+    }
+
+    put_pixel() {
+        console.log("put_pixel")
+    }
+}
+
+//------------------------------------------------------------------------------
+
+let camera = Camera({
+      position:  {x: 0, y: 0, z: 0}, 
+      direction: {x: 1, y: 1, z: 1}
+    })
+
+// The left-handed world.
+
+// Create the cube mesh.
+let cubeMesh = Mesh(8)
+
+// Set the cube mesh vertices.
+cubeMesh.vertices[0] = Vector(-1, 1, 1)
+cubeMesh.vertices[1] = Vector(1, 1, 1)
+cubeMesh.vertices[2] = Vector(-1, -1, 1)
+cubeMesh.vertices[3] = Vector(-1, -1, -1)
+cubeMesh.vertices[4] = Vector(-1, 1, -1)
+cubeMesh.vertices[5] = Vector(1, 1, -1)
+cubeMesh.vertices[6] = Vector(1, -1, 1)
+cubeMesh.vertices[7] = Vector(1, -1, -1)
+
+
+device = new Device(context);
+
+device.project()
+device.render()
+
+u = new T([1, 0, 0, 0], [0, 2, 0, 0], [0, 0, 1, 0], [0, 0, 0, 2])
+v = new T([1, 0, 0, 0], [0, 0.5, 0, 0], [0, 0, 1, 0], [0, 0, 0, 0.5])
+
+u.combine(v)
+
+</script>
+</body>
+</html>

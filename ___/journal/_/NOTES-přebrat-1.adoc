@@ -1,0 +1,116 @@
+
+https://vesmir.cz/cz/casopis/archiv-casopisu/1996/cislo-12/chladova-odolnost-hmyzu-tropy.html
+
+
+== Přednášky o chaosu, fázových přechodecha komplexních systémech
+
+
+
+* Pavel Cejnar: Od chaosu ke komplexitě (MFF FPF 14.5.2015) https://www.youtube.com/watch?v=bC_n9BPK76c&ab_channel=LLionTV
+
+
+
+== Machine Learning a Data Science
+
+Kurz pro základy ML
+https://course.elementsofai.com/cs/1/1
+
+Kurz pro základy DS
+
+Matematický aparát fyziky - MAM01 - Lekce 1.
+https://www.youtube.com/watch?v=PysBx0NseK8&list=PLYYRBJzen2aBW0aboV7MEveasqO1EcO4i&index=1&t=2645s&ab_channel=V%C5%A0P%C5%99edn%C3%A1%C5%A1ky.cz
+
+fázové přechody
+https://www.youtube.com/watch?v=FUwjNNfi3yg
+Kenneth Wilson Renormalizace
+V kritickém bodě efektivní teplota je rovna kritické teplotě, mřížka při přeškálování zstáva stejná
+
+Algebraické su(1,1) modely v kvantové fyzice
+
+Gravitace jako deformace prostoročasu https://www.youtube.com/watch?v=K_Xa0T9So6w
+
+
+Metodika pro DS: White PaperIBM AnalyticsFoundational Methodology for Data Science
+file:///C:/Users/dlanda/AppData/Local/Temp/IBMOpenSource_FoundationalMethologyforDataScience.PDF
+
+
+== Fludifní dynamika
+
+- soliton
+- rovnice mělké vody
+- nambu mechanika
+
+
+Modelování chování přílivové vlny
+    Hydraulic jumps
+    Undular hydraulic jumps
+    Positive surges
+    Tidal bores
+    Unsteady turbulence
+    Air bubble entrainment
+    Boussinesq equation
+    Two-phase flow properties
+    Dynamic similarity
+    Scale effects
+    Turbulence
+
+článek https://www.sciencedirect.com/science/article/abs/pii/S0997754608000678?via%3Dihub 
+
+
+
+== Programování ve Fortranu
+
+https://masuday.github.io/fortran_tutorial/
+https://en.wikibooks.org/wiki/Fortran/Fortran_procedures_and_functions
+
+
+== programování Python
+
+https://towardsdatascience.com/11-pandas-built-in-functions-you-should-know-1cf1783c2b9
+
+
+= Přednášky z geometrické algebry
+
+http://www.faculty.luther.edu/~macdonal/vagc/
+
+
+= Přednášky z obecné teorie relativity
+
+== MFF
+
+STR Semerák http://utf.mff.cuni.cz/~semerak/STR.pdf
+
+== CVUT
+
+Skripta https://www.aldebaran.cz/studium/otr.pdf
+
+Záznam https://www.youtube.com/playlist?list=PLYYRBJzen2aCH6Mipd2zGG01MRVQZQ_V2
+
+. [ ] https://www.youtube.com/watch?v=Cnex7a4lApg&list=PLYYRBJzen2aCH6Mipd2zGG01MRVQZQ_V2&index=1
+  zavedení pojmů ze speciální erlativity, inerciální soustava, sumační konvece, Lorentzova transformace a její matice
+
+. [ ] https://www.youtube.com/watch?v=QsLLhKE3l24&list=PLYYRBJzen2aCH6Mipd2zGG01MRVQZQ_V2&index=2
+  Lorentzova transformace jako rotace, tenzorová sumační konvevce, kovariantní a kontavariantní index tenzoru
+
+
+=== Speciální relativita
+
+Rozpor mezi elektrodynamikou a klasickou fyzikou ve vztahu k rychlosti šíření
+
+Lorentzova trasformace čtyřrozměrného časoprostoru/prostoročasu
+Koeficienty gamma  a beta
+
+Rapidita
+
+Dilatace čas a kontrakce délek
+
+=== Metrika prostoročasu
+
+Kovariantní a kontravariantní tenzory a indexování
+Skalaární součin  a počet indexů
+
+
+
+= Numerika
+
+- Rovnice vlny 1D https://www.youtube.com/watch?v=lMRnTd8yLeY&ab_channel=ChristopherLum

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+
+<canvas id="canvas"></canvas>
+
+
+<script type="text/javascript">
+
+
+Canvas = document.getElementById("canvas")
+
+Canvas.width = 600
+Canvas.height = 92
+
+Context = canvas.getContext("2d")
+
+
+
+//------------------------------------------------------------------
+// render background
+Context.save()
+Context.fillStyle = "#eee"
+Context.fillRect(0, 0, Context.canvas.width, Context.canvas.height)
+Context.restore()
+//------------------------------------------------------------------
+
+
+const TIMELINE_STEP = canvas.width/60
+
+
+//------------------------------------------------------------------
+// render ticks
+//------------------------------------------------------------------
+for (let i = 0; i < Context.canvas.width; ++i) {
+    let color = i % 10 ? "#ddd" : "#000"
+    let height = i % 10 ? 6 : 12 
+    
+    // top ticks
+    Context.fillRect(i * TIMELINE_STEP, Context.canvas.height - height,  1, Context.canvas.height, color)
+    
+    // bottom ticks
+    Context.fillRect(i * TIMELINE_STEP, 0, 1, height, color)
+
+    // numbers
+    if (!(i % 10)) {
+        Context.save()
+        Context.font = "10px Arial";
+        Context.fillText(i, i * TIMELINE_STEP, Context.canvas.height - height - 6)
+        Context.restore()
+    }
+}
+
+
+
+State = {
+    count: 0
+}
+
+
+
+const update = (state) => {
+    state.count++
+}
+
+
+const render = (state, context, time) => {    
+    context.fillRect(
+        state.count * TIMELINE_STEP, 
+        context.canvas.height - 64, 
+        1, 
+        36, 
+    "blue")
+}
+
+
+const timestamp = () => window.performance.now()
+
+
+Time = 0 
+Step = 1000/60 //ms
+
+LastTime = timestamp()
+
+function loop() {
+    delta = timestamp
+    update(State)
+    render(State, Context, Time)
+    requestAnimationFrame(loop)
+    Time += Step
+}
+
+requestAnimationFrame(loop)
+
+
+</script>
+
+</body>
+</html>

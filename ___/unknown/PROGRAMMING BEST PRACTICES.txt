@@ -1,0 +1,23 @@
+
+## Logging
+
+V Pythonu můžeme logování nastavit na úrovní modulu/třídy.
+Musíme uživateli vždy dát možnost "vypnout logování" naší knihovny!
+Logování jde do stderr, výstup programu do stdout.
+
+Tím můžeme pajpnout výstup rpgramu a přitom stále logovat např. do konzole.
+Logovat by mělo být snadné i do soubory nebo třeba soketem přes síť...
+
+Logování potřebují services, controllers a méně domain model... spíše vůbec.
+
+## Dependecy Injection
+
+## Profilování
+
+cpu-profiler, memory-profiler, mrkni na Go!
+
+## Debugování
+
+Mrkni na HandMadehero, jak používá debugger namísto pouštění programu a printování do konzole.
+
+

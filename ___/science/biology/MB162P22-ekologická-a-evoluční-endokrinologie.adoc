@@ -1,0 +1,38 @@
+= MB162P22 Ekologická a evoluční endokrinologie
+
+Lektor: Lukáš Kubička
+
+Přednášky si kladou za cíl seznámit posluchače s tím, jak různé skupiny hormonů ovlivňují životní pochody 
+a strategie živočichů z pohledu ekologie (a také behaviorální ekologie a ekofyziologie), evoluční biologie 
+a fyziologie (včetně makrofyziologie a konzervační fyziologie). Přednáška je převážně zaměřena na obratlovce, 
+skupinu v této oblasti nejlépe probádanou. Nicméně ve vybraných kapitolách budou zmíněny i mechanismy uplatňující se 
+u bezobratlých. Pro svůj mezioborový charakter je zamýšlena zejména pro studenty magisterského programu. 
+Předchozí absolvování některé z přednášek Ekologie živočichů, Morfologie živočichů, Obecná biologie živočichů 
+nebo Základy fyziologie živočichů je výhodou.
+
+== Syllabus
+
+- Endokrinní systém
+vlastnosti a evoluce endokrinního systému a orgánů s endokrinní funkcí; původ hlavních skupin hormonů a receptorů; buněčné a molekulární mechanismy hormonálního účinku a jeho regulace
+
+- Hormonální kontrola endogenních procesů a biologických rytmů
+principy a mechanismy udržování homeostáze; metabolismus, příjem potravy a hospodaření se zdroji; temporální fluktuace homeostatických procesů; typy stresorů a evoluce stresových odpovědí, obecný adaptační syndrom; adaptivní funkce vnitřních biologických hodin a jejich synchronizace s geofyzikálními cykly; endokrinní disruptory
+
+- Hormonální kontrola životních cyklů
+původ komplexních životních cyklů; metamorfóza u obratlovců; přeměna u hmyzu s proměnou dokonalou; determinace a diferenciace pohlaví; fylogeneze pohlavně determinačních systémů; změna pohlaví u ryb; evoluce a ontogeneze pohlavního dimorfismu; puberta; pohlavní dospělost; stárnutí
+
+- Hormonální kontrola reprodukce
+typy reprodukce; organizace a aktivace pohlavně specifických znaků; ovariální cykly; menopauza; pohlavně specifické reprodukční chování a jeho komponenty; vznik živorodosti; změny spojené se superfetací; endokrinní koreláty rodičovské péče u jednotlivých skupin obratlovců; altricialita vs. prekocialita
+
+- Hormonální kontrola sociálních interakcí
+afiliační a agresivní chování a jeho adaptivní funkce; stres v sociálním prostředí, senzitivizace a habituace; načasování puberty a disperzní strategie; pohlavně specifické rozdíly v asociativním a neasociativním učení a paměti
+
+
+== Literatura
+
+- Adkins-Regan A.: Hormones and animal social behavior, Princeton University Press
+- Flatt T., Heyland A. (Eds.): Mechanisms of life-history evolution. Oxford University Press
+- Kardong K.V.: Vertebrates: Comparative Anatomy, Function, Evolution (jakékoliv vydání)
+- Nelson R.J.: An introduction to behavioral endokrinology, Sinauer Associates (jakékoliv vydání)
+- Norris D.O.: Vertebrate endokrinology, Academic Press Elsevier (jakékoliv vydání)
+- Norris D.O., Lopez K.H. (Eds.): Hormones and reproduction of vertebrates, vol. 1-5. Academic Press Elsevier

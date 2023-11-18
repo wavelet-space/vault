@@ -1,0 +1,181 @@
+
+\chapter{Modely popsané pomocí ODE} 
+
+Typická obyčejná difrenciální rovnice prvního řádu
+
+\begin{equation}
+    u'(x) = -u(t), \quad x, t \in \R, \quad u: \R \mapsto \R,
+\end{equation}
+ doplněná počáteční podmínkou
+ \begin{equation}
+    u(0) = u_0, \quad u_0 \in \R,
+ \end{equation}
+jejímž řešením je funkce \footnote{Pro základní informace o řešení  obyčejných diferenciální rovnic lze nahlédnoud do Boyce a DiPrima nebo Braun.}
+$$    
+u(t) = u_0 \e{-t}.
+$$
+
+\noindent Řešení ověříme dosazením 
+
+$$
+u(0) = u_0 \e{0} = u_0
+$$
+
+$$
+u'(t) = -u_0 \e{-t} = 
+$$
+
+
+\chapter{Modely popsané pomocí PDE}
+
+\section{Značení}
+
+Nechť $u := u(\vb{x}) $ je funkce $n$ proměnných tj. $\vb{x} \in \R^2$, $\vb{x} = (x_1,\ldots,x_3)$, potom pro parciální derivace použijeme značení 
+
+$$
+    \pdv{u}{x_1}, \quad \pdv{u}{x_1}{x_2}
+$$
+nebo 
+$$
+    u_{x_1}, \quad u_{x_1 x_2}
+$$
+nebo 
+$$
+    D^{\alpha}u,
+$$
+kde $D$ značí operátor.
+
+\noindent Obecný polynom m-tého stupně:
+$$
+P(x) = \sum c_{\alpha} x^{\alpha}
+$$
+
+\noindent Binomická věta
+
+\noindent Multinomická věta
+
+\section{Diferenciální operátory}
+
+Operátor \textbf{gradient} skalárního pole
+$$
+\grad{U} \equiv grad(U)
+$$
+operátor \textbf{divergence} (zřídlovost) vektorového pole
+$$
+\div{\vb V} \equiv div( \vb V)
+$$
+Operátor \textbf{rotace} (výřivost) vektorového pole
+$$
+\curl{\vb V} \equiv curl(\vb V)
+$$
+Laplacův operátor
+$$
+    \laplacian \equiv \Delta
+$$
+
+\section{Parciální diferenciální rovnice}
+
+Parciální diferenciální rovnice je ve tvaru 
+
+\begin{definition}[Parciální diferenciální rovnice]
+$$
+F = 0, \quad x \in \Omega \in \R^n
+$$
+je parciální diferenciální rovnice m-tého řádu, kde $F$ je skalární funkce a $u : \Omega \rightarrow{\R}$ je neznámá (hledaná) funkce.
+\end{definition}
+
+PDR je lineární pokud ji lze zapsat ve tvaru 
+$$
+$$
+Pokud koeficienty $a_{\alpha}$ jsou konstantní tj. nezávisejí na $x$, jedná se o PDR s konstantními koeficienty.
+
+
+PDR je semilineární (lineární vzhledem k nejvyšším derivacím)
+
+PDR je kvazilineární
+
+PDR je plně nelineární
+
+\subsection{Otázky}
+\begin{itemize}
+    \item U tepelné nebo rovinné rovnice se někdy uvádí na pravé straně konstanta $k^2$ namísto $k$. Proč je tomu tak? 
+\end{itemize}
+
+\section{Úvod}
+
+Řádem rovnice rozumíme řád nejvyšší derivace $u$ v rovnici.
+
+\section{Typologie PDE}
+
+\subsection{Rovnice eliptického typu}
+\subsection{Rovnice parabolického typu}
+Rovnice jako vedení tepla nebo difuze jsou označovaný jako rovnice parabolického tyypu.
+\subsection{Rovnice hyperbolického typu}
+
+Mnoho modelů popisujících difůzní proces má tu vlastnost, že po dostatečně dlouhém čase systém dosáhne ustáleného stavu. Jinak řečeno funkce $u(x, t)$ popisující stav systému se již němění s časem $t$, ale je pouze funkcí polohy $x$ $$ \therefore \partial_t u(x, t) = 0.$$ Pro tento ustálený neboli stacionární stav jsme schopni často nalézt stacionární (\textit{steady})i když neznáme obecné řešení zadané rovnice.   
+
+
+\subsubsection{Příklad}
+% \begin{enumarate}
+%     \item  Tepelná energie se šíří vždy z místa s větší teplotou na místa s měnší teplotou.
+% \end{enumerate}
+% Mám laminární tok nestalčitelné substance a v něm umístěnou nekonečné malou krychlyčku o stranách $dx$, $dy$, $dz$. Potom 
+
+Mějme parciální diferenciální rovnici s neznámou funkcí $u$ 
+
+\begin{equation}
+    \partial_t u = -\kappa \partial_{xx} u, \quad 0 < x < L, 0 < t <  \infty
+\end{equation}
+kde $u \equiv u(x, t)$ je funkcí místa $x$ a času $t \ge 0$ a $c > 0$ je konstanta. Na levé straně rovnice stojí derivace funkce $u$ vzhledem k času $t$ a vpravo její druhá derivace vzhldem k pozici $x$. Pro začátek ukážeme, že tato rovnice modeluje stacionární vedení tepla v tenkém drátu. 
+
+Rovnice se také často udáva v homogenním tvaru, kdy všechny členy převedeme na jednu stranu.
+
+\begin{equation}
+    \partial_t u + \kappa \partial_{xx} u    = 0,
+\end{equation}
+
+\section{Ustálené vedení tepla bez zdroje}
+
+\subsection{Formulace pro 1D}
+Předpokládejme, že rovný drát konéčné délky $L$ leží podél intervalu $[0, L]$ na ose $x$. Také předpokládejme, že je z homogenního materiálů a stejné hustotě a tedy, že má v celé délce stejné vlastnosti a také, že jeho teplota nemá na tyto vlastnosti vliv. To znamená, že schopnost vést teplo ani délka se s teplotou nemění. \footnote{ Vlastnosti materiálu, jako objem a schopnost vést teplo aj., jsou obvykle závislé na teplotě.}
+
+\subsection{Formulace pro 2D}
+
+\section{Ustálené vedení tepla se zdrojem}
+
+\subsection{Formulace pro 1D}
+\subsection{Formulace pro 2D}
+
+\section{Neustálené vedení tepla s anizotropií}
+
+% Rovnice vedení tepla v přímém \footnote{Pokud drát nebyl přímý, má to vliv na úlohu?} drátu o délce $l$, můžeme při zanedbání jeho průměru, považovat za problém v jedné prostorové dimenzi, kdy nás zajímá průběh teploty drátu v jeho libovolném místě $x$ a v čase $t$. Rovnice vedení tepla v diferenciální formě má pak podobu  
+
+% Problém řešení rovnice vedení tepla v tyči o konstaním průřezu a délce můžeme zjednodušit na problém v jedné dimenzi, pokud jdenodudše dělíme tok plochou průřezu kolmou na směr šíření tepla.
+
+% \begin{equation}
+%     \frac{\partial u}{\partial t} = \lamda \frac{\partial \varphi}{\partial t}, 
+% \end{equation}
+% where $u = u(x, t)$ is temperature at point $x$ and time $t$. 
+
+\section{Difuze}
+
+\section{Šíření vlny aneb \textit{Wave Equation}} 
+
+\begin{equation}
+    \partial_{tt} u = -\kappa \partial_{xx} u,
+\end{equation}
+\begin{equation}
+    \frac{\partial^2 u}{\partial t^2} = -\kappa \frac{\partial_{xx} u,
+\end{equation}
+
+\section{Rovnice mělké vody}
+
+řešením parciálních diferenciálních rovnic popisujících proudění tzv. mělké vody, kde zanedbáváme toky ve svislém směru. Tyto rovnice jsou hyperbolického typu 1. řádu s reaktivním členem daným topologií dna.
+
+Diplomové práce z MFF práce věnující se tomuto 
+
+\begin{itemize}
+    \item https://dspace.cuni.cz/handle/20.500.11956/85985
+    \item https://dspace.cuni.cz/handle/20.500.11956/39804
+    \item https://dspace.cuni.cz/handle/20.500.11956/84466
+\end{itemize}

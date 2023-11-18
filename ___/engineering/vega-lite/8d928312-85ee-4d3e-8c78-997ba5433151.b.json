@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "8d928312-85ee-4d3e-8c78-997ba5433151",
+  "height": {"step": 48},
+  "width": 400,
+  "transform": [],
+  "title": {
+    "text": "Zastoupení politiků",
+    "subtitle": "Srovnání s předchozím obdobím"
+  },
+  "data": {
+    "name": "table",
+    "format": {},
+    "values": [
+      {"a": "Babiš, Andrej (ANO)", "b": 75, "c": 70},
+      {"a": "Bartoš, Ivan (Piráti)", "b": 33, "c": 30},
+      {"a": "Hamáček, Jan (ČSSD)", "b": 30, "c": 40},
+      {"a": "Vojtěch, Adam (ANO)", "b": 26, "c": 22},
+      {"a": "Zeman, Miloš (BEZPP)", "b": 22, "c": 32},
+      {"a": "Dostálková, Klára (ANO)", "b": 19, "c": 0},
+      {"a": "Maláčová, Jana (ČSSD)", "b": 17, "c": 7},
+      {"a": "Kremlík, Vladimír (ANO)", "b": 16, "c": 6},
+      {"a": "Rakušan, Vít (STAN)", "b": 15, "c": 5},
+      {"a": "Metnar, Lubomír (ANO)", "b": 14, "c": 29},
+      {"a": "Fiala, Petr (ODS)", "b": 14, "c": 4},
+      {"a": "Plaga, Robert (ANO)", "b": 13, "c": 3},
+      {"a": "Jermanová, Jaroslava (ANO)", "b": 13, "c": 23},
+      {"a": "Povšík, Robin (ČSSD)", "b": 12, "c": 2},
+      {"a": "Michálek, Jakub (Piráti)", "b": 11, "c": 1}
+    ]
+  },
+  "encoding": {
+    "y": {
+      "field": "a",
+      "type": "nominal",
+      "title": "Respondent",
+      "sort": ["-b"],
+      "axis": {"labelAngle": 0}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar",  "yOffset": -10, "size": 20, "color": "royalblue"},
+      "encoding": {
+        "x": {
+          "field": "b",
+          "type": "quantitative",
+          "axis": {"title": null, "ticks": false}
+        }
+      }
+    },
+    {
+    "mark": {"type": "bar",  "yOffset": 10, "size": 20, "color": "lightgray"},
+      "encoding": {
+        "x": {
+          "field": "c",
+          "type": "quantitative",
+          "axis": {"title": null, "ticks": false}
+        }
+      }
+    }
+  ],
+  "config":{ "axis": { "grid": false }, "view": { "stroke": "transparent" }}
+}

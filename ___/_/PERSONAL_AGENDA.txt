@@ -1,0 +1,137 @@
+2019
+----
+TODO
+
+Learn 
+- JavasSript
+- OCaml/Reason
+- Esy, OPam, 
+- Scala
+- Common Lisp, Clojure
+- C++
+- Python
+
+DONE
+
+02-06
+Práce na VISIO
+Vytvořen první NPM testovací balíček
+Studium Petrologie
+
+03-06
+Čtení článku o mikroslužbách
+Práce na návrh mikroslužeb pro registrování a identifikování osob/institucí
+
+Články:
+https://www.independent.co.uk/news/science/the-treasures-of-monkey-island-can-monkeys-have-autism-and-what-would-it-tell-us-if-they-can-a7107911.html
+http://biomedicalcomputationreview.org/content/implicit-representation-biological-shapes-and-forms-0
+https://en.wikipedia.org/wiki/Level_set
+https://www.ncbi.nlm.nih.gov/pubmed/4629379
+https://www.epilepsyresearch.org.uk/conflicting-evidence-regarding-mobile-phones-and-epilepsy-in-children/
+
+
+ZAŘADIT
+
+nelineární příběh
+Nelineární  z pohledu tvůrce, protože příběh se větví
+avšak divák, který vidí jen jednu varaontu přípěbu, pro něho je zcela lineární!
+
+
+
+CODEX
+GUIDE
+TUTOR
+
+ML/Deep LEarning
+
+https://www.fast.ai/about/
+http://platanios.org/
+
+Google Colab Tips:
+https://colab.research.google.com/drive/1P2AmVHPmDccstO0BiGu2uGAG0vTx444b#scrollTo=VgRfWu26wIBt
+
+# Swift basics
+https://guides.codepath.com/ios/Swift-Basics
+
+https://github.com/codepath/ios_guides
+
+
+Swift Colab
+https://colab.research.google.com/drive/1z3mNiAWtvjsF39WnvOrfW6S3Y7eLy0wE#scrollTo=H6kQUZez1vYT
+
+
+const median = xs => xs.sort()[Math.ceil(xs.length / 2)]
+
+const average = xs => xs.sum() / xs.length 
+  where sum = xs => xs.reduce((acc, x) => acc + x, 0)
+
+
+
+developer MUST not branch off of anything other than master branch
+
+
+
+TODO
+- ORGANIZE Poznámky
+- VIEW https://www.khanacademy.org/science/biology/
+- READ https://towardsdatascience.com/building-neural-networks-in-f-part-1-a2832ae972e6
+- READ On Lisp by Paula Graham
+
+DONE
+Article by Bret Victor http://worrydream.com/LearnableProgramming/
+
+READ
+
+
+Práce na REST API Guideline
+Práce na NLP pro Aleše
+Sepiš návod pro venv https://forum.root.cz/index.php?topic=20617.msg304957;topicseen#new
+Nastavení základního projektu CMake + definice Makefile
+Matlab?
+Napsat Obecná chemie o zápočte
+Konyultace z Fyziky Mat. a Pevné L.
+Cvičení MA
+Podobně jako magic_paper projekt lze uvažovat o aplikaci pro rozpoznávání matematických vzorců?
+https://github.com/kenperlin/chalktalk
+https://github.com/mnielsen/magic_paper
+
+- Study Enterprise Integration Patterns and Apache Camel
+- Vytvoř kontejner jen pokud je na mastru novy git tag.
+- aura.view
+  - [-] Run the container with `restart: always` option.
+- aura.store
+  - [x] devops: Vytvoření konfigurace pro CircleCI 2.0
+- aura.register.db
+  - [-] devops: dopracovat docker-compose
+- aura.view
+    [-] Zlepšit bezpečnist kukátka
+    Po volbách začneme
+
+    Kdo používá kukátko
+    - Ondráček
+    - Stejskalová
+    - Nováček
+    - Pokorný
+
+- Poslat Frantovi podklady pro Python
+- JS WebGL příklady (C++ OpenGL až později)
+- Event Sourcing příklady v Pythonu
+Testování v JS pomocí https://mochajs.org
+-https://hackernoon.com/import-export-default-require-commandjs-javascript-nodejs-es6-vs-cheatsheet-different-tutorial-example-5a321738b50f
+-stáhni z https://github.com/mochajs/mocha/releases
+WebDev
+- https://codeburst.io/the-2018-web-developer-roadmap-826b1b806e8d
+Podívat se brutal.js
+Párování záznamů
+- https://www.ncbi.nlm.nih.gov/books/NBK253312/
+Git/Github Branching model
+- https://gist.github.com/digitaljhelms/4287848
+Verzování databáze:
+-https://blog.codinghorror.com/get-your-database-under-version-control/
+-https://spring.io/blog/2016/05/31/zero-downtime-deployment-with-a-database
+WebGL
+- https://stackoverflow.com/questions/25049058/using-a-different-vertex-and-fragment-shader-for-each-object-in-webgl
+- https://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html
+- http://learningwebgl.com/blog/?p=134
+Fyzika
+http://www.continuummechanics.org/index.html

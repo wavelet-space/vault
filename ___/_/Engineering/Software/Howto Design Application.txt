@@ -1,0 +1,24 @@
+== How to design application 
+
+
+Start with requirements. This would not be precise detailed description but high level.
+Write  down features/use-cases e.g 
+
+As a user I want to 
+    download content of some webpage and store them somewhere
+
+This simple use-case imply that we will need to use HTTP request and then use some
+storing capacity in the simple case file system.
+
+The application can be command line so it is good to think about some flags e.g 
+
+    program --url <webpage-url> --output <output-folder>
+
+
+
+== Installing pull-request with pip
+
+    
+    pip install git+https://github.com/MinchinWeb/svglib.git@console_script
+
+See https://stackoverflow.com/questions/13561618/pip-how-to-install-a-git-pull-request

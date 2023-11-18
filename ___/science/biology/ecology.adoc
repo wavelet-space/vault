@@ -1,0 +1,38 @@
+= Ekologie
+
+== Rozmanitost aneb Biodiverzita
+
+Nejdůležitější dimenze diverzity je tělesná velikost
+naprostá většina živočich je malých
+graf hmotnost vs počet druhů
+
+proč je většina druhů malých? protože předek byl malý 
+a zvětšit tělo je náročné, mnohem náročnější nežli ho změnšit
+nebo prostě zůstat stejně velký.
+
+Malý druh toho méně spotřebuje a na dané území se ho vejde více
+velké druhy mají vetší pravděpodobnost vymření
+
+Malý nikoliv však nejmenší druhy mají výhodnou energetickou bilanci
+z hlediska udržení a produkce biomasy  
+
+Důsledky tělesné velikosti
+
+Životní strategie a jejich evoluce
+Kovariance mezi life-history znaky
+
+r-stratég
+* rychlé dospívání
+* krátký život
+* velká investice do reprodukce
+* velké množství malých mláďat
+
+K-stratég
+* pomalé dospívání
+* dlouhý život
+* malá investice do reprodukce
+* malé množství velkých mláďat
+
+
+== Ekofyziologie aneb adaptace na životní podmínky prostředí
+

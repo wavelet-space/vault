@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vega-Lite Bar Chart</title>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+    <style media="screen">
+      /* Add space between Vega-Embed links  */
+      .vega-actions a {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Template for Embedding Vega-Lite Visualization</h1>
+    <!-- Container for the visualization -->
+    <div id="vis"></div>
+
+    <script>
+      // Assign the specification to a local variable vlSpec.
+
+      let url = '8d928312-85ee-4d3e-8c78-997ba5433151.b.json';
+
+        fetch(url)
+        .then(res => res.json())
+        .then(out =>
+          console.log('Checkout this JSON! ', out))
+        .catch(err => { throw err });
+    </script>
+  </body>
+</html>

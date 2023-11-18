@@ -1,0 +1,2 @@
+- Alan Kay
+- Joe Armstrong

@@ -1,0 +1,46 @@
+= Paleobotanika
+
+== třída _Pinopsida_ (jehličnany)
+
+* Jehličnany neboli konifery z anglického _conifers_, doslovně překládané jako šiškonoši (_conus_ = šiška),
+zahrnuje fosilní i recentní dřeviny. 
+
+* Morfologicky jde výhradně o dřeviny s převahou stromů, řídčeji keře.
+
+* Listy vetšinou jehlicovité nebo šupinovité, většinou jednožilné.
+* Jehlice vznikají jako adaptace na aridní permské klima, stejně tak i ochrana semen.
+* Sporofyly šupinovité, ve strobilech
+
+* poprvé se objevují v karbonu
+* divergence nastává juře a křídě
+* v současnosti jde o druhově nebohatou skupinu 
+* převládají v chladnějším až horském pásmu, kde tvoří lesní porost
+* v Evropě, Africe a j. Americe relativně málo druhů
+* v Asis, s. Americe a Austrálii nejvíce druhů
+*   
+
+=== čeleď _Araucariaceae_ (araukáriovité) 
+
+* doloženy z triasu
+* kmen
+* dřevo
+* větve
+* tracheidy
+* pyl
+
+=== _Pinaceae_ (borovicovité)
+=== _Pinus_ (borovice)
+=== _Picea_ (smrk)
+
+
+
+== Zdroje
+
+* Sakala https://drive.google.com/drive/u/1/folders/11uOYzvFD_RuI-meqC1jOAWaNDBk36gVk
+* Fylogeneze a diverzita vyšších rostlin https://is.muni.cz/el/1431/jaro2015/Bi2030/um/
+* Základy systematické paleontologie http://prfdec.natur.cuni.cz/IGP/main/skripta/zaklady_systematicke_paleontologie.pdf
+* 
+
+
+
+

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #editor { width: 100%; height:  500px }
+        #editor textarea { width: 100%; height: 100% }
+    </style>
+</head>
+<body>
+
+    <div id="editor"></div>
+    <input id="range" type="range" min="1" max="100" value="" class="slider" id="undo">
+
+</body>
+
+<script type="text/javascript">
+
+
+/*
+http://prosemirror.net/examples/markdown/
+ 
+Store -> State -> View -> Update
+
+send Command -> dispatcher -> produce Events -> EventBus -> Apply Events   
+*/
+
+//------------------------------------------------------------------------------
+// Module Editor
+//------------------------------------------------------------------------------
+
+/**
+ * The editor state represented as a sequence (array) of events.
+ */
+class State {
+    constructor(initial) {
+        this.current = initial || [] // array of nodes
+    }
+}
+
+class Store {
+
+    constructor(state) {
+        this.changes = []
+        this.changes.push(state)
+    }
+
+    updated(state) {
+        return new this.constructor(
+            this.changes.push(state)
+        )
+    }
+}
+
+/**
+ * The editor view binds the Store HTML text area.
+ */
+class Editor {
+    constructor(target, store) {
+        this.view = target.appendChild(document.createElement("textarea"))
+        this.store = store
+        this.view.value = this.store.changes
+
+        this.view.addEventListener("keypress", (event) => { 
+            this.store = this.store.updated(event.key)
+            console.log(this.store.state, event)
+        }); 
+    }
+}
+
+
+var range = document.getElementById("")
+rangeInput.addEventListener("change", function() {
+    document.getElementById("range").textContent = rangeInput.value;
+}, false);
+
+view = new Editor(document.getElementById("editor"), new Store())
+
+</script>
+</html>

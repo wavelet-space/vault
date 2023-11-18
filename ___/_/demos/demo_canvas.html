@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title></title>
+</head>
+<body>
+
+	<canvas id="canvas"> </canvas>
+
+	<script type="text/javascript">
+
+		const getContext = (canvasElementId, contextType) => {
+			let canvas = document.getElementById(canvasElementId)
+			// Check if the given canvas element exist.
+			if (canvas === null) {
+				throw `The canvas element with id ${canvasElementId} was not found!`
+			}
+			let context = canvas.getContext(contextType)
+			// Check if the context properly created.
+			if (context === null) {
+				throw `The context ${contextType} could be created!`
+			}
+			return context
+		}
+
+		const get2dContext = (canvasElementId) => 
+			getContext(canvasElementId, "2d")
+		
+		const getWebGLContext = (canvasElementId) => 
+			getContext(canvasElementId, "webgl")
+
+
+		let ctx = get2dContext("canvas")
+		console.log(ctx)
+
+	</script>
+
+</body>
+</html>

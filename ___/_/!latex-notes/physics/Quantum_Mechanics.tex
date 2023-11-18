@@ -1,0 +1,202 @@
+\chapter{Kvantová mechanika (nerelativistiská)}
+
+Pravděposobnostní popis, komutátor, operátor, operátor pozice, operátor hybnosti,  relace neurčitosti, Schrodingerovat rovnice bezčasová 
+
+\section{Příklady k přednáškám }
+
+Poruchový počet
+
+
+\section{Vodíku podobný atom}
+\label{QM.30.01.2021}
+
+Uvažujeme jeden elektron a jádro sestávající z 1 až Z protonů.
+Podle klasické fyziky by atom vodíku neměl být vůbec stabilní
+
+Hamiltonián
+
+$$
+    H = -\frac{h^2}{2} ...
+$$
+
+Jádro berem jako nekonečně těžké
+
+
+pro konečné hmotnosti jádra
+
+
+pro limitu $r \to \infty$ je Coulombův potenciál do nuly
+
+
+Vlnová funkce bude záviset na kvantových číslech z momentu hybnosti
+a dodatečné hlavní kvantové číslo $n$
+
+
+$$
+    \psi = \psi_{nlm}(r, \Phi, \phi)
+$$
+
+
+integrály pohybu znamená že se zachovává energi
+
+
+Řešení Shcrodingerovy rovnice pro atom vodíku
+
+$$
+
+    \hat{H} = \frac{h}{2m} ...
+$$
+
+
+$$
+    \hat{L}^2 = -h^2\Delta_{\Phi, \phi}, \quad \hat{L}_z = -ih prt[Phi]
+$$
+
+
+Vlnová funkce pak bude mít tvar
+
+
+Využijeme substituci
+
+$$
+	R(r) = \frac{u(r)}{r} \therefore \ldots
+$$
+
+Pro jednoznačnost přejdeme k bezrozměrných jednotek
+
+Zde $a$ je bohrův poloměr
+
+$$
+    a = 4\pi\epsilon_0 \frac{h}{me^2}
+$$
+
+Také zavedeme berzoměrnou energii
+
+
+Požadujeme aby vlnová funkce byla normalizovaná
+$$
+	\int_{0}^{\infty} {|R(r)|}^2 r^2 dr = 1
+$$$$
+    \eta = \frac{}
+$$
+Vnejniřším řádu to vede na podmínku $\gamma (\gamma - 1) =  l(l + 1)$
+
+Tím pádem máme dvě možné hodnoty: $\gamma = l + 1$ a \gamma = -l$
+
+
+Pro tu druhou ale $\rho \to  \infty$ diverguje.
+
+Dosadíme do $f(\rho)$  do rovnice (řady) $\frac{d^2}{d\rho^2} - 2\alpha \ldots$
+
+Má platit pro libovolné $\rho$
+
+pro koeficienty tak musí platit rekurentní vzorec
+$$
+	a_{\nu + 1} = \frac{2\alpha (\nu + l + 1) - 2Z}{(\nu + l + 2)(\nu + l + 1)-l(l + 1)} a_{\nu}, \quad \nu = 0, 1, \ldots
+$$Jak se řada chová pro velmi vysoké indexy?
+Pokdu $\nu$ bude dost velké pak bude dominovat a vede to na rozvoj exponenciely.
+taková nekonečná řada se dá sečíts a vyjde $f = \rho^{l + 1} e^{2\alpha\rho}$, potom by ale vlnová funkce v limitě $\rho \to \infty$ divergovala a  tedy místo nekonečné řady musíme mít polynom konečného řádu a dostaneme konečnou řadu. Musíme tedy řadu zastavit na konečném indexu $\nu$. Pro jsitou hodnotu $\nu = n_r$ musí být nulový čitatel.
+Z toho plyne $2\alpha(n_r + l + 1) = 2Z, \quad n_r = 0, 1, \ldots$
+
+Toto je kvantovací podmínka pro $\alpha = \sqrt{-\epsilon}$
+
+pro bezrozměrnou energii pak dostaneme
+
+$$	
+	\epsilon = -\alpha^2 = - \frac{Z^2}{n^2}, \quad n = 1, 2, \ldots
+$$Energie vodíku pak vyjde v základním stavu
+
+$$
+	E_n = - \frac{1}{4\pi\epsilon_0}  \frac{Z^2e^2}{}
+$$Energie $E_n$ v Couloumbickém potenciálu jsou
+
+[obr]
+
+Energie základního stavu není degenerovaná avšak energie všech excitovaných stavů jsou degenerované a ta je rovna $\sum_{l=0}^{} (2l + 1) = n^2$
+
+Celkovou vlnovou funkci poté dostaneme dosazením ... do $f(\rho)$
+
+
+\subsubsection{Laguerrovy polynom}
+
+Vlnové funkce několika nějnižších stavů jsou
+$$
+R_{n=1,l=0}(r) = \frac{Z}{}  
+$$Pravděpodobnost nalezení elektrony v daném objemovém elementu zadaném $(r, r + dr)$, $\theta, \theta + d\theta)$, $(\varphi, \varphi + d\varphi)$.
+
+Integrací přes prostorový úhel dostaneme pak...
+
+radiální hustoty pravděpodobností $P_{nl}(r) = |R_{nl}|^2r^2$.
+
+S rostoucí energií se pravděpodobnost nalezení elektronu vzdaluje od jádra.
+
+s, p, d stavy
+
+Polární diagram ukazují závislost 
+
+
+Při přechodu z jednoho stavu do druhého se musí vyzářit jeden foton. Můžeme přecházet diskrítně mezi hladinami a pro každý přechod se přísluší jeden foton.
+
+fe+25, kde se vyskytuje
+přechod od rel k nerel?
+kvantová elektrodynamika
+
+\section{Spojité spektrum}
+
+\chapter{Metoda Free Electron Molecular Orbita (FEMO)}
+\label{QM.07.05.2021}
+
+Ve složitějších látkách neumíme přesně řešit (určit) Schrödingerovu rovnici 
+Při předpokladu ,že můžeme zanedbat vliv interakce elektronů, pak můžeme použít metodu FEMO.
+
+Aplikace na $\pi$ elektrony v $1,3$ butadienu.
+
+Máme čtyři elektrony (fermiony), každý y nich může mít spin $\pm \frac{1}{2}$.
+
+Slaterův determinant umožňuje generovat bázové funkce.
+
+Funkce jsou ortonormální.
+
+Vlnové funkce budou kombinacemi funkcí $\psi_1$ a $\psi_2$
+
+Vlnová funkce musáí být anti
+
+Pro efektivní šířku potenciálové jámy použijeme hodnotu $L = 4 \times 1.4 \time 10^{-10} \SI{m}$.
+
+Pro vlnovou délku fotonu 
+
+
+Pro složitější molekulu např. $1, 3, 5$ \ldots
+
+
+\subsection{Molekula benzenu}
+Metodu FEMO můžeme použít i pro uzavřenou molekulu jako je cyklická, kruhová molekula benzenu.
+Benzen má $3$ dvojné vazby a $6-\pi$elektronů
+
+Máme dvě rovnice $ A ¤\sin 0 B \cos 0 = A \sin kL +  \cos KL $ a další rovnice plyne z podmínky spojitosti derivace $ D_t \psi(0) = D_t \psi(L)$
+
+$$
+A k  \cos(0) - Bk\sin0 \ldots
+$$
+
+a dostaneme maticovou soustavu, pro kterou determinant musí být nula, abychom měli netriviální řešení
+
+To vede na rovnici $\cos kL = 1$ a získáme podmínky 
+
+$$
+kL = 2n\pi\ quad n = 0, \pm 1, \pm 2, \ldots
+$$
+
+Energie bude 
+
+$$
+E_n = {(2n)^2 h^2}{8mL^2}
+$$
+
+Jaké jsou vlnové funkce?
+
+$$
+\begin{gather}
+    \psi_0 = \sqrt{\frac{1}{L}}    
+\end{gather}
+$$

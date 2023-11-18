@@ -1,0 +1,90 @@
+# Poznámky
+
+Pravděpodobně se každá skupina vytvořila v samostatném prostředí se specifickou hloubkou
+vzniku, gravitačním polem, věkem, začáteční a končící teplotou a rychlostí ochlazování.
+Velikost mateřských těles se mohla měnit v důsledku velkých faktorů, kdy některé možná
+byly centrálními jádry 100 km těles, jiné s vyšší rychlostí ochlazování, možná tvořily metrové
+hrozny v horním plášti toho stejného nebo jiného rodového tělesa.
+
+Je docela zajímavé, že chondrity jsou převážně dost homogenní a lze je poměrně dobře
+klasifikovat. Není zde žádný nezařazený a méně než jedno procento anomálních vzorků. U
+železných meteoritů je to, co se týče klasifikace poněkud složitější.
+- Chondrity obsahují milimetrové částečky křemitých střepů, chondruly, 19 – 35% železa (volné
+nickeliferous iron nebo vázené na troilit a silikáty).
+- „Tento „systém“ má pouze poskytnout obraz o chemických vztazích mezi podskupinami, a
+nikoli naznačit genezi. V současné době neexistuje dostatek důkazů, které by umožňovaly
+jasné závěry ohledně vzniku různých skupin meteoritů. „
+
+Pro karbonátové chondrity je předvídáno větší množství skupin a podskupin.
+
+Ve většině chondritů jsou hlavními minerály olivín, ortopyroxen, albitický živec, troilit, kalc.
+pyroxen a kovové nikl-železo (Kamacite, taenit a jejich plessitní srůsty). Kamacit z
+enstatitových chondritů je pozoruhodný vysokým obsahem křemíku (14% hmotnosti), což je
+kompozice, která se jinde vyskytuje jen v některých enst. achondritech a několika železných
+meteoritech (např. Tucson a Horse Creek). U karbonových chondritů se vyskytuje magnetit,
+epsomit (síran hořečnatý), pyrrhotit, dolomit a další minerály, často s „Křišťálovou“ vodou?,
+ale zajímavé jsou zejména organické sloučeniny.
+
+Dále poměrně detailní informace ohledně rozdílů jednotlivých skupin. (Je třeba to klasifikovat
+co chceme vysvětlovat, aby z toho bylo KRÁTKÉ pojednání.
+
+Pro vznik chondrulitů byly navrženy dvě zásadní hypotézy: Jedna hypotéza naznačuje, že
+chondrulity jsou primární objekty, které kondenzovaly z relativně pomalu se ochlazující
+plynné mlhoviny solárního složení a pak se aglomerovaly za vytvoření mateřských těles
+meteoritu. Druhá hypotéza naznačuje, že chondrulity jsou druhotné objekty vytvořené z již
+existujících pevných látek procesy, jako je vulkanismus (Tschermak, 1875), šoková
+metamorfóza (Fredriksson, 1963), távení primitivního prachu (Wood, 1963) nebo vznik
+elektrickými výboji primitivního oblaku prachu (Whipple, 1966).
+
+Po stanovení výše uvedených tříd zůstává řada železitých meteoritů, které jsou dostatečně
+anomální, aby vyžadovaly individuální klasifikaci, jako jedinečné exempláře. Někdy se zdá, že
+dvě nebo více tvoří dvojice nebo trojice, ale obecně vzato anomální železité meteority
+zahrnují meteority, které jsou strukturálně i chemicky snadno rozpoznatelné. Zdá se, že jde o
+bodové vzorky různých, velmi malých „populací“. N&#39;Goureyma, Barranca Blanca, Zacatecas,
+Santa Rosa, Tucson a Nový Baltimore jsou dobrými příklady. Anomální meteority jsou často
+relativně jemnozrnné. Velikost prvotního taenitového krystalu byla řádově 1-3 cm místo
+obvyklé velikosti destet cm až metr. Řezy skrz např. Tucson, Mundrabilla, Santa Rosa a
+N&#39;Goureyma jasně ukazují polykrystalické pole velikých krystalů, často s hojným množstvím
+křemičitanů nebo troilitu v hranicích zrn.
+
+Celkově můžeme říct, že se vyskytuje méně strukturálně anomálních meteoritů než chemicky
+anomálních meteoritů. Mnoho chemicky anomálních meteoritů může být zařazených do
+skupin oktahedritu a ataxitu.
+
+Meteority nejsou brekciované, ale jsou to polykrystalické agregáty feritových a
+austenitových zrn, které narostli do jejich aktuální velikosti (solid state) difuzí.
+
+Existuje mnoho železitých meteoritů, které po rozřezání mohou být složené z několika
+krystalů taenitu, což z nich dělá anomálii. Ale většina je normálním členem skupiny. Jsou
+klasifikované podle šířky pásma, ale předpona „polykrystalický“ naznačuje, že zkoumané
+vzorky byly složené z několika krystalů taenitu. Pokud tato předpona není uvedená,
+předpokládá se, že příslušné meteority jsou nebo při austenitických teplotách byly, jednotlivé
+krystaly taenitu větší jako stopa.
+
+U jednotlivých meteoritech je uvedený kvalifikační údaj o množství a povaze inkluzí (silikáty,
+grafit, troilit) a o stavu rekrystalizace, jestli se považuje za charakteristický pro konkrétní
+meteorit. Zatím co v každé třídě nebo skupině může nastat rekrystalizace a jiné znaky
+kosmického přehřátí, zdá se, že křemičitany jsou ve významných množství omezené na hrubé
+oktaedrity skupiny I a na několik anomálních železitých meteoritů.
+
+Strukturní klasifikační schéma, jak je rozvinuté výše, se jen mírně liší od klasických. Je
+záměrně vyvinuté tak, aby zůstal čistě popisných systémem založeným na morfologických
+znacích, které se dají lehce pozorovat okem nebo lupou. Neměl by se tento systém používat
+na studie geneze. Pokud se toto schéma použije s chemickým systémem, poskytuje
+kompletní „manuál“ pro železné meteority.
+
+Chemická klasifikace železných meteoritů – V chemickém klasifikačních systému, který
+původně navrhli Goldberg et al. (1951), prvky nikl a galium byly vybrané na vytvoření nového
+klasifikačního schéma důležité pro genezi (šlo o pokus seskupit všechny železné meteority
+podobného složení a pravděpodobně podobného původu). Později byly zahrnuté další
+parametry, nejdříve galium (Lovering et al. 1957) a potom iridium (Wasson a Kimberlin 1967).
+Přesné stanovení Ni, Ga, Ge a Ir spolu s mikroskopií s nízkým výkonem umožnily Wassonovi
+definovat 12 nebo 13 skupin chemicky příbuzných meteoritů. V 4rozměrném kompozičním
+prostoru (Ni, Ga, Ge, Ir) tvoří skupiny velmi kompaktní dobře definované shluky. Shluky mají
+omezený rozsah koncentrace všech prvků v porovnání s rozsahem, který vykazuje všechny
+železné meteority: vykazuje hladké variace v koncentraci jednoho prvku, kde jsou vynesené
+proti koncentraci jiného prvku a členové vykazují podobné struktury (Wasson a Kimberlin
+1967).
+
+Dále popis tabulek a grafů, kde je popis, jak se dá struktura a chemismus použít na jasné
+odlišení skupin meteoritů.

@@ -1,0 +1,60 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1703,         52]
+NotebookOptionsPosition[      1165,         36]
+NotebookOutlinePosition[      1570,         52]
+CellTagsIndexPosition[      1527,         49]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["", "Input",
+ CellChangeTimes->{{3.871456692763072*^9, 3.8714567802349095`*^9}},
+ FormatType->
+  "TextForm",ExpressionUUID->"16adef27-21e9-44b6-bcbf-165e9381a75e"],
+
+Cell[TextData[StyleBox["Lagrangeova interpolace", "Title"]], "Input",
+ CellChangeTimes->{{3.8714567853728385`*^9, 3.8714568250878553`*^9}, {
+  3.8714569452430573`*^9, 3.871456959150908*^9}},
+ FormatType->
+  "TextForm",ExpressionUUID->"ed688276-2bdc-40c5-a812-6092fe7319a3"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8714567822023144`*^9, 
+  3.8714567830355625`*^9}},ExpressionUUID->"0196b631-e4f6-4596-9822-\
+bfa3d6bc46f7"]
+},
+WindowSize->{760, 813},
+WindowMargins->{{Automatic, -1853}, {Automatic, 84}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6a8313d7-f641-4f39-abbb-6db74448c554"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 168, 3, 35, "Input",ExpressionUUID->"16adef27-21e9-44b6-bcbf-165e9381a75e"],
+Cell[729, 25, 273, 4, 86, "Input",ExpressionUUID->"ed688276-2bdc-40c5-a812-6092fe7319a3"],
+Cell[1005, 31, 156, 3, 35, "Input",ExpressionUUID->"0196b631-e4f6-4596-9822-bfa3d6bc46f7"]
+}
+]
+*)
+

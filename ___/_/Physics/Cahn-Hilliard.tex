@@ -1,0 +1,93 @@
+
+\documentclass[a4]{article}
+
+\input{../preamble.tex}
+
+\DeclareMathOperator{\Res}{Res}
+
+\title{Thermodynamics, Statistical and Quantum Mechanics}
+
+\begin{document}
+
+\section{Cahn-Hilliardova rovnice a její odvození}
+
+Rozbor článku: Physical, mathematical, and numerical derivations of the Cahn–Hilliard
+equation.
+
+V článku se odvodí fyzikálně, matematicky a numericky Cahn-Hilliardova rovnice pro binární směs.
+Touto rovnicí lze popsat odmíšení fází (exsoluci) v binární směsi, kdy se původně homogenní směs
+tvořená jednou fází rozdělí dvě fáze v podobě domén obahující jednu komponentu.
+
+CH popisuje časový vývoj konzervativního pole, které je popsáno spojitou a dostatečně diferencovatelnou funkcí polohy (a času).
+Oddělení fází je způsobeno vlivem ne Fickovské (\textit{uphill}) difuze, která je řízena nikoliv gradientem koncentrace, ale  gradientem chemického potenciálu.
+
+CH byla původně navržena jako model pro jev nazývaný spinodální dekompozice, pozorovaná v binárním A-B systému (slitině) při konstantní teplotě. 
+
+Počáteční stav systému je, že se skládá z určitého molárního množství fáze B a spontánně se rozdělí na 
+dvě fáze A a B, které mají stejnou krystalovou orientací (fluida?) ale různé složení popsané 
+kompozičním (koncentračním?) polem $c(\vb, t)$.
+
+Časový vývoj $c$ je popsán řešením CH.
+
+$$
+\partial_t c = \div(M \grad{\mu}) = M \laplacian{\mu}
+$$
+
+, kde $M$ je konstantní mobilita (difuzivita), která obecně je tenzorem (2. řádu) a 
+$\mu$ je lokální chemický potenciál definovaný jako funkce
+
+$$
+    \mu = F(c) - \kappa \laplacian{c}.
+$$
+
+$F(c)$ je hustota Helmholtzovy volné energie pro jednu molekulu (částici) homogenního systému
+o složení $c$ a $\kappa > 0$ je konstanta nazývaná také jako koeficient gradientu energie $\kappa = \epsilon^2$, který úzce souvisí s mezifázovým rozhraním.
+
+Základním konceptem (vlastností) CH je, že rozhraní mezi fázemi $\alpha$ a $\beta$ není ostré (nulové tloušťky), ale že má konečnou nenulovou tloušťku, kde $c$ se mění postupně.
+
+Z obrázku [1] můžeme vidět, že složení $c$ a v termodynamicky rovnovážném stavu je uvedeno pro každou doménu jako $c^{eq}_{\alpha}$ respektive $c^{eq}_{\beta}$.
+
+Na rozhraní je potom $c_{\alpha} c < c_{\beta}$.
+
+Výhodou použití CH oproti jiným metodám je v tom, že nemusím explicitně sledovat rozhraní mezi fázemi, protože to 
+je zahrnuto jako vlastnost (hodnota) pole ($c(\vb, t)$). Tomuto konceptu se také říká difuzní rozhraní.
+
+Proto můžeme CH výhodně použít např. pro vývoj mikrostruktur obecně, kde se předtím pracně aplikovaly metody ostrého rozhraní označované jako 
+Sefanův problém, kdy se rozhraní mezi fázemi časově proměnné 
+
+%(https://en.wikipedia.org/wiki/Stefan_problem).
+% (https://www.researchgate.net/figure/Schematic-of-1D-Stefan-problem_fig1_315382305)
+
+V modelech fázového pole poté zavadíme parametr uspořádání (order parameter) či fázoové pole $\phi(\vb, t)$ namísto 
+kompozičního (koncentračního) pole $c(\vb x, t)$, 
+
+\section{Fyzikální odvození z termodynamických principů}
+
+Fyzické odvození je provedeno z termodynamických principů, kdy volná energie izotropního systému oblasti $\Omega$  
+
+\begin{enumerate}
+
+\item Odvodíme hustotu Helmhotzovy volné energie $F(c)$ pro homogenní systém.
+
+\item Odvodíme lokální hustotu Helmholtzovy energie pro nehomogenní systém v podobě funkcionálu $c(\vb x, t)$
+
+\item Lokální chemický poetnciál $\mu$, který musí být potom rovnoměrný v celém systému v rovnováze, je poté definován jako variace (variační) derivace funkcionálu $F$ a gradient 
+toku hmoty je $J = - \grad {\mu}$
+
+\item CH nakonec získáme substitucí vztahů mezi $J$ a $\mu$ do rovnice (kontinuity) zachování hmoty.
+
+\ite,m  NVR X½FðcÞ þ 0:5�2jrcj2�dx. 
+
+
+
+\end{enumerate}
+
+\subsection{Volná energie homogenního systému}
+
+\subsection{volná energie heterogenního systému}
+
+\section{Matematické odvození CH jako gradientního toku}
+
+[TODO]
+
+\end{document}

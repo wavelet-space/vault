@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf8">
+</head>
+<body>
+  <canvas id="canvas"; background-color: white"></canvas>
+</body>
+  <script type="module">
+    
+    import { renderSquareGrid, square } from "./cgs-canvas.js"
+
+    const World = {
+      
+      bounds: [100, 100],
+      
+      items: [
+      
+      ],
+
+      /**
+       * The inital state of the world.
+       */
+      init: () => {
+        // no-code
+      },
+
+      /** 
+       * Update the state of the world. 
+       */
+      update: (item, dt) => {
+        
+      },
+        
+      /** 
+       * Render the state of the world.
+       */
+      render: (item) => {
+        
+      },
+    }
+
+    var canvas = document.getElementById("canvas")
+    var context = canvas.getContext("2d")
+
+    context.canvas.width = 201
+    context.canvas.height = 201;
+
+    renderSquareGrid(context, 20)
+
+    square(context, [0, 0], 20, {fillColor: "black"})
+
+  </script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style type="text/css">
+        canvas { border: 1px solid black; }
+    </style>
+
+    <script type="text/javascript" src="index.js"></script>
+    
+    <script type="module">
+
+        window.onload = () => {
+            
+            var canvas1 = document.getElementById("canvas1");
+            var canvas2 = document.getElementById("canvas2");
+            
+            canvas1.width = 500;
+            canvas1.height = 300;    
+            canvas2.width = 300;
+            canvas2.height = 300;
+
+            var data = {
+                "Classical music": 10,
+                "Alternative rock": 14,
+                "Pop": 2,
+                "Jazz": 12
+            };
+
+
+            let pieChart = new PieChart({
+                data: data,
+                canvas: canvas2,
+                legend: "Legend",
+                doughnutHoleSize:0.5, 
+                colors: [
+                    "rgb(100, 100, 100)",
+                    "rgb(150, 150, 150)", 
+                    "rgb(200, 200, 200)",
+                    "rgb(180, 180, 180)"
+                ]
+            });
+            
+            //pieChart.draw();
+
+            let barChartOptions ={
+                context: canvas1.getContext('2d'),
+                data: data,
+                seriesName: "Legend",
+                padding: 10,
+                gridScale:5,
+                gridColor:"#222",
+                colors: [
+                    "rgb(100, 100, 100)",
+                    "rgb(150, 150, 150)", 
+                    "rgb(200, 200, 200)",
+                    "rgb(180, 180, 180)"
+                ]
+            };
+
+            let barChart = charts.chart('bar', barChartOptions);
+            charts.draw(barChart);
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+</body>
+</html>

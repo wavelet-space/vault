@@ -1,0 +1,39 @@
+= Zabezpečení webové aplikace 
+
+== Přehled metod pro autorizaci
+
+Metod pro zapezpečení webových aplikací je několik.
+
+== HTTP Basic Authentication
+
+Klient posílá uživatelksé jméno a heslo se zasílanou zprávou (requsest) v hlavičce `Authorization`
+v jediném řetězci `username:password`, který je enkodován pomocí Base64. Basic kyword je přidáno před tento řetězec
+
+curl --header "Authorization: Basic m9objpzZWNyZXQ=" some-website.net
+
+Využití je v jednoduchých aplikacích, např na intranetu, kde je aplikace izolována od vnější sítě. V jiných případech jde o příliš jednoduchou a lehece napadnutelnou formu zabezpečení. Doporučujeme ji raději nepoužívat.
+
+=== JSON Web Token (JWT)
+
+Vygenerovaný token uložíme na klientovi.
+
+    Header
+    Payload
+    Signature
+
+=== Request Signing
+
+Protože pracujeme s microservices, kde služby komunikují pomocí API mezi sebou, potřebujeme tuto metodu autorizace.
+Předpoklad: Známe HTTP(s) protokol
+HMAC
+
+==== Ukázka komunikace
+
+Přišla zpráva od Alice?
+HTTP Request {
+    public_key: 001,
+    signatur: dkajaiodaxoa792879729xjxjaojao,
+    body: {
+        message: "hi"
+    }
+}

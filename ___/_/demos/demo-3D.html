@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title></title>
+</head>
+<body>
+
+
+<canvas id="screen" width="500", height="500"></canvas>
+
+<script type="text/javascript">
+
+
+// Import hex/rgb from graphics.color
+
+/**
+ * The screen backed by HTML canvas onto which we will paint.
+ */
+class Screen {
+
+    constructor(canvas, pixel) {
+        this._context = document.getElementById(canvas).getContext("2d")
+        
+        this.real_width = this._context.canvas.width
+        this.real_height = this._context.canvas.height
+        
+        // The square pixel properties
+        this.pixel_size = pixel.size 
+        this.pixel_color = pixel.color
+        
+        this._context.fillStyle = this.pixel_color    
+        this._context.fillRect(0, 0, this.real_width, this.real_height)
+        this._context.canvas.width = this.real_width 
+        this._context.width = this.real_width 
+        this._context.canvas.height = this.real_height 
+        this._context.height = this.real_height 
+
+        this.width = this.real_width / this.pixel_size
+        this.height = this.real_height / this.pixel_size
+
+        this.buffer = new Array(this.width * this.height).fill("black")
+    }
+
+    static make(canvas, pixel = {size: 10, color: "yellow"}) {
+        return new Screen(canvas, pixel)
+    }
+
+    getPixel(position) { 
+        return this.buffer[position[0] + this.width * position[1]]
+    }
+
+    setPixel(position, color) { 
+        this.buffer[position.x + this.width * position.y] = color // Set the pixel color. 
+    }
+
+    paint() {
+        // For each pixel in frame buffer put the pixel onto canvas.
+        for (let i = 0; i < this.width; ++i) {
+            let position_x = this.pixel_size * i
+            for(let j = 0; j < this.height;  ++j) {
+                let position_y = this.pixel_size * j
+                this._context.save()
+                this._context.fillStyle = this.getPixel([i, j])
+                this._context.fillRect(position_x, position_y, this.pixel_size, this.pixel_size);
+                this._context.restore()
+            }
+        }  
+    }
+
+    clear(color="black", repaint=true) {
+        // For each pixel in buffer set the color to `color`.
+        this.buffer.fill(color)
+        if (repaint) {
+            this.paint()        
+        }
+    }
+}
+
+screen = Screen.make(canvas="screen", pixel = {size: 10, color: "black"})
+
+screen.clear(color="yellow", repaint=false)
+
+// screen.setPixel({x: 0, y: 0}, "red")
+// screen.setPixel({x: 1, y: 0}, "green")
+        
+for (let i = 0; i < screen.width; ++i) {
+    for (let j = 0; j < screen.height; ++j) {
+        if (j % 2) {
+            // Generate random color.
+            // Generate a xor pattern with some random noise
+                var red = Math.floor(Math.random() * 100);
+                var green = Math.floor(Math.random() * 100);
+                var blue = Math.floor(Math.random() * 100);
+            screen.setPixel({x: i, y: j}, rgbToHex(red, green, blue))
+        }
+    }
+}
+
+screen.paint()
+console.log(screen.getPixel([1, 1]))
+
+        
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+DDD in Elixir
+
+https://github.com/pcmarks/ddd_elixir_demo_stage1
+
+
+Other interesting projects
+
+- https://github.com/elixir-nx/nx
+- https://github.com/upstarter/automata
+
+Excel to Notebook: F# -> Jupyter
+
+Lambda functions in Excel
+
+
+

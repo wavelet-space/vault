@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+class MessageBus {
+  constructor() {
+    this.events = {}
+  }
+
+  publish(event, payload = {}) {
+    if (!this.evenst.hasOwnProperty(event)) {
+      throw `$Unknown event ${event}!`
+    }
+    return this.events[event].map(handler => handler(payload))
+  }
+
+  subscribe(event, handler) {
+    if (!this.evenst.hasOwnProperty(event)) {
+      this.events[event] = []
+    }
+    this.events[event].push(handler) 
+  }
+}
+
+
+class Store {
+  constructor(params) {
+    this.state = {}
+    this.status = 'SUSPENDED'
+    this.actions = {}
+    this.changes = {}
+  }
+}
+  
+
+</script>
+
+
+
+</body>
+</html>

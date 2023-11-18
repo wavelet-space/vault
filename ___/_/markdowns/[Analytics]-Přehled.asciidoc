@@ -1,0 +1,16 @@
+= Přehled pojmů
+
+Máme dva druhy dat.
+
+- *Dimenze* je atribut nějakého objektu analýzy, např. v případě návštěv stránek je Město ze ktrého n. přícházeji dimenzí.
+  nad touto dimenzí pak máte metriky viz dále.
+  
+  https://marketing.adobe.com/resources/help/en_US/dsc/c_dimensions.html
+
+- *Metrika* je číslo, je měřitelná, např.celkový počet, průměr, poměr
+    
+  https://marketing.adobe.com/resources/help/en_US/dsc/c_metrics.html
+
+  - Vypočítaná Metrika
+    https://support.google.com/analytics/answer/6121409?hl=cs&ref_topic=2709827
+    https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/

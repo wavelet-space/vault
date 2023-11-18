@@ -1,0 +1,125 @@
+\chapter{Měrné teplo ideálního krystalu}
+
+Tepelní kapacita za konstantního tlaku (izochorická) pro makroskopickou soustavu.
+
+\begin{equation}
+    C_V = \pdv{U}{T}, \quad [V]
+\end{equation}
+
+Pro měrné teplo ideálního krystalu existuje Einsteinovo (1906) a Debeyovo (1912) teoretické odvození. Oba modely vycházejí z Planckova principu kvantování energie.  
+
+\section{Empirické vlastnosti tepelné kapacity}
+
+\begin{enumerate}
+    \item Při nulové teplotě je $\lim_{T \to 0} C_V = 0$.
+    \item Při nízkých teplotách do 15K je $C_V = konst. T^3$.
+    \item Při vysokých teplotách v blízkosti bodu tání je $ \lim_{T \to \infty} C_V = 3R$ Dulong-Petitův zákon (klasický model).
+\end{enumerate}
+
+\section{Einsteinův kvantový teoretický model}
+
+Předpoklady:
+\begin{itemize}
+    \item \textbf{Nezávislost} vibrace jedné částice je nezávislá na vibracích okolních částic.
+    \item \textbf{Izotropie} vibrace, tj. žádný směr vibrace částice není preferován, všechny mají stejnou váhu -- jsou stejně pravděpodobné.
+    \item \textbf{Harmonicita} vibrací tj. vibrace částice se dá popsat harmonickou funkcí a všechny částice kmitají na stejné frekvenci $\nu$.
+    \item Počet oscilátorů je $3N_A$ molů, jde $N_A$ je Avogardova konstanta.
+    \item  Spektrum energií není spojité, ale kvantované v jednotkách $h\nu$ 
+\end{itemize}
+
+Z předpokladu o nezávislosti odvodíme, že partiční funkce vibrací $Q_{vib}$ je rovna součinu partičních funkcí jednotlivých částic $q$ \cite{Malijevsky2009}. Pro krystal o $N$ částicích je tedy
+$$
+    Q_{vib} = q^N.
+$$
+
+Z předpokladu o izotropnosti plyne, že partiční funkce jedné částice 
+$$
+    q = q_x . q_y . q_z = q_x^3.
+$$.
+
+Z předpokladu o harmonicitě plyne, že pro vibraci částice (molekyly) v kvantovém stavu (s kvantovým číslem) $n$ je energie $ \epsilon_n = h \nu (n + \frac{1}{2}) = \hbar \omega (n  + \frac{1}{2})$ .
+
+$$
+q_x = \sum_{n = 0}^{\infty} e^{ \frac{-\epsilon_{\n}}{k_B T}}.
+$$
+
+Sečteme geometrickou řadu pro $q_x$ a další odvození celkové partiční funkce viz \cite{Malijevsky2009}.
+
+V \cite{Danis2019} je odvození s pomocí pravděpodobností, že částice je ve stavu $n$ máme $p_n \sim e^{-\frac{-\epsilon_n}{k_B T}}$.
+
+% % todo Boltzman, Raoult, Avogadro, Planck Macro
+
+Střední energii získáme derivováním partiční funkce podle $\beta = \frac{1}{k_B T}$. 
+$$
+\bar E = \pdv{Q}{\beta}
+$$
+
+Výraz pro izochorickou měrnou tepelnou kapacitu získáme derivováním střední energie podle teploty.
+
+$$
+C_V = \pdv{\bar E}{T} = \ldots
+$$
+
+Nakonec dostaneme Einsteinův výraz pro tepelnou kapacitu ideálního krystalu
+
+\begin{equation}
+    C_V_{Einstein}  = 3 N_A k_B\ (\beta / T)^2 \frac{e^{-\beta/T}}{ (1-e^{-\beta/T})^2 }
+\end{equation}
+
+, kde $\beta = h\nu/k_B = \hbar \omega/k_B, \quad [K]$ je Einsteinova charakteristická teplota.
+
+\subsection*{Limitní případ pro $T \to 0$}
+
+Pro nízké teploty bude výraz $e^{-\beta/T}$ velmi malý a dostaneme
+
+$$
+    C_V = 3N_A k_B \Big(\frac{\beta}{T}\Big)^2 e^{-\beta/T}
+$$
+
+\subsection*{Limitní případ pro $T \to \infty$}
+ 
+ Pro vysoké teploty bude $\frac{1}{k_B T} \to 0$ a tedy $\beta/T$ je malé; exponencielu nahradíme Taylorm $e^x = 1 + x$
+ 
+ $$
+    C_V = 3N_A k_B = 3R
+$$
+, kde $R$ je univerzální plynová konstanta.  
+
+\subsection*{Závěr} 
+
+Model dobře popisuje model při vyšších teplotách a nulové teplotě, avšak pro teploty blízké absolutní nule neodpovídá pozorované závislosti $C_V = \alpha T^3$ tj. nesplňuje asymptotický vztah.
+
+\section{Debeyův kvantový teoretický model}
+
+Debeyův model již nepředpokládá, že částice vibrují nezávisle a na stejné frekvenci tzn. že počítají s elastickými vazbami. Odvození vzrorce viz \cite{Danis2019}.
+
+\begin{equation}
+    C_V_{Debeye} = 9N_Ak_B \Big(\frac{T}{\theta_D}\Big)^3 \int_{0}^{\frac{\theta_D}{T}}  \frac{x^4 e^4}{(e^x - 1)^2} dx.
+\end{equation}
+
+\subsection*{Limitní případ pro $T \to \infty$}
+
+Horní integrandu mez je malá a tak nahradíme exponenciálu v integrandu Taylorovým polynomem.
+
+$$
+C_V \approx 3N_A k_B
+$$
+, což odpovídá Dulong-Petitovu zákonu.
+
+\subsection*{Limitní případ pro $T \to 0$}
+
+Horní mez integrálu bude nekonečno a vzorec přejde na
+$$
+C_V \approx T^3
+$$
+
+\subsection*{Závěr}
+
+Debeyeův model splňuje asymptotické chování, platí pro kove i nekovy, ovšem za vysokých teplot již se projevuje vliv volných elektronů, které musíme opět započítat. Debeyův model je tak lepším přiblížením než Einsteinův.
+
+\begin{thebibliography}{}
+
+\bibitem{Danis2019} S. Daniš: Atomová fyzika a elektronová struktura látek. MatfyzPress Praha, 2019.
+\bibitem{Malijevsky2009} A. Malijevský: Lekce ze statistické termodynamiky, VŠCHT Praha, 2009
+\bibitem{Kraus2017} I. Kraus., J. Fiala : Elementární fyzika pevných látek, ČVUT Praha, 2017
+\end{thebibliography}

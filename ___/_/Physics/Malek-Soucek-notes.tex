@@ -1,0 +1,82 @@
+% Mechanika a termodynamika kontinua a teorie směsí.
+\part{Mechanika kontinua}
+
+Poznámky ze vychází s přednášek M.L, O.Č a skript Málek a Souček 2021.
+
+\section{Zápisky ze schůzek}
+
+\begin{enumerate}
+    \item Probrat kapitolu 1 Callen 
+\end{enumerate}
+
+
+\chapter{Matematický aparát}
+
+\section{Matice}
+
+\begin{enumerate}
+    \item transpozice, inverze: $(A \cdot B)^T = B^T \cdot \A^T, \quad (A \cdot B)^{-1} = B^{-1} \cdot A^{-1}, \quad (A^{-1})^T = (A^T)^{-1}$
+    \item ortogonální matice:  $Q^T = Q^{-1}, \quad Q^T \cdot Q = Q \cdot Q^T = I, \quad |Det(Q)| = 1 $
+    \item vlastní čísla  vektory: $A \cdot \vb v = \lambda \vb v$
+    \item determinant $Det(A \cdot B) = Det(A) \cdot Det(V) $
+    \item Diagonalizace matice
+    \item Pozitivní definitnost matice
+    \item Mocnina respektive odmocnina matice
+    \item $T : U$ kontrakce tenzorů
+\end{enumerate}
+
+\section{Vektory}
+\section{Tenzory}
+
+tenzor prvního řádu, tenzor druhého řádu, tenzor třetího řádu, Levi-Civitův tenzor $\epsilon_{ijk}$, 
+
+\subsection{Operátory}
+
+Jakobián a diferenciální operatory: grad, curl (rot), div
+
+\chapter{Kinematika}
+
+Kinematika neboli studium pohybu.
+
+V mechanice kontinua si pohyb tělesa $\mathfrak{B}$ představujeme jako funkci $\chi = \chi(\vb X, t)$, která zobrazuje jeho počáteční polohu $\vb X$ do konečné polohy $\vb x = \chi(\vb X, t)$.
+
+Pomocí velkého písmene označujeme referenční konfiguraci např. $\vb X$ a pomocí malého písmene označujeme aktuální konfiguraci např. $\vb x$.
+
+\begin{equation}
+    \chi(\dot, t) : \kappa_0(\mathfrak{B}) \to \kappa_t(\mathfrak{B}) 
+\end{equation}
+
+Prostorový gradient:
+
+\begin{gather}
+    Grad[\Phi(\vb X, t)] = \pdv{\Phi}{\vb X} \\
+\end{gather}
+
+\chapter{Deformace}
+
+\subsection{Předpoklad kontinuity}
+
+Předpokládáme, že funkce $\chi, \ldots$ jsou dostatečně pekné a hladké: jednoznačné, invertovatelné, derivovatelné do libovolného rádu až na vybrané singulární body, křivky, povrchy. Zaručujeme si tím, že těleso má konečný objem tzn. nemůžeme ho deformovat tak, že bude mít nulový nebo nekonečný objem a dále, že těleso zachovává dimenzionalitu tj. objem se deformuje na objem, povrch na plocha na plochu (povrch) a křivka na křivku. Při tomto předpokladu tedy nelze uvažovat o vzniku nových povrchů, lomu, trhhlinách a jiných diskontinuitách.
+
+
+\subsection{Materiálový popis}
+\subsection{Referenční popis Lagrangeův}
+\subsection{Prostorový popis Eulerův}
+\subsection{Relativní popis}
+
+\subsection{Materiálový popis}
+\subsection{Referenční popis Lagrangeův}
+\subsection{Prostorový popis Eulerův}
+\subsection{Relativní popis}
+
+
+Polární rozklad deformačního gradientu je analogiií rokladu komplexního čísla na $r$ a $\phi$ např. $z = Re + Im = x + iy = r \exp(i\phi)$, kde $r = \sqrt(x^2 + y^2)$ a $\phhi = \atan(\frac{y}{x})$.
+
+Tenzor s nenulovým determinatem můžeme rozložit na orotogonální tj. rotační složku (tenzor) a levý nebo pravý \textit{stetch} symetrický  a pozitivně definitní tenzor.
+
+$$
+    F = R \cdit U = V \cdot R
+$$
+
+Green, Piola, Finger, Cauchy deformační tenzor.
+

@@ -1,0 +1,91 @@
+\chapter{Deformation}
+
+\section{Stress}
+
+Stress $\Stress$ is a tensor quantity.
+
+\subsection{Stress Tensor 2D Notation}
+
+\begin{equation}
+     \Stress \equiv 
+     \begin{bmatrix} 
+        \sigma_{11} & \sigma_{12} \\
+        \sigma_{21} & \sigma_{22} \\
+    \end{bmatrix}
+    =
+    \begin{bmatrix} 
+        \sigma_{xx} & \sigma_{xy} \\
+        \sigma_{yx} & \sigma_{yy} \\
+    \end{bmatrix} 
+    = 
+    \begin{bmatrix} 
+        \sigma_{xx} & \tau_{xy} \\
+        \tau_{yx} & \sigma_{yy} \\
+    \end{bmatrix} 
+\end{equation}
+
+\subsection{Stress Tensor 3D Notation}
+
+\begin{equation}
+     \Stress \equiv 
+     \begin{bmatrix} 
+        \sigma_{11} & \sigma_{12} & \sigma_{31} \\
+        \sigma_{21} & \sigma_{22} & \sigma_{31} \\
+        \sigma_{31} & \sigma_{32} & \sigma_{33} \\
+    \end{bmatrix}
+    =
+    \begin{bmatrix} 
+        \sigma_{xx} & \sigma_{xy} & \sigma{xz} \\
+        \sigma_{yx} & \sigma_{yy} & \sigma{yz} \\
+        \sigma_{zx} & \sigma_{zy} & \sigma{zz} \\
+    \end{bmatrix} 
+    = 
+    \begin{bmatrix} 
+        \sigma_{xx} & \tau_{xy} & \tau{xz} \\
+        \tau_{yx} & \sigma_{yy} & \tau{yz} \\
+        \tau_{zx} & \tau_{zy} & \sigma{zz} \\
+    \end{bmatrix} 
+\end{equation}
+
+\begin{equation}
+\end{equation}
+    
+Proof that stress tensor is symmetric tensor if the body is in rotational equlibrium.
+% https://eng.libretexts.org/Bookshelves/Civil_Engineering/Book%3A_All_Things_Flow_-_Fluid_Mechanics_for_the_Natural_Sciences_(Smyth)/17%3A_Appendix_F-_The_Cauchy_Stress_Tensor/17.03%3A_F.3_Symmetry_of_the_stress_tensor#:~:text=i.e.%2C%20the%20stress%20tensor%20is%20symmetric%20at%20every%20point%20in%20space.
+
+
+A density $\rho$ at a point $P$ contained in volume $V$ is a limit
+$$
+    \rho^{(P)} = \lim_{\Delta V \to 0} = \frac{\Delta m}{\Delta V} 
+$$. This is the average density in the volume around the given point.     
+
+
+The force can be of two types: the \textit{volume (body) force} or \textit{surface (contact) force}.
+
+\subsection{Volume force}
+
+The magnitude of the volume force is proportional to the mass and acts at distance. This type of force is, e.g., gravity and magnetic force. They can be computed per unit body mass or volume, hence the name.
+
+\begin{equation}
+    \vec b (\vec x) = \lim_{\Delta m \to 0} \frac{\Delta f}{\Delta m}
+\end{equation}
+
+\subsection{Surface force}
+
+\subsection{Traction vector}
+
+The traction vector $\vec t$ is defined as
+
+\begin{equation} \label{eq:traction_vector.1}
+    \vec{t} := \frac{\vec f}{A}
+\end{equation}
+
+where $\vec f$ is a force acting \textbf{\textbf{uniformly}}\footnote{When  the force doesn't act uniformely we could use integration over the area $ f = \int_S f ds $.} on the surface $S$ with area $A$. The traction really is a vector and has always a direction of the applied force $\vecf$.  
+
+\subsubsection{Example of calculating the traction vector magnitude}
+
+\cdots
+
+\subsection{Normal and shear stress as components of the traction vector}
+
+The traction vector can be decomposed to two perpendicular components. The first component, perpendicular to the surface, is called the \textit{normal stress} vector. The second component, parallel to the surface, is called the \textit{shear stress} vector.

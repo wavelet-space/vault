@@ -1,0 +1,9 @@
+{
+    "width": 500,
+    "height": 200,
+    "config": {
+      "axis": {
+        "grid": false
+      }
+    }
+  }

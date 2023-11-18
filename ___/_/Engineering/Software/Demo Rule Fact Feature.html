@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf8">
+  <!-- <script type="text/javascript" defer src="./microlight.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <style type="text/css">
+    
+    .card {
+      border: 1px solid black;
+      margin: 0 0 1em 0;
+      padding: 0.4em;
+    }
+  </style>
+  <title></title>
+</head>
+<body>
+
+<div id="container">
+
+<header>HEADER</header>
+
+<div id="main" class="left-content">
+
+</div> <!-- /left-content -->
+
+<div class="right-content"> 
+  <div id="toc"></div>
+</div>
+
+
+</div> <!-- /container -->
+
+<script type="text/javascript">
+
+  class Entity {
+    constructor(id, name) {
+      this.id = id
+      this.name = name
+    }
+  }  
+
+  class Rule extends Entity { 
+
+    constructor(id, name) {
+      super(id, name)
+    }
+
+    static make(id, name) {
+      return new Rule(id, name)
+    }
+
+    get template() {
+      return (`
+        <div class="card rule">
+          <header class="card-header">
+            <p class="card-header-title">
+              ${this.constructor.name}-${this.id}
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              ${this.name}
+            </div>
+          </div>
+        </div>`
+      )
+    }
+  }
+
+  class Story extends Entity {
+
+    constructor(id, name) {
+      super(id, name, text)
+    }
+
+    get template() {
+      return `
+        <div class="card feature">
+          <header class="card-header">
+            <p class="card-header-title">
+              [STORY-${this.id}] ${this.name}
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              ${this.text}
+            </div>
+          </div>
+        </div>
+      `
+    }
+  }
+
+  // class Usecase {  }
+
+  class Feature extends Entity {
+
+    constructor(id, name, stories = []) {
+      super(id, name)
+      this.stories = stories
+    }
+
+    get template() {
+      return (`
+        <div class="card case">
+          <header class="card-header">
+            <p class="card-header-title">
+              ${this.constructor.name}-${this.id}
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              ${this.name}
+            </div>
+          </div>
+        </div>`)
+    }
+  }
+
+
+  let rules = [
+    Rule.make(1, "V daný okamžik může mít osoba pouze jednu aktivní stranu."),
+    Rule.make(1, "V daný okamžik může mít osoba pouze jednu aktivní stranu.")
+
+  ]
+
+  let ruleDiv = ""
+  for (let i = 0; i < rules.length; ++i) {
+    ruleDiv += rules[i].template
+  }
+
+  // let stories = [
+  //   new Story(`${entity} SHOULD be able to ${action} BECAUSE {benefit}.`"}
+  // ]
+  // let stories = ""
+  // for (let i = 0; i < stories.length; ++i) {
+  //   c += caseTemplate(i, cases[i].text);
+  // }
+
+
+  let features = [
+    new Feature(1, "Hromadný import osob")
+  ]
+
+  let featureDiv = ""
+  for (let i = 0; i < features.length; ++i) {
+    featureDiv += features[i].template
+  }
+
+  document.getElementById("main").innerHTML = featureDiv + ruleDiv
+
+</script>
+<!-- <script type="text/javascript" defer src="markjax.min.js"></script>
+<script type="text/javascript" defer src="main.js"></script> -->
+</body>
+</html>

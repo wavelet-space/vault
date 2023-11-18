@@ -1,0 +1,10 @@
+
+Generative deep learning models, a class of unsupervised deep learning models, are capable of learning the important
+characteristics of a data distribution and generating realistic samples based purely on obser-
+vation.
+
+
+The phase field is in the form of c(x, y, t). We assume a constant di↵usion coe�cient
+(D). The ✏ parameter is the energetic penalty on gradients in the concentration field, which
+drives the phase segregation process and influences the mean size of single-phase regions.
+f(c) is the free energy of the system that is generally selected in the form f(c) = ac2(c�1)2,

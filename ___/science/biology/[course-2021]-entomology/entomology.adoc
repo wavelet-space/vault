@@ -1,0 +1,64 @@
+= Entomologie
+
+
+== Metamorfóza hmyzu
+
+Hmyz rozdělujeme na _ametabola_, _hemimatabola_ a _holometabola_, tj. s s přímým vývojem, nedokonalou přeměnou a dokonalou přeměnou.
+
+
+== Hlava
+
+
+
+
+
+
+
+== Tagmatizace těla
+
+== Segmentace těla
+
+* tělo chmyzu je segemntované tj. rozdělené na segmenty neboli části
+
+* Morfologický segmen
+primární segment =  myosegment = dělení segmentů dle svalů
+sekundární segment  = metasegment =
+
+segmentace je spouštěna geneticky již preembryonálně
+parasegmentace
+
+Embryonální regulace segmentace u *Drosophila melanogaster* má pět částí
+- syncitiální blastoderm
+- materální geny
+- gap geny
+- pair rule geny
+-
+Vypnutí některých GAP genů způsobuje zastavení segmentace
+Pair Rule tyto geny definují parasegmenty
+
+Segment polarizující geny
+    goosberry
+    wingless
+    engrailed
+
+Párem není engrailed a wingless ale hedgehog a wingless
+
+Embryonální regulace segmentace u Shcystocercea
+dochází k segmetaci postupně
+
+U Drosophilla to jde vše naráz
+
+Jaké segmenty nebo parasegmenty jsou homologické s jinými organizmy není úplně jasné
+
+Většinu genů pojmonovaná podle toho co vypíná
+- deformování hlavy
+- z tykadel vznikají končetiny
+- vypnutím bitorax zadohruď není definována
+
+
+Diferenciace končetin a stavba segmentované končetiny
+drozalizační geny nastavují dorzoventrální rovinu
+končetina z 8 článků
+
+V roce 2021 vyšly článek na původ křídla, je jí vyčítána špatná homologizace
+epikoxální a subkoxální číst

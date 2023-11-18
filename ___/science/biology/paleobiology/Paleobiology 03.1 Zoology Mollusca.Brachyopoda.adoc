@@ -1,0 +1,186 @@
+= Ramenonožci
+
+mají lofofor, bilaterální souměrnost schránky,
+pravá dutina tělní
+
+== Rhynchoneliformea
+
+Dnes už se neříká myska břišní; nicméne
+
+dorsální = hřbetní myska
+ventrální = břišní myska
+
+=== Morfologie
+
+foramen = 
+
+=== Morfologie schránky 
+
+ractimarginate
+sulcate
+uniplicate
+
+laterální boční obrys mysek
+- bikonvexní
+- planokonvexní
+- resipunátní
+
+vnitřní struktury jsou tvořené sekundární schránkou
+
+typy ramenních aparátů
+opory filtračního ústrojí maji velkou variabilitu 
+např. smyčka u recentních nebo spirální s vertikální (málo zástupců) nebo horizontální osou (vymřelé zcela) 
+
+Tvar a velikost ramenního aparátu se  ontogeneze mění => obtíže při určování juvenilních jedinců.
+
+Lofofor je filtrační ústrojí, které najdeme i u bryozoa a phoronid
+význam lofoforu pro paleontologii je nepřímý, pro systematiku 
+je důležité oporné struktury jako ramenní aparát popř spikule
+
+Mohou si určovat směr filtrované  a nefiltrované vody
+to má vliv na efektivitu filtrace
+tvar schránky ovlivňuje filtrační ústrojí, řídícím mechanismem je směřování
+vstupních (inhalantních) a výstupních (exhalantních) proudů
+
+Zkoušková otázka: Co jsou zuby zámku?
+
+Muskulatura, tři hlavní skupiny svalů
+. abduktory, závírání schránky
+. diduktory, otvírání schránky, normálně max o 15%
+. adjustory, ovládání stvolu
+
+Stvol je orgán mnoha funkcí, k ucycování (k podkladu, substrátu) i pohybu, podle rozmístění adjustorů rozpoznáme způsob života, celá řada adaptací, mnohdy je také zakrnělý.
+
+Magadinella mineuri; recent; vyhrabávání z písku pomocí rotace
+Anakinetica cumingi; recent; vyhrabávání z písku 
+
+Schránka a substrát; tvar schránky a skulptury jako adaptace na substrát
+Waagenoconcha; perm;
+Linoproductus; perm
+Coscinarina; perm (podobné adaptace jako rudisté)
+
+=== Ekologie
+
+Magasella sanguinea; Nový zéland; recent
+
+
+Dnes se vyskytují ve veětších hloubkách, 15-20m a v podmořských jeskyních, kde není tolik konkurence, mají nižší spotřebu kyslíku než jiní mlžy obdobných rozměrů (10-90%). Plášť citlivý na změnu světla, turbidity, snížení salinity (beobratlí nemají rádi změny)
+se sevřenými miskami jsou schopni dýchat až 8 hodin
+
+
+žijí jako 
+infauna = 
+epifauna = 
+epiplankton = přichyceni na plovoucí substrát.
+
+Paleoekologické ukazatele, celkový tvar schránky, skulptura a ostny, tvar vrcholu a stvolového otvoru, svalové vtisky, epizoozonti, stopy po predaci, stpy po činnosti ramenonožců
+Larvy ramenonožců jsou senzoricky vybaveni.
+
+V Ordoviku vidíme hodně inovací 
+
+== Schránka a její struktura
+
+Schránka je 3-4 vrstevnatá, složená z *peristraky* (bílkovinná bralnka, nesoucí barevé vzory), která se obyčejné nezachovává, primární (mikrokrystalická kalcium karbonátu, celistvá), sekundární (krystalická vlákna uložená pod ostrýcm úhlem vůči vnitřnímu povrchu schránky) a výjímečně terciární vrstvy (prizmatická). Zkaměněliny jsou často deformované. primární často prodělavěla punkty, kterými procházejí céky, senzorická funkce a zásobní, nejistá stále funkce (dýchání).
+
+. periostrakum
+. primární
+. sekundární
+. terciální
+
+Punktace
+
+. punktuátní
+. impuktátní
+. pseudopunktátní
+
+podle množství a rozložení schránky rozeznáváme druhy
+
+== Linguloformní
+
+mají organofosfatické schránky apatit mukosocharadi chotin,bez zámku, bez opor (brachidia), svalstvo je velmi složité. 
+
+morfologie je značně konzervativní 
+
+. linguloidní s masivním stvolem
+. discinoidní bez stvolu
+
+ekologie
+
+stratigrafie sp. kamrium až recent
+
+== Craniformea
+
+mají kalcitovou schránku, bez zámku, střevo je průchózí a ústí mimo schránku (narozdíl od dalších)
+
+nalézáme už ve spodním ordoviku
+
+řád 
+. Craniida
+.. Crania
+.. Orthisocrania
+. Craniopsida
+.. Craiops
+. Trimerellida
+.. Monomerella
+
+Ramenonožsi žijí často v chladnějších cvodách, v trogách, ledovcově zaplavená pobřeží. Často nacházíme horní misky a dolní nelze nalézt díky tomu, že jsou přisedlé k organickým povrchům, např, jiných schránek.
+
+== Reprodukce
+
+
+* silně převládájí gonochoristi
+* vývoj nepřímý přes larvální stádium (lecito-x planktotrofní)
+* larvy zástávají v lofoforu , v plášťové dutině
+
+=== r/K strategie
+
+r-selekce, r-stratég = cheap (planktotrofní larva)
+K-selekce, K-stratég = expensive (lecitotrofní larva)
+
+
+- jak je to s viděním? Larvy mají oči
+- larva má lepší zrak než dospělec?
+
+
+
+štetiny zustavaji, oci mizi
+U larvy se schránka vyvýjí na hřbetu
+
+
+laminarni vs turbulentni proudeni, kognitivni funkce, chemorecepce
+
+== Původ, vztahy, vývoj
+
+staré rozdělení na skupinu Lophohorata, rozdělení podle 
+toho, že mají lofofor
+vs
+
+fylogenetika
+
+A
+. Brachiozoa
+.. Phoronida
+.. Brachiopoda (monofyletičtí)
+
+B:
+.. "Articulata"
+.. "Inarticulata"
+
+staré členeí na artikulata = mají zámek (dnes linchoneridea) a inartikulata
+
+Znovu se to vrací na toto dělení viz varianta B.
+
+
+Jaký je původ ramenonožců? nevíme, ale bjevují se ve spodním kambriu.
+Peleontologická zkušenost sedí s molekulárním výpočtem.
+
+sesilní Halkeridi (Halkieria) ? zkrácení a přehnutí; u všech je prohnutá do U a ústí u plášťové dutiny.
+
+== Kmen brachiopoda "Bráchové" v historii 
+
+Kambrium až recent ukazuje, že dochází k výrazné redukci druhů. Na hranici P/T, kdy dochází k velkému vymírání na úrovni čeledí, vydíme, že variabilita se drží na nízké úrovni. V devonu a permu vidíme vrcholy
+
+
+Většina ramonožců má barevné vzory nebo přechody, paprsčité, rozbíhavé, přechody mezi fialovou, okrovou.
+
+== Phoronoid Chapadlovky

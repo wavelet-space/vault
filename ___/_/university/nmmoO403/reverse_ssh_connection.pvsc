@@ -1,0 +1,51 @@
+<Servers>
+  <Server name="reverse ssh" configuration="" resource="csrc://localhost">
+    <CommandStartup>
+      <Options>
+        <Option name="PV_SERVER_PORT" label="Server Port: ">
+          <Range type="int" min="1" max="65535" step="1" default="11111"/>
+        </Option>
+        <Option name="OFFSCREEN" label="Use offscreen rendering:">
+          <Boolean true="--force-offscreen-rendering" false="--force-onscreen-rendering" default="false"/>
+        </Option>
+        <Option name="SERVER" label="Server:" save="true">
+          <String default="r3d3"/>
+        </Option>
+        <Option name="USER" label="Username:" save="true">
+          <String default=""/>
+        </Option>
+        <Option name="MODULE" label="Paraview module:" save="true">
+          <String default="paraview/5.8.0-server"/>
+        </Option>
+        <Option name="NUMPROC" label="Number Of Processes">
+          <Range type="int" min="1" max="8" step="1" default="1"/>
+        </Option>
+      </Options>
+      <Command exec="ssh" timeout="0" delay="5">
+        <Arguments>
+          <Argument value="-nTR"/>
+          <Argument value="$PV_SERVER_PORT$:localhost:$PV_SERVER_PORT$"/>
+          <Argument value="$USER$@$SERVER$.karlin.mff.cuni.cz"/>
+          <Argument value="&#x22;source"/>
+          <Argument value="/etc/profile.d/modules.sh"/>
+          <Argument value="&#x26;&#x26;"/>
+          <Argument value="module"/>
+          <Argument value="add"/>
+          <Argument value="$MODULE$"/>
+          <Argument value="&#x26;&#x26;"/>
+          <Argument value="module"/>
+          <Argument value="list"/>
+          <Argument value="&#x26;&#x26;"/>
+          <Argument value="mpiexec"/>
+          <Argument value="-n"/>
+          <Argument value="$NUMPROC$"/>
+          <Argument value="pvserver"/>
+          <Argument value="--server-port=$PV_SERVER_PORT$"/>
+          <Argument value="--reverse-connection"/>
+          <Argument value="--client-host=localhost"/>
+          <Argument value="$OFFSCREEN$&#x22;"/>
+        </Arguments>
+      </Command>
+    </CommandStartup>
+  </Server>
+</Servers>

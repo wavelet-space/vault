@@ -1,0 +1,351 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\date{}
+
+\begin{document}
+
+\hypertarget{simulace-dopadu-mimozemskuxe9ho-tux11blesa}{%
+\section{Simulace dopadu mimozemského
+tělesa}\label{simulace-dopadu-mimozemskuxe9ho-tux11blesa}}
+
+Závěrečná práce pro předmět \emph{Impaktové kráterování a šoková
+metamorfóza} -- David Landa (2019).
+
+\hypertarget{uxfavod}{%
+\subsection{Úvod}\label{uxfavod}}
+
+Pro simulaci dopadu mimozemského tělesa s níže uvedenými počátečními
+hodnotami jsem použil program dostupný na
+https://impact.ese.ic.ac.uk/ImpactEarth/ImpactEffects.
+
+\textbf{Počáteční hodnoty}
+
+\begin{itemize}
+\tightlist
+\item
+  průměr 1500 m
+\item
+  hustotě 3 g/cm³
+\item
+  rychlosti dopadu 17 km/s
+\item
+  pod úhlem 45°
+\item
+  dopad do sedimetárního terčového materiálu
+\item
+  dopad ve vzdálenosti 10, 50, 100 km
+\end{itemize}
+
+Jako místo dopadu jsem vybral Paříž o přibližné rozloze 100 km². V
+dalším textu uvedu jednotlivé charakteristiky dopadu tělesa a účinky na
+infrastrukturu. Údaje pro jednotlivé vzdálenosti čísluji v tabulkách
+jednoduše jako 1 (10 km), 2 (50 km) a 3 (100 km). Úplný výstup programu
+s popisem jednotlivých vlastností dopadu mimozemského tělesa je uveden v
+příloze.
+
+\hypertarget{porovnuxe1nuxed-charakteristik-dopadu-pro-jednotlivuxe9-vzduxe1lenosti}{%
+\subsection{Porovnání charakteristik dopadu pro jednotlivé
+vzdálenosti}\label{porovnuxe1nuxed-charakteristik-dopadu-pro-jednotlivuxe9-vzduxe1lenosti}}
+
+\hypertarget{rozsah-kruxe1teru}{%
+\subsubsection{Rozsah kráteru}\label{rozsah-kruxe1teru}}
+
+\begin{itemize}
+\tightlist
+\item
+  Transient Crater Diameter: 14.5 km
+\item
+  Transient Crater Depth: 5.12 km
+\item
+  Final Crater Diameter: 20.6 km
+\item
+  Final Crater Depth: 736 meters - The crater formed is a complex
+  crater.
+\item
+  The volume of the target melted or vaporized is 4.78 km³
+\item
+  Roughly half the melt remains in the crater, where its average
+  thickness is 29 meters.
+\end{itemize}
+
+Vysvětlení uvedených pojmů lze nalézt např. na
+https://www.purdue.edu/impactearth/Home/Glossary
+
+\hypertarget{vyzuxe1ux159enuxe9-teplo}{%
+\subsubsection{Vyzářené teplo}\label{vyzuxe1ux159enuxe9-teplo}}
+
+Vyzářené teplo, neboli termální radiace, popisuje parametry zářící
+sféry, konkrétně její absolutní poloměr, relativní velikost vůčí slunci,
+tak jak ho vidíme ze Země, zaznamenané teplo na m², dobu záření a
+tepelný tok opět relativní ke slunci.
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+\begin{minipage}[b]{0.02\columnwidth}\raggedright
+\#\strut
+\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
+Visible fireball radius (km)\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Size (relative to the sun)\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+Thermal Exposure (Joules/m²)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+Duration of Irradiation (minutes)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+Radiant flux (relative to the sun)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.02\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+Your position is inside the fireball\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+415\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+3.63 x 109\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+3.95\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+15300\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.02\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+18.1\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+82.1\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+1.43 x 108\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+3.95\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+604\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.02\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+17.5\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+39.7\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+3.43 x 107\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+3.95\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+145\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Tepelné účinky dopadu jsou pro všechny zdálenosti stejné, konkrétně:
+
+\begin{itemize}
+\tightlist
+\item
+  Vznícení papíru
+\item
+  Vznícení oděvů
+\item
+  Vznícení překližky
+\item
+  Vznícení listantých stromů
+\item
+  Vznícení travin
+\item
+  Popáleniny 3. stupně
+\end{itemize}
+
+\hypertarget{seismickuxe9-efekty}{%
+\subsubsection{Seismické efekty}\label{seismickuxe9-efekty}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\# & Arrival Time of Shaking (s) & Magnitude\tabularnewline
+\midrule
+\endhead
+1 & 2 & 8.1\tabularnewline
+2 & 10 & 8.1\tabularnewline
+3 & 20 & 8.1\tabularnewline
+\bottomrule
+\end{longtable}
+
+Podle Mercalliho škály je pro vzdálenost 10 a 50 km poškození shodné
+(stupěň X., XI.) a to kompletní poničení nadzemní i podzemní
+infrastruktury. Pro vzdálenost 100 km již většina budov neutrpí nevratné
+poškozeni, popadají však komíny, zdi (stupeň VII., VIII.).
+
+\hypertarget{vyvrux17eeniny}{%
+\subsubsection{Vyvrženiny}\label{vyvrux17eeniny}}
+
+V případě vdálenosti 10 km jsem přímo v centru kráteru, proto žádná data
+o vyvrženinách nejsou dostupná.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+\begin{minipage}[b]{0.02\columnwidth}\raggedright
+\#\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+Arrival Time (minutes)\strut
+\end{minipage} & \begin{minipage}[b]{0.31\columnwidth}\raggedright
+Ejecta Type\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright
+Average Ejecta Thickness\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+Mean Fragment Diameter\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.02\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+1.69\strut
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
+jemný prach s občasnými velkými fragmenty\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+3.15 meters\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+83.5 cm\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.02\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+2.4\strut
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
+jemný prach s občasnými velkými fragmenty\strut
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+39.4 cm\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+13.3 cm\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{ruxe1zovuxe1-vlna}{%
+\subsubsection{Rázová vlna}\label{ruxe1zovuxe1-vlna}}
+
+Hodnoty charakteristik příchozí rázové neboli tlakové vzduchové vlny se
+vzrůstající vzdáleností klesají. Z toho samozřejmě vyplývá, že ničivé
+následky rázové vlny se vzrůstající vzdáleností klesají. U posledních
+dvou vzdáleností je uvedeno, že zvuk může způsobit již jen bolest.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+\begin{minipage}[b]{0.03\columnwidth}\raggedright
+\#\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+Arrival Time\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright
+Peak Overpressure\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Max Wind Velocity (m/s)\strut
+\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
+Sound Intensity (dB)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.03\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+30.3 seconds\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+3.54e+07 Pa = 354 bars\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+4780\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+151 (Dangerously Loud)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.03\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+2.53 minutes\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+928000 Pa = 9.28 bars\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+731\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+119 (May cause ear pain)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.03\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+5.05 minutes\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+207000 Pa = 2.07 bars\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
+293\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+106 (May cause ear pain)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{zuxe1vux11br}{%
+\subsection{Závěr}\label{zuxe1vux11br}}
+
+Paříž leží při udávané rozloze zcela v zóně kráteru o výsledném průměru
+20 km. Předpokládáme tedy kompletní zničení města. Podle předpokladů se
+vzrůstající vzdáleností klesá většina hodnot a tedy i ničivých účinků
+impaktu. Zajímavostí může být, že sesmické efekty si drží konstantní
+hodnoty (magnitudo) i na velmi velkou vzdálenost a navíc mohou vyvolat i
+sekundární ničivé události jako např. tsunami.
+
+\hypertarget{dodatek}{%
+\subsection{Dodatek}\label{dodatek}}
+
+Výstup programu pro jednotlivé vzdálenosti je uveden v příloze.
+
+\end{document}

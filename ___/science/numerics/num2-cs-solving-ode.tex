@@ -1,0 +1,23 @@
+
+\chapter{Numerické řešení ODE}
+
+\textbf{Analytické řešení} -- hledáme většinou obecné řešení úlohy a následně dosadíme počáteční nebo okrajové podmínky a tím získáme konkrétní řešené pro daný problém.
+
+\textbf{Numerické řešení} -- hledáme jedno konkrétní řešení úlohy. Neřešíme tedy ODE ale úlohu -- jakou? -- Diferenciální rovnici 1. řádu, kde řešení závisí na $n$ konstantách tzn. že k rovnici musíme přidat $n$ podmínek. 
+
+\textbf{Počáteční podmínka} -- Pokud zadáváme všechny podmínky v jednom bodě tzn, jde o počáteční podmínku, nazýváme úlohy jako Cauchyho úloha (CU).
+
+\begin{align*}
+    y^{(0)}(x_0) = y_0^0 \quad \\
+    y^{(1)}(x_0) = y_0^1 \quad \\
+    y^{(n - 1)}(x_0) = y_0^{n - 1}
+\end{align*}
+
+\textbf{Okrajové podmínky} -- Při zadání podmínky ve dvou a více bodech, mluvíme o okrajových podmínkách.
+
+\begin{enumerate}
+    \item Dirichletovy okrajové podmínky $y(a) = \alpha, y(b) = \beta$
+    \item Neumannovy okrajové podmínky $y'(a) = \alpha, y'(b) = \beta$
+\end{enumerate}
+
+\textbf{Normální tvar diferenciální rovnice} -- Budeme uvažovat sosuobyčejnou (nebo soustavu) diferenciální rovnice 1. řádu v \textit{normálním tvaru}. 

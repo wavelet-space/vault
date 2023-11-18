@@ -1,0 +1,117 @@
+
+
+= Learn R
+
+Cesta k R 64bit verzi interpreteru po instalaci bude  & 'C:\Program Files\R\R-3.6.0\bin\R.exe'
+
+
+Podobně jako v jazyce Python, mžeme pracovat s odděleným virtuálním prostředím. K tomu může dobře
+posloužit balík `renv`  viz https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/
+a https://rstudio.github.io/renv/articles/renv.html
+
+    install.packages("renv")
+
+
+Spustíme li interpretr R můžeme použít `renv` následovně.
+
+
+    > renv::init()
+
+    Welcome to renv!
+
+    It looks like this is your first time using renv. This is a one-time message,
+    briefly describing some of renv's functionality.
+
+    renv maintains a local cache of data on the filesystem, located at:
+
+    - "C:/Users/dlanda/AppData/Local/renv"
+
+    This path can be customized: please see the documentation in `?renv::paths`.
+
+    renv will also write to files within the active project folder, including:
+
+    - A folder 'renv' in the project directory, and
+    - A lockfile called 'renv.lock' in the project directory.
+
+    In particular, projects using renv will normally use a private, per-project
+    R library, in which new packages will be installed. This project library is
+    isolated from other R libraries on your system.
+
+    In addition, renv will update files within your project directory, including:
+
+    - .gitignore
+    - .Rbuildignore
+    - .Rprofile
+
+    Please read the introduction vignette with `vignette("renv")` for more information.
+    You can browse the package documentation online at https://rstudio.github.io/renv/.
+    Do you want to proceed? [y/N]:
+
+
+    * Initializing project ...
+    * Discovering package dependencies ... Done!
+    * Copying packages into the cache ... Done!
+    The following package(s) will be updated in the lockfile:
+
+    # CRAN ===============================
+    - renv   [* -> 0.13.1]
+
+    * Lockfile written to 'C:/Users/dlanda/Projects/Personal/Learn-R/renv.lock'.
+    * Project 'C:/Users/dlanda/Projects/Personal/Learn-R' loaded. [renv 0.13.1]
+    * renv activated -- please restart the R session.
+    >
+
+    https://www.rdocumentation.org/packages/startup/versions/0.15.0/topics/restart
+
+Použijeme tedy funkci restart
+
+    > restart()
+
+= Learn Julia
+
+
+Stáhni a  instaluj Julia
+Použije VS Code https://www.julia-vscode.org/
+
+== Interaktivní REPL
+
+V terminálu můžeme zapsat počáteční písmeno a stsknout TAB, tím získáme nápovědu pro všechny dostupné funkce např,
+
+    julia> s<TAB>
+    s"                  setfield!            sincosd              sortslices           stride
+    schedule            setindex!            sind                 splice!              strides
+    searchsorted        setprecision         sinh                 split                string
+    searchsortedfirst   setproperty!         sinpi                splitdir             strip
+    searchsortedlast    setrounding          size                 splitdrive           struct
+    sec                 show                 sizehint!            splitext             subtypes
+    secd                showable             sizeof               splitpath            success
+    sech                showerror            skip                 sprint               sum
+    seek                sign                 skipchars            sqrt                 sum!
+    seekend             signbit              skipmissing          stacktrace           summary
+    seekstart           signed               sleep                startswith           supertype
+    selectdim           significand          something            stat                 supertypes
+    set_zero_subnormals similar              sort                 stderr               symdiff
+    setdiff             sin                  sort!                stdin                symdiff!
+    setdiff!            sinc                 sortperm             stdout               symlink
+    setenv              sincos               sortperm!            step                 systemerror
+
+
+    apropos("quit")
+
+
+== Aritmetika, implicitní násobení
+
+
+Příkaz `ans` vyvolá poslední uloženou hodnotu v paměti
+
+
+    julia > 1 + 1
+    2
+    julia > ans + ans
+    4
+
+    julia> +(1, 1)
+    2
+
+    julia> *(2, 2)
+    4

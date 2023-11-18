@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "The chart description",
+    "transform": [],
+    "height": {"step": 22},
+    "data": {
+      "url": "data2.json"
+    },
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "a",
+        "type": "nominal",
+        "title": "Y",
+        "sort": "-x"
+      },
+      "x": {
+        "field": "b",
+        "type": "quantitative",
+        "title": "X"
+      }
+    }
+  }

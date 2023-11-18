@@ -1,0 +1,458 @@
+---
+title: "gam nelinear"
+author: "Jakub Kreisinger"
+date: "April 16, 2018"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+library(mgcv)
+
+PATH<-"/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/Vse/data/"
+list.files(PATH)
+
+```
+
+
+#Nelinearni vztah mezi x a y#
+
+Doposud jsem předpokládaly linearní vztah mezi vysvětlující a vysvětlovanou proměnnou
+```{r}
+X<-1:20
+Y<-2+X*0.5+rnorm(20)
+{plot(X,Y)
+  abline(2,0.5)}
+```
+
+...a nebo (v případě glm) nelineárni vztah, který je možno linearizovat transformací y (pomocí link funkce)
+
+V přirodě jsou nelineárni vztahy mezi x a y naprosto bězné. Použití lineárniho vztahu by mohlo vést k [1] nesmyslnym predikcím, [2] špatné kvalitě modelu a [3] nesmyslným hodnotám testovací statistiky.
+
+*V praxi pro modelovani nelinearnich vztahu obvykle pouzivame:<br />*
+[1] Aproximace pomocí polynomů<br />
+[2] Piecewise Regression<br />
+[3] Nelineární regrese<br />
+[4] GAM – zobecněné aditivní modely<br />
+
+#Aproximace pomoci polynomu:#
+
+*Lineární regrese:<br />*
+y = a + bx + e<br />
+
+*Polynomická regrese<br />*
+y = a + b[1]x^1 + b[2]x^2 ....... b[z]x^z + e<br />
+
+V praxi se používá obvykle do polynomu třetího stupně (kubický polynom: y = a +b[1]x + b[2]x^2 + b[3]x^3 ).
+Vhodný k např. aproximaci [růstových křivek](https://www.crcpress.com/Growth-Curve-Analysis-and-Visualization-Using-R/Mirman/p/book/9781466584327)
+
+Polynomické závislosti můžeme použít pro modely s Gaussovský rozložením i pro všechny dalši typy GLM. Platí stejné předpoklady jako u modelu pro lineární závislosti, které lze oveřit např. pomocí funkce *plot()*.<br />
+To, jestli polynomický člen vysvětluje více variability než lineráni testujeme jako obvykle pomocí *anova()* popř. *AIC()* apod.
+
+*Příklady různých vztahů mezi x a y, které lze modelovat pomocí polynomické regrese:*
+
+```{r}
+x<-seq(1,10,0.1)
+# x
+
+y1<- 4+2*x-0.1*x^2
+y2<- 4+2*x-0.2*x^2
+y3<- 12-4*x+0.35*x^2
+y4<- 4+0.5*x+0.1*x^2
+
+#kvadraticka regrese muze aproximovat celou radu vztahou mezi x a y
+{par(mfrow=c(2,2))
+plot(x,y1,type="n", main = "4+2*x-0.1*x^2")
+lines(x,y1)
+plot(x,y2,type="n", main = "4+2*x-0.2*x^2")
+lines(x,y2)
+plot(x,y3,type="n", main = "12-4*x+0.35*x^2")
+lines(x,y3)
+plot(x,y4,type="n", main = "4+0.5*x+0.1*x^2")
+lines(x,y4)}
+
+par(mfrow=c(1,1))
+
+```
+
+*V R polynomické vztahy mezi vysvětlovanou a vysvětlující (*x*) proměnnou zahrnujeme do modelu pomocí:<br />*
+[1] x+I(x)<br />
+[2] poly(x,2)<br />
+
+První možnost nám vrátí v *summary()* modelu parametry které lze jednoduše dosadit do výsledné rovnice (*y = a +b[1]x + b[2]x^2 + b[3]x^3*) a odhadnout tak predikce modelu pro jednotlivé hodnoty y. Ale *b[1]x* a *b[2]x^2*  budou potom úzce korelovane což může v některých případech komplikovat odhad příslušných parametrů. Vzájemná *b[1]x* a *b[2]x^2*, popř. polynomu vyšších stupňů se řeší pomocí *poly()*. Výsledné parametry *summary()* modelu ale není možné použít přímo pro dosazení do polymomické regrese. Je potřeba je transformovat např. pomocí funkce *predict()*. Další možností je centrování vysvětlujicí proměnné, viz [Schielzeth (2010)](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/j.2041-210X.2010.00012.x) 
+
+#Příklad: kvadratická regrese#
+Úkolem je otestovat, zda je vztah mezi yv a xv lineární, nebo zda je vhodnější jej aproximovat pomocí polynomu.
+
+```{r}
+PATH_dat<-paste(PATH,"diminish.txt",sep="")
+PATH_dat
+poly<-read.table(PATH_dat,header=T)
+
+head(poly)
+plot(poly$xv,poly$yv,pch=16)
+```
+
+Vztah mezi xv a yv vypadá relativně lineárně. Zkusíme na tyto data nafitovat linární regresi a zobrazit jeji predikce:
+```{r}
+model1<-lm(yv~xv,data=poly)
+x<-0:90
+y.lin<-predict(model1,list(xv=x))
+
+{plot(poly$xv,poly$yv,pch=16)
+lines(x,y.lin,col="green")}
+
+#a provedeme kontrolu modelu
+{par(mfrow=c(1,2))
+plot(model1,which=c(1:2))}
+
+```
+
+Jsme s výsledkem spokojeni, pokud ne tak proč?<br />
+
+Nyní zkusíme paralelně s lineární regresí popsat vztah mezi dvěmi proměnnýni pomocí kvadratické regrese.
+
+```{r}
+model1<-lm(yv~xv,data=poly)
+model2<-lm(yv~xv+I(xv^2),data=poly)
+
+#predikce pro dva predesle modely
+x<-0:90
+y.kvad<-predict(model2,list(xv=x))
+y.lin<-predict(model1,list(xv=x))
+
+{plot(poly$xv,poly$yv,pch=16)
+lines(x,y.kvad,col="red")
+lines(x,y.lin,col="green")}
+
+#porovnani modelu, a jejich vizualni kontrola:
+anova(model1,model2)
+
+#rezidualy pro jednotlive modely.
+{par(mfrow=c(2,2))
+plot(model1,which=c(1:2))
+plot(model2,which=c(1:2))
+anova(model1,model2)}
+par(mfrow=c(1,1))
+
+```
+
+*Ktery z techto dvou modelu popisuje vztah mezi xv a yv lepe a proc?*
+
+
+Pro ilustraci si ukážeme, jak vypadají predikce modelu pokud použijeme *[1] poly(xv,2)* nebo *[2] I(xv^2)*. Druhá možnost umožnuje (na rozdíl od první, viz příklad) bezproblémovou "ruční" extrakci parametrů ze summary modelu. První možnost naopak poskytuje numericky stabilnější řešení (může usnadnit konvergenci u komplexnějších modelů). 
+```{r}
+
+model2a<-lm(yv~xv+I(xv^2),data=poly)
+model2b<-lm(yv~poly(xv,2),data=poly)
+summary(model2a)
+summary(model2b)
+
+anova(model2a,model2b,test="F")
+
+#predikce na zaklade parametru, u modelu model2b nefunguje, ale muzeme pouzit predict()
+x<-0:90
+ya<-24.6323529+0.4057534*x-0.0018834*x^2
+yb<-38.3889+24.9644*x-4.7869*x^2
+new <- data.frame(xv = 0:90)
+yb2<-predict(model2b,new)
+
+{plot(poly$xv,poly$yv,pch=16)
+lines(x,ya,col="red")
+lines(x,yb,col="blue")
+lines(x,yb2,col="green",lty=3,lwd=2)}
+
+```
+
+*všimněte si že nesprávné dosazení parametrů vypočtených pomocí poly() do rovnice vede k nesmyslným predikcím (modrá čára). Naopak jejich trasformace pomocí funkce predict() vrátí stejné predikce (zelaná přerušovaná) jako model kde byl použit I(xv^2).*   
+
+#[2] DOPLNĚNÍ Piecewise regression#
+**(není nezbytné, vzhedem k časovým omezením můžete zkusit doma)**
+Fituje rozdílné regresní rovnice pro různé oblasti dat. V praxi se s tímto přístupem setkáme jen vzácně.
+
+Klíčové je najít optimální 'break point', který dělí data na dvě části pro které platí odlišné regresní vztahy.<br />
+1) zkoušíme ho umístit v různých hodnotách pro x<br />
+2) počítáme devianci pro jednotlivé modely<br />
+3) vybereme model s optimální hodnotou BP<br />
+
+###PŘÍKLAD: Vztah mezi počtem druhů a velikostí zkoumané oblasti###
+Zkušíme jednoduchou lineární regresi. Na základě predikcí modelu a chovaní reziduálnů zjistíme, že model není moc dobrý (podhodocuje počet druhů ve středních hodnotách rozlohy).
+```{r}
+# PATH_dat<-paste(PATH,"sasilwood.txt",sep="")
+# PATH_dat
+# data<-read.table(PATH_dat,header=T)
+# head(data)
+# 
+# plot(log10(data$Species)~log10(data$Area),pch=16)
+# 
+# #zkusime jednoduchou linearni regresi
+# model1<-lm(log10(Species)~log10(Area),data=data)
+# summary(model1)
+# 
+# #model podhodocuje pocet druhu ve strednich hodnotach rozlohy 
+# {par(mfrow=c(2,1))
+# plot(log10(data$Area),log10(data$Species))
+# abline(model1)
+# plot(log10(data$Area),resid(model1))
+# abline(0,0)}
+```
+
+Zkusíme proto na tyto data fitovat dvě regresní závislosti, samostatně pro rozlohy < nebo > než log10=1. Tento breakpoint odhadneme okometricky. Výsledek porovnáme s modelem, který předpokládá jednu závislost přes celý rozsah dat. Pomocí *anova()* oba modely porovnáme. 
+```{r}
+# Break<-1
+# model2<-lm(log10(Species)~log10(Area)*(Area<Break)+log10(Area)*(Area>=Break),data=data)
+# summary(model2)
+# 
+# #porovnanim modelu pro jednoduchou a linearni peace-wise regresi zjistime ze druhy model je signifikantne lepsi 
+# #zlepsilo se i rozlozeni rezidualu
+# anova(model1,model2)
+# plot(log10(data$Area),resid(model2))
+
+```
+
+Pro objektivnější stanovení "breakpoint" můžeme použít např. následující postup. [1] pomocí *sort(unique())* zjistíme všechny unikátní hodnoty proměnné *Area*. Tyto hodnoty budeme používat jako potenciální breakpoints. [2] pro každý z nich nafitujeme Piecewise regresi a to automaticky pomocí *for{}* smyčky. [3] 'kvalita' těchto modelů bude posuzována na základě 'residual standard errors'. Mohli bychom ale použít i jiné měřítko kvality modelu (AIC, R^2 ...).  
+```{r}
+# #stanovime si beak points na zaklade unikatnich hodnot plochy v datasetu
+# sort(unique(data$Area))
+# Break<-sort(unique(data$Area))
+# 
+# #pro kazdou hodnotu promenne Break fitujeme samostanty model
+# d<-numeric()  					# fituji se modely pro jednotlive hodnoty Break z techto modelu se extrahuje informace o SSE
+# for (i in 1:length(Break)) 
+#   {
+#   model<-lm(log10(Species)~(Area<Break[i])*log10(Area)+(Area>=Break[i])*log10(Area),data=data)
+#   #ve vektoru d budeme skladovat hodnoty residual SE
+#   #mozno pouzit i dalsi kriteria kvality modelu, napr AIC(model)
+#   d[i]<-summary(model)[[6]] 
+#   }
+# 
+# #na zaklade teto analyzy nam vychazi jako nejlepsi breakpoint mezi log10(Area) ~ 2 - 3
+# plot(log10(Break),d,type="l") #nejmensi SSE je pokud je Break == 3
+
+```
+*Jako nejlepší vychází model s breakpoint 2 nebo 3. Doma si můžete zkusit zobrazit predikce těchto modelů*
+
+Ješte můžeme zkusit, jestli je opravdu piecewise regrese pro tyto data lepší než např. polynomická regrese. Piecewise model vychází opravdu jako lepší než ostatní alternativy.
+```{r}
+# model.piece<-lm(log10(Species)~(Area<100)*log10(Area)+(Area>=100)*log10(Area),data=data)
+# model.lin<-lm(log10(Species)~log10(Area),data=data)
+# model.poly<-lm(log10(Species)~poly(log10(Area),2),data=data)
+# 
+# summary(model.piece)
+# summary(model.lin)
+# summary(model.poly)
+# 
+# anova(model.lin,model.piece)
+# anova(model.poly,model.piece)
+# 
+# area<-sort(unique(data$Area))
+# 
+# #predikce pro jednotlie modely
+# {plot(log10(data$Species)~log10(data$Area))
+# lines(log10(area),predict(model.piece,list(Area=area)),col="red")
+# lines(log10(area),predict(model.poly,list(Area=area)),col="blue")
+# lines(log10(area),predict(model.lin,list(Area=area)),col="green")}
+```
+
+Teď je možná dobrá chvíle ukázat si, že modely můžeme porovnat i pomocí [AIC](https://en.wikipedia.org/wiki/Akaike_information_criterion). Pro detailnější vhled je dobrý tento [článek](https://link.springer.com/article/10.1007/s00265-010-1029-6). Na rozdíl od porovnávání pomoci *anova()* muzeme vypočíat váhy konkurenčních modelů a řict např. jak moc je 'nejlepši' model věrohodnější než druhý v pořadí.
+```{r}
+# #zhodnoceni techto tri modelu na zaklade AIC
+# AIC_mod<-AIC(model.piece,model.lin,model.poly)
+# delta<-AIC_mod[,2]-min(AIC_mod[,2])
+# AIC_weigths<-(exp( -0.5 *delta))/sum(exp( -0.5 *delta)) #podle tohoto vzorce se delty preskaluji, takze jejich soucet da 1 
+# 
+# AIC_res<-cbind(AIC_mod,delta,AIC_weigths)
+# AIC_res
+```
+
+#NELINEARNÍ REGRESE#
+V některých případech pro nás aproximace pomocí polynomu nemusí být plně dostačující, ale chtěli bychom data proložit jasně definovanou matematickou závislostí popř. zhodnoti která z možných kandidátních závislostí popisuje naše měření lépe. Např. nás zajímá který z několika růstových modelů lépe popisuje naše data, jaké jsou kinetické parametry daného enzymu podle rovnice Michaelise a Mentenové apod.
+
+Pro tento typ úloh v R existuje funkce *nls()*. Kromě specifikace daného modelu musíme obvykle dodat počáteční hodnoty pro jednotlivé parametry, které bude *nls()* odhadovat. Ty by se měli pohybovat v rozumných mezích, jinak bude mít *nls()* problém s optimalizacemi. Tomuto problému se můžeme vyhnout použitím 'Self-Starting' funkcí kde se počáteční hodnoty zadávat nemusejí. Spektrum 'Self-Starting' funkcí v R je ale relativné omezené, zkuste (help(selfStart)). 
+
+*PŘÍKLAD: *nls()* fitujeme asymtotický vztah mezi váhou mandibuly a stářím jelena*
+
+```{r}
+PATH_dat<-paste(PATH,"jaws.txt",sep="")
+PATH_dat
+deer<-read.table(PATH_dat,header=T)
+summary(deer)
+plot(deer$age,deer$bone)
+
+model<-nls(bone~a-b*exp(-c*age),start=list(a=120,b=110,c=0.064),data=deer)
+summary(model)
+model2<-nls(bone~a*(1-exp(-c*age)),start=list(a=120,c=0.064),data=deer)
+summary(model2)
+anova(model,model2)
+av<-seq(0,50,0.1)
+
+bv<-predict(model2,list(age=av))
+bv2<-predict(model,list(age=av))
+
+{plot(deer$age,deer$bone)
+lines(av,bv,col="blue")
+lines(av,bv2,col="red")}
+```
+
+*PŘÍKLAD: Self starting, logistická regrese. Úkolem je posoudit, která z logistických funkcí líp fituje naše data.*  
+```{r}
+PATH_dat<-paste(PATH,"weibull.growth.txt",sep="")
+PATH_dat
+dat<-read.table(PATH_dat,header=T)
+head(dat)
+
+par(mfrow=c(1,1))
+plot(dat$time,dat$weight)
+xt<-seq(2,22,0.1)
+
+#logisticka fce - tri parametry
+model.3p<-nls(weight~SSlogis(time,a,b,c),data=dat)
+summary(model.3p)
+yt.3p<-predict(model.3p,list(time=xt))
+
+#logisticka fce - ctyri parametry
+model.4p<-nls(weight~SSfpl(time,a,b,c,d),data=dat)
+summary(model.4p)
+yt.4p<-predict(model.4p,list(time=xt))
+
+#weilbull fce
+model.w<-nls(weight~SSweibull(time,Asym,Drop,lrc,pwr),data=dat)
+summary(model.w)
+yt.w<-predict(model.w,list(time=xt))
+
+#kubicka regrese
+model.k<-lm(weight~poly(time,3),data=dat)
+summary(model.k)
+yt.k<-predict(model.k,list(time=xt))
+
+#polynom 4 stupne
+model.poly4<-lm(weight~poly(time,4),data=dat)
+summary(model.poly4)
+yt.poly4<-predict(model.poly4,list(time=xt))
+
+#zhodnoceni techto modelu na zaklade AIC
+AIC_mod<-AIC(model.w,model.3p,model.4p,model.k,model.poly4)
+delta<-AIC_mod[,2]-min(AIC_mod[,2])
+AIC_weigths<-(exp( -0.5 *delta))/sum(exp( -0.5 *delta)) #podle tohoto vzorce se delty preskaluji, takze jejich soucet da 1 
+
+AIC_res<-cbind(AIC_mod,delta,AIC_weigths)
+AIC_res
+
+#zobrazeni predikci
+{plot(dat$time,dat$weight)
+lines(xt,yt.3p,col="yellow")
+lines(xt,yt.4p,col="green")
+lines(xt,yt.w,col="red")
+lines(xt,yt.k,col="gray")
+lines(xt,yt.poly4,col="violet")}
+```
+
+#GAM - ZOBECNENE ADITIVNI MODELY#
+Neparametrická metoda – cílem není přesně odhadnout funkci mezi vysvětlovanou a vysvětlující proměnnou a její parametry. Zajímá nás celkový 'tvar' vztahu a to jestli se např. liší v kontextu různých úrovní kategoriální vysvětlované proměnné.
+Pro detailnější vysvětlení základních principů viz prezentace pdf.<br />
+V rámci GAM můžeme modelovat vztah mezi dvěma kontinuláními proměnnými jako nelinearni a nebo linearní (a polynomický) a pomoci funkce *anova()* testovat která z těchto možností je lepší. V případě GAM modelu kde jsou všechny vztahy specifikované jako linární (a nebo polynomické) je výsledek identický s GLM.
+
+*Příklad:*<br />
+Zapis gam v R (balicek mgcv):<br />
+-Vztah mezi vysvětlovanou a všemi vysvětlujícími proměnnými je fitován pomocí neparametrické vyhlazovací funkce:<br />
+*gam(y~s(x) + s(y) + s(z))*<br />
+-Pouze pro x je fitován nelineárni vztah, u ostatních proměnných je linearní:<br />
+*gam(y~s(x) + y + z)*<br />
+-Takto specifikujeme, že nás zajímá dvourozměrný vztah mezi dvěma promennýma („interakce“)<br />
+*gam(y~s(x) + s(y,z))*<br />
+-Typ rozdělení dat specifikujeme tak, jak jsme na to zvyklí z GLM (defaultně se předpokládá Gaussovské):<br />
+*gam(y~s(x) + s(y,z),falmily=Poisson)*<br />
+
+nezapomenout provést kontrolu modelu tak jak jsme zvyklí z *glm* a *lm*.<br />
+
+PŘÍKLAD: Kocentrace přízemniho ozonu vs charakteristiky prostředí
+```{r}
+PATH_dat<-paste(PATH,"ozone.data.txt",sep="")
+PATH_dat
+ozone.data<-read.table(PATH_dat,header=T)
+head(ozone.data)
+
+pairs(ozone.data, panel=function(x,y) { points(x,y); lines(lowess(x,y))} )
+
+#nedriv fitujem vsechny promene jako nelinearni
+model<-gam(ozone~s(rad)+s(temp)+s(wind),data=ozone.data)
+summary(model)
+
+#rad rad se zda ze ma slaby efekt - vyhodime ho z modelu
+model2<-gam(ozone~s(temp)+s(wind),data=ozone.data)
+anova(model,model2,test="F")
+
+#jeste muzeme zkusit, jak moc se model zhorsi pokud "rad" fitujeme jako linearni clen
+model2b<-gam(ozone~s(temp)+s(wind)+rad,data=ozone.data)
+anova(model,model2b,test="F")
+
+summary(model)
+#############################
+summary(model2b)
+
+#testujen zda existuje interakce mezi teplotou a vetrem
+model3<-gam(ozone~s(temp)+s(wind)+s(rad)+s(temp,wind),data=ozone.data)
+summary(model3)
+anova(model,model3,test="F")
+
+par(mfrow=c(2,2))
+plot(model3,residuals=T)
+
+#pomoci fce. vis.gam vykreslime 3D plot
+vis.gam(model3)
+vis.gam(model3, theta = 120, color = "heat")
+
+#kontrola modelu pomoci gam.check
+gam.check (model3)
+
+```
+
+*PŘÍKLAD GAM S BINOMICKÝM ROZDĚLENÍM: výskyt druhů v závislosti na izolovanosti a velikosti ostrova*
+
+```{r}
+PATH_dat<-paste(PATH,"island.txt",sep="")
+PATH_dat
+island<-read.table(PATH_dat,header=T)
+head(island)
+summary(island)
+
+model<-gam(incidence~s(area)+s(isolation),binomial,data=island)
+summary(model)
+{par(mfrow=c(1,2))
+plot.gam(model,residual=T,pch=16)}
+
+#pokud fitujeme area jako linearni clen tak se model signifikantne nezhorsi
+model2<-gam(incidence~s(isolation)+area,binomial,data=island)
+anova(model2,model,test="F")
+summary(model2)
+
+#naproti tomu pokud "area" odstranime uplne z modelu, tak dostaneme vyrazne horsi model
+#spravny postup je tedy nejprve odstranovet nelinearni fit a potom az 
+model2b<-gam(incidence~s(isolation),binomial,data=island)
+anova(model2b,model,test="F")
+summary(model2)
+
+#Pokracujeme v updatovani modelu 2, 
+model3<-gam(incidence~area+isolation,binomial,data=island)
+#...coz by melo odpovidat tomu pokud temto model fitujeme pomoci glm
+model3b<-glm(incidence~area+isolation,binomial,data=island)
+
+summary(model3)
+summary(model3b)
+
+#odstraneni nelinearniho clenu u "isolation" nas model vyrazne nezhorsi 
+AIC(model2,model3)
+
+```
+
+*Závěr: Na základě techto dat jsme nenašli dostatečnou podporu pro nelienární vztah mezi vyskytem druh a izolovaností nebo plochou ostrova. Obě promenné hrají důležitou roli, ale predikovaný efekt na výskyt druhu se dá uspokojivě modelovat pomocí lineárních závyslostí*
+
+#Úkoly#
+[1] Pro následující data zkuste modelat vztah mezi koncentrací substrátu a reakční rychlostí. Použijte k tomu vohodnou funkci z repertoáru "Self starting" funkcí a porovnejte výsledek s tím, který dostanete na základě polynomické regrese nebo gam. Na základě výsledných parametrů stanovte maximální rychlost reakce a hodnotu [Km](https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics).
+
+concentration <- c(1,2,3,5,10,15,20,25,30,35)<br />
+rate <- c(2.8,4.2,3.5,6.3,15.7,21.3,23.7,25.1,25.8,25.9)
+
+[2] V databázi nott.txt jsou průměrné měsíční teploty v Nottinghamu za období od 1920 do 1939. Převeďte teploty ve Farenheitech na stupně Celsia a pomocí GAM analyzujte její kolísání mezi lety a v průběhu sezóny. (Správně bychom měly pro tyto cyklická data použít bs="cc", to však můžeme ignorovat).
+
+

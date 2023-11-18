@@ -1,0 +1,72 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+```{r}
+```
+
+
+Lineární regrese. 
+Odhadujeme dva typy parametrů
+
+y - vysvětlovaná proměnná
+x - vysvetlující proměnná
+a - 
+b - sklon
+e - residuum 
+
+
+y = a x + b 
+
+
+2 typy proměnných (máme více ale mi )
+
+## 1 Kontinuální => Linerání regrese, odhadujeme a, b
+
+Odhadneme nulový model, který představuje, že tam není ždáná vztah.
+Intercept odpovídá průměru dat a sklon je nula.
+Pro jednotlivé body nulového modelu spočteme sumu čtvervů = suma reziduí na druhou.
+Poté najdeme vztah, pro a a b, a zkusíme, jestli má lepší sumu čtverců než nulový model tzn. 
+snažíme se sumu čtverců minimalizivovat. červené vs zelené čtvercev obrázku.
+
+
+## 2 Faktoriální (kategorická/kategoriální) => ANOVA, odhadujeme kategorie
+
+## 3 Kontinuální + kategoriální => ANCOVA
+
+Sledujeme sklony regresí pro jednotlivé úrovně
+
+Pokud je stejný, můžeme zjednodušovat
+
+ANCOVA - GLM
+
+
+Step -wise model selection není optimální, ale budeme se jím zabývat.
+
+
+Diagnostika obecného lineárního modelu.
+
+
+Gaussovské i Poissonovské rozdělení by mělo být popdáno jedním parametrem, který vyvětluje celou variabilitu dat.
+
+
+
+Př. Poissinovské rozdělení, máme plochy rozdělenou na čtverce, známe průměr kapek dopadající na plochu.
+Z rozdělení víme kolik kapek dopadlo na kolik kostek.
+
+

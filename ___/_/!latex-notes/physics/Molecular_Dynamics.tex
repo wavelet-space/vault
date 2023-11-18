@@ -1,0 +1,57 @@
+(Molecullar Dynamics 1. 3.)
+
+\section{Ekvipartiční teorém}
+
+EKvipartiční teorém, pravděpodobnostní rozdělení energie.
+Ekvipartice kinetické energie kB * T / 2 per stupěň volnosti
+V ekvilibriu budou mít mt různé částice průmerně stejnou moment energie
+
+Ekvipartiční teorém (zákon stejnoměrného rozdělení) z klasické statistické termodynamiky, spojuje teplotu systému a 
+pruměrnou energii. 
+
+Střední kinetická energie Ek jedné jednoatomové molekuly bude $N_A$-krát menší než je kinetická energie 
+jednoho molu plynu.
+
+\begin{equation}
+    E_k = \frac{3}{2} k_B T
+\end{equation}
+    
+V nejjednodušším případě je ekvipartiční teorém vyhádřen pro jednoatomový plyn.
+Každá jednotlivá  molekula plynu má tři stupně volnosti a její pohyb je chaotický.
+Každému jednotlivému stupni volnosti jednoatomové molekuli příluší střední hodnota kinetické energie o hodnotě  $\frac{1}{2} k_B T$
+
+Pokud spojíme dva  atomy vazbou, uzmem původně 6- stupňům volnosti 1. avšak dvouatomolová molekula má kromě translace nyná také  rotaci, přesně řečené 3 stupně volností pro translaci a 2 stupně 
+
+\begin{equation}
+    E_k = E_t + E_r \frac{5}{2} k_B T
+\end{equation}
+
+\section{Termostat}
+
+Co je to termostat?
+Jaké termostaty máme k dispozici?
+
+\subsection{Nosé Hoover Termostat (SM 4.8)}
+
+Je deterministický a jeden z nejvíce accurate a efficient metoda (algoritmus) pro molekulárné dynamické simulace s konstatntní teplotou. Pro Hamiltonian zavedeme jeden stupněm volnosti 
+navíc pro tepelnou lázeň $s$.
+
+% $$
+% H(\vec p, \vec r, p_s, s) = \sum 
+% $$
+
+Pohybové rovnice pro jeden stupěň volnosti
+
+\begin{align}
+    \frac{dr}{dt} & = \frac{p}{m} \\
+    \frac{dp}{dt} & = F -\frac{}{Q} p
+\end{align}
+
+\subsection{Langevin Termostat}
+
+Stochastický termostat s disipací energie.
+
+\subsection{Andersen Termostat}
+Extrémní stochastický termostat kdy v každém simulačním kroku převzorkujeme momenty.
+
+

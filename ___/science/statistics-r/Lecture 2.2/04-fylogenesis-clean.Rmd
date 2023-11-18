@@ -1,0 +1,198 @@
+---
+title: "Prostorove a fylogeneticke korelace"
+author: "Jakub Kreisinger"
+date: "June 19, 2021"
+output: html_document
+---
+
+```{r eval=FALSE}
+library(ggplot2)
+library(nlme)
+library(gridExtra)
+library(fields)
+library(caper)
+library(ape)
+library(phytools)
+
+PATH="/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/Vse/data/"
+```
+
+#PROSOTROVE KORELACE
+Data popisují miru napadení dvou odrůd slunečnice chorobou. Cílem je zjistit, jestli míra napadení souvisí s odrůdou slunečnice. 
+Nejprve fitujeme naivní model, který nezohledňuje prostorové autokorelace. V tomto modelu vychází efekt odrůdy jako vysoce průkazný. Residuály však vykazují jasnou prostorou závislost, v určitých oblastech studované plochy model intenzitu infekce systematicky podhodnocuje a jinde zas nadhodnocuje. I když se Moran s I neliší oproti očekáváni, prostorová autokorelace residuí je dobře vidět i na semivariagramu. 
+
+```{r eval=FALSE}
+
+dat<-read.delim(paste(PATH,"disease.txt",sep=""),header=T)
+head(dat)
+
+#vypada to ze intezita infekce ma jasne prostotove usporadani
+ggplot(data=dat,aes(x=x,y=y, color=size))+geom_point(size=4)+theme_bw()
+
+#to ma ale i distribuce odrud slunecnic
+ggplot(data=dat,aes(x=x,y=y, color=size))+geom_point(size=4)+theme_bw()+
+  facet_wrap(~variety)
+
+#nejpdve naivni model ktery nebere v potaz prostorove usporadani
+m1<-gls(size ~ variety,data=dat)
+summary(m1)
+#...to odpovida lm
+summary(lm(size~variety,data=dat))
+
+#residualy ale vykazuji jasnou prostorovou zavislost
+ggplot(data=dat,aes(x=x,y=y, color=size))+geom_point(aes(size=resid(m1)))+theme_bw()
+
+#alternative lze zobrazit pomoci bubble
+library(sp)
+dat$Resid <- resid(m1)
+coordinates(dat) <- ~x+y  #effectively convert the data into a spatial data frame
+bubble(dat, "Resid")
+
+#Moran I
+coords = cbind(dat$x,dat$y)
+w =rdist(coords) #Vypocet distanci
+Moran.I(x = resid(m1), w = w)
+Moran.I(x = dat$size, w = w)
+
+#semivariogram
+plot(Variogram(m1,form=~x+y))
+
+```
+Do modelu zahrneme prostorové korelace residuí (exponeciání prostorová korelce). Výsledný model je lepší než bez prostorové autokorelce, ale efekt odůdy již nevychází průkazně. Na základě semivariogramu vidíme, že exponenciální korelační struktura dobře popisuje chování residuí. Semivariogram pro normalizované residuály (ošetřené na prostorové autokorelace) nenaznačuje žádný efekt prostorové vzdálenosti a to samé platí pro normalizované residuály vynesené pomocí *bubble()* a pro Morans I.
+```{r eval=FALSE}
+m2<-gls(size~variety,cor=corExp(form=~x+y),data=dat)
+anova(m1,m2)
+summary(m2)
+summary(m1)
+
+#semivariagram s exponecialni korelaci
+plot(Variogram(m2,form=~x+y))
+#semivariagram pro normalizovane resida, ktera berou v uvahu kovariance v residualech 
+plot(Variogram(m2,form=~x+y,resType="n"))
+
+dat$Resid2 <- residuals(m2,"normalized")
+bubble(dat, "Resid2")
+
+Moran.I(x = residuals(m2,"normalized"), w = w)
+```
+
+Tady vyzkoušíme alternativní typy prostorových autokorelací. Výsledné modely porovnáme pomocí AIC a posoudíme pomocí semivariogramů. Exponenciální korelační struktura vychází ze všech nejlépe. 
+
+```{r eval=FALSE}
+
+m2<-gls(size~variety,cor=corExp(form=~x+y),data=dat)
+m3<-gls(size~variety,cor=corGaus(form=~x+y),data=dat)
+m4<-gls(size~variety,cor=corLin(form=~x+y),data=dat)
+m5<-gls(size~variety,cor=corRatio(form=~x+y),data=dat)
+m6<-gls(size~variety,cor=corSpher(form=~x+y),data=dat)
+
+AIC(m2,m3,m4,m5,m6)
+
+grid.arrange(
+  plot(Variogram(m2,form=~x+y),main="exponencialni"),
+  plot(Variogram(m3,form=~x+y),main="gausovsky"),
+  plot(Variogram(m4,form=~x+y),main="linearni"),
+  plot(Variogram(m5,form=~x+y),main="racionalni kvadraticky"),
+  plot(Variogram(m6,form=~x+y),main="sfericky"),
+    ncol=3)
+
+```
+
+#PGLS: PHYLOGENETIC GENERALIZED LEAST SQUARES
+
+**Analýza fylogenetických autokorelací**
+
+###Načtení, zobrazení fylogenetikého stromu
+```{r  eval=FALSE, fig.width=10,fig.height=15}
+
+TREE<-read.tree(paste(PATH,"shorebird.tree",sep=""))
+TRAITS<-read.table(paste(PATH,"shorebird.data.txt",sep=""),header=T)
+
+head(TRAITS)
+
+str(TREE)
+ape::plot.phylo(TREE,cex=0.7)
+
+```
+
+###Rekonstrukce evoluce kontinuálniho znaku ve fylogenezi 
+```{r  eval=FALSE, fig.width=10,fig.height=15}
+
+#jmena radku musi odpovidat jmenum druhu ve fylogenezi
+head(TRAITS)
+summary(TRAITS)
+rownames(TRAITS)<-TRAITS$Species
+
+#rekonstrukce kontinualniho znaku (pohlavni dimorfismus v hmotnisti tela)
+#vice viz: http://www.phytools.org/eqg/Exercise_5.2/
+plot(TRAITS$M.Mass,TRAITS$F.Mass)
+PHENO<-(TRAITS$M.Mass-TRAITS$F.Mass)
+names(PHENO)<-TRAITS$Species
+
+phytools::contMap(tree=TREE,x=PHENO,fsize=c(0.7,0.7),outline=F,type="phylogram",lwd=3,method="anc.ML")
+
+# #zkuste to same udelat pro relativni prirustky hmotnosti
+# PHENO<-(TRAITS$M.Mass-TRAITS$F.Mass)/TRAITS$F.Mass
+```
+
+###Rekonstrukce evoluce kategoriálního znaku ve fylogenezi 
+
+```{r  eval=FALSE, fig.width=10,fig.height=15}
+PHENO<-TRAITS$Mat.syst
+names(PHENO)<-TRAITS$Species
+#?make.simmap
+trees <- make.simmap(TREE, PHENO, model = "ER", nsim = 100)
+trees
+obj <- describe.simmap(trees, plot = FALSE)
+obj
+par(mai=rep(0.1,4))
+plot(obj, cex=0.5,fsize=c(0.7))
+```
+
+###Souvisí pohlavní dimorfismus s párovacím systémem?
+```{r  eval=FALSE, fig.width=10,fig.height=15}
+
+#priprava dat pro pgls
+TRAITS$Mat.syst<-as.character(TRAITS$Mat.syst)
+shorebird <- comparative.data(TREE, TRAITS, Species)
+shorebird.sub <-subset(shorebird,subset=Mat.syst!="PG")
+
+TRAITS.sub<-subset(TRAITS,TRAITS$Mat.syst!="PG")
+
+
+mod0 <- lm(log(F.Mass-M.Mass) ~ Mat.syst , data=TRAITS.sub)
+summary(mod0)
+mod1 <- pgls(log(F.Mass-M.Mass) ~ Mat.syst , shorebird.sub)
+summary(mod1)
+
+mod2 <- pgls(log(F.Mass-M.Mass) ~ Mat.syst , shorebird.sub,lambda = "ML", kappa = "ML",  delta= "ML")
+summary(mod2)
+
+```
+
+###Souvisí párovací systém s velikostí vejce?
+
+```{r  eval=FALSE, fig.width=10,fig.height=15}
+#souvisi parovaci system s velikosti vejce
+plot(log(TRAITS$F.Mass),log(TRAITS$Egg.Mass),col=ifelse(TRAITS$Mat.syst=="PA","red",'black'))
+
+mod0 <- lm(log(Egg.Mass) ~ log(F.Mass) + Mat.syst , data=TRAITS.sub)
+summary(mod0)
+
+mod1 <- pgls(log(Egg.Mass) ~ poly(log(F.Mass),2) * Mat.syst , shorebird.sub)
+mod2 <- pgls(log(Egg.Mass) ~ log(F.Mass) * Mat.syst , shorebird.sub)
+mod3 <- pgls(log(Egg.Mass) ~ log(F.Mass) + Mat.syst , shorebird.sub)
+anova(mod1,mod2)
+anova(mod3,mod2)
+summary(mod3)
+
+
+mod1 <- pgls(log(Egg.Mass) ~ poly(log(F.Mass),2) * Mat.syst , shorebird.sub,lambda = "ML", kappa = "ML",  delta= "ML")
+mod2 <- pgls(log(Egg.Mass) ~ log(F.Mass) * Mat.syst , shorebird.sub,lambda = "ML", kappa = "ML",  delta= "ML")
+mod3 <- pgls(log(Egg.Mass) ~ log(F.Mass) + Mat.syst , shorebird.sub,lambda = "ML", kappa = "ML",  delta= "ML")
+AIC(mod1,mod2,mod3)
+#anova(mod3,mod2)
+
+summary(mod2)
+summary(mod3)
+```

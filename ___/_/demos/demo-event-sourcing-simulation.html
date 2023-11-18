@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf8">
+    <style type="text/css">
+        #canvas-wrapper {
+            width: 800px;
+            /*margin: auto; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #canvas-wrapper > canvas {
+            background-color: #eee ;
+            width: 400px;
+            height: 300px;
+        }
+
+        #console-log {
+            background: #feefBB;
+            width: 100%
+        }
+
+        #container {
+            display: flex;
+            width: :100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="sketch">
+        <div id="canvas-wrapper">
+            <canvas id="canvas-1"></canvas>
+            <canvas id="canvas-2"></canvas>
+            <canvas id="canvas-3"></canvas>
+            <canvas id="canvas-4"></canvas>
+        </div>
+    </div>
+
+    <div id="console-log"></div>
+</div>
+
+<script type="module">
+
+import {generateClickEvent} from "./src/event-generator.js"
+import { circle } from "./src/graphics/canvas.js"
+
+/*
+
+[1] Capture the event and send it to dispatcher.
+[2] Dispatch event to appropriate handler.
+[3] Handle the event and produce *effect*.
+[4] Store the effect in storage.
+
+*/
+
+/*
+ * ****************************************************************************
+ * Handlers
+ *
+ * Handle a given event and produce result in the form of action object.
+ * The event can be accepted or rejected, this depends on domain constraints.
+ *
+ * If the event is accepted then it can be used to change state of the system.
+ * on the other hand when the event is rejected it signals some failure and
+ * we should react in appropriate way.
+ *
+ * Example:
+ *
+ *   User requested that some graphical object should be moved to specified
+ *   position but at this position is already an another object and they cannot
+ *   overlap, so this `ChangePosition` command will be rejected and we produce
+ *   `ChangePositionRejected` event.
+ *
+ * ****************************************************************************
+ */
+
+const handleKey = (message) => {
+    switch (message.key) {
+        case 'f':
+            document.getElementById("console-log").innerHTML = ""
+            break;
+        case 's':
+            break;
+    }
+    return () => `KEY <'${event.key}'> PRESSED`// effects
+}
+
+const handleMouseMove = (message) => {
+    let canvas = message.target
+    let context = canvas.getContext("2d")
+    let position = getMousePosition(canvas, message)
+    context.beginPath()
+    circle(context, {x: position[0], y: position[1]}, 10)
+    context.closePath()
+
+    return () => "MOUSE_MOVE"
+}
+
+const handleMouseClick = (message) => {
+    let canvas = message.target
+    let context = canvas.getContext("2d")
+    let [x, y]= getMousePosition(canvas, message)
+    context.save()
+    context.beginPath()
+        context.fillStyle = "red"
+        context.fillRect(x, y, 4, 4)
+    context.closePath()
+    context.restore()
+
+    return () => "MOUSE_CLICK"
+}
+
+
+var EFFECT_STORE = []
+
+
+/**
+ * This is a *grand central command dispatcher* function which takes an message
+ * and call an appropriate `handle` function.
+ */
+const dispatch = (message) => {
+
+    let handler = null;
+
+    // Select the appropriate handler.
+    switch (message.type) {
+        case "mousemove":
+            handler = handleMouseMove
+            logMessage("MOUSE MOVE HANDLER")
+            break
+
+        case "mousedown":
+            handler = () => "MOUSE DOWN HANDLER"
+            break
+
+        case "mouseup":
+            handler = () => "MOUSE_UP HANDLER"
+            break
+
+        case "click":
+            handler = handleMouseClick
+            break
+
+        case "keyup":
+            handler = () => handleKey(message)
+            break
+    }
+
+    // assert handler !== null
+
+    // Handle the message with appropriate handler.
+    let effects = handler(message)
+
+    // Store effect in stoage
+    EFFECT_STORE.push(effects)
+
+    // Apply effects TODO
+}
+
+/**
+ * Get the mouse position for a given canvas.
+ */
+function getMousePosition(canvas, event) {
+    var rect = canvas.getBoundingClientRect();
+    return [
+        event.clientX - rect.left,
+        event.clientY - rect.top
+    ]
+}
+
+function logMessage(message) {
+ let loggerArea = document.getElementById("console-log");
+
+  loggerArea.innerHTML
+    += EFFECT_STORE[EFFECT_STORE.length - 1] + "<br>";
+}
+
+/**
+ * Listen for specified events on each given element.
+ */
+const assignDispatcher = (elements, ...events) => {
+    elements.forEach((element) => {
+        // Call the `dispatch` for each event type.
+        events.forEach(
+            (event) => {
+                element.addEventListener(event, (event) => {
+                    dispatch(event)
+            }, false)
+        })
+    })
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Main
+////////////////////////////////////////////////////////////////////////////////
+
+// Get all canvases as array.
+let canvases = Array.from(document.getElementsByTagName("canvas"))
+
+// Get each canvas as individual object.
+let [canvas_1, canvas_2, canvas_3, canvas_4] = canvases;
+
+// Assign dispatchers.
+assignDispatcher(canvases, "click", "mousemove", "mousedown", "mouseup")
+assignDispatcher([window], "keyup")
+
+// Set properties for each canvas.
+canvases.forEach((canvas) => {
+    canvas.width = 400
+    canvas.height = 300
+    canvas.style.width  = `${canvas.width}px`
+    canvas.style.height = `${canvas.height}px`
+
+    // let ctx = canvas.getContext("2d")
+
+    // ctx.fillRect(0, 0, 5, 5);
+    // ctx.fillRect(canvas.width-5, canvas.height -5, 5, 5);
+    // ctx.fillRect(0, canvas.height -5, 5, 5);
+    // ctx.fillRect(canvas.width -5, 0, 5, 5);
+    // ctx.fillRect(canvas.width/2-5, canvas.height/2-5, 5, 5);
+})
+
+// for (var i = 0; i < 100 ; i++) {
+//   (function (i) {
+//     setTimeout(function () {
+//         canvas_1.dispatchEvent(generateClickEvent({
+//             x: Math.ceil(Math.random() * 801),
+//             y: Math.ceil(Math.random() * 601)
+//         }))
+//     }, 100);
+//   })(i);
+// };
+
+
+</script>
+
+</body>
+</html>

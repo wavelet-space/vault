@@ -1,0 +1,39 @@
+\chapter{Deformation}
+
+The homogeneous deformation is \Gls{isochoric_deformation}.
+
+\section{Examples}
+
+\subsection{Deformation 2D}
+ 
+\subsubsection{What should be the value of $x$ in the deformation gradient matrix $F$, to make the deformation isochoric (i.e., no volume change)? }
+
+$$
+F = \cvec{1 & 2\\ 3 & 4}
+$$
+
+\subsubsection{The rock was affected by two superposed deformations defined by deformation gradients, firstly by $F_1$ and after the $F_2$. Which deformation gradient characterizes the total deformation?}
+
+$$
+F = \cvec{1 & 2\\ 3 & 4}
+$$
+
+\subsubsection{Deformation is defined by the deformation gradient F. What should be the value of x-component of such a positional vector X, that magnitude of the displacement of the point defined by this positional vector is exactly 1.} $$ F := \begin{pmatrix} 2 & 1\\ 0 & \frac{1}{2} \end{pmatrix},  \vec{X} := (x, 2)^T. $$
+
+By applying the deformation gradient represented by a matrix $F$ to the vector $\vec{X}$ we get a new point positon represented by a vector $\vec{x}$.
+
+$$ 
+\vec{x} := F\vec{X} = \begin{pmatrix} 2 & 1\\ 0 & \frac{1}{2}  \end{pmatrix} \begin{pmatrix} x \\ 2 \end{pmatrix} = \begin{pmatrix} 2x + 2  \\ 1 \end{pmatrix}.
+$$
+
+Pro hodnotu $x$ požadujeme aby výsledný vektor posunutí měl jednotkovou délku tj. $|\Delta x| = 1$.  Vektor posunutí získáme jako rozdíl $\Delta \vec{x} = \vec{X} - \vec{x}$ 
+    $$\therefore \Delta \vec{x} = \cvec{x\\2} - \cvec{2x + 2 \\ 1}  = \cvec{-x - 2\\ 1}$$. 
+
+Podmínka pak bude mít tvar 
+
+$$ \sqrt{(-x - 2)^2 + 1^2= 1^2}  $$
+$$ \sqrt{x^2 + 4x + 5} = 1 /^2 $$
+$$ x^2 + 4x + 4 = 0 $$
+$$ (x + 2)^2 =  0 $$
+
+Poslední rovnice je splněna jen pro $x = -2$ a tedy hledaný vektor je $\cvec{-2\\2}$.

@@ -1,0 +1,964 @@
+---
+title: "Moderni statisticke metody Ia"
+author: "Jakub Kreisinger"
+date: "May 15, 2021"
+output: html_document
+---
+
+#Náplň této části kurzu
+**1. Základní orientace a práce s R/RStudio**<br />
+1.1 Help<br />
+1.2 Instalace a spouštění balíčků<br />
+1.3 Nastavení pracovní složky apod<br />
+**2. R jako kalkulačka**<br />
+**3. Objekty**<br />
+3.1 Objekty - Numerické vektory<br />
+3.2 Objekty - Vektory typu factor a character<br />
+3.3 Objekty - Matice<br />
+3.4. Objekty - data.frames<br />
+3.5. Objekty - List<br />
+**4. Randomizace**<br />
+**5. "flow control"** ifelse(), if(), while(), for()<br />
+5.1. "flow control" ifelse()<br />
+5.2. "flow control"  if()<br />
+5.3. "flow control"  for()<br />
+**6. Tvorba vlastních funkcí**<br />
+**7. Spuštění programů v rámci R pomocí system()**<br />
+**8 Grafika - scatterplot**<br />
+8.1 Grafika - scatterplot<br />
+8.2 Grafika - histogram<br />
+8.3 Grafika - boxplot<br />
+8.4 Grafika - violin plot<br />
+8.5 Grafika - barplot<br />
+8.6 Grafika - ggplot<br />
+
+##1.Základní orientace a práce s R/RStudio
+- Pro detailnější popis jednotlivých oken viz pdf prezentace<br />
+- Příkazy v levém horním okně spouštíme pomocí "ctrl+ENTER" (myší lze označit i víc řádek)<br />
+- Příkazy v levém dolním okně spouštíme pomocí "ENTER"<br />
+- "#" znamená komentář - od tohoto znaku dál se je jakýkoliv příkaz neaktivní (viz příklad dole)<br />
+- pokud překlikneme do dolního okna můžeme listovat v historii funkcí pomocí šipek<br />
+- cesty k souborům můžeme doplňovat pomocí tabelátorů
+
+###1.1 Help
+- Skoro každá funkce má help file s popisem, specifikací parametrů <br />
+- Dá se k němu dostat pomocí F1 způsoby popsanými dole:<br />
+
+**Poznámkz pro mně**
+Dovzsvětlit rozdíl mezi = a ==
+
+```{r eval=FALSE}
+help(mean)
+?median
+#help(sum) #na zacatku rady je komentar tj. funkce je neaktivni 
+```
+
+###1.2 Instalace a spouštění balíčků
+- Základní instalace R obsahuje celou řadu funkcí pro základní statistiku<br />
+- Speciálnější funkce jsou obsažené v balíčcích které si můžeme stáhnout a nainstalovat z konkrétních úložišt (CRAN, github, Bioconductor)<br />
+- Instalace pomocí Tools>Install Packages a nebo příkazem install.packages()<br />
+- Po instalaci není balíček aktivní. Abychom si "nahráli" v něm obsažené funkce a mohli s nimi pracovat je třeba příkaz library()<br />
+- Zde jsou balíčky, které budeme dnes potřebovat:
+
+```{r eval=FALSE}
+# install.packages("ggplot2")
+# install.packages("png")
+
+library(ggplot2)
+library(png)
+library(scales)
+library(vioplot)
+library(sciplot)
+```
+
+###1.3 Nastavení pracovní složky apod
+- *setwd()* nastaví pracovní složku, *getwd()* ukáže cestu k pracovní složce, *list.files()* a *list.dirs()* vypíše obsah pracovní složky<br />
+- Vhodné je "natvrdo" specifikovat odkud se budou načítat data a kam se budou ukládat výsledky<br />
+```{r eval=FALSE}
+setwd("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2019-2020/R_uvod/")
+getwd()
+list.files()
+list.dirs()
+```
+
+##2. R jako kalkulačka
+Dole najdete přehled základních matematických funkcí. *log()* je přírozený logaritmus, *log10()* dekadický. Závorky při výpočech fungují tak, jak jsme zvyklý:
+```{r eval=FALSE}
+3+5
+6-3
+6*6
+20/5
+
+3^2
+16^0.5
+sqrt(16)
+log(10) 
+log10(10)
+sin(0.5)
+
+2+3*2+3
+(2+3)*(2+3)
+```
+
+##3. Objekty
+- Výpočty a data lze ukládat to operační paměti tzv objektů pomocí *<-*  nebo *=*<br />
+- S těmito objekty můžeme dál pracovat měnit jejich obsah, ukládat je apod.<br />
+- *ls()* - seznam aktuálně dostupných objektů, *rm()* - odstranění objektu z paměti, *class()* typ objektu, *save()* uložení objektu, *load()* - nahrání objektu z disku<br />
+
+```{r eval=FALSE}
+dvojka<-2 
+dvojka 
+trojka<-3
+dvojka+trojka
+petka=dvojka+trojka
+petka
+class(dvojka)
+ls()
+rm(petka)
+ls()
+
+save(trojka,file = "trojka.R")
+list.files()
+load("trojka.R")
+```
+
+##Úloha 1: 
+- Vypočtěte přeponu pravoúhlého trojúheníku s odvěsnami 6 a 12 cm   
+```{r eval=FALSE}
+```
+
+###3.1 Objekty - Numerické vektory
+- Jedná se o řadu čísel<br />
+- Specifikujeme tak, že do 'c()' vpíšeme jednotlivé čisla oddělená čárkami.<br />
+- pomocí *c()* můžeme spojovat několik již existujících vektorů<br />
+- *summary()* - důležité popisné statistiky, *length* - délka, *sum()* - součet všech prvků, *mean()* - průměr<br />
+- NA značí chybějící údaje. Pokud je chceme ignorovat musíme dát např. mean(vector,na.rm=T)<br />
+```{r eval=FALSE}
+VEKTOR.NUM<-c(0,1,2,3,4,5,6,7,3,1,4,5)
+VEKTOR.NUM
+c(VEKTOR.NUM,VEKTOR.NUM)
+class(VEKTOR.NUM)
+length(VEKTOR.NUM)
+summary(VEKTOR.NUM)
+SUMMARY<-summary(VEKTOR.NUM)
+SUMMARY
+
+A<-c(1,2,3,4,5,6,7,3,1,4,5)
+B<-c(5,4,3,7,3,4,2,1,5,2,3)
+A*2
+A^2
+sum(A)
+length(A)
+mean(B,na.rm=T)
+A+B #funguje pokud jsou stejne dlouhe
+
+VEKTOR.NA<-c(0,1,2,NA,4,5,6,7,3,1,4,5)
+mean(VEKTOR.NA)
+mean(VEKTOR.NA,na.rm = T)
+```
+
+##Úloha 2:
+Vektorz A a B obsahují délky odvěsen. Spočtěte:<br />
+- Jednotlivé přepony pro tyto trojúhelníky<br />
+- Celkovou plochu těchto trojúhelníků<br />
+```{r eval=FALSE}
+A<-c(1,2,3,4,5,6,7,3,1,4,5)
+B<-c(5,4,3,7,3,4,2,1,5,2,3)
+```
+
+-numerické vektory můžeme tvořit pomocí *seq()* nebo *rep()*
+```{r eval=FALSE}
+seq(from=1,to=10,by=1)
+seq(from=1,to=10,by=5)
+rep(c(1,2,3),2)
+rep(c(1,2,3),each=2)
+rep(seq(from=1,to=10,by=1),2)
+```
+
+- pomocí *sort()* řadíme od největšího po nejmenší, pomocí *rev()* zobrazíme prvky v opačném pořadí
+```{r eval=FALSE}
+UNSORTED<-c(5,6,8,2,1,0,6)
+sort(UNSORTED)
+rev(sort(UNSORTED)) #kombinace dvou funkcí pomoci závorek, nejdriv sort, potom rep
+rank(UNSORTED)
+```
+
+- zaokrouhlování
+```{r eval=FALSE}
+DESETINY<-c(1.52,1.95,2.15,3.14)
+floor(DESETINY) #vse zaokrouhli dolu
+ceiling(DESETINY) #vse zaokrouhli nahoru
+round(DESETINY,digits=0) #vse zaokrouhli klasicky na dany pocet desetinych cisel
+round(DESETINY,digits=1)
+```
+
+-**Podvýběry:** Pomocí hranatých závorek můžeme určit které prvky chceme vybrat. Mínus naopak značí co chceme z podvýběru vznechat 
+```{r eval=FALSE}
+VEKTOR.NUM<-c(0,1,2,3,4,5,6,7,3,1,4,5)
+VEKTOR.NUM[1:5]
+VEKTOR.NUM[c(2,5,4)] 
+VEKTOR.NUM[c(-1,-2)]
+```
+
+-**Podvýběry:** Fungují tak, že pro každý prvek se testuje, jestli platí námi specifikovaná podmínka.<br />
+-Výsledek je pravda (TRUE nebo T) nebo nepravda (FALSE nebo F).<br />
+- Můžeme např. použít následdující logické operace - vetsi mensi: > <, rovna se: ==, nerovna se: != , a: &, nebo: |<br />
+-Defaultne se vybíraji prvky, kde je tento test TRUE (t. podmínka platí), ale můžeme to i otočit (vybírat prvky s hodnoutou F) jak je ukázáno dole<br />
+
+*Poznamka: == je test rovnosti, např. 1 == 1 má hodnotu TRUE a 1 == 2. Naproti tomu = funguje jako <-*
+```{r eval=FALSE}
+VEKTOR.NUM<-c(0,1,2,3,4,5,6,7,3,1,4,5)
+VEKTOR.NUM
+VEKTOR.NUM>5
+VEKTOR.NUM[VEKTOR.NUM>5]
+
+TEST=VEKTOR.NUM>5
+VEKTOR.NUM[TEST]
+VEKTOR.NUM[TEST == FALSE]
+VEKTOR.NUM[TEST != FALSE]
+```
+
+-**Podvýběry:** Můžeme kombinovat víc podmínek pomocí např.: a: &, nebo: |
+```{r eval=FALSE}
+# kladna cisla mensi nez 10
+VEKTOR.NUM[VEKTOR.NUM>0 & VEKTOR.NUM<10]
+# bud zaporna cisla nebo vetsi nez 10
+VEKTOR.NUM[VEKTOR.NUM<0 | VEKTOR.NUM>10]
+
+#pokud vam pripada tento zapis moc komplikovany, lze jej napr. takto rozepsat:
+FILTER1<-VEKTOR.NUM<10
+FILTER1
+FILTER2<-VEKTOR.NUM>0
+FILTER2
+
+# vysledne logicke vektory kombinovat pomoci matematickych operaci (FALSE=0,TRUE=1). Napr:
+# vysledkem nasobeni bude nula pokud v danem poradi bude aspon jedna nula. 
+# vysledkem bude 1 pokud ve vsech elemetech bude 1, tj. vsechny podminky specifikovane jednotlivymi filtry budou splnene
+FILTER<-FILTER1*FILTER2
+FILTER1+FILTER2==2
+FILTER
+VEKTOR.NUM[FILTER==1]
+```
+
+*Porovnávání vektorů, hledání unikátních prvků apod.*<br />
+-*unique()* - unikátní prvky, *duplicated()* - to co je duplikované, *setdiff()* - unikátní prvky obsažené v první a ne druhém vektoru, *intersect()* - průnik, *union()* sjednocení unikátních prvků, *%in%* - je daný prvek z prvního obsažený i v druhém<br />
+```{r eval=FALSE}
+VEKTOR1<-c(1,1,2,3,2,4,5,6,6)
+VEKTOR2<-c(3,3,4,5,6,10)
+unique(VEKTOR1)
+duplicated(VEKTOR1)
+setdiff(VEKTOR1,VEKTOR2) #
+setdiff(VEKTOR2,VEKTOR1)
+
+intersect(VEKTOR1,VEKTOR2)
+union(VEKTOR1,VEKTOR2)
+VEKTOR1 %in% VEKTOR2
+```
+
+##Úloha 3:
+-A] Napište příkay, který pro libovolně dlouhý vektor vybere první tři a poslední tři čisla a vypočte jejich celkový součet<br />
+-B] Vytvořte příkaz, který z vektoru vybere jenom prvky dělitené beze zbytku dvěma<br />
+*Nápověda - podívejte se na to jak se zjistí délka vektoru a jak se zaokrouhluje*<br />
+```{r eval=FALSE}
+VEKTOR.NUM<-c(1,2,3,4,5,6,7,3,1,4,5)
+```
+
+
+###3.2 Objekty - Vektory typu factor a character
+-factor - obsahuje "katalog" úrovní proměnne které vidím např. pomocí *levels()* nebo *summary()*<br />
+-character - nekatalogizovaný text<br />
+-nelze s nimi dělat matematické operace<br />
+-pokud máme ve vektoru kombinaci "slov" a čísel, tak to celé R bere jako character nebo factor, tj. neumí dělat metematické operace na číselných elementech <br />
+
+```{r eval=FALSE}
+OBDOBI_fact<-as.factor(rep(c("jaro","leto","podzim_zima"),8))
+length(OBDOBI_fact)
+class(OBDOBI_fact)
+summary(OBDOBI_fact)
+levels(OBDOBI_fact)
+
+OBDOBI_char<-as.character(rep(c("jaro","leto","podzim_zima"),8))
+length(OBDOBI_char)
+class(OBDOBI_char)
+summary(OBDOBI_char)
+levels(OBDOBI_char)
+
+levels(OBDOBI_fact)
+levels(OBDOBI_fact)<-c("spring","summer","aut_wint")
+OBDOBI_fact
+
+OBDOBI_char
+OBDOBI_char<-gsub("jaro","Spring",OBDOBI_char) #gsub() - funguje na pricipu najdi -> nahrad
+OBDOBI_char
+OBDOBI_char<-gsub("zima","Winter",OBDOBI_char) #gsub() - funguje i na casti slov
+OBDOBI_char
+```
+
+- U class factor je pořadí úrovní defaultně dané abecedním pořadím<br />
+- To ale nemusí být vhodné pokud máme například jasnou referenční skupinu, proti které chceme porovnávat dalši úrovně.<br />
+- V takovém připadě je vhodné manuální nastavení úrovní<br />
+
+```{r eval=FALSE}
+POKUS<-as.factor(rep(c("kontola","antibiotika1","antobiotika2"),each=3))
+POKUS
+levels(POKUS)
+POKUS<-factor(POKUS, levels = c("kontola","antibiotika1", "antobiotika2" ))
+levels(POKUS)
+```
+
+###3.3 Objekty - Matice
+-Můžeme je tvořit pomocí: cbind() - spojení vektorů do sloupců a nebo rbind() - spojení vektorů do řádků<br />
+-Class je "matrix"<br />
+-nefunguje length(), ale dim() udává počet sloupců (první prvek výsledného vektoru) a řádků (druhý prvek)<br />
+-Alternativně jeden vektor, který můžeme rozdělit např. pomocí nrow nebo ncol<br />
+```{r eval=FALSE}
+MATRIX.1<-cbind(c(1,2,3),
+              c(4,5,6))
+
+MATRIX.1
+
+MATRIX.2<-rbind(c(1,2,3),
+              c(4,5,6))
+
+MATRIX.2
+
+matrix(c(1,2,3,1,2,3),nrow=2,byrow=T)
+matrix(c(1,2,3,1,2,3),nrow=2,byrow=F)
+
+class(c)
+dim(MATRIX.1)
+```
+
+- Pohodlnější zobrazení pomocí View() a pro editaci fix()
+```{r eval=FALSE}
+# View(MATRIX.1)
+# fix(MATRIX.1)
+```
+
+- Sloupce a řádkz můžeme pojmenovat
+```{r eval=FALSE}
+colnames(MATRIX.2)<-c("male","strední","velke")
+rownames(MATRIX.2)<-c("pole","les")
+```
+
+
+-**Podvýběry**- stejně jako u vektorů pomocí hranatých závorek. Matice maji dva rozměry a proto můžeme vybírat konkrétní sloupce nebo řádky a nebo obojí.
+```{r eval=FALSE}
+MATRIX.2
+MATRIX.2[1:2,2:3] 
+MATRIX.2["pole","male"]
+MATRIX.2["pole",]
+```
+
+-matematicke operace pro vsechny elementy
+```{r eval=FALSE}
+sum(MATRIX.2)
+mean(MATRIX.2)
+
+MATRIX.2*2
+
+MATRIX.2*MATRIX.2 #nejedna se o klasicke nasobeni matic
+MATRIX.2/MATRIX.2
+```
+
+- součet přes řádky a sloupce
+- obdobně funguje colmean(), rowmean()
+```{r eval=FALSE}
+rowSums(MATRIX.2)
+colSums(MATRIX.2)
+```
+
+-funkce apply - libovolná funkce aplikovaná na řádky (druhý argument = 1 ), nebo sloupce (druhý argument = 2)
+```{r eval=FALSE}
+apply(MATRIX.2,2,mean)
+apply(MATRIX.2,1,mean)
+
+#pomoci apply lze pouzit libovolnou funkci, v tomto pripade rozdil mezi minimalni a maximalni hodnotou
+apply(MATRIX.2,1, function (x) max(x) - min(x))
+```
+
+
+- ukládání matic pomocí write.table(), alternativně i save
+- zkuste otevřít v excelu (lze je u write.table())
+- defaultně se ukládají jména sloupců a jména řádků 
+```{r eval=FALSE}
+write.table(MATRIX.2,"prvni_matice.txt",sep=";")
+write.table(MATRIX.2,"druha_matice.txt",sep="\t",row.names = F)
+```
+
+##Úloha 4:
+Napište příkaz, který pro libovolnou čtvercovou matici spočte sumu všech prvků v levém horním kvadrantu
+```{r eval=FALSE}
+CTVEREC<-matrix(1:100,ncol=10)
+```
+
+###3.5. data.frames - List
+- nečastější typ dat. Může kombinovat numerické i nenumerické proměnné<br />
+- jednotlivé proměnné vždy ve sloupcích. Jednotlivá pozorování vždy v řádcích<br />
+- detailnější doporučení, jak připravovat data.frame viz pdf prezentace<br />
+- obvykle načítáme z txt souboru pomocí read.table() nebo read.delim()<br />
+- z toho plyne, že se ignoruje formátování (barva buněk atd.)<br />
+- existují ale i funkce ktere umí importovat z excelu <br />
+
+
+```{r eval=FALSE}
+worms<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/worms.txt", header=T,sep="\t")
+#alternativne lze nacist pomoci read.csv, read.delim
+
+#zobrazeni nazvu promennych, konce a zacatku datasetu
+names(worms)
+head(worms)
+tail(worms)
+# View(worms)
+```
+
+- na základě summary vidíme jakého typu jsou jednotlivé proměnné a můžeme zkontolovat zda nám hodnoty dávají smysl<br />
+- proměnné z data.frame "taháme" pomocí $<br />
+- jedmotlivá taková proměnná je vektor<br />
+```{r eval=FALSE}
+#podle summary() lze zjist ktera promenna je kontinualni a faktorialni
+summary(worms)
+worms$Area
+is.numeric(worms$Area)
+is.factor(worms$Vegetation)
+```
+
+v případě potřeby lze změnit class jednotlivých proměnných
+```{r eval=FALSE}
+worms$Area<-as.factor(worms$Area)
+summary(worms)
+worms$Area<-as.numeric(worms$Area)
+summary(worms)
+```
+
+- podvýběry stejně jako u matic - tj. pomocí hranatých závorek: [radky,sloupce]
+```{r eval=FALSE}
+dim(worms)
+worms[1:3,1:2]
+```
+
+-vyber jen urcitych radek
+- např. jen sudé řádky a nbo s ph >5
+```{r eval=FALSE}
+worms[seq(from=2,to=dim(worms)[1],by=2),]
+worms[worms$Soil.pH>5,]
+```
+
+-to same jede možná pohodlněji dělat přes subset
+```{r eval=FALSE}
+subset(worms,worms$Soil.pH>5)
+```
+
+- pomocí tapply() můžeme sumarizovat kontinuální proměnnou přes úrovně kategoriální proměnné
+```{r eval=FALSE}
+tapply(worms$Soil.pH,worms$Vegetation,mean)
+tapply(worms$Soil.pH,worms$Vegetation,length)
+```
+
+- místo jedné kategoriální proměnné jich můžeme do tapplz zadat víc.
+```{r eval=FALSE}
+PH_vysoke_nizke<-as.factor(worms$Soil.pH>median(worms$Soil.pH))
+Sklon_vysoky_nizky<-as.factor(worms$Slope>median(worms$Slope))
+levels(PH_vysoke_nizke)<-c("Vysoke.ph","Nizke.ph")
+levels(Sklon_vysoky_nizky)<-c("Velky_sklon","Maly_sklon")
+tapply(worms$Worm.density,list(PH_vysoke_nizke,Sklon_vysoky_nizky),mean)
+```
+
+- funkce order() umožnuje řadit tabulky podle vybrané proměnné od nejmenších po největší hodnoty (a nebo i obráceně) 
+```{r eval=FALSE}
+NUM<-c(1,5,8,2,9)
+order(NUM)
+NUM[order(NUM)]
+worms[order(worms$Slope),]
+worms[order(-worms$Slope),] 
+worms[order(worms$Vegetation, -worms$Slope),] 
+```
+
+
+- na.omit() odstraní všechy řádky, ve kterých se vyskytuje aspoň jedno NA<br />
+- bezpečnější je však použít filtrování pomoci !is.na() pro konkrétní poměnné<br />
+```{r eval=FALSE}
+worms.missing<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/worms.missing.txt", header=T,sep="\t")
+summary(worms.missing)
+worms.missing
+na.omit(worms.missing)
+
+is.na(worms.missing$Slope)
+worms.missing[!is.na(worms.missing$Slope),]
+```
+
+-funkce merge() umožní spojit dvě tabulky na základě společné proměnné<br />
+-mně se lépe pracuje s plyr::join()<br />
+```{r eval=FALSE}
+flowering<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/fltimes.txt", header=T)
+seeds<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/seedwts.txt",header = T)
+
+head(flowering)
+head(seeds)
+
+rownames(flowering)<-paste(flowering$Genus,flowering$species, sep= "_")
+rownames(seeds)<-paste(seeds$name1,seeds$name2, sep= "_")
+
+head(flowering)
+head(seeds)
+dim(flowering)
+dim(seeds)
+
+merge(flowering,seeds,by="row.names")
+merge(flowering,seeds,by="row.names",all=T)
+
+#alternative lze primo specifikovat promenne pro ktere se data,frames spoji
+merge(flowering,seeds,by.x=c("Genus","species"), by.y=c("name1","name2"),all=T)
+
+
+```
+
+###3.5. Objekty - List
+-list může obsahovat libovolnou kombinaci všech možných objektů<br />
+- pomocí str() zjistíme co vše obsahuje<br />
+```{r eval=FALSE}
+LIST=list(MATICE=matrix(seq(1:10),nrow=2),
+          NUMERIC=seq(5:20),
+          CHARACTER=c("pes","kun","hruska"))
+
+str(LIST)
+LIST$MATICE
+LIST$CHARACTER
+
+LIST[[1]]
+```
+
+- Jako listy jsou v R ukládány často výsledky statistických analýz. <br />
+- Teď už víme, jak z takovéhoto listu vytáhnout to, co nás zajímá:<br />
+```{r eval=FALSE}
+help("t.test")
+require(graphics)
+head(sleep)
+tapply(sleep$extra,sleep$group,mean)
+t.test(sleep$extra~sleep$group)
+RESULTS<-t.test(sleep$extra~sleep$group)
+str(RESULTS)
+RESULTS$p.value
+```
+
+##4. Randomizace
+- dát se použít jako poměrně univerzální statistický nástroj<br />
+- resampling s opakováním je základ bootstrapu<br />
+- resampling bez opakování je základ permutačních testů<br />
+
+```{r eval=FALSE}
+Vektor<-1:10
+Vektor
+sample(Vektor) #randomizace vektoru bez opakovani 
+sample(Vektor,replace=T) #s opakovanim
+```
+
+Ptáme se s jakou pravděpodobnobností nabývá pozorovaný parametr exrémnějších hodnot než by se dalo čekat náhodou<br />
+PŘÍKLAD : výška chlapců a dívek (v decimetrech) ve třetí třídě. Ptáme se jestli pozorovaný rozdíl může být jen dílem náhody<br />
+```{r eval=FALSE}
+DF.orig<-data.frame(pohlavi=c(rep("M",10),rep("F",10)),
+                    vyska_dm=c(14,12,11,10,15,16,14,12,17,18,
+                              10,10,12,14,11,15,12,15,12,13))
+DF.orig
+
+PRUMERY<-tapply(DF.orig$vyska_dm,DF.orig$pohlavi,mean)
+PRUMERY
+
+PRUMERY[1]-PRUMERY[2] #pozorovany rozdil primeru mezi pohlavymi
+
+# randomizujeme identitu pohlavi a znovu spocitame prumery pro randomizovany dataset
+DF.rand<-DF.orig                    
+DF.rand$pohlavi<-sample(DF.rand$pohlavi)
+PRUMERY<-tapply(DF.rand$vyska_dm,DF.rand$pohlavi,mean)
+PRUMERY[1]-PRUMERY[2] #randomizovany rozdil primeru mezi pohlavymi
+```
+*v následující části si ukažeme, jak zautomatizovat resampling přes mnoho cyklů (abychom ziskali nulove rozdeleni parametru, ktery nás zajímá).*
+
+##5. "flow control" ifelse(), if(), while(), for()
+
+
+###5.1. "flow control" ifelse(),
+-Pokud platí nečo udělej něco, pokud to neplatí udělej něco jiného.<br />
+-Příklad: V datasetu máme pohlaví kódovanéo jako 0,1 a chceme to změnit na M,F<br />
+
+```{r eval=FALSE}
+
+
+Pohlavi<-sample(rep(0:1,20))
+Pohlavi
+ifelse(Pohlavi==1,"M","F")
+```
+
+###5.2. "flow control" if ... else
+-Složitější varianta ifelse<br />
+-Pokud platí nečo udělej něco, pokud to neplatí otestuj jestli platí něco jiného atd<br />. 
+-Příklad: Náhodný měsíc v roce máme značený 1-12 podle pořadí v kalendáři. Testujeme jestli tento měsíc spadá do jarní, letních a nebo nějakých jiných měsíců<br />
+
+```{r eval=FALSE}
+
+mesic<-sample(rep(1:12,20))[1]
+mesic
+
+if(mesic%in%c(1,2,3)){
+  "zima"      
+} else {
+  if(mesic%in%c(4,5,6)){
+    "jaro"    
+  } else {
+    "leto/podzim"    
+  }
+}
+
+
+```
+
+###5.5. "flow control"  for()
+-for udělá určitou proceduru tolikrát, kolikrát chceme<br />
+-např. resampling určitého datasetu 1000*<br />
+-*jednoduchý příklad* - jenom vypise v jakem kroku jsem<br />
+
+```{r eval=FALSE}
+# jednoduchy priklad - jenom vypise v jakem kroku jsem
+for(i in 1:100){
+  print(paste("To je krok c.:",i))
+}
+```
+
+-*složitější příklad* - spočte počet proměnných a počet pozorovnámí pro všechny datasety ve složce crawley data
+```{r eval=FALSE}
+PATH<-"/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/"
+LIST<-list.files(PATH)
+LIST<-LIST[grep("txt$",LIST)]
+VARIABLES<-as.numeric()
+OBSERVATIONS<-as.numeric()
+
+for(i in 1:length(LIST)){
+  #print(i)
+  ACT<-read.delim(paste(PATH,LIST[i],sep=""))
+  VARIABLES[i]<-dim(ACT)[2]
+  OBSERVATIONS[i]<-dim(ACT)[1]
+}
+
+data.frame(LIST,VARIABLES,OBSERVATIONS)
+
+```
+
+##Úloha 5:
+-Pomocí randomizací se pokuste posoudit, do jaké míry je pozorovaný rozdíl mezi klukama a holkama významný<br />
+-..tj. s jakou pravděpodobností dostaneme stejné nebo vetší rozdíly pouhou náhodou<br />
+- provedˇte alespoň 1000 testů - randomizací<br />
+
+```{r eval=FALSE}
+DF.orig<-data.frame(pohlavi=c(rep("M",10),rep("F",10)),
+                    vyska_dm=c(14,12,11,10,15,16,14,12,17,18,
+                               10,10,12,14,11,15,12,15,12,13))
+DF.orig
+
+PRUMERY<-tapply(DF.orig$vyska_dm,DF.orig$pohlavi,mean)
+PRUMERY
+```
+
+##6. Tvorba vlastních funkcí
+Pokud chceme funkci dál používat můžeme:<br />
+- ji nakopírovat do daného skriptu se kterým pracujeme<br />
+- mužeme ji uložit do textaku s nějakým jménem a potom ji kdykoliv načíst pomocí source():source("/cesta/k/funkci/FUNKCE.R")<br />
+
+```{r eval=FALSE}
+pyt.veta<-function(x,y){
+  z=(x^2+y^2)^0.5
+  z
+}
+
+pyt.veta(x=10,y=5)
+
+#Pythagorova veta (speficikujeme jestli je delsi strana odvesna)
+pyt.veta.2<-function(x,y,delsi_je_odvesna=T){
+  if(delsi_je_odvesna==T){message("Delsi se bere jako odvesna")
+                         z=(x^2+y^2)^0.5}
+  if(delsi_je_odvesna==F){message("Delsi se bere jako prepona")
+                         delsi=sort(c(x,y))[2]
+                         kratsi=sort(c(x,y))[1]
+                         z=(delsi^2-kratsi^2)^0.5}
+  z
+}
+
+pyt.veta.2(x=10,y=5)
+pyt.veta.2(x=10,y=5,delsi_je_odvesna = F)
+
+```
+
+##Úloha 6:
+Vytvořte vlastní funkci která [1] otestuje, zda vstupní data jsou čtvercová matice a pokud ano tak [2] spočte součty pro jednotlivé kvadranty
+```{r eval=FALSE}
+```
+
+##7. Spuštění programů v rámci R pomocí system()
+```{r eval=FALSE}
+# system("vlc ~/Downloads/skal.mp4")
+```
+
+##8. Grafika
+
+
+###8.1 Grafika - scatterplot 
+Vynášíme dvě kontinuální proměnné
+```{r eval=FALSE}
+data<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/scatter1.txt",header=T)
+data
+plot(data$xv,data$ys)
+```
+
+-možné úpravy poměrně detailně vysvětlené tady: https://cran.r-project.org/doc/contrib/CviceniR1.pdf
+```{r eval=FALSE}
+plot(data$xv,data$ys,
+     main="Scatterplot",    #nadpis
+     ylab="Vysvetlovana",xlab="Vysvetlujici",   #ymena nazvu os
+     xlim=c(-10,110),       #rozsah os
+     pch=16,                #typ 'plotting character'
+     col="red",             #'barva'
+     cex=0.8,               #'velikost'
+     cex.lab=1.3)           #'velikost pisma os'
+```
+
+
+```{r eval=FALSE}
+plot(data$xv,data$ys,
+     main="Scatterplot",    #nadpis
+     ylab="Vysvetlovana",xlab="Vysvetlujici",   #ymena nazvu os
+     xlim=c(-10,110),       #rozsah os
+     pch=16,                #typ 'plotting character'
+     col="red",             #'barva'
+     cex=0.8,               #'velikost'
+     cex.lab=1.3)           #'velikost pisma os'
+
+#adodat regresní křivku
+abline(lm(data$ys~data$xv)) # bacha poradi vysvetlujici a vysvetlovane promenne je obracene nez u fce plot
+#abline taky extrapoluje za rozsah namerenych hodnot, coz nemusi byt uplne vhodne
+
+#muzeme take davat vlastni parametry napr. jaky sklon ocekavame, pokud mezi daty neni zadny vztah
+abline(a=(mean(data$ys)),b=0)
+
+
+#format regresni krviky
+abline(lm(data$ys~data$xv),
+       col="blue", #barva
+       lwd=2,      #tloustka cary
+       lty=2)      #typ cary 
+
+#sipky
+arrows(x=data$xv[1],y=data$ys[1],x0=data$xv[1]-10,y0=data$ys[1]-10,lwd=2, col="gold")
+
+#text
+text(x=80,y=35,"Tohle jsem nameril\nblbe", col="gold")
+
+#dalsi tvary
+rect(xleft=0, ybottom=40, xright=20, ytop=50)
+polygon(x=c(-2,22,10),y=c(50,50,60),col="red")
+
+#pridat obrazek 
+
+library(png)
+image <- readPNG("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/elephant_4_png_by_variety_stock.png")
+rasterImage(image,xleft=0, ybottom=40, xright=20, ytop=50)
+```
+-ukládání na disk-  pomocí "Export" v menu a nebo např:
+```{r eval=FALSE}
+cairo_pdf(filename = "Plot1.pdf", width = 12/2.5, height = 20/2.5) #graf se muze potom doupravit napr pomoci inkspace
+
+plot(data$xv,data$ys,
+     main="Scatterplot",    #nadpis
+     ylab="Vysvetlovana",xlab="Vysvetlujici",   #zmena nazvu os
+     xlim=c(-10,110),       #rozsah os
+     pch=16,                #typ 'plotting character'
+     col="red",             #'barva'
+     cex=0.8,               #'velikost'
+     cex.lab=1.3)           #'velikost pisma os'
+
+dev.off()
+```
+
+
+-vice barev
+```{r eval=FALSE}
+data2<-rbind(data,data) #kopirujeme puvodni data.frame dvakrat pod sebe
+dim(data2)
+head(data)
+
+data2$ys[1:2000]<-data2$ys[1:2000]+30 #tohle pripocte k vysvetlovane promenne v prvni kopii 30
+data2$Factor<-rep(c("Levlel_A","Level_B"),each=2000) #tohle doda do data.frame informaci zda jde o puvodni hodnoty a nebo ty, ktere jsme zvetsily o 30 
+
+
+plot(data2$xv,data2$ys,
+     ylab="Vysvetlovana",xlab="Vysvetlujici",                        #zmena nazvu os
+     col=ifelse(data2$Factor=="Levlel_A","red","green"),             #barevne odlisit to jestli jde o puvodni hodnoty a nebo zvetsene
+     pch=ifelse(data2$Factor=="Levlel_A",16,17), 
+     cex=0.8)               #'velikost'
+
+abline(lm(data2$ys~data2$xv,subset=(data2$Factor=="Levlel_A")))
+abline(lm(data2$ys~data2$xv,subset=(data2$Factor=="Level_B")))
+
+#dodelat legendu
+legend(1,80, legend=c("Zvetsene", "Puvodni"),
+       col=c("red", "green"), pch=c(16,17), cex=0.8)
+
+#dalsi moznosti barev: 
+x<-rep(seq(1:1000),each=50)
+error<-rnorm(length(x),mean=0,sd=400)  
+y=10+2*x+error
+Simulovany_dataset<-data.frame(x,y)
+
+#neni videt denzita mereni
+plot(Simulovany_dataset$x,Simulovany_dataset$y,
+     ylab="Vysvetlovana",xlab="Vysvetlujici",   #zmena nazvu os
+     pch=16,                #typ 'plotting character'
+     col="black",             #'barva'
+     cex=0.8)    
+```
+
+-tohle je lepsi
+```{r eval=FALSE}
+library(scales)
+plot(Simulovany_dataset$x,Simulovany_dataset$y,
+     ylab="Vysvetlovana",xlab="Vysvetlujici",   #ymena nazvu os
+     pch=16,                            #typ 'plotting character'
+     col=alpha("black",0.01),             #'barva'
+     cex=0.8)   
+```
+
+-překrývající se data: sunflowerplot + bubbleplot
+```{r eval=FALSE}
+numbers<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/longdata.txt",header=T)
+head(numbers)
+sunflowerplot(numbers$xlong,numbers$ylong)
+
+TAPPLY<-tapply(numbers$xlong,list(factor(numbers$xlong),factor(numbers$ylong)),length)
+DATA.FRAME<-as.data.frame(as.table(TAPPLY))
+DATA.FRAME<-na.omit(DATA.FRAME)
+
+symbols(DATA.FRAME$Var1, DATA.FRAME$Var2, circles=DATA.FRAME$Freq, inches=0.35, fg="white", bg="red")
+```
+
+-vice kontinualnich promennych najednou
+```{r eval=FALSE}
+ozone<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/ozone.data.txt",header=T)
+pairs(ozone)
+pairs(ozone,panel = panel.smooth)
+```
+
+
+###8.2 Grafika - histogram
+```{r eval=FALSE}
+NAHODNA_CISLA<-rnorm(1000,mean=0,sd=400)
+hist(NAHODNA_CISLA)
+hist(NAHODNA_CISLA,freq=FALSE)
+```
+-přidat densitu:
+```{r eval=FALSE}
+hist(NAHODNA_CISLA,freq=FALSE)
+DENSITY<-dnorm(-2000:2000,mean=0,sd=400)
+sum(DENSITY)
+sum((NAHODNA_CISLA))
+lines(-2000:2000,DENSITY)
+```
+
+###8.3 Grafika - boxplot 
+-medián, horní a dolní quartil (interquartile range), 1.5*interquartile range
+```{r eval=FALSE}
+weather<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/SilwoodWeather.txt",header=T)
+head(weather)
+plot(factor(weather$month),weather$upper)
+#notch: +/-1.58*IQR/n^0.5
+plot(factor(weather$month),weather$upper,notch=T)
+#violin plot
+```
+
+###8.4 Grafika - violin plot
+-vertikální histogramy
+-poměrně vhodné alternativa k boxplotům - líp patrná distribuce dat v jednotlivých kategoriích
+```{r eval=FALSE}
+library(vioplot)
+x1 <- weather$upper[weather$month==1]
+x2 <- weather$upper[weather$month==6]
+x3 <- weather$upper[weather$month==11]
+vioplot(x1, x2, x3, names=c("leden", "cerven", "listopad"),
+        col="gold")
+```
+###8.5 Grafika - barplot
+```{r eval=FALSE}
+trial<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/compexpt.txt",header=T)
+library(sciplot)
+head(trial)
+MEANS<-tapply(trial$biomass,trial$clipping,mean)
+SE<-tapply(trial$biomass,trial$clipping,se)
+X<-barplot(MEANS,xlab="pokus",ylab="Prirustek",
+           ylim=c(0,700))
+X
+arrows(x0=X, y=MEANS, x1 = X, y1 = MEANS+SE,angle=90)
+arrows(x0=X, y=MEANS, x1 = X, y1 = MEANS-SE,angle=90)
+```
+
+###8.6 Grafika - ggplot
+- Celkem dobrá alternativa ke klasické grafice<br />
+- Uspokojivý vzhled na prvni dobrou<br />
+- Tvoří se objekt obsahující všechna data + grafické parametry - lze snadno sdílet nedodělané verze a jednoduše je upravovat<br />
+- Umí všechny základní typy grafů (+ mnoho dalších)<br />
+```{r eval=FALSE}
+library(ggplot2)
+
+#boxplot
+data<-read.table("/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/MSM_1a/data_crawley/daphnia.txt",header=T)
+p <- ggplot(data, aes(y=Growth.rate, x=Water)) + 
+  geom_boxplot()+geom_jitter()
+p
+p<-p+facet_grid(~Detergent)
+p
+p+theme_bw()
+
+#scaterplot
+p<-ggplot(data2,aes(xv,ys,color=Factor))+
+  geom_point(alpha=0.1)
+p     
+p<-p+geom_smooth(method=lm)
+p
+p<-p+facet_grid(~Factor)
+
+#ukladani ggplot
+ggsave(filename = "/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/ggplot.jpeg",
+       plot = p,width=20,heigh=20,units="cm")
+```
+
+##Řešení úloh
+```{r eval=FALSE}
+##Úloha 1: 
+(6^2+12^2)^0.5
+odvesna1=6
+odvesna2=12
+prepona=(odvesna1^2+odvesna2^2)^0.5
+prepona
+
+##Úloha 2:
+A<-c(1,2,3,4,5,6,7,3,1,4,5)
+B<-c(5,4,3,7,3,4,2,1,5,2,3)
+prepony=(A^2+A^2)^0.5
+prepony
+
+PLOCHA_jednotlive=A*B/2
+PLOCHA_jednotlive
+sum(PLOCHA_jednotlive)
+
+##Úloha 3:
+VEKTOR.NUM<-c(1,2,3,4,5,6,7,3,1,4,5)
+PRVNI_TRI<-1:3
+POSLEDNI_TRI<-(length(VEKTOR.NUM)-2):length(VEKTOR.NUM)
+VEKTOR.NUM[c(PRVNI_TRI,POSLEDNI_TRI)]
+
+FILTER<-VEKTOR.NUM/2-floor(VEKTOR.NUM/2)==0
+FILTER
+VEKTOR.NUM[FILTER]
+
+#Úloha 4
+CTVEREC<-matrix(1:100,ncol=10)
+PUL<-floor(dim(CTVEREC)[1])
+sum(CTVEREC[1:PUL,1:PUL])
+```
+

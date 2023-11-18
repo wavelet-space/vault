@@ -1,0 +1,93 @@
+\section{Úvod}
+Základním principem numerických metod je diskretizace proměnných a to buď prostorových (\textit{spatial}) anebo časových (\textit{temporal}) proměnných.
+
+\begin{itemize}
+    \item Approximation
+        \begin{itemize}
+            \item Aproximace na okolí bodu
+            \item $L_2$ approximace
+            \item Interpolation $\R \mapsto \R$
+            \begin{itemize}
+                \item Použijeme pokud chceme danými body proložit polynom tzn, že aproxumace přesně prochází body.
+                
+                \item Lagrange Interpolation Method
+                    Lagrange Interpolating Polynomial
+                \item Newton Interpolation Method
+                    Newton Interpolating Polynomial
+                \item 
+            \end{itemize}
+        \end{itemize}
+    \item Iterativní metoda
+    
+    \item Přímá metoda
+
+    \item Numerická derivace
+    \item Numerická integrace
+        \begin{itemize}
+            \item   - Newtonovy-Cotesovy vzorce a složené Newtonovy-Cotesovy vzorce,
+  - Rombergova kvadratura
+  - Gaussova kvadratura.
+        \end{itemize}
+\end{itemize}
+
+\chapter{Approximation and Interpolation}
+
+Mějme funkci $f: \R \mapsto \R$ definovanou v $n + 1$ bodech $x_i$.
+
+\subsection{Aproximace na okolí bodu}
+
+Aproximace funkce $f$ na okolí bodu $x_0$ pomocí Taylorova polynomu $T$. Předpokldáme, že funkce $f$ má v daném bodě $x_0$ alespoň derivaci $n$-tého řádu (včetně) jejichž hodnoty známe. Hledáme funkci $\varphi$, která má v daých bodech stejnou derivaci a tedy je dosti podobná dané funkci $f$.
+
+\begin{equation}
+    \varphi^{(k)}(x_0) = f^{(k)},  \quad k = 0, 1,\ldots n,
+\end{equation}
+
+Toto chování je zajištíme pomocí Taylorova polynomu. 
+
+\input{Taylor.tex}
+
+rozepsáno 
+
+\begin{equation}
+T_n^{f,a} = \frac{f^{(0)}(a) (x - a)^0}{0!} + \frac{f^{(1)}(a) (x - a)^1}{1!} + \ldots + \frac{f^{(n) (x - a)^n}}{n!}
+\end{equation}
+
+Chyba aproximace $error(x) = f(x) - T_n(x) = f^{n+1}(\xi) \frac{(x - x_0)}{(n + 1)!}, \xi \in U(x_0) $
+
+\begin{example}
+Aproximujte funkci $f := \sin(x)$ (se středem) v bodě $x_0 = 0$ pomocí Taylorova polynomu čtvrténo stupně $T_4^f(x)$. 
+
+Řešení:  $T_4^f(x) = \sin(0)  + \cos(0)x - \frac{\sin(0) x^2}{2!} - \frac{\cos(0) x^3}{3!} + \frac{\sin(0) x^4}{4!} = x - \frac{x^3}{6}$. Chyba je ve tvaru $error(x) = \frac{\lvert\cos(0) x^5\rvert}{5!} = \frac{\lvert{x^5}\rvert}{120}$
+\end{example}
+
+\subsection{
+Aproximace v zadaných bodech
+%Lagrange Interpolating Polynomial
+}
+
+Označím hledaný Lagrangeův polynom stupně $n$ jako $L_n(x)$ a požadujme splnění interpolační podmínky 
+
+\begin{equation}
+    L_n(x_i) = f(x_i), \quad i = 0, 1,\ldots, n.
+\end{equation}
+
+Podmínka říká, že hledaný polynom $n$-tého stupně $L_n$ prochází přesně body dané fukce $f$ pro dané hodnoty $x_i$. Polynom $L_n$ hledáme ve tvaru 
+
+\begin{equation}
+    L_n(x) = \sum_{i=0}^0 f(x) l(x),
+\end{equation}
+
+
+\section{Numerical Analysis}
+\begin{itemize}
+    \item Rounding Error
+\end{itemize}
+
+\textbf{Jednokroková metoda} --
+
+\textbf{Vícekroková metoda} --
+
+
+\section{Metoda konečných diferencí}
+
+Metoda konečných diferencí je založena na diskretizaci prostoru a času studované domény. Obvykle diskretizujeme prostor ekvidistantně. příklad si ukážeme na rovnici vedení tepla  v jedné prostorové a jedné časové dimenzi. Výslední výpočetní mříž bude tedy dvojrozměrná.

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Počet promluv nejčastěji zastoupených politiků",
+    "width": 400,
+    "height": {"step": 32},
+    "transform": [],
+    "data": {
+      "url": "data2.json"
+    },
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "a",
+        "type": "nominal",
+        "title": "Y",
+        "sort": "-x"
+      },
+      "x": {
+        "field": "b",
+        "type": "quantitative",
+        "title": "X"
+      }
+    },
+    "config": {
+        "axis": {
+          "grid": false
+        },
+        "view": {"stroke": "transparent"}
+      }
+  }

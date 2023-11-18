@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf8">
+</head>
+<body>
+  <div id="box1" style="background-color: black; height: 10px; width: 10px; position: absolute; top: 50px"></div>
+  <div id="box2" style="background-color: black; height: 10px; width: 10px; position: absolute; top: 50px"></div>
+  <div id="box3" style="background-color: black; height: 10px; width: 10px; position: absolute; top: 50px"></div>
+</body>
+  <script type="module">
+    
+    class Box {
+      constructor(element, position, velocity, color = "black") {
+        this.element = document.getElementById(element)
+        this.position = position
+        this.velocity = velocity
+        this.element.style.top = position[0] + "px"
+        this.element.style.left = position[1] + "px"
+        this.element.style.backgroundColor = color
+      }
+    }
+
+
+    const World = {
+      
+      bounds: [100, 100],
+      
+      items: [
+        new Box("box1", [20, 20], 2, "#ff0000"),
+        new Box("box2", [40, 40], 2, "#0000ff"),
+        new Box("box3", [60, 60], 2, "#00ff00"),
+      ],
+
+      /**
+       * The inital state of the world.
+       */
+      init: () => {
+        // no-code
+      },
+
+      /** 
+       * Update the state of the world. 
+       */
+      update: (item, dt) => {
+        // ds = v * dt
+        item.position[0] += item.velocity * dt 
+
+        if (item.position[0] >= World.bounds[0] || item.position[0] <= 0) {
+          item.velocity = -item.velocity
+        } 
+      },
+        
+      /** 
+       * Render the state of the world.
+       */
+      render: (item) => {
+        item.element.style.left = item.position[0] + 'px'
+        // document.body.textContent = Math.round() + ' FPS'; // display the FPS
+      },
+    }
+
+
+    var dt = 10
+    var fps = 60
+    var ts = 1000 / fps // 16.667ms
+
+    
+    /* 
+     * The simulation loop.
+     */
+    ;(function (Wold) {
+      
+      const loop = () => {
+        window.requestAnimationFrame(loop);
+  
+        for (var i = 0; i < World.items.length; ++i) {
+          World.update(World.items[i], dt)
+          World.render(World.items[i])
+        }
+      }
+
+      loop()
+    })(World);
+    
+  </script>
+</html>

@@ -1,0 +1,106 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3561,         99]
+NotebookOptionsPosition[      2922,         80]
+NotebookOutlinePosition[      3296,         96]
+CellTagsIndexPosition[      3253,         93]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", " ", "+", " ", "a"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", "0", ",", " ", 
+     RowBox[{"2", "Pi"}]}], "}"}], ",", "  ", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8129443339738226`*^9, 3.812944354080826*^9}, {
+  3.8129443900075226`*^9, 3.812944459744543*^9}, {3.8129444897775555`*^9, 
+  3.812944498945562*^9}, {3.812944659866334*^9, 3.8129446647433443`*^9}, {
+  3.812944741786124*^9, 3.8129447588931217`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d14d5f72-2cc6-4908-b27b-9be071244c97"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Plot","nonopt",
+   "\"Options expected (instead of \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"a\\\", \\\",\\\", RowBox[{\\\"-\\\", \\\"10\\\"}], \\\",\\\", \
+\\\"10\\\"}], \\\"}\\\"}]\\)) beyond position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) \
+in \\!\\(\\*RowBox[{\\\"Plot\\\", \\\"[\\\", RowBox[{RowBox[{\\\"Sin\\\", \
+\\\"[\\\", RowBox[{\\\"x\\\", \\\"+\\\", \\\"a\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"x\\\", \\\",\\\", \\\"0\\\", \\\",\\\", \
+RowBox[{\\\"2\\\", \\\" \\\", \\\"\[Pi]\\\"}]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"a\\\", \\\",\\\", RowBox[{\\\"-\\\", \
+\\\"10\\\"}], \\\",\\\", \\\"10\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\). An \
+option must be a rule or a list of rules.\"",2,4,5,30041463055743738890,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.81294475966916*^9},
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"974504c2-3345-482b-9bb5-883d4298670d"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", "+", "a"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.8129444534125233`*^9, {3.812944493928551*^9, 3.812944499448549*^9}, 
+   3.8129447597011223`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"424d8bbc-8305-45e5-9a08-e6532a684044"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ EmphasizeSyntaxErrors->
+  True,ExpressionUUID->"e97de3e8-ecb3-4953-aeec-288dc2a30223"]
+},
+WindowSize->{2560, 1386},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>1.7 Inherited,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 697, 15, 49, "Input",ExpressionUUID->"d14d5f72-2cc6-4908-b27b-9be071244c97"],
+Cell[1280, 39, 989, 18, 39, "Message",ExpressionUUID->"974504c2-3345-482b-9bb5-883d4298670d"],
+Cell[2272, 59, 517, 14, 55, "Output",ExpressionUUID->"424d8bbc-8305-45e5-9a08-e6532a684044"]
+}, Open  ]],
+Cell[2804, 76, 114, 2, 49, "Input",ExpressionUUID->"e97de3e8-ecb3-4953-aeec-288dc2a30223"]
+}
+]
+*)

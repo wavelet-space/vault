@@ -1,0 +1,241 @@
+---
+title: "Mixované modely"
+author: "Jakub Kreisinger"
+date: "June 18, 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(lme4)
+library(lmerTest)
+library(nlme)
+library(ggplot2)
+library(MuMIn) #vypocet R^2
+library(rptR) #repeatibilita
+library(jtools)
+library(sjPlot)
+
+PATH<-"/media/kreising/DATA/Documents/prezentace/vyuka/Statisticke_Metody/2020_2021/Vse/data/"
+```
+
+Pro detailnější a zároveň ne příliš technický úvod do mixovaných modelů viz následující literatura:<br /> 
+[Bolker et al. 2009](https://www.sciencedirect.com/science/article/pii/S0169534709000196)<br />
+[Harrison et al. 2018](https://peerj.com/articles/4794/)<br />
+
+...a další zde uvedené zdroje.
+
+#Mixované modely s náhodným interceptem
+Studujeme modulaci výšky hlasu (frequency) podle kontextu (pol, inf). Experiment probíhal v různých modelových situacích (*scenario*) u jedinců (*subject*) různého pohlaví (*gender*).
+Rozdíly mezi jedinci (*subject*) nás moc nezajímají, ale jsou pravděpodobně důležitým zdrojem variability - dáme je tedy jako random. Stejně tak *scenario* nebudem brát jako fixed, ale jako random. Důležité je si uvědomit, že úrovně *scenario* jsou kodované pro všechny jedince stejně takže je musíme kódovat jako nested random (**model2**) a ne jako crossed (**model3**) pokud uvařujeme, že výsledek se mění neaditivně v kontextu jedince a scenario. Altenativně je můžeme překódovat jako v **model4** a potom budou výsledky stejné jako u **model2**.<br />
+Na následujících příkazech je vidět 1) jak porovnávat jednotlivé modely pomocí fce anova (doporučuji použít funkci anova, nebo taky anova.lmerModLmerTest z balíčku lmerTest(), kde je možné přefitovat model pomocí *ML* i *REML*), dále 2) spočteme podíl vysvětlené variability pro celý model pomocí funkce MuMIn::r.squaredGLMM(), detaily viz [Nakagawa Schielzeth 2013](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.2041-210x.2012.00261.x). R2marginal udává podíl variance vysvětlený fixnimi efekty a R2conditional podíl variance vysvětlený celým modelem. Nakonec spočteme repeatabilitu (*intraclass correlation coefficient*) v rámci jedince pomocí balíčku rptR(), detaily viz [Stoffel et al. 2018](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12797)     
+
+```{r }
+d<-read.table(paste(PATH,"politeness_data.csv",sep=""),
+              header=T,sep=",")
+head(d)
+summary(d)
+d$scenario<-as.factor(d$scenario)
+table(d$subject, d$attitude)
+
+ggplot(data=d, aes(x=attitude, y=frequency))+geom_boxplot()+facet_grid(. ~ subject)
+
+d<-d[!is.na(d$frequency),] #odstranit jedno chybejici pozorovani
+
+res1 = lmer(frequency ~ attitude+gender+attitude:gender+ 
+              (1 | subject), data = d) #model nezohlednujici scenario
+res2 = lmer(frequency ~ attitude+gender+attitude:gender+ 
+              (1 | subject/scenario), data = d) #model kde je scenario jako nested
+res3 = lmer(frequency ~ attitude+gender+attitude:gender+ 
+              (1 | subject)+(1 | scenario), data = d) #model kde je scenario jako crossed
+
+# alternativni prekodovani scenario
+d$scenario2<-paste(d$scenario,d$subject,sep="_")
+
+res4 = lmer(frequency ~ attitude+gender+attitude:gender+ 
+              (1 | subject)+(1 | scenario2), data = d) #model kde je scenario spravne jako crossed
+
+
+summary(res1)
+summary(res2)
+summary(res4) #dava identicke odhady parametru jako res2
+summary(res3) # ale u tohoto modelu jsou odlisne
+
+anova(res1,res2, refit=FALSE) # refit=FALSE protoze porovnavame modely lisici se v random efektech, 
+                              # odhad by tudiz mel byt provedeny na urovni REML a ne ML
+anova(res1,res4, refit=FALSE) 
+
+#odstaneni interakce
+res2b = lmer(frequency ~ attitude+gender+ 
+              (1 | subject/scenario), data = d)
+
+anova(res2b,res2) #nesignifikantni - Ale pozor nutno zkontrolovat jestli je to fitovane jako ML
+anova(res2b,res2,refit=F)  #pokud bychom nespravne porovnaviali REML fity, tak to vyjde signifikantne 
+
+#podil variability vysvetleny fixanimi a random efekty
+r.squaredGLMM(res1)
+r.squaredGLMM(res2)
+
+#repeatabilita v ramci subjektu
+rep1 <- rpt(frequency ~ attitude+gender+ (1 | subject/scenario), grname = "subject", data = d, 
+    datatype = "Gaussian", nboot = 1000, npermut = 0)
+rep1
+
+rep2 <- rpt(frequency ~ attitude+gender+ (1 | subject), grname = "subject", data = d, 
+    datatype = "Gaussian", nboot = 0, npermut = 0)
+rep2
+
+#u jednoduchych modelu lze intraclass cor. coefficient dopocitat pomene jednoduse i rucne
+#rozptyl = S.D.^2
+m = lmer(frequency ~ attitude+gender+ 
+              (1 | subject), data = d)
+summary(m)
+24.57^2/(29.17^2+24.57^2)
+rpt(frequency ~ attitude+gender+ (1 | subject), grname = "subject", data = d, 
+    datatype = "Gaussian", nboot = 0, npermut = 0)
+
+#zobrazeni koeficinetu pro random efekty
+sjPlot::plot_model(m,type = "re")
+
+```
+#Mixované modely - příklad s random slopes
+Studujeme vliv hnojení (*fertilizer*) na růst (*root*) rostlin (*plant*). Vzhledem k tomu že jednotlivé rostliny můžou mít za identických podmínek rozdílné rychlosti růstu, je vhodné tuto variabilitu ošetřit pomocí random slopes. Pokud tento zdroj variability nepodchytíme, nemůžeme úplně věřit výsledkům pro fixed efekty, ale i jiným. Obecně se doporučuje do modelu dávat random slopes vždy, když to tává smysl viz [Schielzeth, Forstmeier 2008](https://academic.oup.com/beheco/article/20/2/416/218997). <br />
+Na druhou stranu model s ramdom slopes je složitější než bez nich, což může způsobit špatnou konvergenci a nevěrohodnost výsledků. Špatná konvergence se dá někdy odstanit centrováním a škálovaním prediktorů (funkce scale()) a specifikaci jiného optimalizačního algoritmu, [viz např.](https://stats.stackexchange.com/questions/242109/model-failed-to-converge-warning-in-lmer). <br />
+V tomto konkrétním případě předpokládáme lineární růst. Pomocí mixovaných modelů se ale dají pomocí polynomů modelovat i složitější, např. logistické, růstové křivky jako je to úkázané [tady](https://www.amazon.com/Growth-Curve-Analysis-Visualization-Chapman-ebook/dp/B00UV90D5W) a nebo na praktickém příkladě [tady](https://journals.plos.org/plosone/article/comments?id=10.1371/journal.pone.0236583). Je dobré pamatovat, že v takovém případě by se měli jako "random" specifikovat jak lineární tak i kvadratické členy.   
+
+*Náhled na data:*
+
+```{r}
+results<-read.table(paste(PATH,"fertilizer.txt",sep=""),header=T)
+head(results)
+results<-groupedData(root~week|plant,outer = ~ fertilizer,results)
+plot(results)
+plot(results,outer=T)
+
+```
+
+*Fitujeme a porovnáváme modely s a bez random slope a takz posuzujeme efekt prediktorů*
+
+```{r}
+
+#testujeme jestli hnojivo ovlivnuje velikost rostliny po kontrole na jejich variabilitu v jejich pocatecni velikosti (random intercept) a rychlosti rustu (random slope) 
+results$week2<-results$week-mean(results$week)
+model<-lmer(root~fertilizer+(week|plant),data=results)
+model2<-lmer(root~1+(week|plant),data=results)
+model3<-lmer(root~fertilizer+(1|plant),data=results)
+anova(model,model2)
+anova(model,model3,refit=F)
+summary(model)
+summary(model3)
+
+```
+
+#Generalized Linear Mixed Models - příklad s binomickými daty
+Budeme studovat efekt světla (*LIGHT.log*) a výšky (*HEIGH.log*) na jejich přežívání (*STATUS*, 0,1) rostlin. STATUS je binární proměnná, použijeme tedy glmm s binomickým rozdělením. Rostliny byly pěstovaní na různých polích (*PLOT*), což zahrneme jako random efekt.   
+
+*Testujeme efekt výšky a světla. Světlo nevychází signifikantně.*
+```{r}
+library(sjPlot)
+library(sjmisc)
+
+sdata<-read.table(paste(PATH,"sdata.txt",sep=""), header = T)
+head(sdata)
+
+model1 <- glmer(STATUS ~ HEIGHT.log+LIGHT.log + (1 | PLOT), data = sdata, 
+                    family = binomial)
+model2 <- glmer(STATUS ~ HEIGHT.log + (1 | PLOT), data = sdata, 
+                family = binomial)
+summary(model1)
+anova(model1,model2, refit=T)
+
+```
+
+Zkoušíme zahrnout random slopes pro *HEIGHT.log*. Model s random slopes je výrazně lepší, ale *HEIGHT.log* stále vychází jako vysoce průkazná.   
+
+```{r}
+model3 <- glmer(STATUS ~ HEIGHT.log + (HEIGHT.log | PLOT), data = sdata, 
+                family = binomial)
+
+anova(model3,model2, refit=F)
+summary(model2)
+summary(model3)
+```
+
+Testujeme signifikanci random efektů. A to tak, že uděláme binomické glm bez random a to porovnáme s původními glmmm modely, detaily viz [Bolker et al., 2009](https://www.sciencedirect.com/science/article/pii/S0169534709000196) . 
+```{r}
+model.glm <- glm(sdata$STATUS ~ log(sdata$HEIGHT), family = binomial)
+
+summary(model.glm)
+summary(model2)
+
+# pro model s random intercepts
+LL1 <- logLik(model.glm)
+LL2 <- logLik(model2)
+D <- as.numeric(-2 * (LL1 - LL2))
+pchisq(D, df = 1, lower = FALSE)[1]
+
+#pro model s random intercepts + slopes
+LL1 <- logLik(model.glm)
+LL3 <- logLik(model3)
+D2 <- as.numeric(-2 * (LL1 - LL3))
+pchisq(D2, df = 1, lower = FALSE)[1]
+
+```
+
+
+Vykreslení predikcí modelu 
+```{r}
+#predikce fixed effect
+easyPredCI <- function(model,newdata,alpha=0.05) {
+  ## baseline prediction, on the linear predictor (logit) scale:
+  pred0 <- predict(model,re.form=NA,newdata=newdata)
+  ## fixed-effects model matrix for new data
+  X <- model.matrix(formula(model,fixed.only=TRUE)[-2],
+                    newdata)
+  beta <- fixef(model) ## fixed-effects coefficients
+  V <- vcov(model)     ## variance-covariance matrix of beta
+  pred.se <- sqrt(diag(X %*% V %*% t(X))) ## std errors of predictions
+  ## inverse-link (logistic) function: could also use plogis()
+  linkinv <- model@resp$family$linkinv
+  ## construct 95% Normal CIs on the link scale and
+  ##  transform back to the response (probability) scale:
+  crit <- -qnorm(alpha/2)
+  linkinv(cbind(lwr=pred0-crit*pred.se,
+                upr=pred0+crit*pred.se))
+}
+
+#nejdriv data.frame ktery bude obsahovat hodnoty na zaklade kterych budeme delat predikce
+range(sdata$HEIGHT.log)
+pframe<-data.frame(HEIGHT.log=seq(from=1, to=2.778151,by=0.01))
+
+#predikce konfidencnich intervalu
+cpred1.CI <- data.frame(easyPredCI(model2,pframe))
+head(cpred1.CI)
+
+summary(model2)
+Y<-1/( 1 +1/(exp(-3.2116+2.2053*pframe$HEIGHT.log)))
+
+{plot(c(min(pframe$HEIGHT.log),max(pframe$HEIGHT.log)),c(0:1),type="n")
+points(sdata$HEIGHT.log,sdata$STATUS)
+#vyneseni predikci konfidencnich intervalu
+lines(pframe$HEIGHT.log,cpred1.CI$lwr,lty=2)
+lines(pframe$HEIGHT.log,cpred1.CI$upr,lty=2)
+#vyneseni predikovanych kodnot (odvodime zpetnou transformaci parametru modelu 2)
+lines(pframe$HEIGHT.log,Y,lty=1)
+}
+
+
+```
+
+To samé jde podstatně snáz udělat pomocí jtools::effect_plot()
+```{r}
+library(jtools)
+
+EFF<-effect_plot(model3, pred = HEIGHT.log, interval = TRUE)
+EFF
+```
+
+Přidáme další vrstvu, kde budou pozorované hodnoty.
+```{r}
+EFF+geom_jitter(data = sdata,aes(x=HEIGHT.log,y=STATUS),
+                alpha=0.1,height =0.05,width = 0)
+```

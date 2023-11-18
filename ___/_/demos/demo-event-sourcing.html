@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script type="module">
+        import {Div} from "./cgs-html.js"
+    </script>
+</head>
+<body>
+<div id="menu">
+    <a href="">index</a>
+    <a href="">about</a>
+</div>
+<div id="content">
+
+</div>
+
+<script type="text/javascript">
+
+
+class Page() {
+    constructor(path) {
+        this.path = path
+    }
+    async load() {
+
+    }
+    async show() {
+    }
+}
+
+/**
+ * Router manages the page transitions.
+ *
+ * It is singleton object.
+ */
+class Router = {
+    constructor(routes) {
+        this.routes =  routes || { }
+    }
+
+    /**
+     * Create the route.
+     *
+     * @name The route name.
+     * @path The route path.
+     * @path The route page.
+     */
+    createRoute(name, path, page) {
+        routes[name] = { path: path, page: page };
+    }
+
+    /**
+     * Delete the route.
+     *
+     * @name The route name.
+     */
+    deleteRoute(name)  {
+        delete routes[name]
+    }
+
+    /**
+     * Navigate to the route.
+     */
+    async navigate() {
+        await console.log(window.location)
+    }
+
+    observe() {
+        window.addEventListener('load', this.navigate );
+        window.addEventListener('hashchange', this.navigate );
+    }
+}
+
+// ============================================================================
+// Pages
+// ============================================================================
+
+const About = async (...inner) => {
+  `<section class="section">
+    <h1>{inner}</h1>
+  </section>`
+}
+
+// ============================================================================
+
+
+// Get the current URL
+
+let indexPage = () => "<h1>index</h1>"
+
+let currentPageContent = document.getElementById("content")
+
+currentPageContent.innerHTML = indexPage()
+
+router = new Router
+router.observe()
+
+</script>
+
+</body>
+</html>

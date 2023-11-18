@@ -1,0 +1,57 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage[acronym]{glossaries}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage[hscale=0.8,vscale=0.8]{geometry}
+\usepackage{siunitx}
+
+\urlstyle{same}
+
+
+\usepackage{mhchem}
+
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{R}}
+
+\newglossaryentry{isochoric_deformation}
+{
+    name=isochoric_deformation,
+    description={A deformation without change in volume}
+}
+
+\newacronym{gcd}{GCD}{Greatest Common Divisor}
+
+\makeglossaries
+
+\newcommand{\cvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+
+\title  {Continuum and Solid Mechanics \\ Study Notes}
+\author {David Landa}
+\date   {2021}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+
+These notes are for my personal use only. They are not complete nor accurate. I created them during the master courses  \href{https://is.cuni.cz/studium/eng/predmety/index.php?do=predmet&kod=MG440P46}{Advanced Structural Geology} and \href{https://is.cuni.cz/studium/predmety/index.php?id=15376e056557fd1aa0462c0718f16ca7&tid=&do=predmet&kod=MG451P11&skr=2020}{Language of Continuum Mechanics}. 
+
+% \input{BSZZ}
+% \input{Mechanics_Statistical}
+% \input{Numerical_Mathematics}
+% \clearpage
+% \printglossary[type=\acronymtype]
+% \printglossary
+\input{ContMech2022Homeworks}
+\end{document}

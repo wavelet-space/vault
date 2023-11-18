@@ -1,0 +1,33 @@
+= Scala 3 Guide
+
+:description: This guide shows how to start and develop with Scala 3
+
+== Study Plan
+
+=== Basics
+
+. Managing project with _sbt_ and _Visual Studio Code_.
+. Learn the basic syntax
+  . expressions
+  . variables and constants (`var`, `val`)
+  . objects and classes (`object`, `class`, `case class`)
+  . methods and functions (`def`).
+. Functional programming: _referential transparency_, _pure functions_ / _side effects_
+. Packages and modules
+. Testing: _ScalaTest_, property based testing
+. Interactive development (REPL + notebooks)
+. Scala 2 vs Scala 3
+
+=== Advanced
+
+. Functional programming with `cats` library + comparison with Haskell
+. Asycnhronous vs Synchronous programming
+
+== Installation
+
+See the https://docs.scala-lang.org/scala3/getting-started.html
+
+== Resources
+
+- https://docs.scala-lang.org/scala3/book/introduction.html
+- https://marketplace.visualstudio.com/items?itemName=scalameta.metals

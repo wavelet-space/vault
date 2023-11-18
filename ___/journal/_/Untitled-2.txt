@@ -1,0 +1,93 @@
+Modelling spinodal decomposition at the atomic scale --- beyond the Cahn-Hilliard model
+
+
+
+Computational modeling of mineral unmixing and growth
+An application of the Cahn–Hilliard equation
+
+
+Gibbs, J.W., “On the Equilibrium of Heterogeneous Substances,” in Transactions of the Connecticut Academy of Arts and Sciences, 1876, III, pp. 108–248, Oct. 1875–May 1876, and pp. 343–524, May 1877–July 1878.
+
+
+- granát je v granulitové facii indexovým minerálem metamorfózy.
+
+
+(1998) Lasaga. Kinetic theory in earth sciences
+Kapitoly: 4. Diffsion, 5. Irreversible thermodynamics
+
+
+(1998) Raabe. Computational Materials Science: The Simulation of Materials, Microstructures and Properties (380 s.)
+
+- Kapitoly:
+  - Monte Carlo Simulation and Integration
+  - Ginzburg-Landau-Type Phase Field Kinetic Models
+  - Cellular Automata
+
+
+Thermodynamics of Microstructures
+
+
+FiPy
+https://github.com/usnistgov/fipy/blob/6e1e60d71f76e81b8678b60c42ce954a7d88dc3c/examples/cahnHilliard/mesh2D.py
+
+
+
+Cahn–Hilliard
+
+- 2006 KUHL Computational modeling of mineral unmixing and growth
+- 2012 PETRISHCHEVA Exsolution by spinodal decomposition in multicomponent
+mineral solutions
+
+
+=== 2006 KUHL Computational modeling of mineral unmixing and growth
+
+Jaký je rzdíl mezi unmixing or exsolution?
+
+exso-lution textures vs microstructure
+
+A related phenomenon to min-
+eral exsolution is symplectitic growth, which yields similar
+intergrowth pattern. In contrast to mineral exsolution, which
+is a solid-state process in a closed system, symplectites may
+involve fluids and small amounts of residual magma in an
+open system [25].
+
+Flory–Huggins thermodynamics of mix-
+ing
+
+However,theoftenrandomarrangementof
+the delicate exsolution and symplectite textures (cf. Fig. 1b)
+suggests that they typically grow in low-strain locations, see,
+e.g.,Vernon[25].
+
+Nevertheless,strainmaycontributedirectly
+to the their formation through the effect of strain energy on
+the total free energy [23], or indirectly as the textures may
+become distorted and recrystallized into granular aggregates
+when being subjected to strain.
+
+governing equations of nonlinear nonlocal
+diffusion of Cahn–Hilliard type which finally result in a gov-
+erning fourth order diffusion equation.
+
+Governing equations
+
+Remark 2 (Constant vs. concentration dependent mobility)
+In the simplest case, we could assume a constant mobility
+which is then equivalent to the diffusivity D.
+M = D.
+(14)
+Thermodynamic reasoning, however, suggests the choice of
+M = c [ 1 − c ] D/RT ,
+(15)
+which, as we will see later, results in Fickian diffusion in the
+case of ideal solution.
+
+Remark 3 (Isotropic vs. anisotropic diffusion) In the case of
+isotropic mineral growth, the diffusivity tensor D can be
+expressed in terms of the identity tensor weighted by the
+scalar valued diffusion coefficent D.
+D = D I.
+
+=== Exsolution by spinodal decomposition in multicomponent
+mineral solutions

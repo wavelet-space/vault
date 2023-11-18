@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Perspective</title>
+   </head>
+  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" id="style" type="text/css" href="">
+
+    <script type="module">
+
+    import { Point2, Point3 } from "./visio/math/point.js"
+    import { radians, degrees } from "./visio/math/angle.js"
+    import { Matrix3 } from "./visio/math/matrix.js"
+
+    import { P, Div, Header, Footer, Canvas, Span, H1, H2, H3 } from "./visio/html.js"
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      console.log("DOM fully loaded and parsed");
+      document.body.style = "background-color: #white; color: #222";
+      let canvas = document.getElementById("context")
+      console.log(canvas)
+    });
+
+    window.onload = () => {    
+
+      document.body.innerHTML = 
+        Div("container",  
+          Header("header",
+            H1(Span("gray", "Orthographic Projection")),
+            P("about", "Example of orthographic projection of cube. For rotation, drag a cube.")
+          ),
+          Canvas("context"),
+          Footer("footer", "&copy; CGS (Computer Graphics Samples)")
+        )
+
+      //>>> Type aliases
+      const Vertex2 = Point2
+      const Vertex3 = Point3
+      //<<<
+
+      const renderText = ({context: ctx, text,
+        x = 0,
+        y = 0
+      }) => {
+        console.log(x, y)
+        ctx.fillText("Hello World", x, y);
+      }
+
+      /**
+       * The cube primitive object. 
+       */
+      class Cube {
+
+        constructor(center, side) {
+          this.side = side
+          this.center = center 
+          
+          let half = side / 2
+
+          this._vertices = [
+              new Vertex3(center.x - half, center.y - half, center.z + half),
+              new Vertex3(center.x - half, center.y - half, center.z - half),
+              new Vertex3(center.x + half, center.y - half, center.z - half),
+              new Vertex3(center.x + half, center.y - half, center.z + half),
+              new Vertex3(center.x + half, center.y + half, center.z + half),
+              new Vertex3(center.x + half, center.y + half, center.z - half),
+              new Vertex3(center.x - half, center.y + half, center.z - half),
+              new Vertex3(center.x - half, center.y + half, center.z + half)
+          ]
+          
+          this._faces = [
+            [this.vertices[0], this.vertices[1], this.vertices[2], this.vertices[3]],
+            [this.vertices[3], this.vertices[2], this.vertices[5], this.vertices[4]],
+            [this.vertices[4], this.vertices[5], this.vertices[6], this.vertices[7]],
+            [this.vertices[7], this.vertices[6], this.vertices[1], this.vertices[0]],
+            [this.vertices[7], this.vertices[0], this.vertices[3], this.vertices[4]],
+            [this.vertices[1], this.vertices[6], this.vertices[5], this.vertices[2]]
+          ]
+        }
+
+        get faces() {
+          return this._faces
+        }
+
+        get vertices() {
+          return this._vertices
+        }
+
+        toString() {
+          return `${this.vertices}, ${this.faces}`
+        }
+
+        // copy()
+        // equals(other)
+        // hash(other)
+      }
+        
+      /**
+       * Project a vertex.
+       */
+      const project = (p) => {
+        return new Vertex2(p.x, p.z)
+      }
+      
+      // Rotate a vertex
+      const rotate = (M, center, theta, phi) => {
+        // Rotation matrix coefficients
+        var ct = Math.cos(theta);
+        var st = Math.sin(theta);
+        var cp = Math.cos(phi);
+        var sp = Math.sin(phi);
+
+        // Rotation
+        var x = M.x - center.x;
+        var y = M.y - center.y;
+        var z = M.z - center.z;
+
+        M.x = ct * x - st * cp * y + st * sp * z + center.x;
+        M.y = st * x + ct * cp * y - ct * sp * z + center.y;
+        M.z = sp * y + cp * z + center.z;
+      }
+
+      const render = (context, objects, center)  => {
+        
+        let dx = center[0]
+        let dy = center[1]
+
+        const pallete = [
+            "rgba(96, 169, 23, 0.3)",
+            "rgba(0,  80, 239, 0.3)",
+            "rgba(216, 0, 115, 0.3)",
+            "rgba(240, 163, 10, 0.3)",
+            "rgba(100, 118, 135, 0.3)",
+            "rgba(229, 20, 0, 0.3)"
+          ]
+
+        renderText({context: context, text: "demo", x: 40, y: 40})  
+       
+        // for each object in the scene
+        for (let i = 0; i < objects.length; ++i) {
+            
+          
+
+          // render each face of the object
+          for (let j = 0; j < objects[i].faces.length; ++j) {
+            
+            context.fillStyle = pallete[j]
+            context.save()
+          
+            context.beginPath();
+              
+            let face = objects[i].faces[j]
+            let proj = project(face[0])
+
+            // Draw the first vertex.
+            context.moveTo(proj.x + dx, -proj.y + dy);
+
+            // Draw the other vertices.
+            for (var k = 1, n_vertices = face.length; k < n_vertices; ++k) {
+                context.strokeStyle= (j < 4 ) ? "#000" : "#000"
+                let proj = project(face[k]);
+                context.lineTo(proj.x + dx, -proj.y + dy);
+            }
+            // Close the path and draw the face.
+            context.closePath();
+            context.stroke();
+            context.fill();
+            context.restore()
+          }
+        }
+        // for echa face
+          // draw vertex
+      }
+
+      
+      // @return the center of [x, y]
+      const center = (width, height) => [width / 2, height / 2]
+
+      //-----------------------------------------------------------------------
+
+      let context = document.getElementById("context").getContext("2d")
+      context.canvas.width = 600
+      context.canvas.height = 600
+      context.transform(1, 0, 0, -1, 0, context.canvas.height)
+
+
+      let objects = [
+        new Cube({x: 0, y: 0, z: 0}, 200)
+      ]
+
+      const clear = (context) => {
+        context.fillStyle = "#eee"
+        context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+      }
+
+      for (let i = 0; i < objects[0].vertices.length; ++i) {
+        rotate(objects[0].vertices[i], objects[0].center, radians(45), radians(67))
+      }
+      
+      clear(context)
+      render(context, objects, center(context.canvas.width , context.canvas.height))
+
+      var mouseButtonDown = false
+      
+      document.getElementById("context").addEventListener("mouseup", function() {
+          mouseButtonDown = false
+
+      })
+
+      document.getElementById("context").addEventListener("mousedown", function() {
+          mouseButtonDown = true
+      });
+
+      document.getElementById("context").addEventListener("mousemove", (e) => { 
+        if (mouseButtonDown) {
+          for (let i = 0; i < objects[0].vertices.length; ++i) {
+            rotate(
+              objects[0].vertices[i], 
+              objects[0].center, 
+              radians(e.clientX * Math.PI / 360),
+              radians(e.clientY * Math.PI / 360)
+            )
+          }         
+        }   
+        clear(context)
+        render(context, objects, center(context.canvas.width , context.canvas.height))
+      })
+    }
+
+    </script>
+  </body>
+</html>
+

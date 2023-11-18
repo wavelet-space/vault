@@ -1,0 +1,61 @@
+#### "Always learning new things"
+
+Learning things is different form openning and expanding your mind. Don't waste time with programming languages which are not differents enough from your language of choice. What I mean is that it make sense to learn Java and Scala or Clojure at the same time but not Java and C#. They are so close to each other and only differ in syntax and some marginal features. What I can recomend is to learn F# and C# together if you feel that .NET platform fits your needs better the e.g. Java platform. If you are really curious, learn Haskell for a great good!
+
+#### Python from the perspective of longterm user
+
+People say that it is a simple and elegant language. I don't think so! Compare it to Ruby or Smalltalk, how nice and concise the syntax is without all these ugly `__magic__` methods. In recent years many dynamically typed languages are on the way to intercorporate optional typing (Python, Ruby, PHP, JavaScript/TypeScript). It means that istead of this
+
+ ```python
+ def factorial(n):
+      """
+      Compute a factorial of number `n`.
+      :param n: A positive integer.
+      :type  n: int
+      :return: The factorianl of number `n`
+      :rtype: int
+      """
+
+  ```
+  we can write the foloowing code where we use type annotations
+  ```python
+  def factorial(n: int) -> int:
+      """
+      Compute a factorial of number `n`.
+      """
+  ```
+
+Personaly I thing that is a right decision to add optional typing to these languages. The downside is that it is not deeply rooted in the Python community and learning Python and its new typing capabilites is sometimes quite challenging due the non existent or, what is worst, confusing examples. The syntax is sometimes clunky and verbose, but with a few tips you can make it nicer. I will write more on that in some future post.
+
+#### A few words for R users
+
+Use _R_ where it make sense: data analysis and statistics and don't hates on Python: Yes I am talking about [you](https://dev.to/sadick/hating-on-languages-you-dont-use-440i)!
+My experience is sadlly that: when you learn R as your first language it is often the beginning of personal disaster.
+Don't take it wrong, I use and like R. I started to use R after one of my coworker written an important part of our code base in it.
+It was his first language and he was smart enough to learn little bit of Java, Python and even F# and Rust. I always had to force him to try
+  another programming language and go outside his comfort zone. Unfortunately his code remained shitty and buggy despite
+the language he used. The reason was simple: bad habits from R when you thing that your project is top-down long love letter or
+you think that R-Markdown is production ready. This is really not a hate on R or its users in general. I like R despite some syntax quirks for its functional roots and packages.
+ but use it where it make sense and please don't pretend that you can use it for things for what it was never be thought.
+
+ #### I had failed many projects
+
+ Yes, I had failed many projects for several reasons:
+ - I did not recognize that the customers are not my "blood" group.
+ - I had and anxiety and was not able to manage it or even recognize it.
+ - I was not able to say no to stupid ideas.
+ - I was too frinedly to my coworkers and then they pissed on me.
+ - I was too inexperienced to understand that more the half of project is not a programming but managing things.
+ - I chose the wrong technology because I thought that it will be an oportunity to learn new things or
+   I was not able to force a custommer to replace their old MySQL server to, for me more familiar technology such as PostgreSQL,
+   which was a "root of all evil".
+
+I apologize to all these customers and I hope we will meet in the future under better circumstances.
+
+#### AI and other "bulshit" driven companies
+
+So you own __bullshit.ai__ company and manage projects using neural networks for _cat_/__dog_ recognition. Congratulations, you are really pushing an artificial inteligece to the limits. Have you ever heard about machine learnning? Because maybe it is what you do and you should not be the shame of it. I will also have soon my AI company and I will beat you!
+
+#### Arrogance
+
+The worst kind of arrogance is not an arrogance because you have a money, but because you have an education: The first can be fixed, the second often not.

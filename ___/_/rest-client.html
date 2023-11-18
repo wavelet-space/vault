@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title></title>
+</head>
+<body>
+
+
+ <script type="text/javascript">
+
+
+const ResponseTypes = {
+    json: 'application/json',
+    text: 'text/*',
+    formData: 'multipart/form-data',
+    arrayBuffer: '*/*',
+    blob: '*/*'
+};
+
+/**
+ * The base class for all HTTP REST services.
+ */
+class Service {
+
+    /** 
+     * Create the new service.
+     * 
+     * @param name The service name.
+     * @param path The service base path. 
+     * @param port The service port number.
+     */
+    constructor({name, path, port}, timeout = 1000) {
+        this.timeout = timeout
+        this.service = {name, path, port}
+    }
+
+    /**
+     * return the promise object. 
+     */
+    async request(url) {
+        return (await fetch(
+            `${this.service.path}:${this.service.port}/${url}`)
+        ).json()
+    }
+}
+
+
+class Storage {
+
+    // uses Service
+
+    async find(criteria) { }
+
+    async save(entity) { }
+
+}
+
+
+/**
+ * The network service.
+ */
+class MyService extends Service {
+    constructor(timeout = 1000) {
+        super({name: "regres", path: "https://reqres.in", port: "443"}, timeout)
+    }
+}
+
+const service = new MyService()
+
+service.request("api/users?page=2").then(users => { console.log(users) })
+service.request("api/users?page=2").then(users => { console.log(users) })
+
+
+ </script>   
+
+</body>
+</html>

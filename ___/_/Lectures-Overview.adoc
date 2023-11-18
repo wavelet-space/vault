@@ -1,0 +1,59 @@
+
+Literatura
+
+Zde si budu ukládat záznamy knih a článků. Zřejmě nelze všechny knihy přečíst naráz a tak si budu ke každé knize poznamenávat, jestli jsem ji četl, případně přečetl a možná i které pasáže jsou cenné.
+
+. Author, A. (date). Book title. City, State: Publisher.
+
+* Kampen, N. V. (2007). _Stochastic processes in physics and chemistry_. North Holland 
+
+* Gardiner, C. W. (2004) _Handbook of Stochastic Methods for Physics, Chemistry and the Natural Sciences_, Springer, Berlin. [415 pages]
+
+. Risken, H.: The Fokker-Planck Equation, Springer, Berlin (1989).
+
+. Feller, W.: An Introduction to Probability Theory and Its Applications.,
+Vol. 1., Third edition, Wiley, New York, 1968. Vol. 2., Second edition, Wiley, New York, 1971.
+
+
+image:https://images-na.ssl-images-amazon.com/images/I/41aByWEpmCL._SX334_BO1,204,203,200_.jpg[book, 200]
+
+
+* James, G., Witten, D., Hastie, T., & Tibshirani, R. (Eds.). (2013). An introduction to statistical learning: With applications in R. Springer.
+
+
+
+= Numerická matematika
+
+
+http://physics.ujep.cz/~mlisal/nm_2-chomutov/
+
+https://www2.karlin.mff.cuni.cz/~hrncir/du01.pdf
+
+
+= Statistika 
+
+pravděpodobnostní prostor, množina jevů, jistý jev, nemožný jev, 
+
+
+=== Přednášky na ČVUT
+
+==== Statistika
+
+. https://www.youtube.com/watch?v=X_BxBR3NU9E[Přednáška]:
+  sigma-algebra, pravděpodobnostní prostor,
+. https://www.youtube.com/watch?v=M-sN3IHLpSA[Přednáška]:
+  věta o úplné pravděpodobnosti, Bayesova věta, závislost a nezávislost jevů
+
+
+==== Numerika 
+
+. https://media.cvut.cz/cs/video/20190219-doc-petr-habala-diferencialni-rovnice-numericke-metody-01a-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190221-doc-petr-habala-diferencialni-rovnice-numericke-metody-01b-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190226-doc-petr-habala-diferencialni-rovnice-numericke-metody-02a-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190228-doc-petr-habala-diferencialni-rovnice-numericke-metody-02b-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190228-doc-petr-habala-diferencialni-rovnice-numericke-metody-02c-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190228-doc-petr-habala-diferencialni-rovnice-numericke-metody-02d-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190305-doc-petr-habala-diferencialni-rovnice-numericke-metody-03a-ls-18-19[Přednáška]
+. https://media.cvut.cz/cs/video/20190307-doc-petr-habala-diferencialni-rovnice-numericke-metody-03b-ls-18-19[Přednáška] 
+
+3. ODR 1. řádu numericky. b) Metody Runge-Kutta. [0:00:00] Převod diferenciální rovnice na integrální [0:06:11] Implicitní Eulerova metoda [0:24:16] Heunova metoda [0:32:14] Midpoint (RK2) metoda [0:43:40] Metody Runge-Kutta [0:49:22] RK4 [0:58:17] Numerická stabilita [1:03:58] Praktický odhad chyby, adaptivní krok [1:18:07] Adaptivní metody, RKF45

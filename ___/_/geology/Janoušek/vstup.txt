@@ -1,0 +1,7 @@
+a AB abc
+
+abc ab a
+
+a1b;c3d
+
+ababab

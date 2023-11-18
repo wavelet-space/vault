@@ -1,0 +1,591 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <canvas id="board"></canvas>
+
+  <script type="module">
+
+    import {Div, Header, H1, Canvas, Footer, Span, P} from "./cgs-html.js"
+
+    import { renderSquareGrid, canvasCenter } from "./cgs-canvas.js"
+    import { timestamp, center } from "./cgs-utils.js"
+    import { Command } from "./cgs-messaging.js"
+
+
+    /*
+    DONE
+    ----
+
+    Features
+    --------
+
+      Game control
+  
+      As a player I am able to:
+
+      - Pause the game on space key press when it is uptime
+      - Resume the game on space key press when it is paused
+      - Change the direction to north when up arrow key was pressed
+      - Change the direction to East when right arrow key was pressed
+      - Change the direction to South when down arrow key was pressed
+      - Change the direction to West when left arrow key was pressed
+  
+      Game status
+      
+      - count the hits
+      - measure time of game play (exclude time when the game is paused)
+      - count updates
+      - count frames
+      - render grid
+      - reverse direction on shift key press
+    
+      Game behaviour
+    
+      - snake
+        when we hit an apple 
+        then snake will grow by one. 
+
+      - apple
+        when the snake eat the apple
+        then a new one is created at a random place on the grid. 
+
+    TODO
+    ----
+
+    - show snake head position
+      
+
+    NOTE
+    ----
+
+      Pokud se snake pohzbuje pak stačí přemístit hlavu a ubrat ocas, pakliže
+      však nesnědl jablko a má růst pak při pohzbu neubíráme z ocasu nic.
+    */
+
+    window.onload  = function () {
+      
+      document.body.innerHTML = 
+        Div("container",  
+          Header("header",
+            H1(Span("gray", "Snake Game [work-in-progress]")),
+            P("about", "")
+          ),
+          Canvas("context"),
+          Footer("footer", "&copy; CGS (Computer Graphics Samples)")
+        )
+      
+      var context = (document.getElementById("context")).getContext("2d")
+      
+      context.canvas.width = 600
+      context.canvas.height = 600
+
+      const FPS = 60 
+      const BUS = new MessageBus()
+      
+      // ----------------------------------------------------------------------
+      // DEFINE GLOBAL GAME STATE
+      // ----------------------------------------------------------------------
+      var STATE = { 
+        wasHit: false, 
+        mode: "DEBUG",
+        GRID_SIZE: 20,
+        context: context,
+        canvas: context.canvas, 
+        apple: new Food(context.canvas.width/2, 20),
+        snake: new Snake(...canvasCenter(context.canvas)),
+        dx: 0,
+        dy: 0,
+        started: (new Date()).getTime() / 1000,
+        paused: 0,
+        uptime: 0, // seconds
+        frames: 0,
+        updates: 0,
+        hits: 0, 
+        timer: {
+          last: timestamp(),
+          current: null 
+        },
+        // commands: []
+      }
+      
+      const run = (state, context) => {
+        function  tick() {
+          
+          const STEP = 1/60
+
+          state.timer.current = timestamp()
+
+          let dt = Math.min(1, (state.timer.current - state.timer.last) / 1000)
+
+          if (!state.paused)  {
+            while(dt > STEP) {
+              dt -= STEP 
+              update(state, STEP)
+            }
+          }
+          render(state, context, dt)
+          
+          state.timer.last = state.timer.current
+
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      // ----------------------------------------------------------------------
+      // REGISTER LISTENERS 
+      // ----------------------------------------------------------------------
+      document.addEventListener(
+        "keydown", (event) => dispatch(STATE, event, BUS)
+      )
+      
+      // ----------------------------------------------------------------------
+      // RUN GAME
+      // ----------------------------------------------------------------------
+      run(STATE, context)
+    }
+
+    // ------------------------------------------------------------------------
+    // Models
+    // ------------------------------------------------------------------------
+
+    /** 
+     * Snake model.
+     */
+    class Snake {
+
+      /** 
+       * Create a new instance.
+       */
+      constructor(x, y, color = "blue") {
+        this.body = [[x, y]] 
+        this.color = color
+        this.direction = CardinalDirection.north()
+      }
+
+      /**
+       * Get the head `x` position.
+       */
+      get x() {
+        return this.body[0][0]
+      }
+
+      /**
+       * Get the head `y` position.
+       */
+      get y() {
+        return this.body[0][1]
+      }
+
+      /** 
+       * Set the head `x` position.
+       */
+      set x(value) {
+        this.body[0][0] = value
+      }
+
+      /** 
+       * Set the head `y` position.
+       */
+      set y(value) {
+        this.body[0][1] = value
+      }
+
+      /** 
+       * Change the state.
+       */
+      evolve(event) {
+        switch (event.constructor.name) {
+          case "ChangeDirection":
+            break
+        }
+      }
+
+      grow() {
+
+        console.log("growed")
+      }
+
+      render(context) {
+        context.save()  
+        context.fillStyle = this.color
+        for (let i = 0; i < this.body.length; ++i) {
+          context.fillRect(this.body[i][0], this.body[i][1], 20, 20)  
+        }
+        context.restore()
+      }
+    } 
+
+    /** 
+     * Food model.
+     */
+    class Food {
+      
+      constructor(x, y) {
+        this.x = x
+        this.y = y
+      }
+
+      render(context) {
+        context.fillStyle = "red"
+        context.fillRect(this.x, this.y, 20, 20)
+      }
+    }
+
+
+    /** 
+     * The cardinal direction inlcudes North, East, South, West,
+     * see `https://en.wikipedia.org/wiki/Cardinal_direction`.
+     *
+     * We use inverted y coordinate as defined by canvas but it can change in the future.
+     */
+    class CardinalDirection {
+
+      constructor(dx, dy, name, unsafe=true) {
+        if (unsafe) {
+          throw "Use factory methods instead."
+        }
+        this.dx = dx
+        this.dy = dy
+        this._name = name
+      }
+
+      get name() {
+        return this._name
+      }
+
+      get opposite() {
+        return {
+          "east" : CardinalDirection.west(),
+          "west" : CardinalDirection.east(),
+          "north": CardinalDirection.south(), 
+          "south": CardinalDirection.north(),
+        }[this.name]
+      }
+
+      /** 
+       * Return `1` for north and east, `-1` otherwise.
+       *       
+       *        1
+       *        |
+       *  -1 ---|--- 1
+       *        |    
+       *       -1
+       */ 
+      get scalar() {
+        return this.dx + this.dy 
+      }
+
+      static north() {
+        return new CardinalDirection(0, -1, "north", false)
+      }
+
+      static south() {
+        return new CardinalDirection(0, 1, "south", false)  
+      }
+
+      static west() {
+        return new CardinalDirection(-1, 0, "west", false)
+      }
+
+      static east() {
+        return new CardinalDirection(1, 0, "east", false)
+      }
+    }
+
+    //-------------------------------------------------------------------------
+
+    /** 
+     * Update the world state.
+     */
+    const update = (state) => {
+  
+      state.snake.x += state.dx * state.GRID_SIZE
+      state.snake.y += state.dy * state.GRID_SIZE
+      
+      // if state.snake.body.length > 1)
+      //   state.snake.body.pop()
+
+      // Move snake head to the opposite border when ...
+      
+      // Check left and right border.
+      if (state.snake.x < 0)    { state.snake.x = 600 }
+      if (state.snake.x > 600)  { state.snake.x = 0   }
+
+      // Check top and bottom border. 
+      if (state.snake.y < 0)    { state.snake.y = 600 }
+      if (state.snake.y > 600)  { state.snake.y = 0   } 
+
+      // Detect food hit.
+      if (state.snake.x == state.apple.x && state.snake.y == state.apple.y) {
+        
+        state.hits++
+        state.snake.grow()
+        state.wasHit = true
+        
+        // N => y - state.GRID_SIZE
+        if (state.snake.direction.name == "north") {
+          var newHead = [state.snake.x, state.snake.y - state.GRID_SIZE]
+        }
+        // S => y + state.GRID_SIZE
+        if (state.snake.direction.name == "south") {
+          var newHead = [state.snake.x, state.snake.y + state.GRID_SIZE]
+        }
+
+        // E => x + state.GRID_SIZE
+        if (state.snake.direction.name == "east") {
+          var newHead = [state.snake.x + state.GRID_SIZE, state.snake.y]
+        }
+
+        // w => x - state.GRID_SIZE
+        if (state.snake.direction.name == "west") {
+          var newHead = [state.snake.x - state.GRID_SIZE, state.snake.y]
+        }
+
+        state.snake.body.unshift(newHead)
+
+      } else {
+        state.wasHit = false
+      }
+
+      state.uptime = ((new Date()).getTime() / 1000) - state.started
+      state.updates++
+    } 
+
+    // ------------------------------------------------------------------------
+    // Message handling
+    // ------------------------------------------------------------------------
+
+    class MessageBus {
+
+      constructor() {
+        this.messages = []
+      }
+      
+      send(state, command) {
+        
+        // --------------------------------------------------------------------
+        // >>> Handle command
+        // --------------------------------------------------------------------
+        switch (command.constructor.name) {
+          
+          case "ChangeDirection":
+                    
+            switch (command.data.name) {
+              case "west":
+                [state.dx, state.dy] = [-1, 0]
+                state.snake.direction = CardinalDirection.west() 
+                break
+              case "south":
+                [state.dx, state.dy] = [0, 1]
+                state.snake.direction = CardinalDirection.south()
+                break
+              case "east":
+                [state.dx, state.dy] = [1, 0]
+                state.snake.direction = CardinalDirection.east()
+                break
+              case "north":
+                [state.dx, state.dy] = [0, -1]
+                state.snake.direction = CardinalDirection.north()
+                break
+            }
+            break
+
+          case "PauseGame":
+            state.paused = state.paused === 0 ? 1 : 0
+            break
+          
+          case "OppositeDirection":
+            let opposite = state.snake.direction.opposite
+            state.snake.direction = opposite
+            state.dx = opposite.dx
+            state.dy = opposite.dy 
+            break  
+
+          default:
+            break
+        }
+        // --------------------------------------------------------------------
+        // <<< 
+        // --------------------------------------------------------------------
+
+        // Push the command and later @fixme event not command!
+        this.messages.push(command)
+        if (state.mode == "DEBUG") {
+          let lastMessage = this.messages[this.messages.length - 1] 
+          console.log(`RECEIVED '${lastMessage.constructor.name}' command with data '${lastMessage.data}'.`)
+        }
+      }
+    }
+
+
+    /** 
+     * Dispatch the system mouse and keyboard events.
+     * 
+     * It produces the apropriate command which is send to (command) bus.
+     * This function is used as a listner for `document` object e.g: 
+     *  
+     * `document.addEventListener("keydown", (event) => dispatch(event, BUS))`
+     *  
+     *  The `BUS` object is the existing instance.
+     * 
+     * @fixme Remove dependency on global state.
+     */
+    const dispatch = (state, event, bus) => {      
+      // We use destructuring assigment `[a, b] = [x, y]`,
+      // it is the one-line equivalent to `a = x; b = y;`.
+
+      switch (event.code) {
+        case "KeyA":
+        case "ArrowLeft":
+          bus.send(state, new ChangeDirection(CardinalDirection.west())) // West
+          break
+       
+        case "KeyS":
+        case "ArrowDown": 
+          bus.send(state, new ChangeDirection(CardinalDirection.south())) // South
+          break
+  
+        case "KeyD":
+        case "ArrowRight": 
+          bus.send(state, new ChangeDirection(CardinalDirection.east())) // East
+          break
+        
+        case "KeyW":
+        case "ArrowUp":
+          bus.send(state, new ChangeDirection(CardinalDirection.north())) // North
+          break
+        
+        case "Space":
+          bus.send(state, new PauseGame("PAUSE"))
+          break
+
+        case "ShiftLeft":
+        case "ShiftRight":
+          bus.send(state, new OppositeDirection())
+          break
+
+        default:
+          if (state.mode = "DEBUG") {
+            bus.send(state, new Command(`Unhandled ${event.code}`))
+          }
+          break
+        }
+    }
+
+    /**
+     * Render the current state.
+     */
+    const render = (state, context, dt) => {
+      
+      // render board
+      context.fillStyle = "#eee"
+      context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+
+      // ----------------------------------------------------------------------
+      // render grid
+      // ----------------------------------------------------------------------
+      context.strokeStyle="#eee"
+      
+      renderSquareGrid(context, state.GRID_SIZE, {fillColor: "#ddd"})
+      // ----------------------------------------------------------------------
+
+      // ----------------------------------------------------------------------
+      // render entities
+      // ----------------------------------------------------------------------
+      state.snake.render(context)
+      state.apple.render(context)
+
+      context.font = "30px Arial";
+      context.fillStyle = "#000"
+        
+      // ----------------------------------------------------------------------
+      // render overlay
+      // ----------------------------------------------------------------------
+      if (state.paused == 1) {
+        context.save()
+        
+        // overlay
+        context.fillStyle = "rgba(0, 0, 0, 0.9)"
+        context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+        
+        context.fillStyle = "#fff"
+        context.textAlign = "center";
+        context.textBaseline = 'middle'; 
+        context.fillText("PAUSED", context.canvas.width / 2, context.canvas.height /2); 
+        context.font = "11px Arial"
+        context.fillText("PRESS <SPACE> KEY TO RESUME THE GAME.", context.canvas.width / 2, context.canvas.height / 2 + 25); 
+        context.restore()
+      }
+
+      context.font = "12px Arial";
+      
+      // ----------------------------------------------------------------------
+      // render infos
+      // ----------------------------------------------------------------------
+      if (state.paused == 1) {
+        context.fillStyle = "#fff"
+      }
+
+      // render frames
+      context.textAlign = "right";
+      context.textBaseline = 'middle'; 
+      context.fillText(`renders: ${state.frames}`, context.canvas.width -40, context.canvas.height - 20); 
+
+      // render updates
+      context.textAlign = "right";
+      context.textBaseline = 'middle'; 
+      context.fillText(`updates: ${state.updates}`, context.canvas.width -140, context.canvas.height - 20); 
+
+      // render seconds
+      context.textAlign = "right";
+      context.textBaseline = 'middle'; 
+      context.fillText(`seconds: ${Math.floor(state.uptime)}`, context.canvas.width -240, context.canvas.height - 20); 
+
+      // Render hits
+      context.textAlign = "right";
+      context.textBaseline = 'middle'; 
+      context.fillText(`hits: ${state.hits}`, context.canvas.width -340, context.canvas.height - 20); 
+
+      // Flash on hit
+      // if (state.wasHit) {
+      //   fillStyle="black"
+      //   context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+      // }
+
+      state.frames++
+    }
+
+    // ------------------------------------------------------------------------
+    // Helpers
+    // ------------------------------------------------------------------------
+
+    class ChangeDirection extends Command {
+      constructor(data) {
+        super(data)
+      }
+      get direction() {
+        return this.data.name
+      }
+    }
+
+    class PauseGame extends Command {
+      constructor() {
+        super()
+      }
+    }
+
+    class OppositeDirection extends Command {
+      constructor() {
+        super()
+      }
+    }
+
+  </script>
+
+</body>
+</html>

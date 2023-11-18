@@ -1,0 +1,46 @@
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage[acronym]{glossaries}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\usepackage{braket}
+% $\braket{\varphi|\psi}$
+% $\bra{\varphi}$
+% $\ket{\psi}$
+% $\ket{\varphi}\bra{\psi}$
+% $\ketbra{\varphi}{\psi}$
+
+\urlstyle{same}
+\usepackage{mhchem}
+\def\R{\mathbb{R}}
+\def\N{\mathbb{R}}
+
+\newcommand{\cvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+
+% ====================================================================
+% Mathematics
+% ====================================================================
+\newcommand\N{\ensuremath{\mathbb{N}}}  % Set of natural numbers
+\newcommand\R{\ensuremath{\mathbb{R}}}  % Set of real numbers
+\newcommand\Z{\ensuremath{\mathbb{Z}}}  % Set of integer numbers
+\renewcommand\O{\ensuremath{\emptyset}} % Empty set
+\newcommand\Q{\ensuremath{\mathbb{Q}}}  % Set of rational numbers
+\newcommand\C{\ensuremath{\mathbb{C}}}  % Set of Complex numbers
+% Exponenciel function
+\newcommand{\e}[1]{\ensuremath{ {\rm e}^{#1} }}
+
+% ====================================================================
+% Physics
+% ====================================================================
+
+% Continuum Mechanics
+\newcommand\Stress{\ensuremath{\mathbf{\sigma}}} % stress
+\newcommand\Strain{\ensuremath{\mathbf{\epsilon}}} % strain
+
+%Numbered environment
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   \noindent \textbf{Example~\theexample. #1} \rmfamily}{\medskip}
+

@@ -1,0 +1,23 @@
+
+= Python DEVELOPMENT GUIDE
+
+== Psaní kód
+
+* Pro testování používej balík `pytest` a jeho rozšiřující moduly.
+* Piš dokumentační testy třídy. Ty slouží nejen jako dokumentace, ale jako prvotní jednodychý test.
+* pro spuštění dokumentačních testů použij pytest a jeho přepínač `pytest --doctest-modules`.
+* Piš dokumentaci modulu.
+* Uveď všechny veřejné tj. exportované entity v poli `__all__`.
+
+= Statistika nuda je...
+
+Rozdělení
+
+Jak zjistit, jestli dva soubory jsou si podobné
+
+- Statistika
+- population, sample
+- sample mean, sample variance, covariance
+
+
+Hypotéza a její testování

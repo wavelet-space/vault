@@ -1,0 +1,137 @@
+
+= Ložisková geologie
+
+== Rudní minerály
+
+* molibdenit, MoS2, hexagonální
+* jirdisite, MoS2 (nekrystalický)
+* chromit, FeCr2O4, kubický, skupina spinelová skupina (spinelid)
+* pyrit, FeS2, kubický
+* chalkopyrit, CuFeS2, tetragonální; významná ruda Cu
+* magnetit Fe3O4, kubický; významná ruda Fe
+* scheelit CaWO4, tetragonální; významná ruda W   
+* cinnabarite, HgS, trigonální; pigment rumělka
+* goethit, FeO(OH) ortorombický
+* boehmit, AlO(OH), ortorombický
+* siderit, FeCO3, trigonální
+* ankerit, (Ca,Fe)(CO3)2, trigonální, karbonát
+* wolframit (Mn, Fe)WO4, monoklinický; intermediate between ferberite and hübnerit
+* pantlandit, (Fe, Ni)9S8, kubický
+* antimonit (stibnit), Sb2S3, ortorombický 
+* illmenit, FeTiO3, trigonální
+* cassiterite, SnO2, tetragonální; významná ruda cínu
+* tetraedrit, Cu12Sb4S13, kubický
+* hematit, Fe2O3, trigonální
+* ZnS sulfid zinečnatý, polymorfy kubický sfalerit nebo hexagonální wurtzit
+
+== Nerudní minerály
+
+* křemen, SiO2
+* CaSO4 anhydrit, ortorombický
+* CaSO4.2H2O dihydrate calcium sulphate
+* halit, NaCl, kubický
+* CaF2,fluorit, izometrický (kubický) calcium fluoride
+* kalcit, CaCO3, trigonální
+* aragonit, CaCO3, ortorombický
+* kyanit, Al2SiO5, triklinický
+* andalusit, Al2SiO5 (Al2O3·SiO2, Al2(SiO4^4-)O), ortorombický (dipyramidální)
+* sillimanit, Al2SiO5, ortorombický
+* magnesit, MgCO3, trigonální
+* wollastonit, CaSiO3, triklinický
+* ortoklas (k-živec), KAlSi3O8
+* mastek, Mg3Si4O10(OH)2, 
+* leucit, KAlSi2O6, tetragonální
+* baryt, BaSO4, ortorombický
+* kaolinit, Al2Si2O5(OH)4, triklinický
+* sádrovec, CaSO4·2H2O, monoklinický
+* dolomit, CaCO3, trigonální 
+* pyrit, kubický
+* sylvín, KCl, kubický
+* albit, NaAlSi3O8, monoklinický
+* vápno, CaO
+* apatit, Ca5(PO4)3(Cl/F/OH)
+* fluoroapatit Ca5(PO4)3F
+
+Polymorfy andalusit a sillimanit se liší koordinací Al.
+
+== Dělení
+
+=== Karbonáty
+
+Minerály obsahující karbonátový ion CO32−.
+
+. vodné
+  . kalcitová skupina: trigonální
+  . aragonitová skupina: ortorombická
+. bezvodné
+
+== Kaustobiolity
+
+==== Tepelná přeměna organické hmoty
+
+Přeměna (alterace) 
+
+fáze přeměny keroteny
+
+
+geochemické fáze vzniku uhlí
+kondenzace, polymerace, aromaticita
+* ztráta funkční skupiny s O, N, S
+* nárůst obsahu uhlíku –nerovnoměrně (prouhelňovací skoky)
+
+
+====
+
+černouhelná hemifáze, černouhelná ortofáze a černouhelná metafáze
+vyjadřují zastoupení uhlíku v černém uhlí
+
+* hematip
+* ortotyp
+
+* Schurmanovo pravidlo: s hloubkou klesá obsah vody; hnědouhelné sloje klidného uložení
+
+* Sd je zkratka používaná při analýze uhlí pro, 
+* akrotelm = povrchová zóna rašeliniště, s kolísáním vodní hladiny
+* katotelm = hluboká zóna rašeliniště, trvale prod úrovní hladiny  
+
+* koksovatelné uhlí 
+* přírodní koks
+* vyrobený koks
+
+* Uhlí 
+  - černé mastné uhlí (antractitická) nedají se koksovat
+  - černé hubené uhlí (žírná, spékavá), koksovatelné a používané v metalurgii
+
+* Plyn
+  - suchý (chudý) zemní plyn s vysokým obsahem metanu (95--98%) a nepatrným nožstvím složitých uhlovodíků
+  - vlhký (bohatý)
+  - kyselý s obsahem sulfanu H2S
+  - s inertními plyny
+
+* huminové  látky
+* kerogen is solid, insoluble organic matter in sedimentary rocks. polymer např. v ropných břidlicích, vysoká molekulová hmotnost, každá molekula jedinečná; podle organické teorie kerogen- > živice -> ropa, zemní plyn 
+    - kerogen I
+    - kerogen II
+    - kerogen III
+* bitumen rozpustný v organických rozpouštědlech
+* karboid nerozpustný v organických rozpouštědlech
+
+
+Rozeznáváme 7 krystalografických soustav
+
+. Trojklonná nebo triklinická
+. Jednoklonná nebo monoklinická
+. Kosočtverečná nebo ortorombická
+. Čtverečná nebo tetragonální
+. Šesterečná nebo hexagonální
+. Klencová nebo trigonální
+. Krychlová nebo izometrická?, kubická
+
+Polymorfie: Nekteré minerály se stejným empirickým chemickým vzrocem mohou krystalizovat v různých soustavách.
+ 
+ U minerálu rozeznáváme
+ - krystalovou třídu (class)
+ - krystalový systém (system)
+ - krystalový tvar (habit)
+
+include::demo.txt[] 
