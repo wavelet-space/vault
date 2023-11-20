@@ -33,6 +33,7 @@ For analysis e.g. Python, R, Julia or q/kdb+ etc.
 - arbitrage
 - low latency systems
 - cryptocurrency
+- zero sum game
 
 ## Resources
 

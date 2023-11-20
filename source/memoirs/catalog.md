@@ -4,8 +4,10 @@ Personal catalog of articles, books, movies, games etc.
 
 ## Movies
 
-- Planet Finance: The Nature of the Beast, 2023, https://www.youtube.com/watch?v=WWdXI1_En9A&t=461s
-  
+- Planet Finance (1/6): The Nature of the Beast, 2023, https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF
+- Planet Finance (2/6): Free Oil, 2023, https://youtu.be/oZcH_VyFMUQ?si=V48pqDj3LfpCrSox
+  see also https://www.nytimes.com/2020/04/20/business/oil-prices.html
+
 ## Computer games
 
 - [*Albion*](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
