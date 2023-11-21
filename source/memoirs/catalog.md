@@ -4,9 +4,9 @@ Personal catalog of articles, books, movies, games etc.
 
 ## Movies
 
-- Planet Finance (1/6): The Nature of the Beast, 2023, https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF
-- Planet Finance (2/6): Free Oil, 2023, https://youtu.be/oZcH_VyFMUQ?si=V48pqDj3LfpCrSox
-  see also https://www.nytimes.com/2020/04/20/business/oil-prices.html
+- Planet Finance (1/6): The Nature of the Beast, 2023, [video](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF)
+- Planet Finance (2/6): Free Oil, 2023, [video](https://youtu.be/oZcH_VyFMUQ?si=V48pqDj3LfpCrSox), see also [this](https://www.nytimes.com/2020/04/20/business/oil-prices.html)
+- Planet Finance (6/6): Bubbles and Crashes, [video](https://youtu.be/i_up7b9yU44?si=q4_7lS-TGirJx3kq), see also [this](https://en.wikipedia.org/wiki/John_Hempton)
 
 ## Computer games
 
@@ -84,3 +84,12 @@ Erlang
 - Joe Armstrong RIP <https://en.wikipedia.org/wiki/Joe_Armstrong_(programmer)>
 - <https://joearms.github.io/index.html#Index>
 - <https://joearms.github.io/published/2013-11-21-My-favorite-erlang-program.html>
+
+
+## Events
+
+- Tohaka 
+- 2023 10 Sam Bankman-Fried found guilty
+- 2023 Huge earthquake in Turkey
+  - <https://en.wikipedia.org/wiki/List_of_earthquakes_in_2023>
+- hindemburg

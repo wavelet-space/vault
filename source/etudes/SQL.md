@@ -1,7 +1,8 @@
 # SQL
 
-> There are only two kinds of languages: the ones people complain about and the ones nobody uses.</br>
->-- Bjarne Stroustrup
+Solutions for <https://www.hackerrank.com/domains/sql>
+
+See also https://www.kdnuggets.com/2023/01/7-best-platforms-practice-sql.html
 
 Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA.
 
@@ -164,3 +165,7 @@ select name from employee
 where months < 10 and salary > 2000
 order by employee_id
 ```
+
+
+> There are only two kinds of languages: the ones people complain about and the ones nobody uses.</br>
+>-- Bjarne Stroustrup

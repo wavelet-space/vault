@@ -1,4 +1,6 @@
-# Algorithmic and High Frequency Trading
+# Trading
+
+## Algorithmic and High Frequency Trading
 
 [[terms, facts, rules]]
 
@@ -12,9 +14,9 @@
 - What is a future contract?
   Futures contracts expire; 
 
-## What is algorithmic trading (AT)?
+### What is algorithmic trading (AT)?
 
-## What technology is used for AT?
+### What technology is used for AT?
 
 For low latency systems C++ or Java.
 Generally low latency systems needs special treatment.
@@ -35,8 +37,13 @@ For analysis e.g. Python, R, Julia or q/kdb+ etc.
 - cryptocurrency
 - zero sum game
 
+- Exchange-Traded Fund (ETF)
+  - https://www.patria.cz/fondyderivaty/etf/popis.html 
+
+
 ## Resources
 
+- [Crude Oil on Yahoo Finance](https://finance.yahoo.com/quote/CL%3DF?p=CL%3DF)
 - Jane Street: US trading company.
 - quantlane: CS trading company. 
 - qminers: CS trading company.

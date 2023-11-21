@@ -1,12 +1,12 @@
-# Sowing, growing and cooking
+# Cooking
 
-- Příprava rýže
-  - vaření
-  - dušení
-- Zeleninový vývar
-  - mrkev celer, pórek
-- Rýže s vejcem
-  - dušenou rýži spicháme na pánvi s vejcem
-- Rizoto
-- dušená rýže na másle, hrášek, mrkev, celer
 
+- Preparation of rice
+  - cooking
+  - choking
+- Vegetable broth
+  - carrot, celery, leek
+- Rice with egg
+  - cook steamed rice in a pan with an egg
+- Risotto
+- steamed rice in butter, peas, carrots, celery
