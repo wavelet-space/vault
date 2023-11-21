@@ -4,6 +4,7 @@ Personal catalog of articles, books, movies, games etc.
 
 ## Movies and Series
 
+- [Flash Crash](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7) 
 - [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6) 
   <details><summary>summary</summary>
   <em>For most, Planet Finance is a complex, influential world that only becomes visible when crashes occur in the financial markets. Stock market prices quickly shot back up on Planet Finance during the COVID pandemic, while the inhabitants of planet Earth were still sweeping the shards together. 
@@ -26,9 +27,15 @@ Personal catalog of articles, books, movies, games etc.
 - [Before The Mets, Steve Cohen Was The Hedge-Fund King](https://youtu.be/1szayJV505M?si=EAHJHYlrZT1rPD1X)
   <details><summary>summary</summary><em>Inside the government’s crackdown on insider trading, drawing on exclusively-obtained video of hedge fund titan Steven A. Cohen, incriminating FBI wiretaps, and interviews with both Wall Street and Justice Department insiders. (Aired 2014)</em></details>
 
+- [Quants: The Alchemists of Wall Street](https://www.youtube.com/watch?v=ed2FWNWwE3I)</br>
+  <details><summary>summary</summary><em>Quants are the math wizards and computer programmers in the engine room of our global financial system who designed the financial products that almost crashed Wall street. The credit crunch has shown how the global financial system has become increasingly dependent on mathematical models trying to quantify human (economic) behaviour. Now the quants are at the heart of yet another technological revolution in finance: trading at the speed of light. What are the risks of treating the economy and its markets as a complex machine? Will we be able to keep control of this model-based financial system, or have we created a monster? A story about greed, fear and randomness from the insides of Wall Street.</em></details>
+  
+  - [Emanuel Derman](https://en.wikipedia.org/wiki/Emanuel_Derman), [Paul Wilmott](https://en.wikipedia.org/wiki/Paul_Wilmott)
+
+
 ## Computer games
 
-- [<italic>Albion*](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
+- [Albion](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
 - [Brigand: Oaxaca](https://store.steampowered.com/app/652410/Brigand_Oaxaca/)
 - [El Paso, Elsewhere](https://store.steampowered.com/app/1546310/El_Paso_Elsewhere/)
 - [Alone in the Dark](https://store.steampowered.com/app/548090/Alone_in_the_Dark_1/), 1993

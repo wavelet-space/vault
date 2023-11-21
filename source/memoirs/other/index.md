@@ -1,5 +1,4 @@
-# LEGO
-
+# Other
 
 ```{toctree}
 :glob:

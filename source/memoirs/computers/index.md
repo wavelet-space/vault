@@ -1,4 +1,4 @@
-# Software
+# Computers
 
 Contains notes on practical programmings and computer science.
 
@@ -7,5 +7,6 @@ Contains notes on practical programmings and computer science.
 :hidden:
 
 algorithms/index
+testing/index
 *
 ```
