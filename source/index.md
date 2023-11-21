@@ -50,4 +50,4 @@ essays/*
 etudes/*
 ```
 
-<iframe width="100%" height="600" src="https://www.youtube.com/embed/HKEZ47j6dP8?si=aE-lckHwzi48_i1H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/FWbXMXTdOPQ?si=ANVR-bOhsgN5f8rX&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
