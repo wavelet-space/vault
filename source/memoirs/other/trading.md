@@ -14,6 +14,9 @@
 - What is a future contract?
   Futures contracts expire; 
 
+
+- When an HFT system makes money, some other person or system is loosing money i.e. it is a zero-sum game. 
+    
 ### What is algorithmic trading (AT)?
 
 ### What technology is used for AT?

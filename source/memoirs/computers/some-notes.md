@@ -1,7 +1,5 @@
 # Some notes
 
-
-
 - Distributed systems, Concurrent and Parallel programming
   - OpenMP
   - CUDA
