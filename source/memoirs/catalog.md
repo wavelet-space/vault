@@ -4,26 +4,28 @@ Personal catalog of articles, books, movies, games etc.
 
 ## Movies and Series
 
-- **Planet Finance**, 2023</br>
-  *In this six-part documentary series, Marije Meerman takes you to Planet Finance. Who live and work there? What language do they speak? What is the use of this planet, and what makes this financial world so attractive to so many people?*
-  - [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6) 
-    <details><summary>Summary</summary>
-    <em>For most, Planet Finance is a complex, influential world that only becomes visible when crashes occur in the financial markets. Stock market prices quickly shot back up on Planet Finance during the COVID pandemic, while the inhabitants of planet Earth were still sweeping the shards together. 
-    The contrast could hardly be greater. But how does such a market emerge? Through interviews including the founder of the market in oil futures, one of its first traders and a neuropsychologist who mentally guides traders and hedge fund managers in making risky decisions, it becomes clear how Planet Finance grew into what it is today.</em>
-    </details>
-  - [Free Oil](https://youtu.be/oZcH_VyFMUQ?si=V48pqDj3LfpCrSox) | Planet Finance (2/6) </br>
-    <details><summary>Summary</summary><em>Planet Finance sets the world price for many commodities: for grain, for gold and also for oil. There is always demand for oil and the price is constantly changing. It is hard to imagine now, but at the beginning of the COVID pandemic, we could not get rid of oil. The world's oil supply was floating at sea. The tankers, and their crews, had no choice but to wait for a better price. And then came a day when a barrel of oil was free! How can a market be so derailed?</em></details>
-  - [Fortune Seekers](https://youtu.be/3V7XklEC1Qk?si=0P1HyRoUcY6kzTTF) | Planet Finance (3/6)</br>
-    <details><summary>Summary</summary><em>Planet Finance is a mostly unknown, adventurous and also attractive world for the retail trader. In Japan, you won't get interest on your savings for decades. Entering the foreign exchange market is then a low-threshold step. 'Mrs Watanabe' is a collective name for the one and a half million Japanese individuals in this market and a household name in the shiny towers of Planet Finance. But on the foreign exchange market, the value of one currency always rises or falls against another. Where one wins, by definition someone else loses. It's a Zero Sum Game. Who wins when you lose?</em></details>
-  - [The Biggest IPO Ever](https://youtu.be/MJlR7JlC5wo?si=oLZkogpQoEnaH852) | Planet Finance (4/6)</br>
-    <details><summary>Summary</summary><em>Although the financial industry in China is still in its infancy, 7% of Chinese people are already trading the markets, and millions more are being added every month. Western investors are also lining up to benefit from China's economic growth. For years, Wall Street gave China wide latitude to raise money on the international capital market, such as with Jack Ma's Alibaba IPO. In 2020, when Ma also wanted to take his new company Ant Group public he no longer did so on Wall Street but wanted to do so simultaneously in Shanghai and Hong Kong. That plan strained the relationship between China and Planet Finance. By whose rules will the game ultimately be played?</em></details>
-  - [Bubbles and Crashes](https://youtu.be/i_up7b9yU44?si=q4_7lS-TGirJx3kq) | Planet Finance (6/6)</br>
-    <details><summary>Summary</summary><em>The so-called shortsellers live off the mistakes of others. They win when others lose. A shortseller benefits from the fact that many investors are guided by the delusion of the day. The events at three famous companies popular among investors, the Flemish Lernout & Hauspie, the German Wirecard and the American Gamestop, show the forces the shortseller encounters when going against the emotions of the masses.</em>
-    </details>
+- [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6) 
+  <details><summary>summary</summary>
+  <em>For most, Planet Finance is a complex, influential world that only becomes visible when crashes occur in the financial markets. Stock market prices quickly shot back up on Planet Finance during the COVID pandemic, while the inhabitants of planet Earth were still sweeping the shards together. 
+  The contrast could hardly be greater. But how does such a market emerge? Through interviews including the founder of the market in oil futures, one of its first traders and a neuropsychologist who mentally guides traders and hedge fund managers in making risky decisions, it becomes clear how Planet Finance grew into what it is today.</em>
+  </details>
+- [Free Oil](https://youtu.be/oZcH_VyFMUQ?si=V48pqDj3LfpCrSox) | Planet Finance (2/6) </br>
+  <details><summary>summary</summary><em>Planet Finance sets the world price for many commodities: for grain, for gold and also for oil. There is always demand for oil and the price is constantly changing. It is hard to imagine now, but at the beginning of the COVID pandemic, we could not get rid of oil. The world's oil supply was floating at sea. The tankers, and their crews, had no choice but to wait for a better price. And then came a day when a barrel of oil was free! How can a market be so derailed?</em></details>
+- [Fortune Seekers](https://youtu.be/3V7XklEC1Qk?si=0P1HyRoUcY6kzTTF) | Planet Finance (3/6)</br>
+  <details><summary>summary</summary><em>Planet Finance is a mostly unknown, adventurous and also attractive world for the retail trader. In Japan, you won't get interest on your savings for decades. Entering the foreign exchange market is then a low-threshold step. 'Mrs Watanabe' is a collective name for the one and a half million Japanese individuals in this market and a household name in the shiny towers of Planet Finance. But on the foreign exchange market, the value of one currency always rises or falls against another. Where one wins, by definition someone else loses. It's a Zero Sum Game. Who wins when you lose?</em></details>
+- [The Biggest IPO Ever](https://youtu.be/MJlR7JlC5wo?si=oLZkogpQoEnaH852) | Planet Finance (4/6)</br>
+  <details><summary>summary</summary><em>Although the financial industry in China is still in its infancy, 7% of Chinese people are already trading the markets, and millions more are being added every month. Western investors are also lining up to benefit from China's economic growth. For years, Wall Street gave China wide latitude to raise money on the international capital market, such as with Jack Ma's Alibaba IPO. In 2020, when Ma also wanted to take his new company Ant Group public he no longer did so on Wall Street but wanted to do so simultaneously in Shanghai and Hong Kong. That plan strained the relationship between China and Planet Finance. By whose rules will the game ultimately be played?</em></details>
+- [Catastrophe for Sale](https://youtu.be/jEwYDl5tl-s?si=Sxu2blRsl8t0e6MT) | Planet Finance (5/6)</br>
+  <details><summary>summary</summary><em>On Planet Finance, there is a market for almost anything. Even for a future disaster that has not yet occurred and may never happen. As the risks of climate change pile up, it appears that money can be made in the Catbond Market on the risk of future wildfires, floods and hurricanes. There is speculation on what the probability is that a catastrophe will occur. And especially on how much damage it might cause. How does this market work? And who are the winners and who are the losers?</em></details>
+- [Bubbles and Crashes](https://youtu.be/i_up7b9yU44?si=q4_7lS-TGirJx3kq) | Planet Finance (6/6)</br>
+  <details><summary>summary</summary><em>The so-called shortsellers live off the mistakes of others. They win when others lose. A shortseller benefits from the fact that many investors are guided by the delusion of the day. The events at three famous companies popular among investors, the Flemish Lernout & Hauspie, the German Wirecard and the American Gamestop, show the forces the shortseller encounters when going against the emotions of the masses.</em>
+  </details>
 
     - [John Hempton](https://en.wikipedia.org/wiki/John_Hempton), [Nathan Anderson](https://en.wikipedia.org/wiki/Nathan_Anderson)
     
-       
+- [Before The Mets, Steve Cohen Was The Hedge-Fund King](https://youtu.be/1szayJV505M?si=EAHJHYlrZT1rPD1X)
+  <details><summary>summary</summary><em>Inside the government’s crackdown on insider trading, drawing on exclusively-obtained video of hedge fund titan Steven A. Cohen, incriminating FBI wiretaps, and interviews with both Wall Street and Justice Department insiders. (Aired 2014)</em></details>
+
 ## Computer games
 
 - [<italic>Albion*](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte

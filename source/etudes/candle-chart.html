@@ -13,325 +13,983 @@
     <canvas id="canvas"></canvas>
 </body>
 <script>
-    //let metaData = {
-    //   information:"",
-    //   symbol:"",
-    //   lastRefresh:"",
-    //   outputSize:"",
-    //   timeZone:""
-    // }
-
-
-    function getTimeslots(width, ohlc) {
-        let count = width / ohlc.length;
-        return count;
-    }
-
-
-    let drawLine = (ctx, x, y, style = undefined) => {
-        ctx.beginPath();
-        if (style) {
-            ctx.strokeStyle = style
-        }
-        ctx.moveTo(x[0], x[1]);
-        ctx.lineTo(y[0], y[1]);
-        ctx.stroke();
-    }
-
-    /**
-    * 0 time
-    * 1 open
-    * 2 high
-    * 3 low
-    * 4 close
-    */
-    function drawCandles(ctx, width, ohlc, dateRange, lp, hp, steps) {
-        let timeSlot = getTimeslots(width, ohlc);
-        let idx = 0;
-        const calculatePosition = (price) => {
-            let maxPx = info.yMax[1]
-            let x = maxPx - ((price - lp) / (hp - lp) * maxPx)
-            return x;
-        }
-        for (var candle of ohlc) {
-            let [open, high, low, close] = candle.slice(1)
-            // console.log(open, high, low, close)
-
-            // Y axis value for each price point.
-            let openPosition = Math.floor(calculatePosition(open));
-            let lowPosition = Math.floor(calculatePosition(low));
-            let highPosition = Math.floor(calculatePosition(high));
-            let closePosition = Math.floor(calculatePosition(close));
-
-            // Pixel for candle center along X axis.
-            let currentStep = Math.floor(idx * timeSlot);
-
-            if (openPosition > closePosition) { // x,y,w,h
-                console.log(currentStep)
-                let height = openPosition - closePosition;
-                ctx.fillStyle = "red";
-                ctx.fillRect(currentStep - 5, closePosition, 10, height);
-                drawLine(ctx, [currentStep, lowPosition], [currentStep, highPosition], "red");
-                ctx.strokeStyle = "black"
-                ctx.beginPath();
-                ctx.rect(currentStep - 5, closePosition, 10, height);
-                ctx.stroke();
-            } else {
-                let height = closePosition - openPosition;
-                ctx.fillStyle = "green";
-                ctx.fillRect(currentStep - 5, openPosition, 10, height);
-                drawLine(ctx, [currentStep, lowPosition], [currentStep, highPosition], "green");
-                ctx.strokeStyle = "black"
-                ctx.beginPath();
-                ctx.rect(currentStep - 5, openPosition, 10, height);
-                ctx.stroke();
-            }
-            candleOhlcMappings.push({
-                idx: idx,
-                step: currentStep,
-                positions: {
-                    openPosition: openPosition,
-                    lowPosition: lowPosition,
-                    highPosition: highPosition,
-                    closePosition: closePosition
-                }
-            });
-            idx++;
-        }
-    }
-
-    /** CALCULATE AMOUNT OF ROWS TO FIT IN GRID */
-    function calculateSteps(w, h, xLines, yLines, info) {
-        //calculate horizontal lines across the Y axis
-        let yDist = h / xLines;
-        let yStep = yDist;
-        let ySteps = [yStep];
-        let yCount = 0;
-
-        while (yCount != xLines) {
-            yCount++
-            yStep += yDist;
-            ySteps.push(Math.floor(yStep));
-        }
-
-        //calculate vertical lines along the X axis
-        let xDist = w / yLines;
-        let xStep = xDist;
-        let xSteps = [xStep];
-
-        let xCount = 0;
-
-        while (xCount < yLines) {
-            xCount++;
-            xStep += xDist;
-            xSteps.push(Math.floor(xStep));
-        }
-        
-        info.yMin = [0, 0]
-        info.yMax = [0, ySteps[ySteps.length - 1]];
-        info.xMin = [0, 0];
-        info.xMax = [xSteps[xSteps.length - 1], 0];
-
-        return [xSteps, ySteps];
-    }
-
-    function drawGrid(ctx, width, height, xLines, lp, hp, dateRange) {
-        let drawHorizontal = (yPoints) => {
-            drawLine([0, 0], [width, 0]);
-            for (var point of yPoints) {
-                drawLine(ctx, [0, point], [width, point], "grey")
-            }
-        }
-        let drawVertical = (xPoints) => {
-            drawLine([0, 0], [0, height]);
-
-            for (var point of xPoints) {
-                drawLine([point, height], [point, 0], "grey")
-            }
-        }
-        let steps = calculateSteps(width, height, xLines);
-        drawVertical(steps[0])
-        drawHorizontal(steps[1])
-        return steps;
-    }
-
-    function drawInfo(ctx, w, h, mousePos) {
-        drawLine([0, mousePos.y], [w, mousePos.y], "black");
-        drawLine([mousePos.x, 0], [mousePos.x, h], "black");
-    }
-
-    function getMousePos(canvas, evt) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-        };
-    }
-
-    (function () {
-        // split the data set into ohlc and volume
-        var volume = [];
-        let hp = 0;
-        let lp = 100
-        let dateRange = ["", ""];
-        // let addEvent = () => {
-        //     let state = "loading";
-        //     canvas.addEventListener('mousemove', function (evt) {
-        //         if (state == "progress") {
-        //             return;
-        //         }
-        //                   state == "progress";
-        //                   var mousePos = getMousePos(canvas, evt);
-        //                   var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-
-
-        //                   var img = new Image();
-        //                   img.onload = function () {
-        //                     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        //                   }
-        //                   img.src = dataUri;
-        //                   drawInfo(mousePos);
-        //                   state == "finished";
-        //     }, false);
-        // }
-        // setTimeout(addEvent, 500);
   
-        data = [
-            { "id": "230864", "company_id": "10", "date": "2015-01-28", "open": "17.1", "close": "17.2", "high": "17.4", "low": "17.1", "volume": "4907" },
-            { "id": "238988", "company_id": "10", "date": "2015-01-27", "open": "17.2", "close": "17.4", "high": "17.5", "low": "17.2", "volume": "20992" },
-            { "id": "249298", "company_id": "10", "date": "2015-01-26", "open": "17.6", "close": "17.4", "high": "17.6", "low": "17.2", "volume": "17030" },
-            { "id": "253925", "company_id": "10", "date": "2015-01-25", "open": "17.5", "close": "17.6", "high": "17.8", "low": "17.5", "volume": "11873" },
-            { "id": "153495", "company_id": "10", "date": "2015-01-22", "open": "18", "close": "17.8", "high": "18.5", "low": "17.5", "volume": "41292" },
-            { "id": "161899", "company_id": "10", "date": "2015-01-21", "open": "17.2", "close": "17.4", "high": "17.5", "low": "17.2", "volume": "12924" },
-            { "id": "169636", "company_id": "10", "date": "2015-01-20", "open": "17.5", "close": "17.3", "high": "18", "low": "17.3", "volume": "23267" },
-            { "id": "178827", "company_id": "10", "date": "2015-01-19", "open": "18.3", "close": "17.5", "high": "18.3", "low": "17.4", "volume": "213588" },
-            { "id": "188876", "company_id": "10", "date": "2015-01-18", "open": "18.5", "close": "18.6", "high": "18.8", "low": "18.4", "volume": "4044" },
-            { "id": "39083", "company_id": "10", "date": "2015-01-15", "open": "18.5", "close": "18.7", "high": "18.8", "low": "18.5", "volume": "55008" },
-            { "id": "4230", "company_id": "10", "date": "2015-01-14", "open": "18.5", "close": "18.7", "high": "18.9", "low": "18.3", "volume": "26539" },
-            { "id": "124970", "company_id": "10", "date": "2015-01-13", "open": "19.1", "close": "18.6", "high": "19.1", "low": "18.5", "volume": "33115" },
-            { "id": "134910", "company_id": "10", "date": "2015-01-12", "open": "18.5", "close": "18.7", "high": "18.9", "low": "18.5", "volume": "5952" },
-            { "id": "111812", "company_id": "10", "date": "2015-01-11", "open": "18.4", "close": "18.8", "high": "18.8", "low": "18.4", "volume": "12269" },
-            { "id": "103733", "company_id": "10", "date": "2015-01-08", "open": "18.3", "close": "18.4", "high": "20", "low": "18", "volume": "71995" },
-            { "id": "45334", "company_id": "10", "date": "2015-01-07", "open": "18.6", "close": "19.2", "high": "19.7", "low": "18.6", "volume": "12924" },
-            { "id": "54152", "company_id": "10", "date": "2015-01-06", "open": "18.5", "close": "18.9", "high": "19.3", "low": "18.5", "volume": "10339" },
-            { "id": "63430", "company_id": "10", "date": "2015-01-05", "open": "18.7", "close": "18.8", "high": "18.9", "low": "18.7", "volume": "7327" },
-            { "id": "32878", "company_id": "10", "date": "2015-01-01", "open": "18.6", "close": "18.8", "high": "19.1", "low": "18.6", "volume": "2807" },
-            { "id": "203982", "company_id": "10", "date": "2014-12-30", "open": "18.3", "close": "18.7", "high": "19.4", "low": "18.3", "volume": "11798" },
-            { "id": "213641", "company_id": "10", "date": "2014-12-29", "open": "18.3", "close": "18.6", "high": "18.6", "low": "18.3", "volume": "22364" },
-            { "id": "221670", "company_id": "10", "date": "2014-12-28", "open": "18.2", "close": "18.8", "high": "19.2", "low": "18.2", "volume": "7142" },
-            { "id": "255270", "company_id": "10", "date": "2014-12-24", "open": "18.6", "close": "18.8", "high": "19", "low": "18.5", "volume": "17440" },
-            { "id": "264715", "company_id": "10", "date": "2014-12-23", "open": "18.3", "close": "18.9", "high": "19", "low": "18.3", "volume": "11142" },
-            { "id": "272949", "company_id": "10", "date": "2014-12-22", "open": "18.5", "close": "18.9", "high": "19", "low": "18.5", "volume": "19596" },
-            { "id": "155319", "company_id": "10", "date": "2014-12-21", "open": "18.3", "close": "18.7", "high": "19", "low": "18.3", "volume": "9941" },
-            { "id": "180174", "company_id": "10", "date": "2014-12-18", "open": "18.3", "close": "18.4", "high": "18.6", "low": "18.1", "volume": "6216" },
-            { "id": "190051", "company_id": "10", "date": "2014-12-17", "open": "18.2", "close": "18.4", "high": "18.6", "low": "18.2", "volume": "5292" },
-            { "id": "73750", "company_id": "10", "date": "2014-12-15", "open": "18", "close": "18.4", "high": "18.8", "low": "18", "volume": "9171" },
-            { "id": "39481", "company_id": "10", "date": "2014-12-14", "open": "18", "close": "18.4", "high": "18.5", "low": "18", "volume": "3889" },
-            { "id": "135833", "company_id": "10", "date": "2014-12-11", "open": "18", "close": "18.2", "high": "18.7", "low": "18", "volume": "5437" },
-            { "id": "142741", "company_id": "10", "date": "2014-12-10", "open": "18.7", "close": "18.7", "high": "19", "low": "18.7", "volume": "15000" },
-            { "id": "85995", "company_id": "10", "date": "2014-12-09", "open": "18.5", "close": "18.7", "high": "18.9", "low": "18.5", "volume": "2500" },
-            { "id": "95439", "company_id": "10", "date": "2014-12-08", "open": "18.9", "close": "18.9", "high": "19", "low": "18.9", "volume": "9000" },
-            { "id": "105196", "company_id": "10", "date": "2014-12-07", "open": "19.1", "close": "18.9", "high": "19.1", "low": "18.6", "volume": "17000" },
-            { "id": "64146", "company_id": "10", "date": "2014-12-04", "open": "19.1", "close": "19.1", "high": "19.5", "low": "19", "volume": "9500" },
-            { "id": "8442", "company_id": "10", "date": "2014-12-03", "open": "19.6", "close": "19.4", "high": "19.6", "low": "18.9", "volume": "16500" },
-            { "id": "19979", "company_id": "10", "date": "2014-12-02", "open": "19.4", "close": "19.3", "high": "19.5", "low": "19.2", "volume": "10500" },
-            { "id": "29120", "company_id": "10", "date": "2014-12-01", "open": "19.2", "close": "19.3", "high": "19.5", "low": "19.2", "volume": "22000" },
-            { "id": "205805", "company_id": "10", "date": "2014-11-30", "open": "18.5", "close": "19", "high": "19.2", "low": "18.5", "volume": "8500" },
-            { "id": "231264", "company_id": "10", "date": "2014-11-27", "open": "18.6", "close": "18.6", "high": "18.8", "low": "18.6", "volume": "4500" },
-            { "id": "241709", "company_id": "10", "date": "2014-11-26", "open": "18.4", "close": "18.4", "high": "18.5", "low": "18.4", "volume": "10500" },
-            { "id": "249698", "company_id": "10", "date": "2014-11-25", "open": "19.3", "close": "18.5", "high": "19.3", "low": "18.4", "volume": "19000" },
-            { "id": "256312", "company_id": "10", "date": "2014-11-24", "open": "18.4", "close": "18.5", "high": "19.4", "low": "18.4", "volume": "10500" },
-            { "id": "265701", "company_id": "10", "date": "2014-11-23", "open": "18.8", "close": "18.4", "high": "18.8", "low": "18.3", "volume": "9000" },
-            { "id": "163888", "company_id": "10", "date": "2014-11-20", "open": "19", "close": "18.9", "high": "19.4", "low": "18.8", "volume": "2500" },
-            { "id": "172132", "company_id": "10", "date": "2014-11-19", "open": "19", "close": "19", "high": "19.3", "low": "18.9", "volume": "10500" },
-            { "id": "181713", "company_id": "10", "date": "2014-11-18", "open": "19", "close": "18.8", "high": "19", "low": "18.5", "volume": "7000" },
-            { "id": "190867", "company_id": "10", "date": "2014-11-17", "open": "18.9", "close": "19", "high": "19.3", "low": "18.9", "volume": "12500" },
-            { "id": "112749", "company_id": "10", "date": "2014-11-16", "open": "19", "close": "19", "high": "19.3", "low": "18.9", "volume": "61500" },
-            { "id": "6305", "company_id": "10", "date": "2014-11-13", "open": "19.3", "close": "19.1", "high": "19.7", "low": "18.9", "volume": "71500" },
-            { "id": "127950", "company_id": "10", "date": "2014-11-12", "open": "19.3", "close": "19.1", "high": "19.8", "low": "19.1", "volume": "88500" },
-            { "id": "137829", "company_id": "10", "date": "2014-11-11", "open": "19.2", "close": "19.4", "high": "19.7", "low": "19.2", "volume": "8500" },
-            { "id": "143860", "company_id": "10", "date": "2014-11-10", "open": "19.3", "close": "19.4", "high": "19.8", "low": "19.3", "volume": "26500" },
-            { "id": "87289", "company_id": "10", "date": "2014-11-09", "open": "19.7", "close": "19.5", "high": "19.7", "low": "19.4", "volume": "17000" },
-            { "id": "46934", "company_id": "10", "date": "2014-11-06", "open": "19.5", "close": "19.8", "high": "20", "low": "19.5", "volume": "17500" },
-            { "id": "55737", "company_id": "10", "date": "2014-11-05", "open": "19.5", "close": "19.7", "high": "20.4", "low": "19.5", "volume": "19000" },
-            { "id": "9385", "company_id": "10", "date": "2014-11-03", "open": "19.6", "close": "19.9", "high": "20.5", "low": "19.6", "volume": "26000" },
-            { "id": "21053", "company_id": "10", "date": "2014-11-02", "open": "19.5", "close": "19.6", "high": "20.1", "low": "19.5", "volume": "35500" },
-            { "id": "206623", "company_id": "10", "date": "2014-10-30", "open": "20.1", "close": "20.1", "high": "20.1", "low": "20.1", "volume": "26500" },
-            { "id": "215378", "company_id": "10", "date": "2014-10-29", "open": "20.1", "close": "20.1", "high": "20.2", "low": "20", "volume": "18000" },
-            { "id": "223801", "company_id": "10", "date": "2014-10-28", "open": "21", "close": "20.2", "high": "21", "low": "20.2", "volume": "15000" },
-            { "id": "233072", "company_id": "10", "date": "2014-10-27", "open": "19.8", "close": "20.3", "high": "20.7", "low": "19.8", "volume": "16000" },
-            { "id": "242748", "company_id": "10", "date": "2014-10-26", "open": "20.2", "close": "20", "high": "20.2", "low": "19.9", "volume": "12000" },
-            { "id": "266222", "company_id": "10", "date": "2014-10-23", "open": "20.6", "close": "20.3", "high": "20.6", "low": "20.3", "volume": "55000" },
-            { "id": "275000", "company_id": "10", "date": "2014-10-22", "open": "21.3", "close": "20.7", "high": "21.3", "low": "20.5", "volume": "31500" },
-            { "id": "156482", "company_id": "10", "date": "2014-10-21", "open": "21.1", "close": "21.2", "high": "21.5", "low": "20.9", "volume": "14500" },
-            { "id": "151061", "company_id": "10", "date": "2014-10-20", "open": "21.7", "close": "20.7", "high": "21.7", "low": "20.2", "volume": "70000" },
-            { "id": "173437", "company_id": "10", "date": "2014-10-19", "open": "21.6", "close": "21.3", "high": "21.9", "low": "21.1", "volume": "30000" },
-            { "id": "113145", "company_id": "10", "date": "2014-10-16", "open": "22.2", "close": "21.9", "high": "22.2", "low": "21.7", "volume": "111000" },
-            { "id": "74650", "company_id": "10", "date": "2014-10-15", "open": "22.8", "close": "22.2", "high": "22.9", "low": "22.1", "volume": "77500" },
-            { "id": "41480", "company_id": "10", "date": "2014-10-14", "open": "22.5", "close": "22.8", "high": "23", "low": "21.5", "volume": "131000" },
-            { "id": "7349", "company_id": "10", "date": "2014-10-13", "open": "22.9", "close": "22.2", "high": "23", "low": "21.5", "volume": "91000" },
-            { "id": "128871", "company_id": "10", "date": "2014-10-12", "open": "21.9", "close": "22.6", "high": "22.6", "low": "21", "volume": "168500" },
-            { "id": "20406", "company_id": "10", "date": "2014-10-02", "open": "19.3", "close": "20.6", "high": "21", "low": "19.3", "volume": "194000" },
-            { "id": "30416", "company_id": "10", "date": "2014-10-01", "open": "19", "close": "19.3", "high": "19.5", "low": "19", "volume": "61000" },
-            { "id": "207706", "company_id": "10", "date": "2014-09-30", "open": "18.5", "close": "18.6", "high": "18.9", "low": "18.5", "volume": "52000" },
-            { "id": "215808", "company_id": "10", "date": "2014-09-29", "open": "18.6", "close": "18.5", "high": "18.7", "low": "18.5", "volume": "21000" },
-            { "id": "224707", "company_id": "10", "date": "2014-09-28", "open": "18.8", "close": "18.5", "high": "19", "low": "18.5", "volume": "62000" },
-            { "id": "251154", "company_id": "10", "date": "2014-09-25", "open": "19", "close": "18.6", "high": "19.1", "low": "18.5", "volume": "71000" },
-            { "id": "256964", "company_id": "10", "date": "2014-09-24", "open": "19.7", "close": "18.9", "high": "19.7", "low": "18.7", "volume": "37500" },
-            { "id": "275395", "company_id": "10", "date": "2014-09-22", "open": "18.8", "close": "18.9", "high": "19.2", "low": "18.6", "volume": "107500" },
-            { "id": "157434", "company_id": "10", "date": "2014-09-21", "open": "18.2", "close": "18.7", "high": "18.9", "low": "18.2", "volume": "81500" },
-            { "id": "183032", "company_id": "10", "date": "2014-09-18", "open": "18", "close": "18.5", "high": "18.8", "low": "17.9", "volume": "90500" },
-            { "id": "193078", "company_id": "10", "date": "2014-09-17", "open": "17.8", "close": "18", "high": "18.3", "low": "17.8", "volume": "77500" },
-            { "id": "113961", "company_id": "10", "date": "2014-09-16", "open": "18.3", "close": "18", "high": "18.4", "low": "17.9", "volume": "78000" },
-            { "id": "75861", "company_id": "10", "date": "2014-09-15", "open": "19", "close": "18.2", "high": "19", "low": "18", "volume": "211500" },
-            { "id": "42657", "company_id": "10", "date": "2014-09-14", "open": "19", "close": "19.1", "high": "19.2", "low": "18.9", "volume": "21000" },
-            { "id": "138528", "company_id": "10", "date": "2014-09-11", "open": "19.3", "close": "19.1", "high": "19.5", "low": "19", "volume": "10000" },
-            { "id": "144798", "company_id": "10", "date": "2014-09-10", "open": "19.2", "close": "19.2", "high": "19.7", "low": "19.1", "volume": "175500" }]
+let candleOhlcMappings = [];
 
-        let candleOhlcMappings = [];
+let info = {
+  yMin:[],
+  xMin:[],
+  yMax:[],
+  xMax:[],
+  l:0,
+  h:0,
+  minDate:"",
+  maxDate:"",
+}
+
+
+let w = window.innerWidth / 2 - 30;
+let h = window.innerHeight /2 - 30;
+
+let canvas = document.getElementById("canvas");
+canvas.width = w;
+canvas.height = h;
+let ctx = canvas.getContext("2d");
+let centerPoint = [w/2,h/2];
+let boundaries = [w-50,h-50];
+
+//amount of grid lines to evenly distribute for each axis
+var xLines = 10;
+var yLines = 10;
+
+function getTimeslots(ohlc){
+  let count = w/ohlc.length;
+  return count;
+}
+
+
+let drawLine = (x,y,style=undefined) =>{
+  ctx.beginPath();
+  if(style){
+    ctx.strokeStyle=style
+  }
+  ctx.moveTo(x[0], x[1]);
+  ctx.lineTo(y[0], y[1]);
+  ctx.stroke();
+}
+// 0 time
+// 1 open
+// 2 high
+// 3 low
+// 4 close
+//DRAW CANDLESTICKS
+function drawCandles(ohlc,dateRange,lp,hp,steps){
+  let timeSlot = getTimeslots(ohlc);
+  let idx = 0;
+  console.log(steps);
+  for(var candle of ohlc){
+    console.log(timeSlot)
+    console.log(candle)
+    //x = maxPx - ((price - minPrice)/(maxPrice-minPrice)*maxPx)
+    let calculatePosition = (price)=>{
+      let maxPx = info.yMax[1] 
+      console.log(maxPx,price,lp,hp,maxPx);
+      let x = maxPx-((price-lp)/(hp-lp)*maxPx)
+      console.log("x",x);
+      return x;
+    }
+    
+    
+    let open = candle[1]
+    let low = candle[3]
+    let close = candle[4]
+    let high = candle[2]
+    
+    // y axis value for each price point
+    let openPosition = Math.floor(calculatePosition(open));
+    let lowPosition = Math.floor(calculatePosition(low));
+    let highPosition = Math.floor(calculatePosition(high));
+    let closePosition = Math.floor(calculatePosition(close));
+
+    //pixel for candle center along x axis
+    let currentStep = Math.floor(idx*timeSlot);
+    
+
+    if(openPosition > closePosition){ //x,y,w,h
+      let height = openPosition-closePosition;
+      ctx.fillStyle = "red";
+      ctx.fillRect(currentStep-5, closePosition, 10, height);  
+      drawLine([currentStep,lowPosition],[currentStep,highPosition],"red");
+      ctx.strokeStyle="black"
+      ctx.beginPath();
+      ctx.rect(currentStep-5, closePosition, 10, height);
+      ctx.stroke();
+    }else{
+      let height = closePosition-openPosition;
+      ctx.fillStyle = "green";
+      ctx.fillRect(currentStep-5, openPosition, 10, height);
+      drawLine([currentStep,lowPosition],[currentStep,highPosition],"green");
+      ctx.strokeStyle="black"
+      ctx.beginPath();
+      ctx.rect(currentStep-5, openPosition, 10, height);
+      ctx.stroke();
+    }
+    candleOhlcMappings.push({idx:idx,step:currentStep,positions:{openPosition:openPosition,lowPosition:lowPosition,highPosition:highPosition,closePosition:closePosition}});
+    idx++;
+  }
+}
+
+// CALCULATE AMOUNT OF ROWS TO FIT IN GRID
+function calculateSteps()  {
+//calculate horizontal lines across the Y axis
+  let yDist = h/xLines;
+  let yStep=yDist;
+  let ySteps = [yStep];
+  let yCount = 0;
+  
+  while(yCount != xLines){
+    yCount++
+    yStep+=yDist;
+    ySteps.push(Math.floor(yStep));
+  }
+  
+  //calculate vertical lines along the X axis
+  let xDist = w/yLines;
+  let xStep=xDist;
+  let xSteps = [xStep];
+  
+  let xCount = 0;
+  
+  while(xCount< yLines){
+    xCount++;
+    xStep+=xDist;
+    xSteps.push(Math.floor(xStep));
+  }
+  info.yMin = [0,0]
+  info.yMax = [0,ySteps[ySteps.length-1]];
+  info.xMin= [0,0];
+  info.xMax = [xSteps[xSteps.length-1],0];
+  return [xSteps,ySteps];
+}
+
+//DRAW GRID
+function createGrid(lp,hp,dateRange){
+
+  let drawHorizontal = (yPoints)=>{
+    //draw top line
+    drawLine([0,0],[w,0]);
+    
+    for(var point of yPoints){
+      drawLine([0,point],[w,point], "grey")
+    }
+  }
+  let drawVertical = (xPoints)=>{
+    drawLine([0,0],[0,h]);
+    
+    for(var point of xPoints){
+      drawLine([point,h],[point,0], "grey")
+    }
+  }
+  let steps = calculateSteps();
+
+  drawVertical(steps[0])
+  drawHorizontal(steps[1])
+  return steps;
+}
+
+function drawInfo(mousePos){
+  drawLine([0,mousePos.y],[w,mousePos.y],"black");
+  drawLine([mousePos.x,0],[mousePos.x,h],"black");
+}
+
+function getMousePos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
+  return {
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top
+  };
+}
+
+$(document).ready(function () {
+  // var urls = "google.com";
+  // 3FJ485A1KCAZCODB.ss
+  // 1EATG6FH0JYICSWH
+  var urls = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=aapl&apikey=1EATG6FH0JYICSWH';
+  function process (data) {
+      console.log(data);
+      // split the data set into ohlc and volume
+      var i = 0;
+      var ohlc = [];
+      var volume = [];
+      let hp = 0;
+      let lp = Infinity;
+      let dateRange = ["",""];
+      var dataLength = data['Time Series (Daily)'];
+      
+      for(var time in dataLength)
+      {       
         
-        let info = {
-            yMin: [],
-            xMin: [],
-            yMax: [],
-            xMax: [],
-            l: 0,
-            h: 0,
-            minDate: "",
-            maxDate: "",
-        }
-        let w = window.innerWidth - 30;
-        let h = window.innerHeight - 30;
-
-        let canvas = document.getElementById("canvas");
-        canvas.width = w;
-        canvas.height = h;
-
-        let ctx = canvas.getContext("2d");
-        let centerPoint = [w / 2, h / 2];
-        let boundaries = [w - 50, h - 50];
-
-        //amount of grid lines to evenly distribute for each axis
-        var xLines = 40;    
-        var yLines = 100;
+        var stock_info = dataLength[time]; 
         
-        ohlc = []
-        for (const item of data) {
-            ohlc.push([item.date, item.open, item.low, item.close, item.high])
-        }
-        //set max/min date
-        dateRange = [ohlc[0][0], ohlc[ohlc.length - 1][0]]
-        ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, w, h);
-        // ctx.fillStyle = "black";
-        // ctx.fillRect(0, 0, w, h)
-        let steps = drawGrid(ctx, 100, 100, xLines, lp, hp [100, 100], info);
-        drawCandles(ohlc, dateRange, lp, hp, steps)
-        // var dataUri = canvas.toDataURL();
-        // console.log(dataUri)
-    })();
+        let newOHLC = [        
+          time,           
+          Number(stock_info["1. open"]),
+          Number(stock_info["2. high"]),
+          Number(stock_info["3. low"]),
+          Number(stock_info["4. close"])
+        ];
+        
+        ohlc.push(newOHLC);
 
-    console.log("---")
+        if(i==0){
+          //set max/min date
+          dateRange[0]=newOHLC[0];    
+        }
+        if(newOHLC[2]>hp){
+          //found highest point
+          hp = newOHLC[2];
+        }
+        if(newOHLC[3]<lp){
+          //found the lowest point
+          lp = newOHLC[3];
+        }
+
+        volume.push([
+          time, // the date                   
+          Number(stock_info["5. volume"]) // the volume
+        ]);
+        
+        i+=1;
+      }
+      let addEvent = () => {
+        let state = "loading";
+        canvas.addEventListener('mousemove', function(evt) {
+          if(state=="progress"){
+            return;
+          }
+//           state == "progress";
+//           var mousePos = getMousePos(canvas, evt);
+//           var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+          
+          
+//           var img = new Image();
+//           img.onload = function () {
+//             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+//           }
+//           img.src = dataUri;
+//           drawInfo(mousePos);
+//           state == "finished";
+        }, false);
+      }
+      setTimeout(addEvent, 500);
+      ctx.fillStyle="white";
+      ctx.fillRect(0,0,w,h);
+      ctx.fillStyle="black";
+
+      //set max/min date
+      dateRange[1]=ohlc[i-1][0];
+      let steps = createGrid(lp,hp,dateRange);
+      drawCandles(ohlc,dateRange,lp,hp,steps)
+      var dataUri = canvas.toDataURL();
+
+    }
+  
+  data = {
+    "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "aapl",
+        "3. Last Refreshed": "2023-11-20",
+        "4. Output Size": "Compact",
+        "5. Time Zone": "US/Eastern"
+    },
+    "Time Series (Daily)": {
+        "2023-11-20": {
+            "1. open": "189.8900",
+            "2. high": "191.9050",
+            "3. low": "189.8800",
+            "4. close": "191.4500",
+            "5. volume": "46538614"
+        },
+        "2023-11-17": {
+            "1. open": "190.2500",
+            "2. high": "190.3800",
+            "3. low": "188.5700",
+            "4. close": "189.6900",
+            "5. volume": "50941404"
+        },
+        "2023-11-16": {
+            "1. open": "189.5700",
+            "2. high": "190.9600",
+            "3. low": "188.6500",
+            "4. close": "189.7100",
+            "5. volume": "54412915"
+        },
+        "2023-11-15": {
+            "1. open": "187.8450",
+            "2. high": "189.5000",
+            "3. low": "187.7800",
+            "4. close": "188.0100",
+            "5. volume": "53790499"
+        },
+        "2023-11-14": {
+            "1. open": "187.7000",
+            "2. high": "188.1100",
+            "3. low": "186.3000",
+            "4. close": "187.4400",
+            "5. volume": "60108378"
+        },
+        "2023-11-13": {
+            "1. open": "185.8200",
+            "2. high": "186.0300",
+            "3. low": "184.2100",
+            "4. close": "184.8000",
+            "5. volume": "43627519"
+        },
+        "2023-11-10": {
+            "1. open": "183.9700",
+            "2. high": "186.5650",
+            "3. low": "183.5300",
+            "4. close": "186.4000",
+            "5. volume": "66177922"
+        },
+        "2023-11-09": {
+            "1. open": "182.9600",
+            "2. high": "184.1200",
+            "3. low": "181.8100",
+            "4. close": "182.4100",
+            "5. volume": "53763540"
+        },
+        "2023-11-08": {
+            "1. open": "182.3500",
+            "2. high": "183.4500",
+            "3. low": "181.5900",
+            "4. close": "182.8900",
+            "5. volume": "49340282"
+        },
+        "2023-11-07": {
+            "1. open": "179.1800",
+            "2. high": "182.4400",
+            "3. low": "178.9700",
+            "4. close": "181.8200",
+            "5. volume": "70529966"
+        },
+        "2023-11-06": {
+            "1. open": "176.3800",
+            "2. high": "179.4300",
+            "3. low": "176.2100",
+            "4. close": "179.2300",
+            "5. volume": "63841310"
+        },
+        "2023-11-03": {
+            "1. open": "174.2400",
+            "2. high": "176.8200",
+            "3. low": "173.3500",
+            "4. close": "176.6500",
+            "5. volume": "79829246"
+        },
+        "2023-11-02": {
+            "1. open": "175.5200",
+            "2. high": "177.7800",
+            "3. low": "175.4600",
+            "4. close": "177.5700",
+            "5. volume": "77334752"
+        },
+        "2023-11-01": {
+            "1. open": "171.0000",
+            "2. high": "174.2300",
+            "3. low": "170.1200",
+            "4. close": "173.9700",
+            "5. volume": "56934906"
+        },
+        "2023-10-31": {
+            "1. open": "169.3500",
+            "2. high": "170.9000",
+            "3. low": "167.9000",
+            "4. close": "170.7700",
+            "5. volume": "44846017"
+        },
+        "2023-10-30": {
+            "1. open": "169.0200",
+            "2. high": "171.1700",
+            "3. low": "168.8700",
+            "4. close": "170.2900",
+            "5. volume": "51130955"
+        },
+        "2023-10-27": {
+            "1. open": "166.9100",
+            "2. high": "168.9600",
+            "3. low": "166.8300",
+            "4. close": "168.2200",
+            "5. volume": "58499129"
+        },
+        "2023-10-26": {
+            "1. open": "170.3700",
+            "2. high": "171.3775",
+            "3. low": "165.6700",
+            "4. close": "166.8900",
+            "5. volume": "70625258"
+        },
+        "2023-10-25": {
+            "1. open": "171.8800",
+            "2. high": "173.0600",
+            "3. low": "170.6500",
+            "4. close": "171.1000",
+            "5. volume": "57156962"
+        },
+        "2023-10-24": {
+            "1. open": "173.0500",
+            "2. high": "173.6700",
+            "3. low": "171.4500",
+            "4. close": "173.4400",
+            "5. volume": "43816644"
+        },
+        "2023-10-23": {
+            "1. open": "170.9100",
+            "2. high": "174.0100",
+            "3. low": "169.9300",
+            "4. close": "173.0000",
+            "5. volume": "55980109"
+        },
+        "2023-10-20": {
+            "1. open": "175.3100",
+            "2. high": "175.4200",
+            "3. low": "172.6400",
+            "4. close": "172.8800",
+            "5. volume": "64244028"
+        },
+        "2023-10-19": {
+            "1. open": "176.0400",
+            "2. high": "177.8400",
+            "3. low": "175.1900",
+            "4. close": "175.4600",
+            "5. volume": "59302863"
+        },
+        "2023-10-18": {
+            "1. open": "175.5800",
+            "2. high": "177.5750",
+            "3. low": "175.1100",
+            "4. close": "175.8400",
+            "5. volume": "54764375"
+        },
+        "2023-10-17": {
+            "1. open": "176.6450",
+            "2. high": "178.4200",
+            "3. low": "174.8000",
+            "4. close": "177.1500",
+            "5. volume": "57549350"
+        },
+        "2023-10-16": {
+            "1. open": "176.7500",
+            "2. high": "179.0750",
+            "3. low": "176.5100",
+            "4. close": "178.7200",
+            "5. volume": "52516984"
+        },
+        "2023-10-13": {
+            "1. open": "181.4200",
+            "2. high": "181.9300",
+            "3. low": "178.1400",
+            "4. close": "178.8500",
+            "5. volume": "51456082"
+        },
+        "2023-10-12": {
+            "1. open": "180.0700",
+            "2. high": "182.3400",
+            "3. low": "179.0400",
+            "4. close": "180.7100",
+            "5. volume": "56743119"
+        },
+        "2023-10-11": {
+            "1. open": "178.2000",
+            "2. high": "179.8500",
+            "3. low": "177.6000",
+            "4. close": "179.8000",
+            "5. volume": "47551098"
+        },
+        "2023-10-10": {
+            "1. open": "178.1000",
+            "2. high": "179.7200",
+            "3. low": "177.9500",
+            "4. close": "178.3900",
+            "5. volume": "43698019"
+        },
+        "2023-10-09": {
+            "1. open": "176.8100",
+            "2. high": "179.0500",
+            "3. low": "175.8000",
+            "4. close": "178.9900",
+            "5. volume": "42390772"
+        },
+        "2023-10-06": {
+            "1. open": "173.8000",
+            "2. high": "177.9900",
+            "3. low": "173.1800",
+            "4. close": "177.4900",
+            "5. volume": "57266675"
+        },
+        "2023-10-05": {
+            "1. open": "173.7900",
+            "2. high": "175.4500",
+            "3. low": "172.6800",
+            "4. close": "174.9100",
+            "5. volume": "48527918"
+        },
+        "2023-10-04": {
+            "1. open": "171.0900",
+            "2. high": "174.2100",
+            "3. low": "170.9700",
+            "4. close": "173.6600",
+            "5. volume": "53020286"
+        },
+        "2023-10-03": {
+            "1. open": "172.2550",
+            "2. high": "173.6300",
+            "3. low": "170.8200",
+            "4. close": "172.4000",
+            "5. volume": "49594613"
+        },
+        "2023-10-02": {
+            "1. open": "171.2200",
+            "2. high": "174.3000",
+            "3. low": "170.9300",
+            "4. close": "173.7500",
+            "5. volume": "52164535"
+        },
+        "2023-09-29": {
+            "1. open": "172.0200",
+            "2. high": "173.0700",
+            "3. low": "170.3410",
+            "4. close": "171.2100",
+            "5. volume": "51861083"
+        },
+        "2023-09-28": {
+            "1. open": "169.3400",
+            "2. high": "172.0300",
+            "3. low": "167.6200",
+            "4. close": "170.6900",
+            "5. volume": "56294419"
+        },
+        "2023-09-27": {
+            "1. open": "172.6200",
+            "2. high": "173.0400",
+            "3. low": "169.0500",
+            "4. close": "170.4300",
+            "5. volume": "66921808"
+        },
+        "2023-09-26": {
+            "1. open": "174.8200",
+            "2. high": "175.2000",
+            "3. low": "171.6600",
+            "4. close": "171.9600",
+            "5. volume": "64588945"
+        },
+        "2023-09-25": {
+            "1. open": "174.2000",
+            "2. high": "176.9700",
+            "3. low": "174.1500",
+            "4. close": "176.0800",
+            "5. volume": "46172740"
+        },
+        "2023-09-22": {
+            "1. open": "174.6700",
+            "2. high": "177.0790",
+            "3. low": "174.0500",
+            "4. close": "174.7900",
+            "5. volume": "56725385"
+        },
+        "2023-09-21": {
+            "1. open": "174.5500",
+            "2. high": "176.3000",
+            "3. low": "173.8600",
+            "4. close": "173.9300",
+            "5. volume": "63149116"
+        },
+        "2023-09-20": {
+            "1. open": "179.2600",
+            "2. high": "179.6950",
+            "3. low": "175.4000",
+            "4. close": "175.4900",
+            "5. volume": "58436181"
+        },
+        "2023-09-19": {
+            "1. open": "177.5200",
+            "2. high": "179.6300",
+            "3. low": "177.1300",
+            "4. close": "179.0700",
+            "5. volume": "51826941"
+        },
+        "2023-09-18": {
+            "1. open": "176.4800",
+            "2. high": "179.3800",
+            "3. low": "176.1700",
+            "4. close": "177.9700",
+            "5. volume": "67257573"
+        },
+        "2023-09-15": {
+            "1. open": "176.4800",
+            "2. high": "176.4950",
+            "3. low": "173.8200",
+            "4. close": "175.0100",
+            "5. volume": "109259461"
+        },
+        "2023-09-14": {
+            "1. open": "174.0000",
+            "2. high": "176.1000",
+            "3. low": "173.5800",
+            "4. close": "175.7400",
+            "5. volume": "60895757"
+        },
+        "2023-09-13": {
+            "1. open": "176.5100",
+            "2. high": "177.3000",
+            "3. low": "173.9800",
+            "4. close": "174.2100",
+            "5. volume": "84267928"
+        },
+        "2023-09-12": {
+            "1. open": "179.4900",
+            "2. high": "180.1300",
+            "3. low": "174.8200",
+            "4. close": "176.3000",
+            "5. volume": "90370192"
+        },
+        "2023-09-11": {
+            "1. open": "180.0700",
+            "2. high": "180.3000",
+            "3. low": "177.3400",
+            "4. close": "179.3600",
+            "5. volume": "58953052"
+        },
+        "2023-09-08": {
+            "1. open": "178.3500",
+            "2. high": "180.2390",
+            "3. low": "177.7900",
+            "4. close": "178.1800",
+            "5. volume": "65602066"
+        },
+        "2023-09-07": {
+            "1. open": "175.1800",
+            "2. high": "178.2100",
+            "3. low": "173.5400",
+            "4. close": "177.5600",
+            "5. volume": "112488803"
+        },
+        "2023-09-06": {
+            "1. open": "188.4000",
+            "2. high": "188.8500",
+            "3. low": "181.4700",
+            "4. close": "182.9100",
+            "5. volume": "81755816"
+        },
+        "2023-09-05": {
+            "1. open": "188.2800",
+            "2. high": "189.9800",
+            "3. low": "187.6100",
+            "4. close": "189.7000",
+            "5. volume": "45280027"
+        },
+        "2023-09-01": {
+            "1. open": "189.4850",
+            "2. high": "189.9200",
+            "3. low": "188.2800",
+            "4. close": "189.4600",
+            "5. volume": "45766503"
+        },
+        "2023-08-31": {
+            "1. open": "187.8400",
+            "2. high": "189.1200",
+            "3. low": "187.4800",
+            "4. close": "187.8700",
+            "5. volume": "60794467"
+        },
+        "2023-08-30": {
+            "1. open": "184.9400",
+            "2. high": "187.8500",
+            "3. low": "184.7400",
+            "4. close": "187.6500",
+            "5. volume": "60813888"
+        },
+        "2023-08-29": {
+            "1. open": "179.6950",
+            "2. high": "184.9000",
+            "3. low": "179.5000",
+            "4. close": "184.1200",
+            "5. volume": "53003948"
+        },
+        "2023-08-28": {
+            "1. open": "180.0900",
+            "2. high": "180.5900",
+            "3. low": "178.5450",
+            "4. close": "180.1900",
+            "5. volume": "43820697"
+        },
+        "2023-08-25": {
+            "1. open": "177.3800",
+            "2. high": "179.1500",
+            "3. low": "175.8200",
+            "4. close": "178.6100",
+            "5. volume": "51449594"
+        },
+        "2023-08-24": {
+            "1. open": "180.6740",
+            "2. high": "181.1040",
+            "3. low": "176.0100",
+            "4. close": "176.3800",
+            "5. volume": "54945798"
+        },
+        "2023-08-23": {
+            "1. open": "178.5200",
+            "2. high": "181.5500",
+            "3. low": "178.3250",
+            "4. close": "181.1200",
+            "5. volume": "52722752"
+        },
+        "2023-08-22": {
+            "1. open": "177.0600",
+            "2. high": "177.6800",
+            "3. low": "176.2500",
+            "4. close": "177.2300",
+            "5. volume": "42084245"
+        },
+        "2023-08-21": {
+            "1. open": "175.0700",
+            "2. high": "176.1300",
+            "3. low": "173.7350",
+            "4. close": "175.8400",
+            "5. volume": "46311879"
+        },
+        "2023-08-18": {
+            "1. open": "172.3000",
+            "2. high": "175.1000",
+            "3. low": "171.9600",
+            "4. close": "174.4900",
+            "5. volume": "61172150"
+        },
+        "2023-08-17": {
+            "1. open": "177.1400",
+            "2. high": "177.5054",
+            "3. low": "173.4800",
+            "4. close": "174.0000",
+            "5. volume": "66062882"
+        },
+        "2023-08-16": {
+            "1. open": "177.1300",
+            "2. high": "178.5400",
+            "3. low": "176.5000",
+            "4. close": "176.5700",
+            "5. volume": "46964857"
+        },
+        "2023-08-15": {
+            "1. open": "178.8800",
+            "2. high": "179.4800",
+            "3. low": "177.0500",
+            "4. close": "177.4500",
+            "5. volume": "43622593"
+        },
+        "2023-08-14": {
+            "1. open": "177.9700",
+            "2. high": "179.6900",
+            "3. low": "177.3050",
+            "4. close": "179.4600",
+            "5. volume": "43675627"
+        },
+        "2023-08-11": {
+            "1. open": "177.3200",
+            "2. high": "178.6200",
+            "3. low": "176.5500",
+            "4. close": "177.7900",
+            "5. volume": "52036672"
+        },
+        "2023-08-10": {
+            "1. open": "179.4800",
+            "2. high": "180.7500",
+            "3. low": "177.6000",
+            "4. close": "177.9700",
+            "5. volume": "54686851"
+        },
+        "2023-08-09": {
+            "1. open": "180.8700",
+            "2. high": "180.9300",
+            "3. low": "177.0100",
+            "4. close": "178.1900",
+            "5. volume": "60378492"
+        },
+        "2023-08-08": {
+            "1. open": "179.6900",
+            "2. high": "180.2700",
+            "3. low": "177.5800",
+            "4. close": "179.8000",
+            "5. volume": "67823003"
+        },
+        "2023-08-07": {
+            "1. open": "182.1300",
+            "2. high": "183.1300",
+            "3. low": "177.3500",
+            "4. close": "178.8500",
+            "5. volume": "97576069"
+        },
+        "2023-08-04": {
+            "1. open": "185.5200",
+            "2. high": "187.3800",
+            "3. low": "181.9200",
+            "4. close": "181.9900",
+            "5. volume": "115956841"
+        },
+        "2023-08-03": {
+            "1. open": "191.5700",
+            "2. high": "192.3700",
+            "3. low": "190.6900",
+            "4. close": "191.1700",
+            "5. volume": "62243282"
+        },
+        "2023-08-02": {
+            "1. open": "195.0400",
+            "2. high": "195.1800",
+            "3. low": "191.8507",
+            "4. close": "192.5800",
+            "5. volume": "50389327"
+        },
+        "2023-08-01": {
+            "1. open": "196.2350",
+            "2. high": "196.7300",
+            "3. low": "195.2800",
+            "4. close": "195.6050",
+            "5. volume": "35281426"
+        },
+        "2023-07-31": {
+            "1. open": "196.0600",
+            "2. high": "196.4900",
+            "3. low": "195.2600",
+            "4. close": "196.4500",
+            "5. volume": "38824113"
+        },
+        "2023-07-28": {
+            "1. open": "194.6700",
+            "2. high": "196.6260",
+            "3. low": "194.1400",
+            "4. close": "195.8300",
+            "5. volume": "48291443"
+        },
+        "2023-07-27": {
+            "1. open": "196.0200",
+            "2. high": "197.2000",
+            "3. low": "192.5500",
+            "4. close": "193.2200",
+            "5. volume": "47460180"
+        },
+        "2023-07-26": {
+            "1. open": "193.6700",
+            "2. high": "195.6400",
+            "3. low": "193.3200",
+            "4. close": "194.5000",
+            "5. volume": "47471868"
+        },
+        "2023-07-25": {
+            "1. open": "193.3300",
+            "2. high": "194.4400",
+            "3. low": "192.9150",
+            "4. close": "193.6200",
+            "5. volume": "37283201"
+        },
+        "2023-07-24": {
+            "1. open": "193.4100",
+            "2. high": "194.9100",
+            "3. low": "192.2500",
+            "4. close": "192.7500",
+            "5. volume": "45505097"
+        },
+        "2023-07-21": {
+            "1. open": "194.1000",
+            "2. high": "194.9700",
+            "3. low": "191.2300",
+            "4. close": "191.9400",
+            "5. volume": "71951683"
+        },
+        "2023-07-20": {
+            "1. open": "195.0900",
+            "2. high": "196.4700",
+            "3. low": "192.4950",
+            "4. close": "193.1300",
+            "5. volume": "59581196"
+        },
+        "2023-07-19": {
+            "1. open": "193.1000",
+            "2. high": "198.2300",
+            "3. low": "192.6500",
+            "4. close": "195.1000",
+            "5. volume": "80507323"
+        },
+        "2023-07-18": {
+            "1. open": "193.3500",
+            "2. high": "194.3300",
+            "3. low": "192.4150",
+            "4. close": "193.7300",
+            "5. volume": "48353774"
+        },
+        "2023-07-17": {
+            "1. open": "191.9000",
+            "2. high": "194.3200",
+            "3. low": "191.8100",
+            "4. close": "193.9900",
+            "5. volume": "50520159"
+        },
+        "2023-07-14": {
+            "1. open": "190.2300",
+            "2. high": "191.1799",
+            "3. low": "189.6300",
+            "4. close": "190.6900",
+            "5. volume": "41616242"
+        },
+        "2023-07-13": {
+            "1. open": "190.5000",
+            "2. high": "191.1900",
+            "3. low": "189.7800",
+            "4. close": "190.5400",
+            "5. volume": "41342338"
+        },
+        "2023-07-12": {
+            "1. open": "189.6800",
+            "2. high": "191.7000",
+            "3. low": "188.4700",
+            "4. close": "189.7700",
+            "5. volume": "60750248"
+        },
+        "2023-07-11": {
+            "1. open": "189.1600",
+            "2. high": "189.3000",
+            "3. low": "186.6000",
+            "4. close": "188.0800",
+            "5. volume": "46638119"
+        },
+        "2023-07-10": {
+            "1. open": "189.2600",
+            "2. high": "189.9900",
+            "3. low": "187.0350",
+            "4. close": "188.6100",
+            "5. volume": "59922163"
+        },
+        "2023-07-07": {
+            "1. open": "191.4100",
+            "2. high": "192.6700",
+            "3. low": "190.2400",
+            "4. close": "190.6800",
+            "5. volume": "46814998"
+        },
+        "2023-07-06": {
+            "1. open": "189.8400",
+            "2. high": "192.0200",
+            "3. low": "189.2000",
+            "4. close": "191.8100",
+            "5. volume": "45156009"
+        },
+        "2023-07-05": {
+            "1. open": "191.5650",
+            "2. high": "192.9800",
+            "3. low": "190.6200",
+            "4. close": "191.3300",
+            "5. volume": "46920261"
+        },
+        "2023-07-03": {
+            "1. open": "193.7800",
+            "2. high": "193.8800",
+            "3. low": "191.7600",
+            "4. close": "192.4600",
+            "5. volume": "31458198"
+        },
+        "2023-06-30": {
+            "1. open": "191.6300",
+            "2. high": "194.4800",
+            "3. low": "191.2600",
+            "4. close": "193.9700",
+            "5. volume": "85213216"
+        }
+    }
+}
+
+  process(data);
+
+});
+
 </script>
 
 </html>
