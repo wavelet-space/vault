@@ -31,7 +31,9 @@ Personal catalog of articles, books, movies, games etc.
   <details><summary>summary</summary><em>Quants are the math wizards and computer programmers in the engine room of our global financial system who designed the financial products that almost crashed Wall street. The credit crunch has shown how the global financial system has become increasingly dependent on mathematical models trying to quantify human (economic) behaviour. Now the quants are at the heart of yet another technological revolution in finance: trading at the speed of light. What are the risks of treating the economy and its markets as a complex machine? Will we be able to keep control of this model-based financial system, or have we created a monster? A story about greed, fear and randomness from the insides of Wall Street.</em></details>
   
   - [Emanuel Derman](https://en.wikipedia.org/wiki/Emanuel_Derman), [Paul Wilmott](https://en.wikipedia.org/wiki/Paul_Wilmott)
+]
 
+- [Hikikomori: A Deafening Silence ](https://www.youtube.com/watch?v=zzF83e_L100), 2019
 
 ## Computer games
 

@@ -1,13 +1,8 @@
-# Journal
-
-Tato stránka je rozcestník na poznámky řazené podle let.
+# Přebrat
 
 ```{toctree}
 :maxdepth: 1
+:glob:
 
-2023/index      
-2022/index
-2021/index
-2019/index
-_/index
+./*
 ```

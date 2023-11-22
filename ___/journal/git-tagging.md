@@ -8,7 +8,6 @@ Lze změnit v nastavení GitHub aby toto dělo automaticky.
 Pokud je pull request spojen s issue (což často je), pak by se mělo zavřít spolu s pull requatsetm.
 Opět toto se může dít automaticky pokud se na issue odkážu v pull request.
 
-
 Pokud mám dlouho otevřenou větev, musím dělat často rebase upstreamu!
 
 ## tagging

@@ -1,3 +1,4 @@
+# MSVC
 
 Pokud máme naistalovaný jen build tools:
 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\'
