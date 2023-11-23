@@ -1,12 +1,6 @@
-===========================
-Software Project Management
-===========================
+# Software Project Management
 
-Projekt C++
-===========
-
-Dokumentace C++ projektu
-------------------------
+## Projekt C++
 
 Dokumentaci C++ projektu tvoříme pomocí nástrojů Doxygen a Breathe. Jak postupujeme:
 

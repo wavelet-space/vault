@@ -52,4 +52,4 @@ personal/resume
 personal/projects
 ```
 
-<iframe width="800" height="450" src="https://www.youtube.com/embed/FWbXMXTdOPQ?si=ANVR-bOhsgN5f8rX&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+*“I've seen things you people wouldn't believe. Attack ships on fire off the shoulder of Orion. I watched C-beams glitter in the dark near the Tannhäuser Gate. All those moments will be lost in time, like tears in rain. Time to die.”*
