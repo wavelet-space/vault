@@ -2,7 +2,7 @@
 
 Personal catalog of articles, books, movies, games, and events.
 
-## Movies and Series
+### Movies and series
 
 - [Flash Crash](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7) 
 - [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6) 
@@ -36,7 +36,7 @@ Personal catalog of articles, books, movies, games, and events.
 
 - [Hikikomori: A Deafening Silence ](https://www.youtube.com/watch?v=zzF83e_L100), 2019
 
-## Computer games
+### Computer games
 
 - [Albion](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
 - [Brigand: Oaxaca](https://store.steampowered.com/app/652410/Brigand_Oaxaca/)
@@ -54,7 +54,7 @@ Personal catalog of articles, books, movies, games, and events.
 - [Enemy Mine](https://www.csfd.cz/film/7225-muj-nepritel/prehled/)
 - [King of Kong](https://www.imdb.com/title/tt0923752/)
 
-## YouTube channels, blogs
+### YouTube channels, blogs
 
 - ThePrimeTime
   - <https://www.youtube.com/watch?v=zjBx9ZgjPt4>

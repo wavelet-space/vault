@@ -18,6 +18,7 @@ html_title = project
 extensions = [
     "myst_parser",
     "sphinx.ext.intersphinx",
+    'sphinxcontrib.bibtex',
 ]
 
 myst_enable_extensions = [
@@ -37,32 +38,23 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
+bibtex_bibfiles = ['references.bib']
+
 # templates_path = ['_templates']
-exclude_patterns = ['build', '_build', '.github', '.vscode']
+exclude_patterns = ['build', '_build', '.github', '.vscode', "_*.md", "__*"]
 
 master_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-import tibas.tt
-import alabaster
-html_theme = 'tt'
-html_theme_path = [tibas.tt.get_path(), alabaster.get_path()]
-html_static_path = ["_static"]
-html_css_files = [ # does not work on GitHub?
-    'custom.css',
-]
-
-html_extra_path = ['etudes/', ".", "memoirs"]
-
+html_theme = 'furo'
+# html_static_path = ["_static"]
+# html_css_files = ['custom.css']
+# html_extra_path = ['etudes/']
 html_theme_options = {
     "light_css_variables": {
         "font-stack": "Times New Roman, Times, serif",
         "font-stack--monospace": "Courier, monospace",
     },
 }
-
-
-# html_js_files = [
-#     'custom.js',
-# ]
+# html_js_files = ['custom.js']

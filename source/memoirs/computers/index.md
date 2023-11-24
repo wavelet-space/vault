@@ -3,8 +3,9 @@
 Contains notes on practical programmings and computer science.
 
 ```{toctree}
-:glob:
+:caption: Index
 :hidden:
+:glob:
 
 algorithms/index
 testing/index

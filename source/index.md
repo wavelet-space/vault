@@ -3,8 +3,9 @@
 ```
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 3
 :caption: Memoirs
+:hidden:
 :glob:
 
 memoirs/computers/index
@@ -16,40 +17,33 @@ memoirs/*
 ```
 
 ```{toctree}
-:caption: Courses 
-:maxdepth: 1
-
-c16/source/index
-```
-
-```{toctree}
-:maxdepth: 1
+:maxdepth: 3
 :caption: Essays 
+:hidden:
 :glob:
 
 essays/*
 ```
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 3
 :caption: Études 
+:hidden:
 :glob:
 
 etudes/*
 ```
 
 ```{toctree}
-:maxdepth: 1
-:hidden:
+:maxdepth: 3
 :caption: Personal
+:hidden:
 :glob:
 
 personal/resume
 personal/projects
 ```
 
-- Working on [candle chart JS library](https://www.wavelet.space/vault/candles.html)
-<!-- 
-```{include} ./memoirs/catalog.md
-:start-line : 2
-``` -->
+```{include} memoirs/catalog.md
+:start-line: 1
+```
