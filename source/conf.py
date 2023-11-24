@@ -44,14 +44,16 @@ master_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-html_theme = "furo"
+import tibas.tt
+import alabaster
+html_theme = 'tt'
+html_theme_path = [tibas.tt.get_path(), alabaster.get_path()]
 html_static_path = ["_static"]
 html_css_files = [ # does not work on GitHub?
     'custom.css',
 ]
 
-html_extra_path = ['etudes/']
+html_extra_path = ['etudes/', ".", "memoirs"]
 
 html_theme_options = {
     "light_css_variables": {

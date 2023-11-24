@@ -3,8 +3,7 @@
 ```
 
 ```{toctree}
-:maxdepth: 3
-:hidden:
+:maxdepth: 1
 :caption: Memoirs
 :glob:
 
@@ -18,15 +17,13 @@ memoirs/*
 
 ```{toctree}
 :caption: Courses 
-:maxdepth: 2
-:hidden:
+:maxdepth: 1
 
 c16/source/index
 ```
 
 ```{toctree}
-:maxdepth: 3
-:hidden:
+:maxdepth: 1
 :caption: Essays 
 :glob:
 
@@ -34,8 +31,7 @@ essays/*
 ```
 
 ```{toctree}
-:maxdepth: 3
-:hidden:
+:maxdepth: 1
 :caption: Études 
 :glob:
 
@@ -43,7 +39,7 @@ etudes/*
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 1
 :hidden:
 :caption: Personal
 :glob:
@@ -52,7 +48,8 @@ personal/resume
 personal/projects
 ```
 
-*“I've seen things you people wouldn't believe. Attack ships on fire off the shoulder of Orion. I watched C-beams glitter in the dark near the Tannhäuser Gate. All those moments will be lost in time, like tears in rain. Time to die.”*
-
-
-- Working on [candle charts JS library](https://www.wavelet.space/vault/candle-chart.html)
+- Working on [candle chart JS library](https://www.wavelet.space/vault/candles.html)
+<!-- 
+```{include} ./memoirs/catalog.md
+:start-line : 2
+``` -->
