@@ -173,6 +173,8 @@ Personal catalog of articles, books, movies, games, and events.
   - <https://is.muni.cz/do/sci/UMS/el/analyza/index.html>
   - <http://math.feld.cvut.cz/mt/indexc.htm>
 
+- Františel Fuka's [homepage](https://www.fuxoft.cz/)
+
 ## Events
 
 - Tohaka
