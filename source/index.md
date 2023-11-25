@@ -57,7 +57,7 @@ can help me improve my parser.
 - I have just realized how modern C++20 is similar to Python. I plan to write a few articles to
 compare C++ and Python side by side, namely generators, asynchronous execution, and type systems.
 - I am working on a personal [catalog](./memoirs/references.md).
-- Don't abuse Python dictionary as data structure. Use `dataclass` or `namedtuple`.
+- Don't abuse Python dictionary as data structure. Use `dataclass` or `namedtuple`. Write some examples for myself and my coworkers.
 - Python namespace package  is very underated feature.
 
 - Some topics which I wanted to explore in the past will explore more in-depth in 2024: *dynamical and complex systems, game theory, optimal control theory, catastrophe theory, pattern formation, phase transitions, Geometric algebra for computer graphics and Lie groups*
