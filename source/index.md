@@ -70,12 +70,12 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
 
 - I have lost a lot of time playing with too many programming languages. I have decided to deepen my knowledge only in these areas:
 
-  - C++ and, in some sense, also in C (abandoned Rust; it is too overhyped and rigid; Zig and Jai are far more interesting).
-  - Python (R is too messy; Julia looks promising, but it cannot compete with Python in versatility).
+  - C++ and, in some sense, also in C (abandoned Rust; it is too overhyped and rigid; Zig and Jai are far more interesting)
+  - Python (R is too messy; Julia looks promising, but it cannot compete with Python in versatility)
   - Fortran (Julia again, but modern Fortran really looks good)
   - Erlang (hidden gem of concurrent and networked programming)
-  - OCaml v5 and Lean v4 (I will never understand why Haskell is so overhyped).
-  - APL and friends k,q and kdb+, Dyalog
-  - Forth and friends (I am working on a custom implementation; as everyone :D)
-  - JavaScript (I really hate TypeScript—not a type system at all but this classy, csharped IAmInterface mess).
+  - OCaml v5 and Lean v4 (I will never understand why Haskell is so overhyped)
+  - APL and friends k,q Dyalog
+  - Forth and friends (I am working on a custom implementation; as everyone)
+  - JavaScript (I really hate TypeScript—not a type system at all but this classy, csharped IAmInterface mess)
   - Go (I really don't like Go, but it is too practical and at the same time too ugly)
