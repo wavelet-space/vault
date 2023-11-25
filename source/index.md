@@ -17,8 +17,9 @@ memoirs/*
 ```
 
 ```{toctree}
-:maxdepth: 3
 :caption: Essays 
+:titlesonly:
+:maxdepth: 3
 :hidden:
 :glob:
 
@@ -26,8 +27,9 @@ essays/*
 ```
 
 ```{toctree}
-:maxdepth: 3
 :caption: Études 
+:titlesonly:
+:maxdepth: 3
 :hidden:
 :glob:
 
@@ -44,6 +46,34 @@ personal/resume
 personal/projects
 ```
 
-```{include} memoirs/catalog.md
-:start-line: 1
-```
+## Present
+
+*Here are some current random thoughts. Either it will be abandoned or finished. and moved to the appropriate place.*
+
+- I'm just trying to implement parser combinators in Python.
+Some time ago, I needed to parse huge XML. I have implemented a class.
+For this, it works, but it is a little bit rubbish. We will see if the parser combinator
+can help me improve my parser.
+- I have just realized how modern C++20 is similar to Python. I plan to write a few articles to
+compare C++ and Python side by side, namely generators, asynchronous execution, and type systems.
+- I am working on a personal [catalog] (memoirs/catalog.md).
+- Don't abuse Python dictionary as data structure. Use `dataclass` or `namedtuple`.
+- Python namespace package  is very underated feature.
+
+- Some topics which I want to explored in the past but want to explore more in-depth in 2024: dynamical and complex systems, game theory, optimal control theory, catastrophe theory, pattern formation, phase transitions, Geometric algebra for computer graphics and Lie groups
+
+- Bibliography and references: At this moment I use combination of BibTex and custom manually edited list [here](./memoirs/references.md). There are movies, games, books, articles (printed, online) and YouTube videos and channels. I need to resolve this mess. See also <https://en.wikipedia.org/wiki/Template:Cite_AV_media>
+
+- Write work notes (journals or reports) on a weekly basis, not on a daily basis. To have a hundred files for each day is annoying. Most of the tasks are done on a weekly basis + squash all daily notes.
+
+- Migrating form `.rst` to MyST `.md`. Using Pandoc for that e.g. `pandoc .\file.rst -f rst -t markdown -o file.md`.
+- I have lost a lot of time playing with too many programming languages. I have decided to deepen my knowledge only in these areas:
+  - C++ and, in some sense, also in C (abandoned Rust; it is too overhyped and rigid; Zig and Jai are far more interesting).
+  - Python (R is too messy; Julia looks promising, but it cannot compete with Python in versatility).
+  - Fortran (Julia again, but modern Fortran really looks good)
+  - Erlang (hidden gem of concurrent and networked programming)
+  - OCaml v5 and Lean v4 (I will never understand why Haskell is so overhyped).
+  - APL and friends k,q and kdb+, Dyalog
+  - Forth and friends
+  - JavaScript (I really hate TypeScript—not a type system at all but this classy, csharped IAmInterface mess). 
+  - Go (I really don't like Go, but it is too practical and at the same time too ugly)

@@ -1,18 +1,10 @@
----
-bibliography:
-  - references.bib
----
+# Disruptor
 
-# Disruptor architecture
+- Q: What s disruptor architecture?
+- A: An alternative to limited queues for fast data exchange between concurrent threads.
+     Read a technical papaer [here](https://lmax-exchange.github.io/disruptor/files/Disruptor-1.0.pdf).
 
-## Poznámky
-
-- Co a k čemu je disruptor?
-  - Alternativa k omezeným frontám pro rychlou výměnu dat mezi souběžnými vlákny.
-
-- [technický dokument](https://lmax-exchange.github.io/disruptor/files/Disruptor-1.0.pdf)
-
-See {cite:t}`Nelson:1987` for an introduction to non-standard analysis.
+## Implementation
 
 - Entry
 - EntryFactory
@@ -29,7 +21,7 @@ See {cite:t}`Nelson:1987` for an introduction to non-standard analysis.
   - YieldingWaitStrategy
   - BlockingWaitStrategy
 
-## Terminologie
+## Terminoloy
 
 ```{glossary}
 

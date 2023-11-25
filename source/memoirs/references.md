@@ -1,13 +1,19 @@
-# Catalog
+---
+bibliography:
+  - ../references.bib
+---
+# References
 
 Personal catalog of articles, books, movies, games, and events.
 
-### Movies and series
+(Manually maintained and ever growing list of books and articles to keep my reading archived and myselforganized and focused.)
+ 
+## Movies and series
 
-- [Flash Crash](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7) 
-- [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6) 
+- [Flash Crash](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7)
+- [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6)
   <details><summary>summary</summary>
-  <em>For most, Planet Finance is a complex, influential world that only becomes visible when crashes occur in the financial markets. Stock market prices quickly shot back up on Planet Finance during the COVID pandemic, while the inhabitants of planet Earth were still sweeping the shards together. 
+  <em>For most, Planet Finance is a complex, influential world that only becomes visible when crashes occur in the financial markets. Stock market prices quickly shot back up on Planet Finance during the COVID pandemic, while the inhabitants of planet Earth were still sweeping the shards together.
   The contrast could hardly be greater. But how does such a market emerge? Through interviews including the founder of the market in oil futures, one of its first traders and a neuropsychologist who mentally guides traders and hedge fund managers in making risky decisions, it becomes clear how Planet Finance grew into what it is today.</em>
   </details>
 - [Free Oil](https://youtu.be/oZcH_VyFMUQ?si=V48pqDj3LfpCrSox) | Planet Finance (2/6) </br>
@@ -22,8 +28,8 @@ Personal catalog of articles, books, movies, games, and events.
   <details><summary>summary</summary><em>The so-called shortsellers live off the mistakes of others. They win when others lose. A shortseller benefits from the fact that many investors are guided by the delusion of the day. The events at three famous companies popular among investors, the Flemish Lernout & Hauspie, the German Wirecard and the American Gamestop, show the forces the shortseller encounters when going against the emotions of the masses.</em>
   </details>
 
-    - [John Hempton](https://en.wikipedia.org/wiki/John_Hempton), [Nathan Anderson](https://en.wikipedia.org/wiki/Nathan_Anderson)
-    
+  - [John Hempton](https://en.wikipedia.org/wiki/John_Hempton), [Nathan Anderson](https://en.wikipedia.org/wiki/Nathan_Anderson)
+
 - [Before The Mets, Steve Cohen Was The Hedge-Fund King](https://youtu.be/1szayJV505M?si=EAHJHYlrZT1rPD1X)
   <details><summary>summary</summary><em>Inside the government’s crackdown on insider trading, drawing on exclusively-obtained video of hedge fund titan Steven A. Cohen, incriminating FBI wiretaps, and interviews with both Wall Street and Justice Department insiders. (Aired 2014)</em></details>
 
@@ -34,9 +40,11 @@ Personal catalog of articles, books, movies, games, and events.
 ]
 - [The Untouchables](https://youtu.be/B4TWN54KqfQ?si=Un1vRgFlAZ942Zeq), 2013
 
-- [Hikikomori: A Deafening Silence ](https://www.youtube.com/watch?v=zzF83e_L100), 2019
+- [Hikikomori: A Deafening Silence](https://www.youtube.com/watch?v=zzF83e_L100), 2019
 
-### Computer games
+- The Adventures of Prince Achmed; Lotte Reiniger; 1926;
+
+## Games
 
 - [Albion](https://en.wikipedia.org/wiki/Albion_(video_game)). (1995). Blue Byte
 - [Brigand: Oaxaca](https://store.steampowered.com/app/652410/Brigand_Oaxaca/)
@@ -53,6 +61,10 @@ Personal catalog of articles, books, movies, games, and events.
 - Carnivores, <https://en.wikipedia.org/wiki/Carnivores_(video_game)>
 - [Enemy Mine](https://www.csfd.cz/film/7225-muj-nepritel/prehled/)
 - [King of Kong](https://www.imdb.com/title/tt0923752/)
+
+* Prince of Persia; Jordan Mechner; 1989 [game]
+- The Witness; Jonathan Blow; 2016 [game]
+- Braid; Jonathan Blow; 2008; [game]
 
 ### YouTube channels, blogs
 
@@ -86,7 +98,24 @@ Personal catalog of articles, books, movies, games, and events.
 - Zhi Chen et al, *Concept whitening for interpretable image recognition*, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
 - H. Y. Kwon et al, *Magnetic Hamiltonian parameter estimation using deep learning techniques*, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
 
-- https://www.nytimes.com/2020/04/20/business/oil-prices.html
+- <https://www.nytimes.com/2020/04/20/business/oil-prices.html>
+
+- Wickham, H., Grolemund, G. (2017) *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly
+- Napolitano, J. (2018) *A Mathematica Primer for Physicists*. Taylor & Francis Group
+- Zhi Chen et al, *Concept whitening for interpretable image recognition*, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
+- H. Y. Kwon et al, *Magnetic Hamiltonian parameter estimation using deep learning techniques*, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
+- Wampler, D. (2021). Programming Scala, 3rd Ed., O'Reilly Media, Inc. ISBN: 9781492077893
+- Ghosh, D. (2016). Functional and Reactive Domain Modeling. manning
+- EQUILIBRIUM VERSUS HOMOGENEITY: American Journal of Physics 83, 749 (2015); <https://doi.org/10.1119/1.4928143>
+- Ganguly J. (2020): Thermodynamics in Earth and Planetary Sciences. 2nd edition 2020. Springer, pp. 610
+- Nordstrom D.K. and Munoz J.L. (1994): Geochemical Thermodynamics. 2nd edition. – The Blackburn Press, pp.493
+- Anderson G. M. (2005): Thermodynamics of natural systems. 2nd edition. - Cambridge University Press, Cambridge, 648 s. (pdf available)
+- Atkins P., de Paula J., Keeler J. (2017) Physical Chemistry. 11th edition. Oxford University Press, pp. 944.
+- Wood B. and Fraser D. (1977): Elementary thermodynamics for geologists. - Oxford University Press, Oxford, 303 s.
+- Spear F. S. (1993): Metamorphic phase equilibria and pressure-temperature-time paths. - Mineralogical Society of America, 799 s.
+- Ehlers E. G. (1972): The interpretation of geological phase diagrams. - W. H. Freeman & Co., Don Mills, 280 s.
+- Morse S. A. (1980): Basalts and phase diagrams. - Springer Verlag, New York, 493 s.
+- Ricci J. E. (1966): Phase rule and heterogeneous equilibrium. - Dover, New York, 505 s.
 
 ## Software projects
 
@@ -99,27 +128,62 @@ Personal catalog of articles, books, movies, games, and events.
 - <https://github.com/mlflow/mlflow>
   MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models
 
-Haskell
+### Haskell
 
 - <https://www.reddit.com/r/haskell/comments/108u9g8/what_is_the_best_resource_to_learn_haskell_in_2023/>
 - <https://haskell-via-sokoban.nomeata.de/>
 - <https://learn-haskell.blog/>
 
-Lisp
+### Lisp
 
 - <https://chee.party/2023/02/22/getting-started-with-common-lisp-in-2023/>
 
-Erlang
+### Erlang
 
 - Joe Armstrong RIP <https://en.wikipedia.org/wiki/Joe_Armstrong_(programmer)>
 - <https://joearms.github.io/index.html#Index>
 - <https://joearms.github.io/published/2013-11-21-My-favorite-erlang-program.html>
 
+### Programming C++
+
+- [Discovering Modern C++: An Intensive Course for Scientists, Engineers, and Programmers (C++ In-Depth Series)](https://www.amazon.co.uk/Discovering-Modern-C-Depth/dp/0136677649/ref=d_pd_vtp_sccl_2_9/257-8539302-1839262?pd_rd_w=9Z9GN&content-id=amzn1.sym.2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_p=2204c855-5dd7-4df3-b470-8459f4c43f4a&pf_rd_r=BJ28HK5CDPS9110S15QS&pd_rd_wg=c75y2&pd_rd_r=519fbda4-3e97-4fc0-9753-dae134901a30&pd_rd_i=0136677649&psc=1)
+- [Tour of C++, A (C++ In-Depth Series)](https://www.amazon.co.uk/Tour-C-Bjarne-Stroustrup-dp-0136816487/dp/0136816487/ref=dp_ob_title_bk)
+- [Programming: Principles and Practice Using C++](https://www.amazon.co.uk/Programming-Principles-Practice-Using-C/dp/0321992784/ref=d_pd_sbs_sccl_1_6/257-8539302-1839262?pd_rd_w=mBdFr&content-id=amzn1.sym.7207abe0-2196-4238-95e4-697dc8e1fcc1&pf_rd_p=7207abe0-2196-4238-95e4-697dc8e1fcc1&pf_rd_r=RC3CF0EH32GND1M5MDGM&pd_rd_wg=OTlQL&pd_rd_r=92169f9c-f27a-4b24-bda9-990bfe58e425&pd_rd_i=0321992784&psc=1)
+- [Modern CMake for C++: Discover a better approach to building, testing, and packaging your software](https://www.amazon.co.uk/Modern-CMake-Discover-approach-packaging/dp/1801070059/ref=d_pd_sbs_sccl_2_7/257-8539302-1839262?pd_rd_w=GTiTV&content-id=amzn1.sym.7207abe0-2196-4238-95e4-697dc8e1fcc1&pf_rd_p=7207abe0-2196-4238-95e4-697dc8e1fcc1&pf_rd_r=FEJ5K8D2W7V0VFJN01W5&pd_rd_wg=MNR2K&pd_rd_r=b9a1d558-e9ba-4ca3-a3fd-f2b98f112b3d&pd_rd_i=1801070059&psc=1)
+- [Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14](https://www.amazon.co.uk/Effective-Modern-Specific-Ways-Improve/dp/1491903996/ref=sr_1_1?keywords=scott+meyer&qid=1660639486&s=books&sprefix=Scott+me%2Cstripbooks%2C80&sr=1-1)
+
+
+
+## Other
+
+- Algebra
+  - Olšák <http://petr.olsak.net/linal.html>
+  - Barto <https://www2.karlin.mff.cuni.cz/~barto/LA1819leto.html>
+  - Šmíd <https://www2.karlin.mff.cuni.cz/~smid/pmwiki/pmwiki.php?n=Main.LAproFZS1920>
+  - Šťovíček <https://www2.karlin.mff.cuni.cz/~stovicek/index.php/cs/2021zs-nmag111>
+  - Tůma <https://www2.karlin.mff.cuni.cz/~tuma/LA1-17/LA-I.html>
+
+- Analýza
+  - Pokorný Dušan <https://www2.karlin.mff.cuni.cz/~dpokorny/>
+
+- Online
+  - <https://mathworld.wolfram.com/>
+  - <https://www.math24.net/>
+  - <https://is.muni.cz/elportal/studovna>
+  - <https://is.muni.cz/do/sci/UMS/el/analyza/index.html>
+  - <http://math.feld.cvut.cz/mt/indexc.htm>
 
 ## Events
 
-- Tohaka 
+- Tohaka
 - 2023 10 Sam Bankman-Fried found guilty
 - 2023 Huge earthquake in Turkey
   - <https://en.wikipedia.org/wiki/List_of_earthquakes_in_2023>
 - hindemburg
+
+## Examples using BibTex in Sphinx
+
+See {cite:p}`Nelson:1987` for an introduction to non-standard analysis.
+
+```{bibliography} ../references.bib
+```

@@ -2,6 +2,6 @@
 ULID: 01H22V89NXZFA4Z9DCT9VWHFGS
 ---
 
-# Pipelines in Python (1)
+# Python Pileines
 
 [[work in progress]]
