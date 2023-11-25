@@ -73,7 +73,7 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - **C++** and, in some sense, also in C (abandoned Rust; it is too overhyped and rigid; Zig and Jai are far more interesting)
   - **Python** (R is too messy; Julia looks promising, but it cannot compete with Python in versatility)
   - Fortran (Julia again, but modern Fortran really looks good)
-  - Erlang (hidden gem of concurrent and networked programming)
+  - **Erlang** (hidden gem of concurrent and networked programming, Elixir is nice but I prefer Prolog-like syntax of Erlang)
   - OCaml v5 and Lean v4 (I will never understand why Haskell is so overhyped)
   - APL and a whole family of *array oriented languages* e.g K, Q and Dyalog APL
   - Forth and a whole family of *stack oriented languages* (I am working on a custom implementation; as everyone)
@@ -82,5 +82,7 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - Smalltalk: Squak is good enough; In the past I emailed autor of some very intersting implementation. He was kind and
     replayed with some tips. He was also geophysicist working on simulations with his own Smalltalk implementation &ndash; very interesting!
     See a dedicated [document](alltalk.md).
+  
+  where languages marked bold are for production and other for hobyy projects (may change depending on my job).
 
 - Create a list of acronyms used in my notes e.g. TBD (To Be Done) etc.
