@@ -10,7 +10,7 @@ Personal catalog of articles, books, movies, games, and events.
  
 ## Movies and series
 
-- [Flash Crash](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7)
+- [Flash Crash 2010](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7)
 - [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6)
   <details><summary>summary</summary>
   <em>For most, Planet Finance is a complex, influential world that only becomes visible when crashes occur in the financial markets. Stock market prices quickly shot back up on Planet Finance during the COVID pandemic, while the inhabitants of planet Earth were still sweeping the shards together.
