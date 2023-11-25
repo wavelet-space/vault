@@ -88,3 +88,5 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
 - Create a list of acronyms used in my notes e.g. TBD (To Be Done) etc.
 
 - I don't like CVs. They are misleading, obsolete, or both.
+
+- I need a grammar checker for code and writing in general. Both the Czech and English spell checkers can be used in GHA, but how do I incorporate them into VS Code?

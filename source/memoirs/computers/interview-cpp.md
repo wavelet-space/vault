@@ -13,7 +13,7 @@
 - Co je oprátor přiřazení?
 
 - Co je operátor rovnosti a kdy ho použít/přetížit?
-  - pokud přetížíme oprátor rovnosti, co operátor nerovnosti?
+  - pokud přetížíme operátor rovnosti, co operátor nerovnosti?
 
 - Co je *move semantics*?
 
@@ -26,10 +26,10 @@
   - mrkni do knihy *Rozumíme C++ - Andrew Koenig, Barbara E. Moo*
 
 - Co je pravidlo tří?
-  *Pravidlo tři* říká, pokud potřebujej definovat kopírovací konstruktor, operátor přiřazení nebo destruktor, pak bude zřejmě třeba definovat všechny tři členské funkce.
+  *Pravidlo tří* říká, pokud potřebujej definovat kopírovací konstruktor, operátor přiřazení nebo destruktor, pak bude zřejmě třeba definovat všechny tři členské funkce.
 
 - Co je pravidlo pěti?
-  Je rozšířením pravidla tří pro nové verze C++, protože přibyl *move constructor*.
+  Je rozšířením pravidla tří pro nové verze C++ &hellip;.
 
 - Co je pravidlo nuly?
   &hellip;
