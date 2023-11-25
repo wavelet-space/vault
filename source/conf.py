@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Vault"
+project = "David Landa"
 copyright = "2023, David Landa"
 author = "David Landa"
 
@@ -47,7 +47,7 @@ master_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-html_theme = 'furo'
+html_theme = 'alabaster'
 # html_static_path = ["_static"]
 # html_css_files = ['custom.css']
 # html_extra_path = ['etudes/']
@@ -57,4 +57,6 @@ html_theme_options = {
         "font-stack--monospace": "Courier, monospace",
     },
 }
+html_logo = "logo.png"
+html_title = "David Landa"
 # html_js_files = ['custom.js']

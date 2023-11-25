@@ -46,7 +46,7 @@ personal/resume
 personal/projects
 ```
 
-## Queue
+<div style="text-align: center; font-size: 1.5rem; font-weight: bold">Queue</div>
 
 *Here are some current random thoughts. Either it will be abandoned or finished. and moved to the appropriate place.*
 
