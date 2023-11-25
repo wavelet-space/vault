@@ -48,15 +48,12 @@ master_doc = "index"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_theme = 'alabaster'
-# html_static_path = ["_static"]
-# html_css_files = ['custom.css']
-# html_extra_path = ['etudes/']
+html_static_path = ["_static"]
+html_js_files = ['custom.js']
+html_css_files = ['custom.css']
+html_extra_path = ['etudes/']
 html_theme_options = {
-    "light_css_variables": {
-        "font-stack": "Times New Roman, Times, serif",
-        "font-stack--monospace": "Courier, monospace",
-    },
+    
 }
 html_logo = "logo.png"
 html_title = "David Landa"
-# html_js_files = ['custom.js']
