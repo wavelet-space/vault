@@ -6,7 +6,6 @@ Alltalk is *an interactive object-oriented programming language*, a Smalltalk pr
 
 TBD
 
-
 ## Conversation with author
 
 Glad to hear from people who try it out. My goal was to create a Smalltalk-like experience but with a read/write syntax. Many popular interactive programming languages feature what I like to call "write-only" syntax.
@@ -75,3 +74,7 @@ On 8/8/2019 9:52 PM, David Landa wrote:
 Dear Hugh, I am playing with your Alltalk and I am trying to understand how this Smalltalk implementation works. I can read all the `.alt` files but I am also interested in the interpreter itself.
 Is the source code available elsewhere, e.g github.com? Anyway, this is a really nice piece of software -- it works on my new Windows 10 machine without problems -- Thank you!
 Best regards, David Landa
+
+## References
+
+- https://en.wikipedia.org/wiki/Smalltalk
