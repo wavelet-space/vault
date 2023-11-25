@@ -48,7 +48,7 @@ personal/projects
 
 <div style="text-align: center; font-size: 1.5rem; font-weight: bold">Queue</div>
 
-*Here are some current random thoughts. Either it will be abandoned or finished. and moved to the appropriate place.*
+*Here are some current random thoughts. Either it will be abandoned or finished, and moved to the appropriate place.*
 
 - I'm just trying to implement parser combinators in Python.
 Some time ago, I needed to parse huge XML. I have implemented a class.
@@ -83,6 +83,8 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
     replayed with some tips. He was also geophysicist working on simulations with his own Smalltalk implementation &ndash; very interesting!
     See a dedicated [document](alltalk.md).
   
-  where languages marked bold are for production and other for hobyy projects (may change depending on my job).
+  where languages marked bold are for production and other for hobby projects (this may change depending on my job position).
 
 - Create a list of acronyms used in my notes e.g. TBD (To Be Done) etc.
+
+- I don't like CVs. They are misleading, obsolete, or both.
