@@ -81,12 +81,44 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - Go (I really don't like Go, but it is too practical and at the same time too ugly)
   - Smalltalk: Squak is good enough; In the past I emailed autor of some very intersting implementation. He was kind and
     replayed with some tips. He was also geophysicist working on simulations with his own Smalltalk implementation &ndash; very interesting!
-    See a dedicated [document](alltalk.md).
+    See a dedicated [document](./memoirs/computers/alltalk.md).
   
-  where languages marked bold are for production and other for hobby projects (this may change depending on my job position).
+  The languages marked bold are for production and other for hobby projects (this may change depending on context).
 
 - Create a list of acronyms used in my notes e.g. TBD (To Be Done) etc.
-
 - I don't like CVs. They are misleading, obsolete, or both.
-
 - I need a grammar checker for code and writing in general. Both the Czech and English spell checkers can be used in GHA, but how do I incorporate them into VS Code?
+
+- Write these to konwledge-base
+  - What is the difference between TCP and UDP?
+  - What part does an HTTP message contain?
+  - What is a URN URL?
+  - What is the difference between stdin, stdout and stderr?
+  - What is the difference between unit, functional and integration tests?
+
+- Read Tabular Expressions in Software Engineering
+  <https://www.semanticscholar.org/paper/Tabular-Expressions-in-Software-Engineering-Wassyng-Janicki/750fecf4349faeeab9a827a929de37be30f3df26?p2df>
+
+- <https://www.southwales.ac.uk/news/news-for-2023/jurassic-park-at-30-how-its-cgi-revolutionised-the-film-industry/>
+
+- ComboBox vs SelectBox?
+  - <https://cs.wikipedia.org/wiki/Kombinovan%C3%A9_pole>
+
+- Add a note to Python konowledge base:
+  - `tempfile` built-in module
+  - `asyncio` built-in module
+  - `threading` built-in module
+  - `multiprocessing` built-in module
+  - When to use `__new__` vs `__init__`
+
+- Use [asciinema](https://asciinema.org/) for README showcases and tutorials.
+
+- Use pipx?
+- AbortController? <https://developer.mozilla.org/en-US/docs/Web/API/AbortController>
+- Context usage in Go?
+
+- Distributed systems
+  - CAP theorem
+  - eventual consitency
+  - Service Oriented Architecture (SOA)
+  - Cloud computing
