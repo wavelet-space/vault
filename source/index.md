@@ -72,12 +72,12 @@ personal/projects
             } 
         }
 </script>
-<div class="eyes" style="width: 220px; height: 200px; margin: 0 auto">
-      <svg width="100" height="100" id="gear1">
+<div class="eyes" style="width: 170px; height: 170px; margin: 0 auto">
+      <svg width="75" height="75" id="gear1">
         <circle cx="37.5" cy="37.5" r="25" />
         <circle cx="27.5" cy="27.5" r="10" fill="white"/>
       </svg>
-      <svg width="100" height="100" id="gear2">
+      <svg width="75" height="75" id="gear2">
         <circle cx="37.5" cy="37.5" r="25" />
         <circle cx="27.5" cy="27.5" r="10" fill="white"/>
       </svg>
