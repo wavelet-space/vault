@@ -55,5 +55,5 @@ html_extra_path = ['etudes/']
 html_theme_options = {
     
 }
-html_logo = "logo.png"
+# html_logo = "logo.png"
 html_title = "David Landa"

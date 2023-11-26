@@ -8,7 +8,7 @@ Personal catalog of articles, books, movies, games, and events.
 
 (Manually maintained and ever growing list of books and articles to keep my reading archived and myselforganized and focused.)
  
-## Movies and series
+## Shows
 
 - [Flash Crash 2010](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7)
 - [The Nature of the Beast](https://youtu.be/WWdXI1_En9A?si=UNLoXTZc0VYdWzNF) | Planet Finance (1/6)
@@ -43,6 +43,7 @@ Personal catalog of articles, books, movies, games, and events.
 - [Hikikomori: A Deafening Silence](https://www.youtube.com/watch?v=zzF83e_L100), 2019
 
 - The Adventures of Prince Achmed; Lotte Reiniger; 1926;
+- [King of Kong](https://www.imdb.com/title/tt0923752/)
 
 ## Games
 
@@ -60,20 +61,16 @@ Personal catalog of articles, books, movies, games, and events.
 - Fahrenheit
 - Carnivores, <https://en.wikipedia.org/wiki/Carnivores_(video_game)>
 - [Enemy Mine](https://www.csfd.cz/film/7225-muj-nepritel/prehled/)
-- [King of Kong](https://www.imdb.com/title/tt0923752/)
-
 * Prince of Persia; Jordan Mechner; 1989 [game]
 - The Witness; Jonathan Blow; 2016 [game]
 - Braid; Jonathan Blow; 2008; [game]
 
 ### YouTube channels, blogs
 
-- ThePrimeTime
-  - <https://www.youtube.com/watch?v=zjBx9ZgjPt4>
-
-- Ben Eater <https://eater.net>
-- Casey Muratori <https://caseymuratori.com/>
-- Jonathan Blow <https://en.wikipedia.org/wiki/Jonathan_Blow>
+- [ThePrimeTime](https://www.youtube.com/@ThePrimeTimeagen/)
+- [Ben Eater](https://eater.net/)
+- [Casey Muratori](https://caseymuratori.com/)
+- [Jonathan Blow](https://en.wikipedia.org/wiki/Jonathan_Blow)
 - <https://www.youtube.com/@AsmonTV>
 - <https://www.youtube.com/@BellularNews>
   Game news, industry coverage, features & documentaries.
@@ -86,20 +83,15 @@ Personal catalog of articles, books, movies, games, and events.
   - <https://learntla.com/>
 - <https://www.rfleury.com/>
 
-## Books and Articles
+## Literature
 
 - [American Journal of Physics](https://pubs.aip.org/aapt/ajp)
   A very friendly and comprehensive articles on Physics.
-  > The American Journal of Physics publishes papers that will support, inform, and delight a diverse audience of college and university physics teachers. Contents include novel approaches to classroom and laboratory instruction, insightful articles on topics in classical and modern physics, apparatus notes, historical or cultural topics, book reviews, resource letters, and award talks.  
-
+  *The American Journal of Physics publishes papers that will support, inform, and delight a diverse audience of college and university physics teachers. Contents include novel approaches to classroom and laboratory instruction, insightful articles on topics in classical and modern physics, apparatus notes, historical or cultural topics, book reviews, resource letters, and award talks.*
 - Wickham, H., Grolemund, G. (2017) *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly
-- Napolitano, J. (2018) *A Mathematica Primer for Physicists*. Taylor & Francis Group
-
 - Zhi Chen et al, *Concept whitening for interpretable image recognition*, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
 - H. Y. Kwon et al, *Magnetic Hamiltonian parameter estimation using deep learning techniques*, Science Advances (2020). DOI: 10.1126/sciadv.abb0872
-
 - <https://www.nytimes.com/2020/04/20/business/oil-prices.html>
-
 - Wickham, H., Grolemund, G. (2017) *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly
 - Napolitano, J. (2018) *A Mathematica Primer for Physicists*. Taylor & Francis Group
 - Zhi Chen et al, *Concept whitening for interpretable image recognition*, Nature Machine Intelligence (2020). DOI: 10.1038/s42256-020-00265-z
@@ -117,7 +109,9 @@ Personal catalog of articles, books, movies, games, and events.
 - Morse S. A. (1980): Basalts and phase diagrams. - Springer Verlag, New York, 493 s.
 - Ricci J. E. (1966): Phase rule and heterogeneous equilibrium. - Dover, New York, 505 s.
 
-## Software projects
+## Software
+
+This is a mess, MUST BE refactored.
 
 - <https://github.com/signals-dev/Orion>
   **Orion** is a machine learning library built for unsupervised time series anomaly detection. With a given time series data, we provide a number of “verified” ML pipelines (a.k.a Orion pipelines) that identify rare patterns and flag them for expert review.

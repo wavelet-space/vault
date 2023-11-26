@@ -46,6 +46,46 @@ personal/resume
 personal/projects
 ```
 
+```{raw} html
+<script type="text/javascript" defer>
+        window.onload = function() {
+            let states = {
+                "gear1": 1,
+                "gear2": 1,
+                "gear3": 3,
+            }  
+            function animate(key, speed) {
+                states[key] = states[key] + speed;
+                
+                document.getElementById(key).style.transform = 
+                    `rotate(${states[key]}deg)`;
+
+                requestAnimationFrame(() => {
+                    animate(key, speed);
+                });
+
+            }
+            for (const [key, value] of Object.entries(states)) {
+                requestAnimationFrame(function () {
+                    animate(key, value);
+                });
+            } 
+        }
+</script>
+<div class="eyes" style="width: 220px; height: 200px; margin: 0 auto">
+      <svg width="100" height="100" id="gear1">
+        <circle cx="37.5" cy="37.5" r="25" />
+        <circle cx="27.5" cy="27.5" r="10" fill="white"/>
+      </svg>
+      <svg width="100" height="100" id="gear2">
+        <circle cx="37.5" cy="37.5" r="25" />
+        <circle cx="27.5" cy="27.5" r="10" fill="white"/>
+      </svg>
+</div>
+```
+
+<!-- Elswhere/Distractions: link other people -->
+
 <div style="text-align: center; font-size: 1.5rem; font-weight: bold">Queue</div>
 
 *Here are some current random thoughts. Either it will be abandoned or finished, and moved to the appropriate place.*
