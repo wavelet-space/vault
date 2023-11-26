@@ -1,4 +1,4 @@
-# Other
+# Various
 
 ```{toctree}
 :glob:
