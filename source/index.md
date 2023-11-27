@@ -47,6 +47,7 @@ personal/projects
 ```
 
 ```{raw} html
+<!--
 <script type="text/javascript" defer>
         window.onload = function() {
             let states = {
@@ -82,6 +83,7 @@ personal/projects
         <circle cx="27.5" cy="27.5" r="10" fill="white"/>
       </svg>
 </div>
+-->
 ```
 
 <!-- Elswhere/Distractions: link other people -->
@@ -118,6 +120,8 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - Smalltalk: Squak is good enough; In the past I emailed autor of some very intersting implementation. He was kind and
     replayed with some tips. He was also geophysicist working on simulations with his own Smalltalk implementation &ndash; very interesting!
     See a dedicated [document](./memoirs/computing/alltalk.md).
+  - Scala is nice, especially Scala 3, but job offers are too limited. Again, when somebody will pay mo for that
+    I will use it, put Python seems to be good enough.
   
   The languages marked bold are for production and other for hobby projects (this may change depending on context).
 
