@@ -155,4 +155,6 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - Service Oriented Architecture (SOA)
   - Cloud computing
 
+- It has bee shown that getting a good night sleep is more significant than the programming language choice (https://youtu.be/7qdpMvv_Qag?t=1043) :D
+
 - Using https://github.com/mgaitan/sphinxcontrib-mermaid

@@ -7,7 +7,7 @@ bibliography:
 Personal catalog of articles, books, movies, games, and events.
 
 (Manually maintained and ever growing list of books and articles to keep my reading archived and myselforganized and focused.)
- 
+
 ## Shows
 
 - [Flash Crash 2010](https://youtu.be/aq1Ln1UCoEU?si=Y2W0BTxKluCaDJD7)
@@ -61,7 +61,9 @@ Personal catalog of articles, books, movies, games, and events.
 - Fahrenheit
 - Carnivores, <https://en.wikipedia.org/wiki/Carnivores_(video_game)>
 - [Enemy Mine](https://www.csfd.cz/film/7225-muj-nepritel/prehled/)
+
 * Prince of Persia; Jordan Mechner; 1989 [game]
+
 - The Witness; Jonathan Blow; 2016 [game]
 - Braid; Jonathan Blow; 2008; [game]
 
@@ -82,6 +84,7 @@ Personal catalog of articles, books, movies, games, and events.
   - <https://github.com/hwayne/tla-graphing-demo>
   - <https://learntla.com/>
 - <https://www.rfleury.com/>
+- Eric Nomand https://www.youtube.com/@ericnormand4210
 
 ## Literature
 
@@ -146,8 +149,6 @@ This is a mess, MUST BE refactored.
 - [Modern CMake for C++: Discover a better approach to building, testing, and packaging your software](https://www.amazon.co.uk/Modern-CMake-Discover-approach-packaging/dp/1801070059/ref=d_pd_sbs_sccl_2_7/257-8539302-1839262?pd_rd_w=GTiTV&content-id=amzn1.sym.7207abe0-2196-4238-95e4-697dc8e1fcc1&pf_rd_p=7207abe0-2196-4238-95e4-697dc8e1fcc1&pf_rd_r=FEJ5K8D2W7V0VFJN01W5&pd_rd_wg=MNR2K&pd_rd_r=b9a1d558-e9ba-4ca3-a3fd-f2b98f112b3d&pd_rd_i=1801070059&psc=1)
 - [Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14](https://www.amazon.co.uk/Effective-Modern-Specific-Ways-Improve/dp/1491903996/ref=sr_1_1?keywords=scott+meyer&qid=1660639486&s=books&sprefix=Scott+me%2Cstripbooks%2C80&sr=1-1)
 
-
-
 ## Other
 
 - Algebra
@@ -159,6 +160,7 @@ This is a mess, MUST BE refactored.
 
 - Analýza
   - Pokorný Dušan <https://www2.karlin.mff.cuni.cz/~dpokorny/>
+  - https://ocw.mit.edu/courses/res-18-006-calculus-revisited-single-variable-calculus-fall-2010/
 
 - Online
   - <https://mathworld.wolfram.com/>
@@ -168,6 +170,9 @@ This is a mess, MUST BE refactored.
   - <http://math.feld.cvut.cz/mt/indexc.htm>
 
 - Františel Fuka's [homepage](https://www.fuxoft.cz/)
+
+- reddit <https://www.reddit.com/r/crtgaming/>
+- reddit <https://www.reddit.com/r/retrogaming/>
 
 ## Events
 
