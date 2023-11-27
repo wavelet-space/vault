@@ -154,3 +154,5 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - eventual consitency
   - Service Oriented Architecture (SOA)
   - Cloud computing
+
+- Using https://github.com/mgaitan/sphinxcontrib-mermaid

@@ -19,6 +19,7 @@ extensions = [
     "myst_parser",
     "sphinx.ext.intersphinx",
     'sphinxcontrib.bibtex',
+    'sphinxcontrib.mermaid',
 ]
 
 myst_enable_extensions = [

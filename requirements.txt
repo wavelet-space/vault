@@ -4,3 +4,4 @@ furo
 sphinxcontrib-bibtex
 sphinx-design
 sphinx_tabs
+sphinxcontrib-mermaid
