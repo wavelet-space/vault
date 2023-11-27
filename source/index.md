@@ -156,5 +156,7 @@ compare C++ and Python side by side, namely generators, asynchronous execution, 
   - Cloud computing
 
 - It has bee shown that getting a good night sleep is more significant than the programming language choice (https://youtu.be/7qdpMvv_Qag?t=1043) :D
+- View https://www.youtube.com/watch?v=nFsBX_w2fRI
+  + https://github.com/uiua-lang/uiua
 
 - Using https://github.com/mgaitan/sphinxcontrib-mermaid
