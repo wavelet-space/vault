@@ -11,7 +11,6 @@ header:
   - text: <span class="iconify" data-icon="ic:outline-location-on"></span>Prague, Czechia
 newLine: true
 ---
-<!-- https://ohmycv.app/ -->
 
 # Resume
 
@@ -21,15 +20,13 @@ newLine: true
   ~ Prague, Czechia
 
 B.S. in Geology, Thesis: *Numerical Simulation of Symplectites*
-  ~ classified
+  ~ 2021
 
 **Academy of Fine Arts**
   ~ Prague, Czechia
 
 M.A. in Painting
-  ~ classified
-
-- \+ some unfinished studies. I try to achieve what I think I can achieve, unless proven wrong. It happened a few times.
+  ~ 2012
 
 ## Experience
 
@@ -61,7 +58,7 @@ M.A. in Painting
 
 - Prototyped NLP solutions in Python
 
-## Awards and Honors
+## Awards and honors
 
 **Scholarship for excellent study results**, Faculty of Science, Charles University
   ~ 2021
@@ -69,27 +66,28 @@ M.A. in Painting
 **Scholarship for excellent study results**, Academy of Fine Arts
   ~ 2008
 
-## Technical Skills
+## Technical skills
 
-**Programming Languages:**
+**Programming languages:**
 
-- <span class="iconify" data-icon="vscode-icons:file-type-python"></span>Python, JavaScript, HTML/CSS
-- C, C++, CMake, Fortran, Go, Rust
-- APL, Erlang, OCaml, Julia, R, SQL
+- <span class="iconify" data-icon="vscode-icons:file-type-python"></span>**Python**, JavaScript, HTML/CSS
+- C, **C++**, **CMake**, Fortran, **Go**
+- APL, Erlang, OCaml, Julia, R, **SQL**
 
-**Frameworks and Tools:**
+**Frameworks and tools:**
 
-- Domain-Driven Design
-- Pandas, Numba, NumPy, Mypy, Sphinx, $\LaTeX$ 
-- PostgreSQL, SQLite, DuckDB, Altair, Jupyter, Wolfram
-- CPython, PyPy, Node.js, Flask, REST (JSON), RPyC, Qt/PyQt
-- Nginx, Debian, Windows, Bash, PowerShell, Git, GitHub, Codacy
+- **Domain-Driven Design**, Python packaging
+- Pandas, Numba, NumPy, **Mypy**, **Ruff**, **Sphinx**, $\LaTeX$ 
+- **PostgreSQL**, SQLite, DuckDB, **Altair** (Vega), Jupyter, Wolfram
+- **CPython**, PyPy, Node.js, **Flask**, REST (OpenAPI), RPyC, **Qt/PyQt**
+- Nginx, **Docker**/Podman, **Debian**, Windows, Bash, PowerShell 
+- **Git**, GitHub + Actions, Codacy
 
 **Languages:** English
 
-## Certifications and Trainning
+## Certifications and trainning
 
-**Introduction to Machine Learning** (J. Materna, ML College)
+**Intoduction to Machine Learning** (J. Materna, ML College)
   ~ 2023
 
 **Natural Language Processing** (J. Materna, ML College)
@@ -104,7 +102,7 @@ M.A. in Painting
 **Mathematica for Beginners** (A. Slavík, Charles University)
   ~ 2021 
 
-**Data Analysis in R and Python** (O. Lexa, Charles University)
+**Data analysis in R and Python** (O. Lexa, Charles University)
   ~ 2020
 
 **Efficient Work with Docker Containers** (O. Sika)
@@ -112,4 +110,3 @@ M.A. in Painting
 
 **Advanced SQL and PostgreSQL** (P. Stěhule)  
   ~ 2018
-  

@@ -1,4 +1,4 @@
-# Debian server administration
+# Server: Debian administration
 
 - Server information
 - User management: create/delete user, create/remove groups, permissions, SSH access

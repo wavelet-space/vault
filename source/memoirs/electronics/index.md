@@ -1,5 +1,4 @@
-# Hobbies
-
+# Electronics
 
 ```{toctree}
 :glob:

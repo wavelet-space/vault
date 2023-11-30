@@ -1,27 +1,22 @@
 # Untitled
 
 Jak použít git tag pro verzování Ptyhon balíku
-https://edwards.flinders.edu.au/python-versioning-with-scm-and-git-tags/
-
+<https://edwards.flinders.edu.au/python-versioning-with-scm-and-git-tags/>
 
 Debion/Ubuntu Python balík je blbě
-https://gist.github.com/tiran/2dec9e03c6f901814f6d1e8dad09528e
+<https://gist.github.com/tiran/2dec9e03c6f901814f6d1e8dad09528e>
 
 Peotry je na nic
-https://news.ycombinator.com/item?id=27559655
+<https://news.ycombinator.com/item?id=27559655>
 
-
-Mrkni na https://github.com/dagster-io/dagster
+Mrkni na <https://github.com/dagster-io/dagster>
 
 Git tag prefixujeme pomocí v.
 
-https://www.programcreek.com/python/?CodeExample=get+git+tag
+<https://www.programcreek.com/python/?CodeExample=get+git+tag>
 
-
-Merkni na https://github.com/pallets-eco/flask-sqlalchemy
+Merkni na <https://github.com/pallets-eco/flask-sqlalchemy>
 Jak mají napsané pyporject, setup
-
-
 
 TIP: Pyton
 
@@ -50,7 +45,7 @@ proběhne automatický join
 - Implement retry or try dave to another location?
 
 - Parser: implementuj další metody?
-    
+
     parse_function() : todo
     parse_expertise() : todo
     parse_email() : todo

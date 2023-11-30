@@ -1,4 +1,4 @@
-# Trochu bezpečnosti na serveru
+# Server: SSH and SCP
 
 ## Jak na zapezpečení serveru
 

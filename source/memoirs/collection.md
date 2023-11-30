@@ -2,9 +2,9 @@
 bibliography:
   - ../references.bib
 ---
-# References
+# Collection
 
-Personal catalog of articles, books, movies, games, and events.
+Personal collection of articles, books, movies, games, and events.
 
 (Manually maintained and ever growing list of books and articles to keep my reading archived and myselforganized and focused.)
 
@@ -188,3 +188,5 @@ See {cite:p}`Nelson:1987` for an introduction to non-standard analysis.
 
 ```{bibliography} ../references.bib
 ```
+
+{cite:t}`youtube`

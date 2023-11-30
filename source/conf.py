@@ -56,5 +56,7 @@ html_extra_path = ['etudes/']
 html_theme_options = {
     
 }
+
+# pygments_style = "github-dark"
 # html_logo = "logo.png"
 html_title = "David Landa"
