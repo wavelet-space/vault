@@ -85,6 +85,7 @@ Personal collection of articles, books, movies, games, and events.
   - <https://learntla.com/>
 - <https://www.rfleury.com/>
 - Eric Nomand https://www.youtube.com/@ericnormand4210
+- Eli Benderski https://eli.thegreenplace.net/
 
 ## Literature
 
