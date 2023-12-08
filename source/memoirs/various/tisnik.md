@@ -16,6 +16,7 @@
 | 2023-11-21 | [Rychlost CPythonu 3.11 a 3.12 v porovnání s JIT a AOT překladači Pythonu](https://www.root.cz/clanky/rychlost-cpythonu-3-11-a-3-12-v-porovnani-s-jit-a-aot-prekladaci-pythonu/)      | article |
 | 2023-11-28 | [Rozpoznávání obrázků knihovnou Scikit-learn: první kroky](https://www.root.cz/clanky/rozpoznavani-obrazku-knihovnou-scikit-learn-prvni-kroky/)                                       | article |
 | 2023-12-01 | [Uiua: nevšední kombinace zásobníkového jazyka s jazykem pro práci s poli](https://www.root.cz/clanky/uiua-nevsedni-kombinace-zasobnikoveho-jazyka-s-jazykem-pro-praci-s-poli/)       | article |
+| 2011-11-10 | [Historie vývoje počítačových her (1.část - první milníky)](https://www.root.cz/clanky/historie-vyvoje-pocitacovych-her-1-cast-prvni-milniky/)                                        | article |
 
 ## Resources
 
