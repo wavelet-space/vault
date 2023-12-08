@@ -1,0 +1,13 @@
+# W22
+
+## 07
+
+Následující [PowerShell](https://learn.microsoft.com/en-us/powershell/) příkaz projde všechny soubory v adresáři `data` a jejich cestu přesměřuje do programu `jq`, který je formátované vypíše na standardní výstup [^2].
+
+```powershell
+foreach($file in Get-ChildItem "data") { jq . $file.FullName }
+```
+
+
+
+Maybe use <https://packaging.pypa.io/>?

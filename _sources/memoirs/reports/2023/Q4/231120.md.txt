@@ -1,0 +1,34 @@
+# 231120
+
+distributed systems
+quanitative finance
+cybersecurity
+
+## Schůzka rozhlas.cz
+
+- Jan navrhnul psát changelog/design desicions
+  - https://github.com/psf/requests/blob/main/HISTORY.md
+  - https://github.com/psf/requests/blob/main/HISTORY.md
+  - lze použít `git log --oneline?` částěčne
+  - musíme lépe psát commit messages
+
+- Zapsali jsem cesku k rundownům do dokumentace.
+- Musíme zkontrolovat, jestli nám dělají zálohy serveru?
+  - Jak to ověřit? nahodí nám repliku/zrcadlo?
+
+- Chceme: mít infrasrruct
+- Musíme: ...
+
+- Vytvořili jsme repozitář https://github.com/czech-radio/servers
+  pro infrastrukturní kód a konfiguraci.
+- Preferujeme logování  do syslogu.
+  - forwardujeme z jednotlivých serverů na centrální
+
+
+- idea: kresli pomocí ploteru souradnice x, y mysi a men barvy + nejak dalsi pravidla.
+     
+
+Věci co mne serou na programech druhých:
+- Pokdu je v kódu někde definice a použití oddělěné 100 řádky.
+  Použít definici proměnné, co nejblíže místu použití, obzvláště pokud jde o nějakou pomocnou proměnnou např. v cykly.
+  

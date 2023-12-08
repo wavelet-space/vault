@@ -1,0 +1,8 @@
+# Electronics
+
+```{toctree}
+:glob:
+:hidden:
+
+*
+```

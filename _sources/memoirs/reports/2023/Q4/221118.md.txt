@@ -1,0 +1,25 @@
+# 231118
+
+TIL
+
+**How to create Python zip archived application.**
+
+https://docs.python.org/3/library/zipapp.html
+
+```powershell
+python -m zipapp .\sample\ -m "sample:main"
+python .\sample.pyz
+```
+
+**How to compile LLVM on Windows with CMake and Visual Studio 17 2022.**
+
+
+- GH organization management
+ - List all repositories
+  - private vs public
+  - maturity status, created vs last updated, dead or alive (active, zombie)
+ - List all members
+  - who has what privilegies
+ - List table/matrix of repositories settings
+ 
+     

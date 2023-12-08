@@ -1,0 +1,28 @@
+# 231029
+
+* Useful notes on note taking with Sphinx <https://silverrainz.me/notes/docutils/index.html>, <https://github.com/sphinx-notes>.
+  * Add to bookmarks and resources!
+* Watching WebGL series on Youtube, very well made: <https://www.youtube.com/watch?v=-T6EbWCq99c&list=PLPbmjY2NVO_X1U1JzLxLDdRn4NmtxyQQo>  
+* For me personaly the bottleneck in terms of productivity is thinking not a writing a code.
+* Still evaluating what to learn and use for production systems (alonside Python).
+  * Go (simple but verbose), Rust (robust but complex), C++ (flexible but complex<sup>2</sup> and fragmented)?
+* For personal projects I'm interested in  APL (K/Q, Dyalog), Forth, Joy, Racket, and Lean. I also like Erlang and OCaml and for some reasons I still don't like Haskell, I really don't.  
+* reading about mechs in japanese culture
+  * [[idea]] RPG computer game with arena and/or quest story line
+* gameplay vs storyline
+* *Night on the Galactic Railorad*.
+* Install [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page)
+* The evolution of trees <https://www.youtube.com/watch?v=nfatf-4fGeo>
+* Study Doom and Quake source code
+* Code quality. Doom and quake are very readable, very portable and heavily documented. The average 1-person codebase tends to be messy and undocumented, as nobody else ever takes a look. On the other hand, plenty of fixmes in there. It was unabashedly special cased where he could get away with it.
+* <https://www.youtube.com/watch?v=4gNYTqn3qRc>
+* <https://news.ycombinator.com/item?id=36315529>
+* <https://en.wikipedia.org/wiki/Machinima>
+* Style guide for C++: <https://www.reddit.com/r/gamedev/comments/iml661/studio_code_style_guides/>
+  We must strictly declare what features and style to use. The same for C -* add examples e.g. how to use anonymous structs/unions.
+* replay systems
+  * GCD rewind System in Braid <https://www.youtube.com/watch?v=8dinUbg2h70>
+  * <https://johnnysswlab.com/rr-the-magic-of-recording-and-replay-debugging/>
+  * <https://www.youtube.com/watch?v=HV3Fh7nsVQA>
+  * <https://www.youtube.com/watch?v=vWvRSiIOGmI>
+* Hot reload in games <https://www.danielecarbone.com/hot-code-reloading/>

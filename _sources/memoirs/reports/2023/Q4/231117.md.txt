@@ -1,0 +1,15 @@
+# 231117
+
+- https://www.powerthesaurus.org/
+
+- synchronize wavelet-space projects
+  - merge sphinx-guide and sphinx-theme
+  - catlog -> oasis
+  - delete esses
+
+- Práce na https://docs.google.com/document/d/1SjOCtszjkhLkxrWjpd_z7KhKR-N6B6Jy
+
+- Authentication = Who you are? Identitiy and Access Management (IAM)
+- Authorization  = What you can?
+- https://auth0.com/intro-to-iam/what-is-authorization
+- privilege, permission

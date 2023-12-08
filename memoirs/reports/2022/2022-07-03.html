@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2022-07-03 &#8212; David Landa</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=56c4699f" />
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/custom.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2022-07-06" href="2022-07-06.html" />
+    <link rel="prev" title="2022-07-02" href="2022-07-02.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2022-07-03<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<p>= REST GUIDELINE</p>
+<ul class="simple">
+<li><p>When the entity is not found set status to <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">NOT</span> <span class="pre">FOUND</span></code></p></li>
+</ul>
+<p>= Clean Architecture</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dev.to/pereiren/clean-architecture-series-part-3-2795">https://dev.to/pereiren/clean-architecture-series-part-3-2795</a></p></li>
+<li><p><a class="reference external" href="https://dev.to/pereiren/clean-architecture-series-part-1-m64">https://dev.to/pereiren/clean-architecture-series-part-1-m64</a></p></li>
+</ul>
+<p>= DDD</p>
+<p>David Pereira
+<a class="reference external" href="https://dev.to/pereiren/clean-architecture-series-part-2-49db">https://dev.to/pereiren/clean-architecture-series-part-2-49db</a></p>
+<p>Paul Rayner
+<a class="reference external" href="http://thepaulrayner.com/blog/aggregates-and-entities-in-domain-driven-design/">http://thepaulrayner.com/blog/aggregates-and-entities-in-domain-driven-design/</a>
+<a class="reference external" href="http://thepaulrayner.com/eventstorming-team-flow/">http://thepaulrayner.com/eventstorming-team-flow/</a>
+<a class="reference external" href="https://github.com/paulrayner/ddd_sample_app_ruby">https://github.com/paulrayner/ddd_sample_app_ruby</a></p>
+<p>Ivan Paulovich
+<a class="reference external" href="https://dev.to/ivanpaulovich/ddd-tactical-design-and-clean-architecture-1o10">https://dev.to/ivanpaulovich/ddd-tactical-design-and-clean-architecture-1o10</a></p>
+<section id="working-efficienncy">
+<h2>Working Efficienncy<a class="headerlink" href="#working-efficienncy" title="Link to this heading">¶</a></h2>
+<p>Jak mít při startu počítače otevřený terminál s předdefinovým layoutem?</p>
+<p>Jak mit při startu počítače otevřený prohlížeč s předdefinovým layoutem?</p>
+<p>Navrhují mít tyto skupiny:
+Business: Vše spojené s prací
+Academia: Vše spojené se studiem</p>
+<p>Udržovat si někde informace o projektech:</p>
+<ul class="simple">
+<li><p>Současný stav projektu</p></li>
+<li><p>Co je třeba příště udělat</p></li>
+<li><p>Kdy na tom dělám</p></li>
+</ul>
+<p>Mít Otevřený projekts s poznámkami.
+Každý den mát jeden soubor s poznámkami, večer ho pak zpravovat¨
+a přemístit kam patří. Nebo aspoň na konci týdne.</p>
+<p>Napsat si vlastní distraction free editor?</p>
+</section>
+<section id="testovani">
+<h2>Testování<a class="headerlink" href="#testovani" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://docs.pytest.org/en/6.2.x/fixture.html#what-fixtures-are">https://docs.pytest.org/en/6.2.x/fixture.html#what-fixtures-are</a></p>
+</section>
+<section id="flask">
+<h2>Flask<a class="headerlink" href="#flask" title="Link to this heading">¶</a></h2>
+<section id="spusteni-aplikace-pomoci-cli">
+<h3>Spuštění aplikace pomocí CLI<a class="headerlink" href="#spusteni-aplikace-pomoci-cli" title="Link to this heading">¶</a></h3>
+<p>Spuštení z příkazové řádky pomocí <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code>.
+Buď konvencí DOPLNIT viz dokumentace <a class="reference external" href="https://flask.palletsprojects.com/en/2.1.x/cli/">https://flask.palletsprojects.com/en/2.1.x/cli/</a>
+nebo nastavíme proměnnou prostředí FLASK_APP např. v PowerShell</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span> <span class="nv">$env:FLASK_APP</span><span class="p">=</span><span class="s2">&quot;src/cro.transcript.service.server:create_server&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Nastavíme pravoní adresář na src/</p></li>
+<li><p>Importujeme modul <code class="docutils literal notranslate"><span class="pre">cro.transcript.service.server</span></code>.</p></li>
+<li><p>Voláme tovární funkci <code class="docutils literal notranslate"><span class="pre">create_server</span></code> klidně is parametrem např. <code class="docutils literal notranslate"><span class="pre">create_server('development')</span></code>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">David Landa</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Memoirs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../computing/index.html">Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../electronics/index.html">Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../equations/index.html">Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../various/index.html">Various</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reports</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../2019/index.html">2019</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/index.html">2021</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2022</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2002W35.html">2002-W35</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-04-07.html">2022-04-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-04-28-.html">28-04-2022</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-05-07.html">2020-05-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-05-08.html">2022-05-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-06-30.html">2022-06-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-02.html">2022-07-02</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2022-07-03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-06.html">2022-07-06</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-08.html">2022-07-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-09.html">2022-07-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-11.html">2022-07-11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-14.html">2022-07-14</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-15.html">2022-07-15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-18.html">2022-07-18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-08-23.html">2022-08-23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-08-30.html">2022-08-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-09.html">2022-09-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-11.html">2022-09-11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-17.html">2022-09-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-26.html">2022-09-26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-29.html">2022-29-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-10-12.html">2022-10-12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-11-20.html">2022-11-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-12-20.html">2022-12-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W16.html">2022-W16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W34.html">2022-Week-34</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W41.html">Week 41</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W42.html">W42</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W45.html">2020-W45</a></li>
+<li class="toctree-l3"><a class="reference internal" href="untitled.html">Untitled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w42.html">2022-W42</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w43.html">2022-W43</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/index.html">2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../collection.html">Collection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Essays</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/01H22V89NXZFA4Z9DCT9VWHFGS.html">Python pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/01H2FRAPRN5PHYMAA6RMYF3F83.html">Disruptor pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/01HG36D05JMVW0T82FTWG93R71.html">Python logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/clean-code-notes.html">Notes on clean code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/how-to-design-program-1.html">Jak navrhovat program (1)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Études</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../etudes/2046.html">Acoustic Input Impedance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Personal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../personal/projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../personal/resume.html">Resume</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Reports</a><ul>
+  <li><a href="index.html">2022</a><ul>
+      <li>Previous: <a href="2022-07-02.html" title="previous chapter">2022-07-02</a></li>
+      <li>Next: <a href="2022-07-06.html" title="next chapter">2022-07-06</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Landa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/memoirs/reports/2022/2022-07-03.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

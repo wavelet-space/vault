@@ -1,0 +1,6 @@
+# 2022-07-11
+
+- [ ] Srovnej si poznámky a odkazy ohledně DDD.
+- [ ] Podívej se na skript pro release: <https://github.com/sameersbn/docker-postgresql/blob/master/scripts/release-notes.sh>
+
+Jak publikovat Domain Event? <https://github.com/VaughnVernon>

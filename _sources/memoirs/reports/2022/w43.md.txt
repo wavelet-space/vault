@@ -1,0 +1,45 @@
+# 2022-W43
+
+Je třeba dopsat a sjednotit dokumentaci pro jednotlivé balíky: -
+<https://github.com/czech-radio/openmedia> -
+<https://github.com/czech-radio/schedule>
+
+V současné době zkoušíme psát v jazyce Go viz -
+<https://github.com/czech-radio/rundown_files_checker> -
+<https://github.com/czech-radio/demo-crud-app>
+
+Rundown Files Checker -\> OpenMedia Files Checker/Monitor - Výstup JSON,
+lze to pak zpracovat pomocí jq <https://stedolan.github.io/jq/> či
+snadno převést do tabulky. Chceme využít v Bash pipách\... - Vstupní
+adresář by mělo být možné zadat z CLI, teď je tam na tvrdo cesta k
+Debian/Samba.
+
+- Navrhni způsob verzování a vydávaní (release) balíků. Jak a kdy
+    měníme verzi balíku, kdy vytváříme tag a jak vytváříme release?
+- Ukaž jak se používá git pro správné verzování balíků.
+- Stanov kdy se přejde z verze 0.X.0 na 1.0.0 a kdy se začínají
+    používat striktně pull-requests.
+- Striktně používat git-precommit-hook s isort, black, pytest
+
+## Knihy
+
+\- Julia for Data Analysis,
+<https://github.com/bkamins/JuliaForDataAnalysis>,
+<https://bkamins.github.io/julialang/2022/10/14/exercises.html> (Bogumił
+Kamiński) <https://www.guru99.com/data-science-books.html>
+
+<https://www.dunderdata.com/build-a-data-analysis-library-from-scratch-in-python>
+
+\-\--<https://en.wikipedia.org/wiki/Decision_tree>
+<https://en.wikipedia.org/wiki/Decision_table>
+
+<https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files>
+
+Python Spojení slovníků from functools import reduce result_dict =
+reduce(lambda a, b: {**a,**b}, list_of_dicts) reduce(operator.ior, \[d1,
+d2\], {})
+<https://stackoverflow.com/questions/3494906/how-do-i-merge-a-list-of-dicts-into-a-single-dict>
+
+<https://office.lasakovi.com/excel/Query-editor/M-code-M-Language-zaklady-PowerQuery-Excel/>
+
+<https://www.r-bloggers.com/2020/02/what-r-you-r-dataframe-vs-python-dataframe/>

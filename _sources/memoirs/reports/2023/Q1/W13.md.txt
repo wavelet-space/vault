@@ -1,0 +1,13 @@
+# W13
+
+## David Landa
+
+David Landa, IČO 06468241
+datová schránka: <https://www.mojedatovaschranka.cz>
+stav datové schránky: <https://www.mojedatovaschranka.cz/sds/>
+
+127.0. 0.1 is known as a loopback (IP) address, but you may see it under the name "localhost."
+When you point your browser to 127.0. 0.1, it tries to connect to the computer you're using right now.
+This is handy when you want to connect to a server on your own computer.
+
+- <https://en.wikipedia.org/wiki/Localhost>

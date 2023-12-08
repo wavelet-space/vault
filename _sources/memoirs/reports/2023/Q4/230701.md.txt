@@ -1,0 +1,41 @@
+# 230701
+
+* <https://www.youtube.com/watch?v=gzBhs_E5Few&ab_channel=HumanoidsInc>.
+* <https://www.youtube.com/watch?v=pFu80BfO3C8&ab_channel=ArtShutter>
+* <https://www.obchod.crew.cz/detail/komiks-660709-mesicni-tvar-vaz-mistrovska-dila-evropskeho-komiksu>
+* James O'Barr
+* <https://github.com/cj1128/sicp-review>
+* <https://github.com/cj1128/handmade-hero>
+* <https://forum.rpg.net/index.php?threads/game-designers-resource-thread.102406/>
+  * <http://www.anwu.org/games/dice_calc.html>
+* <https://morkborg.com/content/>
+  * <https://drive.google.com/file/d/1372heBerUrMiDONWURthu7kyVClOEdTv/view?pli=1>
+
+* <https://zxq9.com/archives/1882>
+* <https://jbuckland.com/2017/10/12/conway.html>
+* <https://gameprogrammingpatterns.com/game-loop.html>
+* <https://www.youtube.com/watch?v=lW6ZtvQVzyg>
+
+* <https://github.com/cj1128/handmade-hero>
+* <https://learn.microsoft.com/en-us/windows/win32/direct3d9/width-vs--pitch>
+* <https://stackoverflow.com/questions/872072/whats-the-differences-between-virtualalloc-and-heapalloc>
+* <https://ruoyusun.com/2019/03/28/game-networking-1.html>
+
+## C
+
+Kdy a proč používat `uint` a `int`?
+Je nějaký rozdíl v bezpečnosti? Co overflow pro tyto typy?
+Proč a kdy používat intXX_t a uintXX_t?
+
+<http://www.ganssle.com/tem/tem265.html>
+<https://electronics.stackexchange.com/questions/145017/for-embedded-code-why-should-i-use-uint-t-types-instead-of-unsigned-int>
+
+```shell
+-std=c99 -pedantic -Wall -Wextra -Wshadow
+```
+
+Jak zjistíme délku pole v C?
+Pokud máme pole na zásobníku, pak můžeme použít trik:
+<https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c>
+Čti i další odpovedi níže abys es dozvedel kdy to nefunguje. It doesn't work  for
+arrays passed to the function as an argument!

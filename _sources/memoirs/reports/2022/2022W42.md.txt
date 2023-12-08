@@ -1,0 +1,145 @@
+# W42
+
+- Projekt `cro-rundown` přejmenován na `openmedia`.
+  Důvod je, že kromě rundownll teď zpracováváme i soubory s kontakty.
+  Sdíli to většinu rutin, proto je dobré to ponechat v projektu.
+  Nicméně je zavádějící ho nazývat jen rundown když zpracovává různá data z openmedia.
+  Zřejmě bude ještě nutné trochu upravit CLI aby se dalo přepínat mezi RD a CT zpracováním.
+
+  Konktakty (`CT_`) se ukádají do `$env:annova/Contacts` a rundowny (`RD_`) do `$env:annova/Rundowns`.
+
+- Odebrat z projektů prefix `cro`.
+  V organizaci přibylo dost projektů, některé prefix mají a jiné ne (nekonzistetní)
+  Prefix je zřejmě nadbytečný, bude lepší ho odebrat u těch pár zbývajících projektů.
+  Co všechno se musí upravit (automatizace/workflows) při změněn názvu?
+  GitHub zachovává aliasy po změně názvu (pokud někkolidují) ale zžejmě udělat mapu projektů a jejich
+  závislostí na jiné procesy.
+
+- I work as a media designer & technical specialist for various events,
+companies and performances. My interests are focused in art, media & culture.
+I build from the ground up Interactive experiences, audiovisual ecosystems & multimedia
+performances involving software and hardware design; imaging devices such as cameras,
+projectors, lights, led screens, live media streaming & media servers; immersive sound
+environments; and interactive design involving sensors, actuators & robotics.
+
+<https://lifearchitect.ai/about-alan/>
+<https://www.hacksparrow.com/webdev/tools-services/github-workflow-job-step-action.html>
+
+<https://crontab.guru/>
+
+<https://docs.github.com/en/actions/using-workflows/triggering-a-workflow>
+
+<https://en.wikipedia.org/wiki/M-expression>
+<https://kaveh808.medium.com/11-night-bus-to-graphics-town-cce966c58b9c>
+<https://py-pkgs.org/03-how-to-package-a-python#building-documentation>
+<https://github.com/omnilib/attribution>
+
+<https://omnilib.dev/>
+<https://www.youtube.com/watch?v=qNmNLR4cCIg&ab_channel=SpineCareDecompressionandChiropracticCenter>
+
+Embeded Programming
+
+Programming Languages
+- <https://www.reddit.com/r/ProgrammingLanguages/>
+- <https://www.reddit.com/r/ProgrammingLanguages/comments/xzvzad/looking_for_some_good_programming_language_papers/>
+- <https://www.reddit.com/r/ProgrammingLanguages/comments/y1w4zh/is_there_a_build_yourself_a_smalltalk/>
+- <https://www.reddit.com/r/ProgrammingLanguages/comments/y3kni8/languages_designed_for_typing_on_mobile_phone/>
+  applicative vs concatenative
+<https://code.jsoftware.com/wiki/Vocabulary/Dissect>
+<https://web.archive.org/web/20111007025556/http://www.latrobe.edu.au/phimvt/joy/j02maf.html>
+- <https://www.youtube.com/>
+
+- <https://craftinginterpreters.com/>
+- <https://wren.io/>
+
+Game engines
+- <https://github.com/storm-devs/storm-engine/>
+- <https://github.com/storm-devs/storm-engine/blob/develop/src/libs/window/include/os_window.hpp>
+- <https://shirakumo.github.io/trial/>
+<https://www.youtube.com/watch?v=SmZETGZKCVU&ab_channel=ScalaintheCity>
+
+<https://github.com/cvdlab/ViewerGL.jl/tree/master/src>
+<https://github.com/plasm-language/pyplasm>
+
+Actor Systems
+- <https://github.com/arago/python-arago-actors>
+- <https://thespianpy.com/doc/>
+- <https://github.com/dapr/dapr>
+
+Project Documentation
+
+- <https://www.makeareadme.com/>
+
+- <https://www.sphinx-doc.org/>
+- <https://sphinx-rtd-theme.readthedocs.io/>
+- <https://docs.typo3.org/m/typo3/docs-how-to-document/>
+- <https://github.com/spatialaudio/nbsphinx>
+- <https://insipid-sphinx-theme.readthedocs.io/en/0.3.5/index.html>
+- <https://github.com/executablebooks/sphinx-book-theme>
+- <https://docs.readthedocs.io/en/stable/index.html>
+- <https://github.com/sphinx-contrib/>
+- <https://myst-parser.readthedocs.io/en/latest/intro.html>
+- <https://www.youtube.com/watch?v=b4iFyrLQQh4&t=64s&ab_channel=avcourt>
+- <https://github.com/eeholmes/readthedoc-test/blob/main/.github/workflows/docs_pages.yml>
+- <https://pypi.org/project/sphinx_mdinclude/>
+- <https://github.com/ammaraskar/sphinx-action>
+
+- <https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/>
+
+    .. include::
+    .. mdinclude::
+
+<https://github.com/EelcoHoogendoorn/numga/blob/main/numga/examples/integrators.py>
+
+<https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/>
+<https://sphinx-autoapi.readthedocs.io/>
+<https://myst-nb.readthedocs.io/>
+
+Short version: put quotes around version numbers in YAML.
+    <https://dev.to/hugovk/the-python-3-1-problem-85g>
+
+- <https://www.youtube.com/watch?v=6udlQakSXZY&ab_channel=ContextFree>
+
+- [ ] Simulation
+  <https://www.youtube.com/watch?v=eED4bSkYCB8&ab_channel=Reducible>
+
+VPN a GHA
+    <https://grrr.tech/posts/2021/github-actions-openvpn/>
+
+Co je rundown?
+    <https://shoflo.tv/what-is-a-rundown/>
+
+Stop Writing Dead programs
+    <https://www.youtube.com/watch?v=8Ab3ArE8W3s&ab_channel=StrangeLoopConference>
+
+Design system příklad
+
+    https://developer.gov.bc.ca/Design-System/Footer-Basic
+    https://beta-docs.developer.gov.bc.ca/reusable-services-list/
+
+OCaml course
+    <https://cs3110.github.io/textbook>
+
+C Hash Table
+    <https://www.youtube.com/watch?v=2Ti5yvumFTU&ab_channel=JacobSorber>
+
+Python, Pandas
+    <https://www.youtube.com/watch?v=9d5-Ti6onew&ab_channel=NextDayVideo>
+
+Python decorator type hints
+    <https://blog.whtsky.me/tech/2021/decorator-type-gymnastics-in-python/>
+
+Smalltalk
+    <https://www.researchgate.net/publication/200040381_Back_to_the_Future_The_Story_of_Squeak_A_Practical_Smalltalk_Written_in_Itself>
+
+Zajímaví lidé přistiženi
+
+    https://digikar99.github.io/index.html
+
+Lisp vs ML
+    <https://news.ycombinator.com/item?id=8281809>
+    -> <https://en.wikipedia.org/wiki/Eurisko>
+
+Scheme Dialekt
+    <https://www-sop.inria.fr/mimosa/fp/Bigloo/>
+    <https://www-sop.inria.fr/mimosa/fp/Bigloo/manual-chapter3.html>

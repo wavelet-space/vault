@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Alltalk &#8212; David Landa</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=56c4699f" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/custom.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Programming ASM x86" href="programming-asm-x86.html" />
+    <link rel="prev" title="Mermaid examples" href="mermaid-examples.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="alltalk">
+<h1>Alltalk<a class="headerlink" href="#alltalk" title="Link to this heading">¶</a></h1>
+<p>Alltalk is <em>an interactive object-oriented programming language</em>, a Smalltalk programming language dialect by <a class="reference external" href="https://www.csparks.com/">Hugh Sparks</a>, see a dedicated <a class="reference external" href="https://alltalk.csparks.com/index.xml">page</a>.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>TBD</p>
+</section>
+<section id="conversation-with-author">
+<h2>Conversation with author<a class="headerlink" href="#conversation-with-author" title="Link to this heading">¶</a></h2>
+<p>Glad to hear from people who try it out. My goal was to create a Smalltalk-like experience but with a read/write syntax. Many popular interactive programming languages feature what I like to call “write-only” syntax.</p>
+<p>Alltalk looks a bit retro these days. I created the first version for the PDP-11 in 1979 inspired by the Smalltalk-76 work at Xerox PARC. It borrows from the fashionable languages of that era: Pascal, Modula, Ada, and other dinosaurs.
+Right now, Alltalk is closed-source freeware. I’d like to open it up to get help from the community, but I also use it for industrial applications and I just don’t have time to do a proper job of moderation. (I’m in Japan right now using it to build a large earthquake simulator.) I’m sure Alltalk will improve rapidly when I involve more developers and I think Github would be an excellent place to do that.</p>
+<p>I’ll add you to my rarely-updated mailing list so you’ll know when I “go public.”</p>
+<p>Alltalk really needs a user guide and tutorial, but here are some non-obvious tricks:</p>
+<p>If you haven’t figured this out yet, semicolon <enter> is used to trigger compilation and execution of whatever you type in the listener window.
+‘this is as string’.writeln; <enter></p>
+<p>There is a shortcut for “#writeln ;” - Just use colon:
+‘this is a string’: <enter>
+There are other keywords that only work in the listener:</p>
+<p>You set the compiler context using WITH:</p>
+<p>WITH Button</p>
+<p>Now any method you type in will become part of class Button and any VAR you create will become a class variable Button. (But you can’t create more instance variables without re-defining the class.)
+Or you can enter an instance:</p>
+<p>WITH x</p>
+<p>Now you can see all the variables in the context of whatever is in the variable x.</p>
+<p>Finally, when you hit a breakpoint, there is an implicit WITH to enter the object that’s the receiver of the method you’re debugging. You can also see the parameter and local variables in that context.</p>
+<p>Debugging:
+The browser itself has some methods used to demonstrate debugging.</p>
+<p>Open the source for Browser in the browser:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Category &quot;Programming&quot; -&gt; class Browser -&gt; method &quot;test&quot;
+</pre></div>
+</div>
+<p>Turn on debugging by clicking the “D” toggle button on the browser menu bar.</p>
+<p>Click on the first executable line of the method for #test and press the “O” button to set a breakpoint.
+Now use the listener window to execute:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>browser.test
+</pre></div>
+</div>
+<p>The debugger buttons have pop-up labels to show what they do.</p>
+<p>Most-but-not-all classes have help files that contain demonstrations. Here are a few that are fun to see:</p>
+<p>Gtk -&gt; GtkDatabox</p>
+<p>Now select “Help” from the file menu, then “Compile All” in the workspace that pops up.</p>
+<p>Gtk -&gt; GtkDrawingArea (now select Help and compile all in the workspace)</p>
+<p>Same drill for most of the other classes.</p>
+<p>Sockets and Concurrency are interesting.</p>
+<p>Class Module lets you open external shared libraries: DLLs in Windows or dynamic shared libraries in linux. Once open, you can send messages to the module instance passing any of the basic scalar or array types and the module function will execute. I’ve only tested this with external dynamic libraries/DLLs writting in standard C, but it should work for other languages with similar calling conventions.
+Have fun!</p>
+<p>-Hugh Sparks</p>
+<p>On 8/8/2019 9:52 PM, David Landa wrote:
+Dear Hugh, I am playing with your Alltalk and I am trying to understand how this Smalltalk implementation works. I can read all the <code class="docutils literal notranslate"><span class="pre">.alt</span></code> files but I am also interested in the interpreter itself.
+Is the source code available elsewhere, e.g github.com? Anyway, this is a really nice piece of software – it works on my new Windows 10 machine without problems – Thank you!
+Best regards, David Landa</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>https://en.wikipedia.org/wiki/Smalltalk</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">David Landa</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Memoirs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Computing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="algorithms/index.html">Data structures and algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3d-printing.html">3D printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chip8.html">CHIP-8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compilers-and-interpreters.html">Compilers and interpreters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpu-simd-overview.html">CPU SIMD overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interview-cpp.html">C++ Interview Questions/Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyboard-shortcuts.html">Keyboard shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine-learning.html">Machine learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mermaid-examples.html">Mermaid examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Alltalk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conversation-with-author">Conversation with author</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="programming-asm-x86.html">Programming ASM x86</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming-c.html">Programming C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming-go.html">course-go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming-languages.html">Programming Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming-powershell.html">PowerShell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming-sql.html">SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering.html">GPU rendering overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-debian.html">Server: Debian administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-ssh-and-scp.html">Server: SSH and SCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-ssh-and-scp.html#scp-secure-copy">SCP Secure Copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-ssh-and-scp.html#prvni-prihlaseni-k-serveru">První přihlášení k serveru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-windows.html">Setup Windows for development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="some-notes.html">Some notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="~mechanical-systems.html">Mechanical systems</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../electronics/index.html">Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../equations/index.html">Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../various/index.html">Various</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collection.html">Collection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Essays</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../essays/01H22V89NXZFA4Z9DCT9VWHFGS.html">Python pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../essays/01H2FRAPRN5PHYMAA6RMYF3F83.html">Disruptor pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../essays/01HG36D05JMVW0T82FTWG93R71.html">Python logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../essays/clean-code-notes.html">Notes on clean code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../essays/how-to-design-program-1.html">Jak navrhovat program (1)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Études</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../etudes/2046.html">Acoustic Input Impedance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Personal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../personal/projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal/resume.html">Resume</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Computing</a><ul>
+      <li>Previous: <a href="mermaid-examples.html" title="previous chapter">Mermaid examples</a></li>
+      <li>Next: <a href="programming-asm-x86.html" title="next chapter">Programming ASM x86</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Landa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/memoirs/computing/programming-alltalk.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

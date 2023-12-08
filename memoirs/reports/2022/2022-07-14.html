@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2022-07-14 &#8212; David Landa</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=56c4699f" />
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/custom.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2022-07-15" href="2022-07-15.html" />
+    <link rel="prev" title="2022-07-11" href="2022-07-11.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2022-07-14<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<section id="knihovna-essence">
+<h2>Knihovna <code class="docutils literal notranslate"><span class="pre">essence</span></code><a class="headerlink" href="#knihovna-essence" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>persistence</p></li>
+<li><p>(Readable = pro čtení, Writable = pro zápis)</p></li>
+<li><p>providers: neukládají, pouze načítají data např. z nějakého feedu</p></li>
+<li><p>repositories: načítají i ukládají data</p>
+<ul>
+<li><p>abstract_repository</p>
+<ul>
+<li><p>implements context managaer (<code class="docutils literal notranslate"><span class="pre">__enter__</span></code>,<code class="docutils literal notranslate"><span class="pre">__exit__</span></code>)</p></li>
+</ul>
+</li>
+<li><p>memory_repository (local)</p></li>
+<li><p>server_repository (remote)</p>
+<ul>
+<li><p>needs connection, has latency</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>https://repodb.net/operation/merge</p>
+<p>Pro připojení k relačnímu databázového serveru používáme balíky splňující Python Database API Specification https://peps.python.org/pep-0249 např. psypocg3 https://www.psycopg.org/psycopg3/docs/advanced/typing.html</p>
+<p>http://balazblogspot.blogspot.com/2018/07/what-is-task-based-ui.html</p>
+</section>
+<section id="ddd-projkety">
+<h2>DDD Projkety<a class="headerlink" href="#ddd-projkety" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>https://github.com/BottegaIT/ddd-cqrs-sample</p></li>
+<li><p>https://github.com/VaughnVernon/IDDD_Samples_NET</p></li>
+<li><p>https://github.com/kgrzybek/sample-dotnet-core-cqrs-api</p></li>
+</ul>
+<p>Dokumentace do gh-pages z ruzznych podadresaru.</p>
+<p>https://book.pythontips.com/en/latest/index.html
+https://github.com/cosmicpython/code/blob/chapter_06_uow_exercise/src/allocation/service_layer/unit_of_work.py</p>
+</section>
+<section id="git">
+<h2>Git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">repository</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">orphan_name</span>
+<span class="n">git</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">.</span>
+<span class="n">rm</span> <span class="s1">&#39;.gitignore&#39;</span>
+<span class="n">echo</span> <span class="s2">&quot;#Title of Readme&quot;</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Initial Commit&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">orphan_name</span>
+</pre></div>
+</div>
+<p>https://jan-v.nl/post/splitting-unit-of-work-and-repository-functionality/</p>
+<p>https://ossia.io/posts/minimum-viable/</p>
+<p>https://docs.docker.com/compose/environment-variables/</p>
+<p>Jsem slyšel vedle u stolu:
+nejvíc hipster cool lokalita, na 3 noci 25000#</p>
+<p>uff</p>
+</section>
+<section id="poznamky-k-transcriptu">
+<h2>Poznámky k transcriptu<a class="headerlink" href="#poznamky-k-transcriptu" title="Link to this heading">¶</a></h2>
+<p>Pracuji na katlogu.
+Dělám v modulu service/catalog/routes.py
+tady: https://github.com/czech-radio/cro-transcript-app/tree/main/server/src/cro/transcript/service</p>
+<p>Catlog je jeden <em>bounded context</em>.
+Vše v něm je implementační detail pro další modul
+např analysis.</p>
+<p>Analysis se trochu hnul od minulé schůzky
+viz https://github.com/czech-radio/cro-transcript-app/blob/feature/analysis/server/src/cro/transcript/service/analysis/processes.py</p>
+<p>Nicméně, ukýřu ji na tom menší chybky… které se nám mohou stávat.</p>
+<ol class="arabic simple">
+<li><p>Jedna byla už odstraněna
+Funkce něpřebírata clienta jako parametr =&gt;
+nedá se to testovat, protože uvnitř použiješ reálný objekt, který nemůžeš nijak nahradit při testování nějakou <em>fake verzí</em>. Ale teď už je to ok viz parametr <code class="docutils literal notranslate"><span class="pre">client</span></code>.</p></li>
+<li><p>Druhá tady stále je a to je, že používá třídu transcript z bounded context(u) catalog. Tím ty dva moduly nejsou nezávislé!
+Tímhle to provazuje a stává se závislým na mém modulu <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">cro.transcript.contexts.catalog.domain</span> <span class="pre">import</span> <span class="pre">Transcript</span> <span class="pre">as</span> <span class="pre">Transcript</span></code>.</p></li>
+</ol>
+<p>lepší řečení je v těch funkcích přebírat nějakou primitivní hodnotu např. string a uvnitře to řešit vlastním doménovým modelem. Nebo nemusí mít doménový model! Ale jeho funkce prostě vězme data provede výpočet a je hotovo.</p>
+<p>V knize jsem pak tady: Service Layer</p>
+<p>Jeho dvě funkce jsou servisné funkce… to jsou funkce co definují API toho modulu. Všechno další je implementační detail modulu, dokonce i doménový model je implementační detail.</p>
+<p>Servisní funkce (nebo třída v modulu catalog) je
+volána v tom frameworku Flask.</p>
+<hr class="docutils" />
+<p>Takže tohle je funkce frameworku Flask.
+Tato funkce má je jednu starost. Když zavoláš adresu <code class="docutils literal notranslate"><span class="pre">localhost:5000/transcripts</span></code>
+pomocí HTTP metody <code class="docutils literal notranslate"><span class="pre">GET</span></code>, tak něco vrací, viz její obsah. Odkorkujeme to 1) Vše co přišlo jako data v tom request(u) (požadavku) tak si dáme na hromádku.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Data v HTTP mohou přijít buď v adrese viz
+
+GET localhost:5000/transcripts?limit=10&amp;offset=2
+                          ^^^^^^^^^^^^^^^^^^ query parameters
+nebo mohou přijít v hlaviče (HEADER) ale to teď není třeba řešit ale je to toto:
+
+Tyto data mohou obsahovat cokoliv a vesměs je to text...
+takže bys je měla nějak upravit, konvertovat a také sanitizovat = odstranit různé
+nebezpěčné věci... takto se dá dělat nějaký hackerský =utok, že tam strčíř třeba
+javascript nebo kus SQL kódu.
+
+2) Teď máš parametry, klidně bcyhom je mohli rovbou použít, ale já používám
+tkzv. command objekt do kterého to zabalím. Moje rozhodnutí, žádná úzus. Ale proš to tak dělám. Comman objekt je pojmenovaný tak, že říká, co od systému chci a zabaluje několik hodnot do jedné. Tento jeden parametr pak posílám do service namísto n-parametrů. A má to další výhody, ale to teď asi není třeba řešit např. že může ještě nějaké parametry konvertovat uvnitř na potřebné hodnoty, něco spočíst atak. Prostě do servisní funkce jde pak jen command objekt s již připravenými daty.
+
+3) Mám command a ten pošlu do servisní funkce. Já napsl třídu s metodami, ale můžeš mít jen funkce. Pointa je, že tak funkce odpovídá use-casu. Tato funkce je tvoje API pro modul a aplikaci. Pokud bych chtěl teď dělat konzolovou aplikaci, tak namísto tady té FLASK
+routy udělám jen jinou knzolovou funkci se setjnými kroky:
+
+console function:
+    1) načti data z konzole
+    2) připrav je v podobě command objektu
+    3) zavolej servisní funkci:
+      -- success: vypis výsledek do konzole
+      -- failure: vypiš chyby do konzole
+    konec
+
+4) Připravím si objekt s ospovědí neboli response na ten HTTP request.
+
+HOTOVO
+
+V našem případě komunikujeme s aplikací přes HTTP protokol pomocí REST API.
+Ale stějné to je v dekstopové okenní aplikaci.
+Když oddělíš funkce od toho jak data prezentuješ tak máš vykráno.
+
+Opakování:
+Každá *feature* je funkce nebo metoda třídy. Tato funkce bere nějaká data
+např. command (cpž je prostě jen hromádka data zabalená v objektu), provádí nějaké
+operace a vrací výsledek (Sucess|Failure).
+
+Těmto funkcím se říká aplikační servisní funkce (třídy+ metody).
+
+Koukni, já mám prostě jednu třídu, kd každá metoda je fature.
+</pre></div>
+</div>
+<p>Nevím ten dotenv tam je jako závislost napsaný.</p>
+<p>Někdy může virtual env blbnout, prostě samazat a nový.
+Jsou tam různé odkazy na operační systém a to se může rozhasit.</p>
+<p>ModuleNotFoundError: No module named ‘dotenv’</p>
+<p>Nevím!
+tady je chyba někde: File “c:\users\dlanda\projects\business\cro-transcript-app\server\src\cro\transcript\service\server.py”, line 11, in <module></p>
+<p>JO ještě… všem těm adrsesám dávám prefix… ale v jiném míste tady:</p>
+</section>
+<section id="poznamka-command-objekt-zachycuje-tvuj-pozadavek-na">
+<h2>Poznámka: Command objekt zachycuje tvůj požadavek na<a class="headerlink" href="#poznamka-command-objekt-zachycuje-tvuj-pozadavek-na" title="Link to this heading">¶</a></h2>
+</section>
+<section id="zmenu-stavu-v-systemu-servisni-funkce-ae-muze-tento-pozadavek-odmitnout">
+<h2>změnu stavu v systému. Servisní funkce ae může tento požadavěk odmítnout<a class="headerlink" href="#zmenu-stavu-v-systemu-servisni-funkce-ae-muze-tento-pozadavek-odmitnout" title="Link to this heading">¶</a></h2>
+</section>
+<section id="napc-proto-ze-data-jsou-v-kontextu-sourasneho-stavu-nevalidni-proto">
+<h2>napč. proto, že data jsou v kontextu souřasného stavu nevalidní. Proto#<a class="headerlink" href="#napc-proto-ze-data-jsou-v-kontextu-sourasneho-stavu-nevalidni-proto" title="Link to this heading">¶</a></h2>
+</section>
+<section id="muzes-vzdy-o-tom-premyslet-jako-o-nejakem-rozhodcim-co-povoli-nebo-zamitne-pozadavek-command-can-be-accepted-or-rejected">
+<h2>můžeš vždy o tom přemýslet jako o nějakém rozhodčím, co povolí nebo zamítne požadavek COMMAND can be ACCEPTED or REJECTED.<a class="headerlink" href="#muzes-vzdy-o-tom-premyslet-jako-o-nejakem-rozhodcim-co-povoli-nebo-zamitne-pozadavek-command-can-be-accepted-or-rejected" title="Link to this heading">¶</a></h2>
+<p>Rozeznávám property promární a sekundární.
+Sekundární jsou odvození z jiných nebo spočtěné.
+Pokud je třída immutable, mohou být cachována.</p>
+<p>This is a secondary (derived) property.</p>
+<p>Flask does nothing to request data besides parsing it from the raw HTTP request. It has no way to know what constraints an arbitrary function has. It’s up to you to check any constraints. All data will be strings by default. Don’t use eval or exec. Use your database driver’s parametrized queries to avoid SQL injection. If you render a template with Jinja it will escape data for use in HTML by default.</p>
+<p>Include to colection
+Exclude from collection</p>
+<p>If you DELETE something that doesn’t exist, you should just return a 204 (even if the resource never existed). The client wanted the resource gone and it is gone. Returning a 404 is exposing internal processing that is unimportant to the client and will result in an unnecessary error condition.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">David Landa</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Memoirs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../computing/index.html">Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../electronics/index.html">Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../equations/index.html">Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../various/index.html">Various</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reports</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../2019/index.html">2019</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/index.html">2021</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2022</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2002W35.html">2002-W35</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-04-07.html">2022-04-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-04-28-.html">28-04-2022</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-05-07.html">2020-05-07</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-05-08.html">2022-05-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-06-30.html">2022-06-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-02.html">2022-07-02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-03.html">2022-07-03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-06.html">2022-07-06</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-08.html">2022-07-08</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-09.html">2022-07-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-11.html">2022-07-11</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2022-07-14</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-15.html">2022-07-15</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-07-18.html">2022-07-18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-08-23.html">2022-08-23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-08-30.html">2022-08-30</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-09.html">2022-09-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-11.html">2022-09-11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-17.html">2022-09-17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-26.html">2022-09-26</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-09-29.html">2022-29-09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-10-12.html">2022-10-12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-11-20.html">2022-11-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022-12-20.html">2022-12-20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W16.html">2022-W16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W34.html">2022-Week-34</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W41.html">Week 41</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W42.html">W42</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2022W45.html">2020-W45</a></li>
+<li class="toctree-l3"><a class="reference internal" href="untitled.html">Untitled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w42.html">2022-W42</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w43.html">2022-W43</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/index.html">2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../collection.html">Collection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Essays</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/01H22V89NXZFA4Z9DCT9VWHFGS.html">Python pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/01H2FRAPRN5PHYMAA6RMYF3F83.html">Disruptor pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/01HG36D05JMVW0T82FTWG93R71.html">Python logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/clean-code-notes.html">Notes on clean code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../essays/how-to-design-program-1.html">Jak navrhovat program (1)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Études</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../etudes/2046.html">Acoustic Input Impedance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Personal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../personal/projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../personal/resume.html">Resume</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Reports</a><ul>
+  <li><a href="index.html">2022</a><ul>
+      <li>Previous: <a href="2022-07-11.html" title="previous chapter">2022-07-11</a></li>
+      <li>Next: <a href="2022-07-15.html" title="next chapter">2022-07-15</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Landa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/memoirs/reports/2022/2022-07-14.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

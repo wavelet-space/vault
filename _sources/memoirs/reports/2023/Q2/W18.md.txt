@@ -1,0 +1,46 @@
+# W18
+
+Dnes jsem se naučil jak importovat JSON pole objektů do Excelu pomocí Power Query.
+
+Dnes jsem se naučil, že GitHub umožňuje vytvářet tzv, *machine users* např. pro automatizaci.
+<https://docs.github.com/en/get-started/learning-about-github/types-of-github-accounts>
+
+Dnes jsem se dozvědel, že existuje `git switch` a nahrazuje `git checkout`
+<https://stackoverflow.com/questions/57265785/whats-the-difference-between-git-switch-and-git-checkout-branch>
+
+## Qt
+
+- Kompilace knihovny Qt5 získané z GitHub repozitáře.
+  - git clone --recurse-submodules
+  - git git submodule init/deinit
+  
+  - perl init-repository --module-subset=qtbase,qtshadertools,qtdeclarative
+
+Toto mlže tvat hodně dlouho, protože se stahuje několig GB dat.
+Pokud chceme jen podmnožinu můžeme omezit stahované repozitáře
+
+Licence Qt:
+
+- <https://qr.ae/pypdnh>
+
+Zásadní zdroj je tento <https://wiki.qt.io/Building_Qt_6_from_Git>
+
+Qt můžeme stáhnout přímo z GitHub repozitáře, který se jmenuje qt5 avšak obsahuje mnoho větví např. i
+6.5 atd. Takže pokud chceme verzi 6 musíme se přepnout do požadované verze.
+
+## 2023-05-13
+
+There are many opinions, one could say myths, that are not evidence based.
+e.g *The serif fonts are better then sans-serif for long text.*
+
+## Golang Cross Kompilace
+
+$env:GOOS="windows"
+$env:GOARCH="amd64"
+
+https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04
+
+## GitHub Actions
+
+- https://github.github.com/actions-cheat-sheet/actions-cheat-sheet.html
+  

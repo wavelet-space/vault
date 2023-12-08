@@ -1,0 +1,34 @@
+# 2021-07-24
+
+Vytvořit si snippety pro Python soubory, např aby vždy obsahoval
+
+- `# /usr/env/python -*-` [obsahuje __main__]
+- `# -*- coding: utf-8 -*-` [module]
+- `__all__` [module]
+
+- Dokumentaci můžeme psát v .adoc, .rst, .md
+  <https://docs.asciidoctor.org/>
+
+= Zajímavé Projekty / Články
+
+- <https://github.com/albin-johansson/centurion>
+  A modern C++ wrapper library for SDL2 in order to improve type-safety, memory safety and overall ease-of-use.
+
+- <https://github.com/rust-lang/mdBook>
+  Create book from markdown files. Like Gitbook but implemented in Rust
+
+- <https://github.com/django/channels/blob/main/channels/>
+  Developer-friendly asynchrony for Django
+  <https://channels.readthedocs.io/en/stable/topics/authentication.html>
+
+- <https://www.aeracode.org/2018/02/19/python-async-simplified/>
+  
+- <https://stackoverflow.com/questions/58755948/what-is-the-difference-between-typevar-and-newtype>
+
+- <https://manubot.org/>
+
+- <https://github.com/dib-lab/2020-workflows-paper/blob/master/content/01.abstract.md>
+  <https://dib-lab.github.io/2020-workflows-paper/manuscript.pdf>
+
+- <https://github.com/graphitemaster/fpinspect>
+  Inspect floating point computations

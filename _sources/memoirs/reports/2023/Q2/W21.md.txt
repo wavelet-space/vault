@@ -1,0 +1,57 @@
+# W21
+
+## Úkoly
+
+### Rozhlas
+
+- Přidat sloupce ObjectID a SystemID do produkční analýza export.
+- Data pro květen plus sloučit sloupec moderátor a přidat stranu respondenta pro data anaytika rada.
+
+- Dopracuj zadání pro výberové řízení na programátora.
+
+### Ostatní
+
+Co je monster clay?
+Jak se odlívá soška do silikonu nebo cínu?
+
+Vytvořit si sytém pro lego.
+Vytvrit senam YT vudei a kanalu (ytdownllaod/api)?
+
+foil figures
+
+- Article *temporality in games*
+- Video Vytváření Firmwre pro Lego a STM32 (blue pill): <https://www.youtube.com/watch?v=4vgnM9-EEeA&ab_channel=FOSDEM>
+
+<https://www.youtube.com/watch?v=XfIriaDbq4s&ab_channel=AgeofNoob>
+
+- Movie: The Keep (198?)
+
+- Jaké zařízení má v domácnosti největší spotřebu?
+- Koupit chytrou zůsuvku?
+
+- <https://en.wikipedia.org/wiki/Build_(game_engine)>
+
+## 05
+
+### 01
+
+- Inspirace pro Sphinx theme: <https://github.com/TYPO3-Documentation/sphinx_typo3_theme>
+
+- <https://myst-nb.readthedocs.io/en/latest/quickstart.html>
+- <https://sphinxcontrib-bibtex.readthedocs.io/en/latest/usage.html>
+
+- <https://stackoverflow.com/questions/44310674/how-to-create-a-title-that-will-not-appear-in-the-toctree-with->
+
+- Instalace build-essentials na Ubuntu měla problém se závislostí Pythin
+  - řešení :<https://askubuntu.com/questions/1402456/unmet-dependencies-for-python-3-10>
+  - sudo apt-get install build-essential
+
+- PHP docker apapche mysql: <https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/>
+
+### Kompilace pomocí GCC
+
+- Docker: <https://hub.docker.com/_/gcc/>
+
+Windows
+
+    docker run --rm -v ${PWD}:/usr/src/code -w /usr/src/code gcc:latest gcc 

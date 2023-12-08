@@ -1,0 +1,86 @@
+# 2022-09-09
+
+Zkontroluj co je nového v https://docs.python.org/3.11/whatsnew/3.11.html
+
+Instalován Kubernetes na server avo.cro.cz; návod zde https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+Jako altenativu ke Kubernetes lze použit Docker Swarm nebo K3 viz https://circleci.com/blog/docker-swarm-vs-kubernetes/
+
+Ukaž jaké aplikace běží na portech `sudo lsof -i -P -n | grep LISTEN` avo.cro.cz
+
+
+verze cat /etc/debian_version (ukáže i minor)
+verze lsb_release -a
+
+Instalován Python 3.10
+- sudo apt update -y
+- sudo apt upgrade
+
+Dependencies: 
+```
+
+apt get install 
+wget 
+build-essential 
+libreadline-dev 
+libncursesw5-dev 
+libssl-dev 
+libsqlite3-dev 
+tk-dev 
+libgdbm-dev 
+libc6-dev 
+libbz2-dev 
+libffi-dev 
+zlib1g-dev 
+libncurses5-dev 
+libsqlite3-dev 
+libreadline-dev 
+libtk8.6 
+libgdm-dev 
+libdb4o-cil-dev 
+libpcap-dev
+-y
+
+dpkg -s libssl-dev
+
+```
+- wget https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz
+- tar -xvf Python-3.10.0.tgz
+- cd Python-3.10.0
+- ./configure --with-openssl --enable-optimizations
+- nproc nebo lscpu (zjistíme počet procesorů)
+- sudo make -j 2
+- sudo make altinstall 
+
+- python3.10 --version
+- alias python='/usr/local/bin/python3.10' # per user
+- (unalias python) 
+- update-alternatives --list python # pers system
+- alias pip='/usr/local/bin/pip3.10'
+
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+
+ sudo apt install 
+
+
+Zdroje:
+- https://cloudcone.com/docs/article/how-to-install-python-3-10-on-debian-11/
+- https://computingforgeeks.com/how-to-install-python-on-debian-linux/
+- https://www.rosehosting.com/blog/how-to-install-python-3-10-on-debian-11/
+- https://linuxconfig.org/how-to-change-from-default-to-alternative-python-version-on-debian-linux
+
+
+
+---
+
+Pro tworbu REST API lze použít tyto projekty
+
+https://github.com/pallets/flask
+https://github.com/spec-first/connexion
+
+
+---
+
+Aktivace virtuálního prostředí na Debian:
+- `python3 -m venv .venv`
+- `.venv/bin/activate`

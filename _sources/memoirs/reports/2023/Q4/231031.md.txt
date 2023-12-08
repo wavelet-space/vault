@@ -1,0 +1,13 @@
+# 231131
+
+* 08:00 work on notes
+* coffee, coffee
+* 10:30 meeting online CRo
+* ? change user line spacing in VSC
+  `Settings -> "editor.lineHeight: 1"`
+* 12:00 data cleaning
+* 13:00 break
+* 14:45 meet online CRo PB
+* changed VPN client (<strike>Cisco</strike>)
+
+* What is tenant?

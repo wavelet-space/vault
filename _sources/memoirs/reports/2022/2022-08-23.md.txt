@@ -1,0 +1,20 @@
+# 2022-08-23
+
+## Pracovní poznámky: rozhlas.cz
+
+Provést revizi pracovních procesů a zadávání práce.
+
+Petra Bučková pracuje velmi svědomitě, orientuje se na vedení projektů a návrh uživatelského rozhraní (Figma). Je zřejmě schopna i programovat a analyzovat data.
+
+Kryštof Pešek pracuje velmi obtížně. Zřejme jedinná možnost je dát mu celý projekt, nepomáhat mu s tím a ověřit si, jestli je něco schopný dopracovat.
+Při vágním zadání si stěžuje, že nemá zadání, při velmi detailím zadání nebo při spolupráci si stěžuje, že by "to" dělal  jinak. Pokud mu s něčím pomáhám nebo ho korigují,
+vždy tu může být výmluva, že ho nenechám dodělat věci podle něho. Jaký mám problém? Je pomalý, zřejmě nepracuje. Kvalita kódu a testování ho příliš nězajímá (i když to je můj subjektivní názor).
+
+Tomáš Pivoda je dle mého stále konfliktní. Není schopný zvěřejit svoji práci a stále něco dělá po vlastní ose -- často opakuje věci, ketré již někde máme.
+Zdrojové kódy projektu dokonce tají a má je na osobním GitHubu. Zřejmě nám však kouká prd ruce na \rozhlasovém githubu: Používá stejné technologie, nasazuje na server bez
+toho aby to oznámil, prezentuje, když tu nejsem. Do aplikace nemám přístup já ani Kryštof.
+
+- [ ] Zavolat Johaně a poradit jí s overleaf
+- [ ] Koupit podestýlku (záchod) a potravu pro kočky.
+- [ ] Porada oddělění.
+- [ ] Osobí schůzka s Martinou Poliakovou: zvýšení platu.

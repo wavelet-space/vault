@@ -1,0 +1,122 @@
+# 2022-W16
+
+- Action
+  - Assignment
+  - Question
+
+## Harmonogram
+
+## Week 10
+
+- Vyzvednout knihy v antikvariát Dlážděná.
+- Napsat parser pro zpravodajství.
+- Úkol neuronové sítě
+- Úkol Janoušek (Geochronologie)
+- Úkol Pavelka (Julia)
+- Zásilkovna pouta 1 + 2
+- Zásilkovna vybrátory
+- Praní prádla
+
+## Week 11
+
+- So 19-03-2022 Burza tera výstavište
+
+## 14 Week
+
+- SO 09-04
+- Přeber soubory v adresáři DESKTOP
+- Ulož heslo pro Matrix
+- Ulož heslo pro GitHub PAT
+
+## 13 Week
+
+- Dokončil jsem první veri knihovny pro získáván, zpracování a pozdější archivaci programu vysílání.
+- Úkol GENERIC
+
+## 12 Week
+
+- odpadá út (jen cvičení) Paralelní mati__cové výpočty
+
+## Zkratky používané v programování
+
+- suffix *_count počet něčeho
+- suffix *_size  velikost něčeho
+- suffix *_qt kvantity
+
+- prefix calc_ calculate
+
+## 11 Week
+
+- odpadá út Počítačoví metody
+- odpadá st Elektrochemie
+- odpadá pá GENERIC
+
+[Reports] Formát - Žánr analysis, field 321
+Study website and REST service development with Flask (<https://flask.palletsprojects.com/en/2.0.x/>)
+Continue work on petri-net based workflow engine (redesign `flownet`)
+Decide how to update `essence` project
+
+Organize your work and study e.g. see <https://en.wikipedia.org/wiki/Bullet_journal>
+
+PIVODA
+
+## 11. týden 14. 3. – 18. 3
+
+ČT, PÁ 14:30
+Úkol: Registr osob - návrh hierarchie štítků u profesní vyváženosti
+ J. Kučera
+
+## 12. týden 21. 3. – 25. 3
+
+T. Pivoda kóduje Přehled pro Radu ČRo – březen (spolupráce s Josefem, zadává práci); nahození webu pro interní potřeby analytiky (spolupráce s Davidem – zadává práci)
+Tomáš Pivoda
+
+- Zkoumám GitHub a seznamuji se s jednotlivými sekcemi a hlavně programy, které lokálně testuji.
+- Testuji nový modul CRo Schedule a komunikace s Davidem.
+- Seznamuji se s Newtonem (nemůžu se ale dostat na jeho API) a
+- Začal jsem vyplňovat tabulku od Josefa s Davidem jsme domluvili nahození webu pro interní potřeby analytiky (o kterém jsme spolu mluvili v pátek),
+  kde bude v podobě webové aplikace taky prezentace pro Radu, co se odevzdává každý měsíc (na které pracuju já, David se věnuje resuscitaci dosavadních
+  analyt. programů a jejich transpozici na web) výhledově budu zpracovávat taky ten registr respondentů, ke kterému se teď ale nedostanu v jeho běžící podobě.
+- Co se týče tabulky kategorií, přijde mi v tuto chvíli kontraproduktivní nějak svévolně měnit kategorie, dokud nebudu mít přístup ke všem datům, co se
+  zpracovávají na reporty a konkrétně si "neosahám" situace, kdy můžou být stávající kategorie nedostačující
+  
+## 13. týden 28. 3. – 1. 4
+
+- metodika Reportingu - vysoká priorita v dubnu - spolupráce Kučera, Pivoda, Křeček, Poliaková - archivní příklad
+
+činnost minulý týden: - kódování Interview Plus + Josefem přidělené speciály - komunikace s Newton Media -
+snaha o API do archivu -> výsledek: není možné - po urputné emailové komunikaci - dostal jsem přístup k API Newton monitoringu -> výsledek: je pro nás
+k ničemu - studium pythonovských knihoven pandas / nltk / streamlit - práce na budoucí aplikaci webového výstupu Přehledu pro Radu (souběžně s xlsx) -
+práce na automatizaci přepisů z Newtonu - nelze vytvořit plnou automatizaci/API, max. parsovacího klienta z newtonovského html výstupu (neexistuje už náhodou? kde)
+
+- po urputné emailové komunikaci se podařilo zpřístupnit VPN (!!!) - to s sebou nese nové výzvy/dotazy do pléna: - Jak se dostanu na R? - Kde je seznam pro naše
+oddělení relevantních adresářů/sekcí na R? (přepisy, zvukové záznamy) - nemám přístup do Open Media (nejspíš potřebuju login/heslo - komu o něj napsat
+(když nemám ještě ani smlouvu)?) - jak se s VPN dostanu k registru <https://github.com/czech-radio/broadcast-tracking-service> (instrukce - přihlaš se k ssh - k ničemu)
+- na jaké IP běží registr osob (docker)
+
+činnost tento týden: - "dokódování" interview a speciálů do 1.4. - pokračování práce na klientovi pro přepis z Newtonu - konference k syntéze hlasu (čt) -
+studium metodiky reportingu - pokračování práce na web. výstupu přehledu pro radu
+
+- Dát OpenMediaParser do samostaného projektu `cro-rundown-parser` a dopsat testy?
+-
+
+Co dělá?
+
+[k for k in vars[Show]('__annotations__').keys()]
+
+Dá se použít?
+
+def filter_schedule_by_columns(self, *columns) -> pd.DataFrame | Schedule:
+    """
+    Return filtered schedule data by text content.
+    """
+    return self.to_table()[[*columns]]
+
+def filter_schedule_by_column_content(self, search ='', column='title', case_sensitive=False, repeated=False) -> pd.DataFrame | Schedule:
+    """
+    Return filtered schedule data by text content.
+    """
+    df = self.to_table()
+    return df[(df[column].str.contains(to_search,case=case)) & (df.repetition==repeated)]
+
+- <https://lexi-lambda.github.io/>

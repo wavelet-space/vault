@@ -1,0 +1,22 @@
+# 2019-05-12
+
+Prozkoumat Github Registry
+<https://github.com/features/package-registry>
+
+Jak nastavit cestu k Leinigen?
+
+Zkusit GraalVM.
+
+Počítačová grafika:
+
+<https://observablehq.com/@kelleyvanevert/projection-of-3d-models-using-javascript-and-html5-canvas>
+
+<https://www.mathsisfun.com/geometry/prisms.html>
+
+<https://www.davrous.com/2013/06/13/tutorial-series-learning-how-to-write-a-3d-soft-engine-from-scratch-in-c-typescript-or-javascript/>
+
+<http://web.archive.org/web/20131222170415/http:/robertokoci.com/world-view-projection-matrix-unveiled/>
+
+EXKURZE
+
+Pecínov -- Perm, Křída

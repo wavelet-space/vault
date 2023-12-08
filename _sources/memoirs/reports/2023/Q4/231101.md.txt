@@ -1,0 +1,86 @@
+# 231101
+
+* 08:00 coffee and emails
+* 10:00 meet online AK CRo (3h)
+* todo zapiš postup kontroly pro *affilations*
+* set powershell prompt, add this to notes  
+
+* Erlang for game development: <https://prog21.dadgum.com/37.html>
+  * definitely read more his articles!
+  * <https://prog21.dadgum.com/33.html>
+  * <https://prog21.dadgum.com/30.html>
+  * <https://developingthedream.blogspot.com/2010/11/erlang-game-loop.html>
+  * <https://developingthedream.blogspot.com/>
+  * <https://www.erlang-factory.com/upload/presentations/395/ErlangandFirst-PersonShooters.pdf>
+  * <https://www.gdcvault.com/play/1016648/Why-Erlang>
+
+* How to <https://arbitrary-but-fixed.net/devops/shell/2021/02/19/release-notes-from-changelog.html>
+
+* Read and implement <https://beza1e1.tuxen.de/articles/forth.html>
+  * JonasForth
+
+* 1@:00 Watch WebGL series and make notes
+
+* How to work with timezones:
+  * ? `datetime.datetime.now().astimezone().tzinfo`
+
+notes for JK
+
+* Prefer `Path` over `str`
+* Use betterne name fname vs filename or file_name
+
+This are useless tests
+
+```py
+@pytest.mark.helpers
+def test_current_timezone() -> None:
+    result = helpers.current_timezone()
+    assert result
+
+@pytest.mark.helpers
+def test_datenow_with_timezone() -> None:
+    result = helpers.datenow_with_timezone()
+    assert result
+```
+
+Dont use assert in fixtures
+
+```py
+@pytest.fixture
+def station_ids():
+    _station_ids = StationIDs()
+    assert_station_ids
+    return_station_ids
+```
+
+use `pytest -x` to fail fast
+use `pytest -s` to capture prints
+
+* <https://rr-project.org/>
+* <https://discuss.ocaml.org/t/my-thoughts-on-ocaml-vs-haskell-rust-in-2023/12027>
+
+* <https://kiwidamien.github.io/>
+* https://yannesposito.com/Scratch/en/blog/Haskell-the-Hard-Way/#introduction
+* https://lean-lang.org/functional_programming_in_lean/getting-to-know.html
+
+found this :-)
+
+//Hello. I want my own local copy of your Widget that I will manipulate,
+//but I don't want my changes to affect the one you have. I may or may not
+//hold onto it for later, but that's none of your business.
+void foo(Widget w);
+
+//Hello. I want to take your Widget and play with it. It may be in a
+//different state than when you gave it to me, but it'll still be yours
+//when I'm finished. Trust me!
+void foo(Widget& w);
+
+//Hello. Can I see that Widget of yours? I don't want to mess with it;
+//I just want to check something out on it. Read that one value from it,
+//or observe what state it's in. I won't touch it and I won't keep it.
+void foo(const Widget& w);
+
+//Hello. Ooh, I like that Widget you have. You're not going to use it
+//anymore, are you? Please just give it to me. Thank you! It's my
+//responsibility now, so don't worry about it anymore, m'kay?
+void foo(Widget&& w);

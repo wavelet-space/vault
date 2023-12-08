@@ -1,0 +1,90 @@
+# 2022-07-02
+
+“I’m Not a Great Programmer, I’m Just a Good Programmer With Great Habits.”
+— Kent Beck
+
+“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” — Martin Fowler
+
+“It’s better to wait for a productive programmer to become available than it is to wait for the first available programmer to become productive”. — Steven C. McConnell, author of Code Complete
+
+“Programming is not easy like Sunday morning, it is silent poetry” — Muhammad Waseem
+
+“No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first” — Andy Hunt
+
+<https://levelup.gitconnected.com/top-45-programming-quotes-24ebad417241>
+
+## Styleguide
+
+Magické metody jako `__eq__`, `__hash__` komentuj stále stejně.
+
+### Pytest
+
+Present value (PV) is the current value...
+expected value
+
+<https://www.investopedia.com/terms/p/presentvalue.asp>
+
+```python
+from contextlib import nullcontext as does_not_raise
+```
+
+<https://docs.pytest.org/en/6.2.x/example/parametrize.html#parametrizing-conditional-raising>
+
+## Pytest Q/A
+
+- Jak testovat, že byla/nebyla vyvolána žádná výjimka?
+- Jak testovat, že byla/nebyla vyvolána specifická výjimka?
+- Jak testovat, že více hodnot najednou tj. parametrizovat test?
+- Které tři kroky v testech provádíme?
+- Kolik testů je potřeba pro jednu jednotku?
+- Jaké výjimky v Pythonu potkáváte/používáte?
+
+## Testování výjimek
+
+<https://docs.python.org/3/library/exceptions.html>
+
+```python
+raise new_exception form existin_exception
+```
+
+### Odvození vlastní výjimky
+
+...
+
+## Jednotkový test
+
+Zdrojový kód testujeme pomocí balíku `pytest`. Testy lze rozdělit do dvou skupin
+a to a) jednotkové a b) integrační. Jako jednotkové označujeme ty, a které testují
+v izolaci jednotku kódu. Může to být funkce, metoda, třída. Podstatné je, že všechny (ne)triviální parametry/závislosti, které tato _jednotka_ potřebuje nahrazujeme nějakou příkladovou hodnotou a v případě tříd/funkcí nějakým tkzv. mockem. Jednotkový test by tedy něměl provádět/testovat žádné IO operace.
+
+V DDD se jednotkovými testy pokrývá celá doménová vrstva: doménový model, doménové služby a také aplikační vrstva. Konkrétně např. Repository classes, které jsou potřeba pro doménovou/aplikační službu se mockují nebo nahrazují nějakou in-memory
+implementací.
+
+### Testování konstruktoru
+
+- Tets that an instance of <entity> has been created.
+
+## Integrační testy
+
+E2E, funkcionální, smoke..
+
+---
+
+Znalostní báze
+Master Ataccama's guidelines and internal policies
+
+---
+
+if **name** == "**main**":
+
+    client = Client(station_id="plus")
+    date = dt.date(2022, 1, 1)
+    transcript = client.get_transcript(date=date)
+
+    with open(f"./data/transcript_{transcript.date}.txt", mode="w") as file:
+        # file.write(str(transcript.content))
+        print(transcript.content, transcript.date)
+
+- Mikroservisy <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern>
+
+How to make a class JSON serializable

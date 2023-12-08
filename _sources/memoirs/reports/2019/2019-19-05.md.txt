@@ -1,0 +1,13 @@
+# 2019-05-19
+
+Étienn-Jules Marey
+
+pro otevření soubory z cesty pojmenuj funkci:
+
+    open(path_to_file) -> Document:
+        ...
+
+Pro otevření soubory z file-like objektu:
+
+    load(file_object) -> Document:
+        ...

@@ -1,0 +1,137 @@
+# 2022-06-30
+
+## Splnit
+
+- [x] Zapsat správné názvy do hlavičky markdown dokumentů v OSR dokumentaci, tak, by se správně zobrazovali na webu. Pokud není správně zapsaný vezme se název souboru.
+- [ ] Pročíst možnosti Petriho sítín a návrh workflow: napsat nebo použít workflow knihovnu.
+
+- [ ] Nastav u projektů export dokumentace pomocí Sphinx.
+
+- <https://jamesiv.es/blog/github/actions/2022/01/23/deploying-to-github-pages-with-github-actions>
+
+- <https://mattermost.com/blog/locally-working-with-sphinx/>
+
+- <https://www.psycopg.org/psycopg3/docs/>
+
+---
+
+## How can I see the size of a GitHub repository before cloning it?
+
+If you own the repository, you can find the exact size by opening your
+Account Settings → Repositories (<https://github.com/settings/repositories>),
+and the repository size is displayed next to its designation.
+
+## Python style guide
+
+- <https://github.com/Khan/style-guides/blob/master/style/python.md>
+- <https://github.com/ckan/ckan/blob/2.9/doc/contributing/python.rst>
+
+## Dokumentace
+
+Psaní doumentace není lehká věc. Je potřeba ji věnovat dosti času a úsilí.
+Zde je několik odkazů, které moho pomoci s orientací v tom, jaké jsou druhy dokumentace a jak ji psát a publikovat.
+
+Rozlišujeme dokumentaci:
+
+- zdrojový kód: Automticky ze zdrojovýcch souborů.
+- narativní: guides, recipes, tutorials
+
+- <https://www.writethedocs.org/>
+- <https://techwritingmatters.com/>
+- [style-guide SymPy](https://docs.sympy.org/latest/guides/contributing/documentation-style-guide.html)
+- <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>
+  <https://docs.blender.org/manual/en/latest/index.html>
+
+- <https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/>
+
+## Sphinx
+
+- <https://sphinx-gallery.github.io/stable/index.html>
+- <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/index.html>
+  <https://developers.google.com/style/>
+
+<https://www.ibm.com/cloud/blog/sdk-vs-api>
+
+---
+
+PŘIDEJ DO DOKUMENTACE OSR
+
+Vše se dělá podle kuchařky na imporovizaci není čas ani nervy.
+
+- Pokud něco děláme poprvé,zapisujeme si postup a nakonec ho zdokumentujeme a
+  zapíšeme případné _pitfalls_.
+- Jsme paranoidní a nevěříme svému sobě natoč kolegovi a vše po něm kontrolujeme, protože
+  na hlavním místě je funkční produkt, ne naše ego!
+- Zárověň si věříme natolik, že se snažímě vymyslet vlastní a funkční řešení.
+- Dokumentujeme vše a využíváme našeho perfekcionismu.
+
+## Klíčové znalosti hadího programátora v jazyce Hroznýš
+
+- Znalost aktuální verze jazyka a standardní knihovny.
+- Správně zapsaná dokumentace modulů, funkcí, tříd a metod a vytvoření webové verze např. pomocé balíku `sphinx`.
+- Automatické testování a formátování vlastního kódu pomocí balíků `pytest`, `black`, `isort`, `pylint`.
+- Instalace závslostí, znalost důležitých balíků jako `numpy`, `pandas`, `matplotlib`, `jupyter` atd.
+- Propojení s GitHub Actions, issue managment, pull request management a případně propojení z Codacy atd.
+- Vytvoření vlastního balíku a jeho poskytnutí na PyPI nebo GitHub (_release managment_)
+- Umět používat virtuální prostředí.
+- Umět používat Visual Studio Code a příslušné extenze.
+- Umět používat Git a GitHub (znát nějaké Git/GitHub workflow tzn. jak spolupracovat)
+- Zapisovat rozumně Git message.
+
+Nauč se Python hraním _Magic the Gathering_!
+
+- sJaký je v Pythonu rozdíl mezi balíkem a modulem?
+
+<https://setuptools.pypa.io/en/latest/userguide/package_discovery.html>
+
+## Práce s GitHubem
+
+Rozlišujeme projektu na dva druhy:
+
+- prototyp:
+- produční:
+
+Pro produkční projekt platí následující:
+
+- Vlastní ho alespoň dva vývojáří, kteří si navzájem dělají code review.
+- Všechny změny jsou přes pull request viz předchozí bod a code review.
+- Nasazení dělají oba vývojáři v součinosti:
+  - vyvoří git tag a publikují ho
+  - vytvoří release nasadí a zkontrolují případně kontejner.
+
+Isn't Saga - just a leaked domain logic?
+<https://groups.google.com/g/dddcqrs/c/_c7rxQUrZTE?pli=1>
+
+Kelly Sommers's profile photo
+Kelly Sommers
+unread,
+Apr 16, 2012, 6:31:13 PM
+to ddd...@googlegroups.com
+Scott,
+
+Garcia-Molina defined saga in 1987 in his paper about Sagas:
+<http://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf>
+
+Sagas contain state machines, so do other concepts in programming. Not every state machine is a Saga however. What's being discussed here are not Sagas.
+
+This brings up an interesting question in my head though (regardless of what you want to call things) and that is, since a Saga contains compensating actions, are these compensating actions domain behavior in some cases or simply chain-able "undo" operations that are infrastructure concerns?
+
+Thoughts on what these compensating actions are?
+
+Sorry if I'm derailing this conversation. It's put me in an interesting thought chain and thought that question might be useful.
+
+Thanks!
+Kell
+
+<https://www.wordhippo.com/what-is/another-word-for/identifier.html>
+
+<https://stackoverflow.com/questions/35700344/rest-api-and-ddd>
+
+<https://stitcher.io/blog/my-journey-into-event-sourcing>
+
+<https://github.com/Pylons/docs-style-guide/edit/main/docs/index.rst>
+<https://gist.github.com/brantfaircloth/791759>
+
+<https://holzhaus.github.io/sphinx-multiversion/master/github_pages.html>
+
+<https://stackoverflow.com/questions/49118468/should-a-builder-accept-primitives-or-value-objects>

@@ -1,0 +1,62 @@
+# 2022-09-11
+
+## Flask
+
+<https://flask.palletsprojects.com/en/2.2.x/changes/>
+
+FLASK_ENV je zastarale, používejme FLASK_DEBUG
+
+.flaskenv soubor
+
+Vykerslíme si závislostní graf projektu: <https://github.com/thebjorn/pydeps#example>
+
+## Python
+
+Installing collected packages: pywin32, progress, fastjsonschema, traitlets, tabulate, smmap, retrying, pyrsistent, mando, future, colorlog, plotly, jupyter-core, jsonschema, gitdb, flake8-polyfill, radon, nbformat, gitpython, wily
+<https://stribny.name/blog/>
+
+## Linux
+
+<https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-locate>
+
+Nastav práva tak, aby uživatel nemohl chodit do jiných /home adresářů-
+
+    chmod 701 /home
+
+Soubor /etc/passwd obsahuje informace o helsech uživatelů systému
+
+<https://linuxhandbook.com/check-if-user-has-sudo-rights/>
+sudo -l -U user_name
+
+## SQLite
+
+Pro práci s SQLite se hodí program <https://sqlitebrowser.org/about/>
+Nebo lze pracovat v příkazové řádce; spustíme pomocí `sqlite3`.
+
+Jaké známe typy JOIN operací v SQL:
+
+- INNER JOIN
+- LEFT (OUTER)JOIN
+- RIGHT (OUTER) JOIN
+- FULL (OUTER)JOIN
+
+<https://learnsql.com/blog/how-to-join-two-tables-in-sql/>
+
+## Docker
+
+Jak kopírovat soubory z/do kontejneru.
+<https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0383441>
+
+## Power Query
+
+<https://blog.crossjoin.co.uk/2018/02/12/running-m-queries-in-visual-studio-with-the-power-query-sdk/>
+<https://www.howtoexcel.org/m-code/>
+<https://docs.microsoft.com/en-us/power-query/power-query-what-is-power-query>
+<https://powerquery.microsoft.com/en-us/>
+
+## Custom DOmain GitHub
+
+- <http://www.wavelet.space/>
+- <https://richpauloo.github.io/2019-11-17-Linking-a-Custom-Domain-to-Github-Pages/>
+- <https://github.com/wavelet-space/wavelet-space.github.io/settings/pages>
+- <https://social.dnsmadeeasy.com/blog/long-short-ttls/>

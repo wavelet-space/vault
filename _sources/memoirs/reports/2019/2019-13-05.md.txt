@@ -1,0 +1,55 @@
+# 2019-05-13
+
+Playlist
+
+Sepultura - Endangered Species
+<https://www.youtube.com/watch?v=9f0LEoDwFO8>
+
+Robert Lippok - Whitesuperstructure - 2011
+<https://www.youtube.com/watch?v=Pb42GbADwZM&t=223s>
+
+Deep Learning Paleo
+
+Classification of radiolarian images with hand-crafted and deep features
+<https://www.sciencedirect.com/science/article/pii/S0098300417302133>
+
+Finding fossils in new ways: An artificial neural network approach to predicting the location of productive fossil localities
+<https://onlinelibrary.wiley.com/doi/abs/10.1002/evan.20324>
+
+Application of artificial neural networks to paleoceanographic data
+<https://www.sciencedirect.com/science/article/pii/S003101829700031X>
+
+Geomorphometric feature analysis using morphometric parameterization and artificial neural networks
+<https://www.sciencedirect.com/science/article/pii/S0169555X07004710>
+
+Machine learning's potential in geoscience modeling
+<https://www.youtube.com/watch?v=ncVVerRBhyM>
+
+Machine Learning Assisted Petroleum Geoscience
+<https://www.youtube.com/watch?v=xMy6dBbMwio>
+
+Machine learning for lithology
+classification, data fusion and
+evaluating prediction uncertainty
+<http://www.cet.edu.au/docs/default-source/presentations/uwa_april_2013_cracknell_machine_learning.pdf?sfvrsn=4>
+
+Classification of volcanic ash particles using a convolutional neural network and probability
+<https://www.nature.com/articles/s41598-018-26200-2>
+
+Machine learning as a tool for geologists
+<https://www.researchgate.net/publication/314226198_Machine_learning_as_a_tool_for_geologists>
+
+Efficient data-driven geologic feature characterization from pre-stack
+seismic measurements using randomized machine learning algorithm
+<https://watermark.silverchair.com/ggy385.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAjowggI2BgkqhkiG9w0BBwagggInMIICIwIBADCCAhwGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMVx3WJeU_Vwe3AY-lAgEQgIIB7XI5RWRd1mEiMRr_5_6ztXIsqBOUvoi1pzcAbnQB3xFI7p6VDc1IpEl5svz5o3_KbQIEAUjCCZyu70Le539rjnLCltVO0NhqYB1zT-CoKLt-olDJtzJrIJamfYPFT1Gv275atvTy5ZpVTbrxI5me4u85sKJyvAxwLF-QnKsDDmL2630CBzVGems4hKLg8EM5ueOpq5DqEvtfyf5bS7RYQdb7v4w2tx7HfEZCicqtbcgA4e_5BNkdpWBgpeI3KAjWps_hCRC7qc65tRO7xjQaCb5M8Bawi94zJ4dfXVf7H1KcyFeTAU4oOYNERs4lPN84WXM36c1IOS-6yjq2ImfIfylUaVNkNoQDIBRXVk22I20ZPbON3fxYYFYKgRvMzy_4tjmGs5uA9A3lX2P3V5nmfqDraeG852WUi4IRhrxvJ8UmZjRRcdLOg58_XhqR1M8T3p5JXZI-Z6Un1br0Hevrti_F7t2Amybvz-81Es18XoQDTf3soS5gpcuVIi33rZbmdV-gquzh2rtKkfRPgDgjLKZmoFzoAYZ5pn7C_m7EKeKm9NyPFF9B3YPFBFKCuxG5WYKw7DYq6Qt1qU6PrkIOj_7GygmdPxaMg-eDFtKir8BEEnAWlmzW3ZgrI0Twr1m34Su1SuVlAFnM0vPT6bw>
+
+Machine Learning to develop a model of rock
+<https://www.imperial.ac.uk/earth-science/research/research-groups/amcg/case-studies/machine-learning-to-develop-a-model-of-rock/>
+
+Computer simulation of the evolution of foraging strategies: application to the ichnological record
+<https://palaeo-electronica.org/content/1-2-computer-simulation>
+
+BOOKS
+
+<http://incompleteideas.net/book/>
+draft <http://incompleteideas.net/book/bookdraft2018mar21.pdf>

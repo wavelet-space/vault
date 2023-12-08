@@ -1,0 +1,48 @@
+# 2021-02-18
+
+* [studijní] 09:00--10:30 Připoj se na hodinu _Morfologie živočichů_ <https://cuni-cz.zoom.us/j/93297337997>
+* [studijní] 11:30--13:50 Připoj se na hodinu _Numerical Modelling of Heat Transfer in Geology_
+* [pracovní] Odevzdej do 13:00 screenshoty z aplikace UniQ.
+
+* Zkus ukázkové grafy v knihovně Altair viz notes/Example Altair.ipynb
+* Dpracuj Matlab příklad s numerickou matematikou
+* Napiš Alssandrovi a stáhni literaturu k termodynamice
+* <https://www2.karlin.mff.cuni.cz/~slavik/info.html>
+
+* Prozkoume knihy z <https://is.cuni.cz/studium/dipl_st/index.php?do=main&doo=detail&did=224930> a <https://is.cuni.cz/studium/dipl_st/index.php?id=&tid=&do=main&doo=detail&did=213742> a <http://theory.kfkl.cz/students_projects.php>
+
+* 1. Ivan Zelinka: Umělá inteligence v problémech globální optimalizace, Praha, BEN - technická literatura (2002).
+* 2. V. Kvasnička, J. Pospíchal, P. Tiňo, Evolučné algoritmy, STU, Bratislava (2000).
+
+* Prozkoumej tyto kurzy a stránky, případně je založ do poznámek
+  * <https://github.com/Codecademy/Master-Statistics-Live-Series>
+  * <https://github.com/fonnesbeck/statistical-analysis-python-tutorial>
+  * <https://cmdlinetips.com/>
+  * <https://github.com/altair-viz/altair-tutorial>
+  * <https://stattrek.com/statistics/charts/histogram.aspx>
+  * <https://github.com/lisacharlotterost/talk-slides/blob/master/1407_MastersThesis.pdf>
+  * <https://is.cuni.cz/studium/predmety/index.php?id=a656b14a10e797f064f74407ce82709f&tid=&do=predmet&kod=NPRF020>
+  * <https://madewithml.com/courses/ml-foundations/linear-regression/>
+  * <https://github.com/LinkedEarth/Ontology>
+
+* Sleduj stack overflow blog a přečti si tento článek, je docela aktuální:
+  * <https://stackoverflow.blog/2021/02/11/why-are-video-calls-so-tiring-you-might-be-misreading-cultural-styles/>
+
+Matematika pro fyziky II - NOFY162
+
+* 1. Komplexní analýza
+  * Holomorfní funkce,
+  * komplexní derivace,
+  * Cauchy-Riemannovy podmínky.
+  * Komplexní křivka a křivkový integrál, délka křivky,
+  * definice primitivní funkce.
+  * Výpočet křivkového integrálu pomocí primitivní funkce, nezávislost integrálu na cestě, jednoduše souvislá oblast.
+  * Cauchyova věta a Cauchyův vzorec. Taylorovy a Laurentovy řady. Reziduová věta a její použití k výpočtům. Liouvilleova věta. Věta o jednoznačnosti.
+
+* 2. Fourierova transformace funkcí
+
+- Fourierova transformace pro funkce z L1(Rn), Vztah F.T. a derivace. Konvoluce, F.T. konvoluce. Věta o inverzi pro Fourierovu transformaci: Schwartzův prostor S (prostor rychle klesajících funkcí) a jeho vlastnosti, věta o inverzi pro fce z S a L1. Rozšíření F.T. do prostoru L2. Parsevalova rovnost, věta o inverzi pro funkce z L2. Základní použití F.T. pro řešení ODR a PDR.
+
+* 3. Úvod do teorie distribucí
+  * Distribuce, temperované (Schwartzovy) distribuce, funkce jako distribuce, rovnost distribucí, konvergence distribucí, regulární a neregulární distribuce.
+  * Derivování distribucí, záměnnost pořadí derivování, derivování funkce se skoky, pojem fundamentálního řešení ODR a PDR, Laplaceův operátor pro sféricky symetrické funkce, fundamentální řešení Laplaceovy rovnice. Násobení distribuce funkcí, lineární transformace distribucí. Fourierova transformace temperovaných distribucí, F.T. Diracovy distribuce, konstant, cplx. exponenciál, sinu a kosinu. F.T. sudé distribuce. Vztah derivace a F.T. distribucí, F.T. distribuce s kompaktním nosičem. Plošná distribuce, výpočet F.T. sféricky symetrických funkcí. Spojitost F.T., inverzní F.T. Konvergence distribucí, řady distribucí, vzorkovací distribuce. Distribuce s parametrem, tenzorový součin distribucí a jeho F.T., distributivní Fubiniho věta, konvoluce funkcí a distribucí, derivování jako konvoluce. Vztah konvoluce a Fourierovy transformace. Fourierovy řady a periodické distribuce.

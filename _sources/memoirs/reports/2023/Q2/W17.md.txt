@@ -1,0 +1,105 @@
+# W17
+
+- project: <https://github.com/santiagobasulto/ipython-gpt>
+- lecture: <https://www.ksi.mff.cuni.cz/~svoboda/courses/211-B4M36DS2/lectures/B4M36DS2-Lecture-08-RiakKV.pdf>
+- article: <https://link.springer.com/chapter/10.1007/978-3-030-65847-2_16>
+- project: <https://news.ycombinator.com/item?id=3570861>
+- project: <https://github.com/pissang/claygl>
+- project: <https://github.com/playcanvas/model-viewer>
+
+HaxkerNews agregátor:
+
+- <https://www.daemonology.net/hn-daily/>
+- <https://www.daemonology.net/hn-weekly-ask/>
+
+- Přemýšlíme o CSS frameworku a doručování přes <https://www.jsdelivr.com/>.
+
+- tools: <https://www.cleancss.com/>
+
+- article: <https://www.freecodecamp.org/news/html-role-attribute/>
+
+. Používej thesayrus: <https://www.merriam-webster.com/thesaurus>
+
+- Jak trackovat aktivitu/čas viz WakaTime,tempo?
+
+- Managuj API klíče na githubu... např. GENEEA_API_KEY
+
+- project: <https://github.com/inkyblackness/imgui-go/blob/main/Vectors.go>
+
+## GitHub 2FA DONE
+
+- <https://bitwarden.com/>
+  - <https://bitwarden.com/help/cli/>
+  Bitwarden je multiplatformní open-source aplikace pro správu hesel.
+  - Instaluj `winget install Bitwarden.Bitwarden`
+  - <https://bitwarden.com/blog/secure-github-with-bitwarden/>
+  - Musíš mít premium účet pro OTTP
+  - Vytvoř si item pro github.
+  - Na Githubu si stáhni obnovovací klíče a ulož si je v Bitwarden.
+  - <https://www.reddit.com/r/Bitwarden/comments/115knss/2fa_app_bitwarden_or_authy_or_others/>
+  - <https://en.wikipedia.org/wiki/Time-based_one-time_password>
+  - <https://github.com/twofas/2fas-server>
+
+## Mon
+
+Rozhlas
+
+- 10-12 Práce na openmedia-arrange: přidán progressbar/zbývá upravit readme
+- openmedia-arrange: Zobrazuj *progress bar* při zpracování souborů.
+- <https://github.com/schollz/progressbar>
+- <https://stackoverflow.com/questions/637827/redirect-stderr-and-stdout-in-bash>
+- <https://betterstack.com/community/guides/logging/logging-in-go/>
+- <https://helpdeskgeek.com/how-to/redirect-output-from-command-line-to-text-file/>
+
+- Pročti si příručku jak tvořit CLI:  <https://clig.dev/>, <https://github.com/cli-guidelines/cli-guidelines>
+- Kniha The Art of Unix Programming dostupná online: <http://www.catb.org/esr/writings/taoup/html/>
+- What is the exact difference between a 'terminal', a 'shell', a 'tty' and a 'console':
+  <https://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con/4132#4132>
+  <http://www.linusakesson.net/programming/tty/>
+
+- Jak vytvořit soubor v PowerShell? `New-Item`
+- stdin, stdout, stderr a logování:
+  <https://www.reddit.com/r/golang/comments/jqvaft/why_does_the_log_package_always_output_to_stderr/>
+  
+  Only the actual output / results of a Unix tool belong to stdout. Progress information, diagnostics and logging belong to stderr.
+
+## Tue
+
+## Wen
+
+Přemýšlím o koupi notebooku:
+
+- <https://www.notebookcheck.net/Lenovo-ThinkPad-T480-Core-i7-8650U-FHD-Laptop-Review.315574.0.html>
+- <https://www.pocitace24.cz/repasovane-notebooky:lenovo/?pv133=7390&pv28=301&pv136=7921&pv100=1489&pv22=247&order=-price>
+
+Update NeoVim na verzi 0.9.0 (Windows): `winget update nvim`
+
+Update WSL: `wls update`.
+
+Konfigurace NeoVim na Windows:
+
+```powershell
+:echo stdpath('config')
+C:\Users\dlanda\AppData\Local\nvim
+```
+
+Zřízen GitHub 2FA:
+Musel jsem instalovat QR browser extension (QR Code Reader for Google Chrome).
+Zkouším Authy...
+TODO řešil jsem to od 9:10 do cca 9:45
+
+## Thu
+
+## Fri
+
+- 10:30-13:00=2,5h Práce na CSS frameworku
+
+## Sat
+
+## Sun
+
+- Jak smaza git submoduly
+  <https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule?page=1&tab=scoredesc#tab-top>
+
+- Push commit i tagy
+  git push --follow-tags

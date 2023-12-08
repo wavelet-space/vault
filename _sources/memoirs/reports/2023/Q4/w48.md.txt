@@ -1,0 +1,47 @@
+# W48
+
+## Meets
+
+- čt 11.00 P6SB
+
+## Notes
+
+- https://github.com/labmlai/annotated_deep_learning_paper_implementations
+- https://github.com/SasLuca/raylib-cmake-template
+
+A few abbreviations for coding:
+
+_idx = index
+_qty = quntity
+
+- Add  https://godbolt.org/  to online compilers
+
+- https://www.rabbitmq.com/getstarted.html
+
+---
+
+Write do style guide:
+antonyms
+encode, decode
+
+source, target 
+outcome
+
+event sourcing
+translate (message)
+  - forward
+  - backward
+
+transport (layer DDD)
+    - https://github.com/debasishg/tradeio3/blob/main/modules/core/src/main/scala/tradex/domain/model/execution.scala   
+
+
+--- 
+
+Pro testování používáme pytest, pytest-watchm Playwright, pytest-playwright
+
+
+Sepiš konečně nějakou stylyguide pro pyproject.toml.
+https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+
+- https://stackoverflow.com/questions/72371401/pytest-asyncio-runtimeerror-cannot-run-the-event-loop-while-another-loop-is-run

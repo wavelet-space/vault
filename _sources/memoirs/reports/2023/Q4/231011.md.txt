@@ -1,0 +1,20 @@
+# 231011
+
+- Jaký je rozdíl mezi B-Tree a Binary Tree a Ordered Binary Tree (Binary Search Tree).
+
+CSS Parser
+
+- <https://github.com/Sigil-Ebook/cssparser>
+- <https://pythonhosted.org/cssutils/index.html>
+
+Caching
+
+- <https://github.com/rails/solid_cache>
+
+Distributed databases
+
+- <https://github.com/rqlite/rqlite>
+
+Job Queues
+
+-

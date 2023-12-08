@@ -1,0 +1,74 @@
+# 2021-07-22
+
+## How to master chaos
+
+Lot of projects written in Python are not properly packaged it is true for many code written by scientist, hobbyist etc. To make a insttalable package from the source code is in fact trivial, so when you ignore it you will in my eyes an ignorant. It does not matter if your pieace of shitt is working onyour machine unless it was intended onluy work on your machine. In that case keep ypur work private and dont pusblish it on github.
+
+- Know when you can stay a diletant and when you hav eto be proffesional.
+
+## How to test a functions which works with file system?
+
+_What is not written, will be forgotten._
+
+---
+
+There are technologies which should be mastered.
+
+- Sharing best practices and keep ypur knowledge accessible for others.
+- programming languege of your choice e.g. Python, Rust, Haskell etc.
+- containerization e.g. Docker
+- database server of yur choice e.g. PostgreSQL, RethinkDB etc.
+- Git and Github/GitLab
+- CI/CD of your libraries and applications
+- Testing: Unit, functional, integration and so on.
+- Documenting your libraries and applciations, tutorials and examples
+
+## How to design programs and libraries
+
+Before you start the coding think about what is the piece of the software which you want to build. The first option is that you want to build a library. This has a implications that you dont have to care about CLI or GUI. The library will be written in some programming language e.g. C++ and will expose at least C++ programming interface (API). In most cases this will be enough but one can also think about bindigs for another languages e.g. Python or exposing C API, so other people can make bindings for their language of choice.
+
+What software project / repository should coontain:
+
+RULES
+
+When you make an library, it SHOULD be properly packaged so
+it easily available for other libraries and applications.
+
+Library
+vs
+Program
+
+How to do it?
+
+- The best option is publish the library to package registry such as PyPi or NPM.
+- Another option is use Github Package registry, but it does not
+- The worst but acceptable option is install it from github repository
+
+When you make an application, it SHOULD be containerized.
+
+- See the section, how to containerize a program
+  - with command line interface (CLI).
+  - web server e.g Flask etc.
+
+---
+
+Pokud chceme refaktorovat jednosouborový modul na adresářový můžeme to udělat bezbolestně následovně
+
+    routes.py
+
+na
+
+    routes/
+        __init__.py
+
+poté můžeme rozdelit funkce v __init__.py do samostatných modulů a jen přeexprotovat
+
+    routes/
+        __init__.py
+        _route1.py
+        _route2.py
+
+v __init__.py
+
+    from <package_name>.routes._route1 import <whatever>
+    from <package_name>.routes._route2 import <whatever>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>231101 &#8212; David Landa</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=56c4699f" />
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/custom.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="231102" href="231102.html" />
+    <link rel="prev" title="231131" href="231031.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>231101<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>08:00 coffee and emails</p></li>
+<li><p>10:00 meet online AK CRo (3h)</p></li>
+<li><p>todo zapiš postup kontroly pro <em>affilations</em></p></li>
+<li><p>set powershell prompt, add this to notes</p></li>
+<li><p>Erlang for game development: <a class="reference external" href="https://prog21.dadgum.com/37.html">https://prog21.dadgum.com/37.html</a></p>
+<ul>
+<li><p>definitely read more his articles!</p></li>
+<li><p><a class="reference external" href="https://prog21.dadgum.com/33.html">https://prog21.dadgum.com/33.html</a></p></li>
+<li><p><a class="reference external" href="https://prog21.dadgum.com/30.html">https://prog21.dadgum.com/30.html</a></p></li>
+<li><p><a class="reference external" href="https://developingthedream.blogspot.com/2010/11/erlang-game-loop.html">https://developingthedream.blogspot.com/2010/11/erlang-game-loop.html</a></p></li>
+<li><p><a class="reference external" href="https://developingthedream.blogspot.com/">https://developingthedream.blogspot.com/</a></p></li>
+<li><p><a class="reference external" href="https://www.erlang-factory.com/upload/presentations/395/ErlangandFirst-PersonShooters.pdf">https://www.erlang-factory.com/upload/presentations/395/ErlangandFirst-PersonShooters.pdf</a></p></li>
+<li><p><a class="reference external" href="https://www.gdcvault.com/play/1016648/Why-Erlang">https://www.gdcvault.com/play/1016648/Why-Erlang</a></p></li>
+</ul>
+</li>
+<li><p>How to <a class="reference external" href="https://arbitrary-but-fixed.net/devops/shell/2021/02/19/release-notes-from-changelog.html">https://arbitrary-but-fixed.net/devops/shell/2021/02/19/release-notes-from-changelog.html</a></p></li>
+<li><p>Read and implement <a class="reference external" href="https://beza1e1.tuxen.de/articles/forth.html">https://beza1e1.tuxen.de/articles/forth.html</a></p>
+<ul>
+<li><p>JonasForth</p></li>
+</ul>
+</li>
+<li><p>1&#64;:00 Watch WebGL series and make notes</p></li>
+<li><p>How to work with timezones:</p>
+<ul>
+<li><p>? <code class="docutils literal notranslate"><span class="pre">datetime.datetime.now().astimezone().tzinfo</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>notes for JK</p>
+<ul class="simple">
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">Path</span></code> over <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>Use betterne name fname vs filename or file_name</p></li>
+</ul>
+<p>This are useless tests</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">helpers</span>
+<span class="k">def</span> <span class="nf">test_current_timezone</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">helpers</span><span class="o">.</span><span class="n">current_timezone</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">result</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">helpers</span>
+<span class="k">def</span> <span class="nf">test_datenow_with_timezone</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">helpers</span><span class="o">.</span><span class="n">datenow_with_timezone</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>Dont use assert in fixtures</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span> <span class="nf">station_ids</span><span class="p">():</span>
+    <span class="n">_station_ids</span> <span class="o">=</span> <span class="n">StationIDs</span><span class="p">()</span>
+    <span class="n">assert_station_ids</span>
+    <span class="n">return_station_ids</span>
+</pre></div>
+</div>
+<p>use <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-x</span></code> to fail fast
+use <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-s</span></code> to capture prints</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rr-project.org/">https://rr-project.org/</a></p></li>
+<li><p><a class="reference external" href="https://discuss.ocaml.org/t/my-thoughts-on-ocaml-vs-haskell-rust-in-2023/12027">https://discuss.ocaml.org/t/my-thoughts-on-ocaml-vs-haskell-rust-in-2023/12027</a></p></li>
+<li><p><a class="reference external" href="https://kiwidamien.github.io/">https://kiwidamien.github.io/</a></p></li>
+<li><p>https://yannesposito.com/Scratch/en/blog/Haskell-the-Hard-Way/#introduction</p></li>
+<li><p>https://lean-lang.org/functional_programming_in_lean/getting-to-know.html</p></li>
+</ul>
+<p>found this :-)</p>
+<p>//Hello. I want my own local copy of your Widget that I will manipulate,
+//but I don’t want my changes to affect the one you have. I may or may not
+//hold onto it for later, but that’s none of your business.
+void foo(Widget w);</p>
+<p>//Hello. I want to take your Widget and play with it. It may be in a
+//different state than when you gave it to me, but it’ll still be yours
+//when I’m finished. Trust me!
+void foo(Widget&amp; w);</p>
+<p>//Hello. Can I see that Widget of yours? I don’t want to mess with it;
+//I just want to check something out on it. Read that one value from it,
+//or observe what state it’s in. I won’t touch it and I won’t keep it.
+void foo(const Widget&amp; w);</p>
+<p>//Hello. Ooh, I like that Widget you have. You’re not going to use it
+//anymore, are you? Please just give it to me. Thank you! It’s my
+//responsibility now, so don’t worry about it anymore, m’kay?
+void foo(Widget&amp;&amp; w);</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">David Landa</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Memoirs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../computing/index.html">Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../electronics/index.html">Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../equations/index.html">Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../various/index.html">Various</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Reports</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../2019/index.html">2019</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/index.html">2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/index.html">2022</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">2023</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Q1/W12.html">W11+12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q1/W13.html">W13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W16.html">W16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W17.html">W17</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W18.html">W18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W19.html">W19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W20.html">W20</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W21.html">W21</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W22.html">W22</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Q2/W23.html">W23</a></li>
+<li class="toctree-l3"><a class="reference internal" href="221118.html">231118</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230611.html">230611</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230621.html">230611</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230628.html">230628</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230701.html">230701</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230721.html">230721</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230911.html">230911</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230914.html">230914</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230916.html">230916</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231011.html">231011</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231013.html">231013</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231029.html">231029</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231031.html">231131</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">231101</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231102.html">231102</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231104.html">231104</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231115.html">231115</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231116.html">231116</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231117.html">231117</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231119.html">231119</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231120.html">231120</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231121.html">231121</a></li>
+<li class="toctree-l3"><a class="reference internal" href="231122.html">231122</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w44.html">W44</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w47.html">W47</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w48.html">W48</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../collection.html">Collection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Essays</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../essays/01H22V89NXZFA4Z9DCT9VWHFGS.html">Python pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../essays/01H2FRAPRN5PHYMAA6RMYF3F83.html">Disruptor pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../essays/01HG36D05JMVW0T82FTWG93R71.html">Python logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../essays/clean-code-notes.html">Notes on clean code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../essays/how-to-design-program-1.html">Jak navrhovat program (1)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Études</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../etudes/2046.html">Acoustic Input Impedance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Personal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../personal/projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../personal/resume.html">Resume</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Reports</a><ul>
+  <li><a href="../index.html">2023</a><ul>
+      <li>Previous: <a href="231031.html" title="previous chapter">231131</a></li>
+      <li>Next: <a href="231102.html" title="next chapter">231102</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Landa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../../_sources/memoirs/reports/2023/Q4/231101.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

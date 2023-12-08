@@ -1,0 +1,74 @@
+# Week 41
+
+## Articles
+
+* https://hexatomic.github.io/documentation/tooling/evaluation.html
+* https://thebe.readthedocs.io/en/latest/
+* https://jupyter-sphinx.readthedocs.io/en/latest/
+* https://nikhilism.com/post/2021/raii-footguns-rust-cpp/
+* 2022-10-09 https://nikhilism.com/post/2021/experiencing-smalltalk/
+  - https://www.dougengelbart.org/pubs/papers/scanned/Doug_Engelbart-AugmentingHumanIntellect.pdf
+
+* https://wetmelon.github.io/clang-on-windows.html
+* https://jayconrod.com/posts/122/leaving-google
+
+## Software
+* Natron | Open-source video compositing software. |  https://github.com/NatronGitHub/Natron
+* Raziz | Rendering Research Engine | https://github.com/Pikachuxxxx/Razix
+* Bun | JavaScript runtime, bundler, transpiler and package manager | https://github.com/oven-sh/bun
+* WebdriverIO | test automation framework | https://github.com/webdriverio/webdriverio
+* LeanQt | stripped-down Qt version easy to build from source | https://github.com/rochus-keller/LeanQt
+* GLFM | | https://github.com/brackeen/glfm/
+* https://github.com/sudhakar3697/electron-alternatives
+
+The game development playground
+https://www.youtube.com/watch?v=S7lXSihz0ac&list=PL_xRyXins848nDj2v-TJYahzvs-XW9sVV&t=550s&ab_channel=DaveChurchill
+
+Jak parsovat GLSL abychom dostali AST -> None Graph?
+
+Timer / Event schedule:
+- episodic
+- periodic
+
+## Podívat se na Kivy UI
+
+Kivy framework je celkem pekně vypadající. Nicméně jako nevýhody vydím, že se
+píše v Pythonu. Pokud by byl C/C++ first s first class Python podporou, tak by byl naprosto super.
+
+KV jazyk: deklarativní definice widgetů... podobně jako QML
+
+Widget
+Layout
+Region
+Screen
+Window
+
+## Blender UI
+
+- https://devtalk.blender.org/t/blender-gui-design-and-implementation/13602/2
+- https://www.khronos.org/opengl/wiki/OpenGL_Context
+
+
+https://devtalk.blender.org/t/meeting-notes-21-april-2021/18533
+
+DONT USE STRELEN! https://wpengineer.com/2410/dont-use-strlen/
+
+GroundStudio
+GroundEngine
+WaveletStudio
+WaveletEngine
+
+Dash Job Queue| https://plotly.com/dash/job-queue/
+Dash | https://github.com/plotly/dash
+Streamlit
+Voila
+
+https://www.datarevenue.com/en-blog/data-dashboarding-streamlit-vs-dash-vs-shiny-vs-voila
+
+https://quillbot.com/
+
+Web komponenty: https://webcomponents.dev/, https://studio.webcomponents.dev/
+
+Předělat projekt course-cpp na Sphinx
+
+PS C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools> .\VC\Auxiliary\Build\vcvars64.bat

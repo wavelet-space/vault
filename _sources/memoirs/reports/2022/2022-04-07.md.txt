@@ -1,0 +1,64 @@
+# 2022-04-07
+
+Specification class (pattern) vs Predicate function
+
+def find(predicate, *arguments):
+result = filter(lambda: predicate(*arguments), iterable)  
+ return result
+
+## Programming Language JavaScript (ECMAScript)
+
+## Fundamental objects
+
+- `Object`
+- `Number`
+- `Boolean`
+- `Symbol`
+
+## `Array`
+
+## Properties
+
+- `Array.prototype[@@unscopables]`
+- `Array.prototype.length`
+
+## Methods
+
+- `Array.prototype.at()` (Experimental)
+- `Array.prototype.concat()`
+- `Array.prototype.copyWithin()`
+- `Array.prototype.entries()`
+- `Array.prototype.every()`
+- `Array.prototype.fill()`
+- `Array.prototype.filter()`
+- `Array.prototype.find()`
+- `Array.prototype.findIndex()`
+- `Array.prototype.flat()`
+- `Array.prototype.flatMap()`
+- `Array.prototype.forEach()`
+- `Array.prototype.group()` (Experimental)
+- `Array.prototype.groupToMap()`(Experimental)
+- `Array.prototype.includes()`
+- `Array.prototype.indexOf()`
+- `Array.prototype.join()`
+- `Array.prototype.map()`
+- `Array.prototype.pop()`
+- `Array.prototype.push()`
+- `Array.prototype.reduce()`
+- `Array.prototype.reduceRight()`
+- `Array.prototype.reverse()`
+- `Array.prototype.shift()`
+- `Array.prototype.slice()`
+- `Array.prototype.some()`
+- `Array.prototype.sort()`
+- `Array.prototype.splice()`
+- `Array.prototype.toLocaleString()`
+- `Array.prototype.toSource()` (Non-Standard)
+- `Array.prototype.toString()`
+- `Array.prototype.unshift()`
+- `Array.prototype.values()`
+
+## Inheritance
+
+Function
+Object

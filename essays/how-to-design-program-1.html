@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Jak navrhovat program (1) &#8212; David Landa</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=56c4699f" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/custom.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Acoustic Input Impedance" href="../etudes/2046.html" />
+    <link rel="prev" title="Notes on clean code" href="clean-code-notes.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="jak-navrhovat-program-1">
+<h1>Jak navrhovat program (1)<a class="headerlink" href="#jak-navrhovat-program-1" title="Link to this heading">¶</a></h1>
+<blockquote>
+<div><p>All theory, dear friend, is grey, but the golden tree of actual life springs ever green.<br>
+– J. W. von Goethe, <em>Faust</em> pt. 1 (1808) ‘Studierzimmer’</p>
+</div></blockquote>
+<p>Každý i sebemenší program je dobré navrhnout tak, aby jsme se v něm dobře orientovali při budoucích změnách nebo rozšíření. Pokud je totiž dobře navržen tzn. rozvrstven nebo modularizován, pak je obykle jednoduché takový program také testovat, protože můžeme snadno izolovat jeho části.
+Není nic horšího než se strachovat ze změn v programu jen proto, že se při sebemenší úpravě začne vše hroutit a my hledáme a odchytáváme chyby napříč funkcemi a moduly (soubory).</p>
+<p>Existuje jednoduchý návod jak začít psát program tak, aby se nám nestávalo výše uvedené? Já myslím, že ano! Přesto, že existuje nespočet způsobů jak počítačový program navrhnout, existuje pár jednoduchých zásad, které vám pomohou zkrotit jeho zdánlivou složitost.</p>
+<p>Než se psutíme do našeho tématu, ještě si popíšeme s jakými programy se v praxi můžeme potkat, respektive které po nás někdo může chtít vypracovat.</p>
+<p>Program bez prezentační vrstvy v podstatě neexistuje.</p>
+<p>Program vždy vrací nějakou hodnout, i když ji uživatel nevidí.
+Program může spouštět i stroj a ten také musí umět zkontrolovat, co se stalo!</p>
+<section id="kategorie-programu">
+<h2>Kategorie programů<a class="headerlink" href="#kategorie-programu" title="Link to this heading">¶</a></h2>
+<section id="program-s-kratkodobym-behem">
+<h3>1. Program s krátkodobým během<a class="headerlink" href="#program-s-kratkodobym-behem" title="Link to this heading">¶</a></h3>
+<p>Takový program, označme ho např. <em>fire and forget</em>, může být spouštěn např. z konzole. Po vyvolání/spuštění provede požadovanou úlohu a skončí. Jsou v podstatě dva mpžné způsoby jak může skončit: 1. skončí úspěšně tzn. provedl, co se po něm chtělo, 2. skončí s neúspěchem.</p>
+</section>
+<section id="program-s-dlouhodobym-behem">
+<h3>2. Program s dlouhodobým během<a class="headerlink" href="#program-s-dlouhodobym-behem" title="Link to this heading">¶</a></h3>
+<p>Program s dlouhodobým během, myslíme takový, který běží jako server nebo démon.</p>
+<ul class="simple">
+<li><p>program s interakcí v průběhu činnosti</p></li>
+<li><p>Program si rozdělte minimálně do dvou částí.</p></li>
+</ul>
+<p>Popíšeme si jak lze konceptuálně navrhnout konzolový program</p>
+</section>
+</section>
+<section id="sekvencni-program">
+<h2>Sekvenční program<a class="headerlink" href="#sekvencni-program" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Přijmi požadavky od uživatele</p></li>
+<li><p>Zpracuj požadavky a vrať výsledek</p></li>
+<li><p>Zašli výsledky zpracování uživateli</p></li>
+</ol>
+<div class="mermaid">
+            sequenceDiagram
+    F-&gt;&gt;B: Command   
+    activate B
+    B--&gt;&gt;F: Result   
+    deactivate B 
+        </div><p>Co je <em>command</em>? Command je objekt, který nese informaci o tom, co chceme od systému. Jde tedy vlastně o formulaci scénáře (use-case) např. <em>Vyhledej všechny zákazníky, kteří mají aktuálně něco objednaného</em>.</p>
+<p>Samozřejme že v každé doméně to může být něco jiného. I pokud děláte vědecké výpočty nebo vestavěné systémy, měli byste si sepsat scénáře, co od vašeho progamu chcete např. <em>Najdi řešení pro (nějakou) rovnici s těmito parametry</em>.</p>
+<p>Takové scénáře popisují očekávané chování systému a lze je použít jako podklad pro testování a dokumentaci.</p>
+<p>Aplikace má tedy minimálně dvě části, nebo chcete-li vrstvy. První je prezentační. Skrze ní uživatel komunikuje s aplikací, zadává požadavky a získává výsledky. V případě konzolové aplikace je command-line interface a konzole se standardním vstupe a výstupe naší prezentační vrstvou. Této vrstvě můžeme také říkat <em>frontent</em>.</p>
+<p>Druhá vrstva, přijímá požadavaky z prezentační vrstvy, provádí požadované akce a vrací výsledky zpět do prezentační vrstvy. Této vrstvě můžeme říkat <em>backend</em>. Tato vrstva obsahuje veškerou logiku a validaci (validace mlže částěčne probíhat i na frontendu, ale na backendu musí být i tak!).</p>
+<p>Každý use-case je možné vyjádřit funkcí, která zpracuje daný požadavek. Taková funkce zřejme bude přijímat nejaké parametry. Tyto parametry můžeme nazývat jako command a dokonce můžeme vytvořit samostatný typ</p>
+<p>Příklad.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">FindCustomer</span><span class="p">:</span>
+    <span class="n">custommer_id</span><span class="p">:</span> <span class="nb">int</span>
+
+
+<span class="k">class</span> <span class="nc">Customer</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    
+<span class="hll">    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span class="hll">        <span class="o">...</span>
+</span><span class="hll">    
+</span><span class="hll">    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span>        <span class="o">...</span>
+
+
+<span class="k">def</span> <span class="nf">find_customer</span><span class="p">(</span><span class="n">customer_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Customer</span><span class="p">]:</span>
+    <span class="c1"># The domain logic aka use-case</span>
+    <span class="o">...</span>
+
+
+<span class="k">def</span> <span class="nf">handle_find_custommer</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="n">FindCustomer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Customer</span><span class="p">]</span> <span class="o">|</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="c1"># get command and pass it to use case.</span>
+    <span class="c1"># if not validate(command):</span>
+    <span class="c1">#     return Exception(&quot;reason&quot;)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">customer</span> <span class="o">=</span> <span class="n">find_customer</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">customer</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">error</span>
+
+    <span class="c1"># Send error to `stderr`.</span>
+    <span class="c1"># or </span>
+    <span class="c1"># Send data to `stdout` </span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="o">...</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">[</span><span class="n">Event</span><span class="p">,</span> <span class="n">Error</span><span class="p">]:</span>
+    <span class="c1"># decide</span>
+    <span class="c1"># process</span>
+    <span class="c1"># return</span>
+</pre></div>
+</div>
+<p>Proč mít oddělenou funkci pro use case a samotný handler? Protože naše funkce neví nic o
+frontendu. Úkolem hadler funkce je převzít požadavek z prezentační vrstvy, tou může být stdint (CLI)
+nebo HTTP request (REST) nebo dokonce nativní GUI. Command objekt může kromě parametrů pro funkci <code class="docutils literal notranslate"><span class="pre">find_customer</span></code>, také obsahovat další metadata. Handle např. může logovat každý příchoz command, který navíc může nést např. informace, kdo, kdy a proč command poslal. Pro různé preznetační vrstvy stačí tedy jen v podstatě vytvořit jiný handler. Samotný usecase, což je logické jádro apliakce pracuje stále stejně.</p>
+<p>Nyní se podíváme na funkci <code class="docutils literal notranslate"><span class="pre">find_customer()</span></code>.</p>
+<p>Ta se potřebuje např. dotázat databáze, vyzvednou výsledek, konvertovat ho do entity Custoemer (doménový model) a vrátit výsledek handleru. Podle zvoleného jazyk a přístupu může také vyhazovat výjimku. Je úkolem handleru, aby tuto výjimku obsloužil.</p>
+<p>Pro ukázku, jak to celé funkguje vytvoříme jednodychou CLI palikaci i REST. Jediné v čem se liší, je prezentační vrstva repektive handler.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="clean-code-notes.html"><span class="std std-doc">notes on clean code</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">David Landa</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Memoirs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../memoirs/computing/index.html">Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memoirs/electronics/index.html">Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memoirs/equations/index.html">Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memoirs/various/index.html">Various</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memoirs/reports/index.html">Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memoirs/collection.html">Collection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Essays</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01H22V89NXZFA4Z9DCT9VWHFGS.html">Python pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01H2FRAPRN5PHYMAA6RMYF3F83.html">Disruptor pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01HG36D05JMVW0T82FTWG93R71.html">Python logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clean-code-notes.html">Notes on clean code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jak navrhovat program (1)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Études</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../etudes/2046.html">Acoustic Input Impedance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Personal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../personal/projects.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../personal/resume.html">Resume</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="clean-code-notes.html" title="previous chapter">Notes on clean code</a></li>
+      <li>Next: <a href="../etudes/2046.html" title="next chapter">Acoustic Input Impedance</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Landa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/essays/how-to-design-program-1.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

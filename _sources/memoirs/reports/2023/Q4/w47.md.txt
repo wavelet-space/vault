@@ -1,0 +1,84 @@
+# W47
+
++ Some tips on Sphinx: <https://github.com/MarkHoeber/sublime_sphinx_guide>
++ Sketch demo project for ChargeMeUp: write use cases in more depth, create simple Python or Erlang server.
++ Security: SHoul dw use some tool e.g. <https://github.com/python-security/pyt>?
++ Read <https://medium.com/@cunderwoodmn/using-xml-to-create-web-pages-541d91593104>
++ Evalueate <https://github.com/Suor/funcy>, Read <https://www.root.cz/clanky/kdyz-moznosti-functools-nedostacuji-dalsi-knihovny-pro-funkcionalni-programovani-v-pythonu/>
++ Evaluate <https://joi.dev/api/?v=17.9.1>
+
++ Organize weaving and tiling notes and resources.
++ Create an armature for sculptin small animals/dinosuaurs.
+
++ <https://www.geeksforgeeks.org/error-recovery-strategies-in-compiler-design/>
++ <https://datos.gob.es/en/blog/why-should-you-use-parquet-files-if-you-process-lot-data>
+
++ read <https://www.gamedeveloper.com/programming/in-depth-functional-programming-in-c->
++ read <https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative>
+
++ aoc in k <https://github.com/chrispsn/aoc2023/blob/main/answers.k>
+
++ Fortran Tips: <https://github.com/zmoon/FortranTipBrowser>
+
++ My personal website is located [here](https://www.wavelet.space/vault/). It is really a mess at this moment, but I am working on that. You know, [everything si a draft](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13).
++ I'm a member of the [Czech Radio](https://github.com/czech-radio) and [Wavelet](https://github.com/wavelet-space) organization. The former is my current employer (thanks for that) and the latter is a one-man show at this moment, but that may change in the future. All new personal projects are developed there.
++ I’m working hard to get this profile and repositories to a readable state. The expected date is the end of 2023.
++ **I'm open to collaboration**, mostly for Python-based projects.
+
+And finally a few words of wisdom.
+
+> Nothing is so permanent as a temporary solution.<br>
+> — Unknown
+
+> Only drug dealers and software companies call their customers ‘users’.<br>
+> — Edward Tufte
+
+Zálohuj tyto projekty do tabulky a odstraň z Forks.
+
+<https://github.com/rswinkle/PortableGL>
+<https://github.com/nick-gravgaard/elastic-tabstops-py>
+<https://github.com/nornagon/jonesforth>
+<https://github.com/ThusSpokeNomad/GameNetworkingResources>
+<https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra>
+<https://github.com/labmlai/annotated_deep_learning_paper_implementations>
+<https://github.com/zsylvester/stratigraph>
+<https://github.com/JuliaDataScience/JuliaDataScience>
+<https://github.com/vega/vega-renderer-webgl>
+<https://github.com/CSNG-MFF/mozaik>
+<https://github.com/SasLuca/raylib-cmake-template>
+<https://github.com/zsylvester/stratigraph>
+<https://github.com/holoskii/FractalsOpenGL>
+<https://github.com/holoskii/Rendering>
+<https://github.com/CSNG-MFF/mozaik>
+<https://github.com/mwalczyk/webgpu-starter>
+<https://github.com/Pylons/docs-style-guide>
+<https://github.com/michelp/pggraphblas>
+<https://github.com/nyx/node_socket_processing>
+
+
+<https://github.com/kevinlawler/kona/wiki/Idioms>
+
+<https://github.com/WEREMSOFT/MS-DOS-frame-buffer-game-engine/>
+<https://github.com/WEREMSOFT/c99-raylib-cimgui-template>
+<https://github.com/vega/vega-renderer-webgl>
+<https://github.com/vega/vega-renderer-webgl/blob/main/src/marks/line.js>
+
+c++, raw-string-literal
+js, taged string template
+
+devlog
+
+c++ flags
+-f fastmath
+
+ <https://misra.org.uk/misra-cpp2023-released-including-hardcopy/>
+
+## IMPORTANT
+
+ What Google GMail related Logins I have?
+
+periodic
+episodic
+
+scheduled
+immediate

@@ -1,0 +1,147 @@
+# W20
+
+## 06
+
+- Napiš skript pro GHA, který vytvoří pro každý týden nový dokument s naázvem/cestou `/journal/{YEAR}/W{WEEK_NUMBER}.md`
+
+- [ ] Přeber
+
+- Udržovat poznámky v adresářích podle kvartálů?
+- <https://www.epochconverter.com/>
+
+- <https://cameron-sea.medium.com/>
+
+- FOLLOW: <https://www.youtube.com/@RetroTechUSA>
+
+## 04
+
+- <https://evanhagitlab.io/png-explorer/>
+- <https://www.kidzfun.art>
+- <https://blog.aira.cz/10-pravidel-webove-typografie-ktere-mel-kazdy-znat>
+- <https://editorsmanual.com/articles/colon-vs-dash/>
+- <https://evanhahn.gitlab.io/png-explorer/>
+- <https://handmade.network/projects>
+
+- DONT USE Arrow functions: <https://www.javascripttutorial.net/es6/when-you-should-not-use-arrow-functions/>
+- <https://stackoverflow.com/questions/46278683/include-my-markdown-readme-into-sphinx>
+- <https://documatt.com/blog/sphinx-errors/9-literal-block-expected-none-found.html>
+- <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository>
+
+- dynabook
+- <https://superuser.com/questions/446827/configure-windows-powershell-to-display-only-the-current-folder-name-in-the-shel>
+
+- <https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.3>
+
+- <https://codeyarns.com/tech/2011-09-02-powershell-change-the-color-of-the-prompt.html#gsc.tab=0>
+
+- GLEW vs GLAD: <https://stackoverflow.com/questions/68821088/if-i-use-glad-and-not-glew-will-i-miss-on-something>
+  - <https://www.amazon.com/Instant-GLEW-Ashwin-Nanjappa/dp/1783280476>
+
+- <https://developer.nvidia.com/gpugems/gpugems3/part-vi-gpu-computing>
+
+    PS> $PROFILE | Select-Object *Host* | Format-List
+
+    AllUsersAllHosts       : C:\Program Files\PowerShell\7\profile.ps1
+    AllUsersCurrentHost    : C:\Program Files\PowerShell\7\Microsoft.PowerShell_profile.ps1
+    CurrentUserAllHosts    : C:\Users\<user>\Documents\PowerShell\profile.ps1
+    CurrentUserCurrentHost : C:\Users\<user>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+
+- <https://www.hanselman.com/blog/you-should-be-customizing-your-powershell-prompt-with-psreadline>
+
+- <https://bradwilson.io/blog/prompt/powershell>
+
+    python -c "print('!' * 10)"
+
+## 03
+
+- Don't use REST for internal services. I my opinion it is a waste of time. Some kind of RPC is better e.g general as gRPC or of you are Python shop use RPyC.
+  - <https://hackernoon.com/dont-use-rest-for-micro-services-ju7k328m>
+
+- Existují dva druhy XML parseru: DOM a SAX
+  - DOM je jednochý, ale načítá celý XML dokument do paměti.
+  - SAX naopak
+  - <https://www.javatpoint.com/xml-parsers>
+
+- <https://www.cs.unm.edu/~brayer/vision/perception.html>
+- <https://www.cs.unm.edu/~brayer/vision/fourier.html>
+
+- UML diagramy, které jsou užitečné:
+  - sekvenční diagram
+
+- <https://towardsdatascience.com/how-i-turned-my-companys-docs-into-a-searchable-database-with-openai-4f2d34bd8736>
+  
+- Použití rebar3 pro erlang projekt:
+  - <https://medium.com/erlang-central/building-your-first-erlang-app-using-rebar3-25f40b109aad>
+  - <https://github.com/erlef/rebar3_hex>
+  - učíme se erlang: <https://learnyousomeerlang.com/starting-out-for-real#numbers>
+
+- <https://github.com/voxel51/fiftyone-examples/blob/master/examples/image_deduplication.ipynb>
+
+- Erlang OpenGL
+  - <http://erlang.org/documentation/doc-5.3/doc/getting_started/getting_started.html>
+  
+  - `werl -s toolbar`
+  - <https://wtfleming.github.io/blog/getting-started-opengl-elixir/>
+  - <https://github.com/asceth/nehe_erlang>
+  - <https://github.com/dgud/gl_demos>
+  - <https://github.com/essen/imaku>
+
+    PS C:\Users\dlanda\Projects> erl
+    Eshell V12.1.5  (abort with ^G)
+    1> wx:demo().
+    ok
+  
+  - <https://hidnasio.github.io/elixir/wxerlang/2022/06/08/wx-erlang-hello-world.html>
+  - <https://hidnasio.github.io/elixir/wxerlang/2022/06/29/advance-wx-erlang-hello-world.html>
+
+- <https://wtfleming.github.io/blog/pytorch-cats-vs-dogs-part-3/>
+
+- SQLIte v prohlížeči: <https://sqlite.org/wasm/doc/trunk/demo-123.md>
+
+- Ukládání do browser local storage
+  - <https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API>
+
+- Workflow system in Go: <https://scipipe.org/>
+
+- READ: <https://spin.atomicobject.com/2023/01/31/5-types-of-software-documentation/>
+- FOLLOW: <https://raganwald.com/>
+- <https://blog.plover.com/notes/game-mechanics.html>
+
+- <https://medium.com/erlang-central/building-your-first-erlang-app-using-rebar3-25f40b109aad>
+
+- Napiš skript co zobrazuje obsah vybraných adresářů.
+
+## 02
+
+- Image processing: <https://ai.stanford.edu/~syyeung/cvweb/tutorial1.html>
+- CSS framework pro inspiraci: <https://alvaromontoro.github.io/almond.css/demo/>
+
+## 01
+
+- Jak formátovat čas v JS
+  - <https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss>
+
+- Jak renderovat webcomponents na serveru
+  - <https://itnext.io/how-to-server-side-render-a-web-component-770cd25efb6f>
+
+- Prozkoumej web Animation API
+  - <https://developer.mozilla.org/en-US/docs/Web/API/Animation/>
+
+- Jak nastavit lokální server pto testování HTML/CSS/JS
+  - <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server>
+
+- Jak konfigurovat VS Code
+  - <https://news.ycombinator.com/item?id=35944373>  
+  - <https://gist.github.com/hyperupcall/99e355405611be6c4e0a38b6e3e8aad0>
+
+- state machine in JS
+  - <https://news.ycombinator.com/item?id=35941749>
+  - <https://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript>
+  
+- <https://plato.stanford.edu/entries/logic-combinatory/>
+
+- HTML nezalomitelné mezery: `&nbsb;/&#160`, `&ensp;`, `&emsp;`
+
+- Decorators in Python: <https://blog.hubspot.com/website/decorators-in-python?hubs_content=blog.hubspot.com%252F&hubs_content-cta=null&hubs_post-cta=blognavcard-website>
+
+- Dark theme inspiration: <https://blog.hubspot.com/website/dark-website-themes?hubs_content=blog.hubspot.com%252Fwebsite%252Fhtml-space&hubs_content-cta=null>

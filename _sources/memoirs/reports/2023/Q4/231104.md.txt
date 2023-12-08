@@ -1,0 +1,19 @@
+# 231104
+
+Explain why you use  `raise ... from None`
+
+NO
+except requests.exceptions.Timeout as ex:
+    raise type(ex)(str(ex), request_msg) from None
+except Exception as exf:
+    if response is not None:
+        raise type(exf)(str(exf), request_msg, response.text) from None
+    else:
+        raise type(exf)(str(exf), request_msg) from None
+
+NO
+if out is not None:
+    assert isinstance(out, _model.Station)
+
+Safety: Protecting people form computers.
+Security: Protecting computers form people.

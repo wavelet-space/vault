@@ -1,0 +1,76 @@
+# 2022-07-06
+
+Skriptování v PowerShell
+
+<https://devblogs.microsoft.com/scripting/powertip-change-the-powershell-prompt/>
+
+(Get-Command Prompt).ScriptBlock
+<https://www.hanselman.com/blog/you-should-be-customizing-your-powershell-prompt-with-psreadline>
+
+--
+
+Strategie testování REST API
+
+<https://flask.palletsprojects.com/en/2.1.x/testing/>
+
+Pokud vytvýříme službu, zřejmě budeme ji budeme mít rozdelenou na tří části: database, server, client. Celý projekt můžeme vyvíjet jako monorepo s tím, že každý balík je vyvíjen a testován nezávisle. Každý balík pak obsahuje vlastní:
+
+- Dockerfile s instrukcemi pro sestavené obrazu
+- .env soubor s proměnnými prostředí
+
+Na nejvyšší úrovni je pak jeden docker-compose souboru, který načítá jednotlivé Dockerfile a .env soubory z každého balíku (adresáře).
+
+Testování probíha pro každý balík zvláště, protože jsou napsány pomocí ruzných technologií. Z8rověň na nejvyšší píšeme integrační/e2e testy např. pomocí RobotFramework.
+
+## Strategie testování
+
+Testovat můžeme samostatně:
+
+- databázové schema: tabulky, procedury
+- server: jednotkové testy doménové vrstvy a mockované aplikační vrstvy a integrční testy pro infrastruckturu např. třídy `repository`.
+  A dále integrační testy pro REST API (Flask má na to pomůcky).
+
+E2E testy poté testují, že z klienta jodu indormace na backend, z něho do databáze a že klient dostane správně odpovědi a správně je interpretuje.
+
+API ENdpoint handler:
+
+1. Získej všechan potřebná data zaslaná requestem.
+
+- data query parametry
+- data z hlaviček
+- Sanitizace a
+- zanalení do Command
+- Zavolání aplikační service (uvnitře se provádí validace)
+  - Accepted => Success -> ...
+  - Rejected => failure -> ...
+
+1. Funkční prototyp:
+
+- Základní funkcionalita je zpracována tj. potřebé REST endopinty. Aplikace může běžet jen na in memory databázi,
+  hlavní je, aby šlo pustit demo. Pokud je součástí zadání i klient, tak to je to hlavní co uživatel vidí!
+
+2. Testovací nasazení:
+
+- Vše jako funkční prototyp, jen již běžíme na reálné databázi s testovacími daty. Musíme být schopni rychle datbázi vyprázdnit a naplnit testovacími daty. Ideální
+  mít robota co volá naší aplikaci a kontrolujeme poté logy
+  že vše proběhlo podle očekávání.
+
+## Návrh frameworku
+
+- funkcionální přístup
+
+## Routing
+
+class Route:
+value: str
+
+class Endpoint:
+path: str
+
+endpoint_handler
+
+## Publikování Docker image
+
+- <https://docs.github.com/en/actions/publishing-packages/publishing-docker-images>
+
+<http://debasishg.blogspot.com/2014/03/functional-patterns-in-domain-modeling.html>
